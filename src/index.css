@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --color-paper: #fafaf7;
+  --color-ink: #111111;
+  --color-yellow: #ffd43b;
+  --color-muted: #737373;
+  --color-soft: #ecece7;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
