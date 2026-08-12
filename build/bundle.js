@@ -471,7 +471,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
       "Liberation Mono", "Courier New", monospace;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
+    --leading-tight: 1.25;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -636,11 +640,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .inset-y-0 {
+    inset-block: calc(var(--spacing) * 0);
   }
   .start {
     inset-inline-start: var(--spacing);
@@ -648,26 +664,146 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .end {
     inset-inline-end: var(--spacing);
   }
+  .-top-\\[9px\\] {
+    top: calc(9px * -1);
+  }
+  .-top-\\[32px\\] {
+    top: calc(32px * -1);
+  }
+  .-top-\\[34px\\] {
+    top: calc(34px * -1);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-1\\/2 {
+    top: calc(1 / 2 * 100%);
+  }
+  .top-4 {
+    top: calc(var(--spacing) * 4);
+  }
+  .top-5 {
+    top: calc(var(--spacing) * 5);
+  }
+  .top-\\[-10px\\] {
+    top: -10px;
+  }
+  .top-\\[10px\\] {
+    top: 10px;
+  }
+  .top-\\[15px\\] {
+    top: 15px;
+  }
+  .top-\\[20px\\] {
+    top: 20px;
+  }
+  .top-\\[22px\\] {
+    top: 22px;
+  }
+  .top-\\[24px\\] {
+    top: 24px;
+  }
+  .top-\\[70px\\] {
+    top: 70px;
+  }
+  .top-\\[74px\\] {
+    top: 74px;
+  }
   .top-\\[77px\\] {
     top: 77px;
   }
   .top-\\[240px\\] {
     top: 240px;
   }
+  .top-\\[250px\\] {
+    top: 250px;
+  }
+  .top-\\[260px\\] {
+    top: 260px;
+  }
+  .top-\\[300px\\] {
+    top: 300px;
+  }
   .right-0 {
     right: calc(var(--spacing) * 0);
+  }
+  .right-5 {
+    right: calc(var(--spacing) * 5);
+  }
+  .right-\\[5\\%\\] {
+    right: 5%;
+  }
+  .right-\\[8\\%\\] {
+    right: 8%;
+  }
+  .right-\\[10\\%\\] {
+    right: 10%;
+  }
+  .right-\\[70px\\] {
+    right: 70px;
+  }
+  .right-\\[120px\\] {
+    right: 120px;
+  }
+  .right-\\[130px\\] {
+    right: 130px;
+  }
+  .right-\\[180px\\] {
+    right: 180px;
+  }
+  .right-\\[250px\\] {
+    right: 250px;
+  }
+  .right-\\[300px\\] {
+    right: 300px;
+  }
+  .-bottom-\\[42px\\] {
+    bottom: calc(42px * -1);
+  }
+  .bottom-1 {
+    bottom: calc(var(--spacing) * 1);
+  }
+  .bottom-1\\/2 {
+    bottom: calc(1 / 2 * 100%);
+  }
+  .bottom-4 {
+    bottom: calc(var(--spacing) * 4);
+  }
+  .bottom-5 {
+    bottom: calc(var(--spacing) * 5);
   }
   .bottom-\\[-40px\\] {
     bottom: -40px;
   }
-  .bottom-\\[50px\\] {
-    bottom: 50px;
+  .bottom-\\[-42px\\] {
+    bottom: -42px;
   }
-  .bottom-\\[60px\\] {
-    bottom: 60px;
+  .bottom-\\[-44px\\] {
+    bottom: -44px;
+  }
+  .bottom-\\[-48px\\] {
+    bottom: -48px;
+  }
+  .bottom-\\[-50px\\] {
+    bottom: -50px;
+  }
+  .bottom-\\[20px\\] {
+    bottom: 20px;
+  }
+  .bottom-\\[22px\\] {
+    bottom: 22px;
+  }
+  .bottom-\\[115px\\] {
+    bottom: 115px;
   }
   .-left-\\[50px\\] {
     left: calc(50px * -1);
+  }
+  .-left-\\[55px\\] {
+    left: calc(55px * -1);
+  }
+  .-left-\\[145px\\] {
+    left: calc(145px * -1);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -675,17 +811,68 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .left-1\\/2 {
     left: calc(1 / 2 * 100%);
   }
-  .left-\\[60px\\] {
-    left: 60px;
+  .left-1\\/3 {
+    left: calc(1 / 3 * 100%);
   }
-  .left-\\[64px\\] {
-    left: 64px;
+  .left-2\\/3 {
+    left: calc(2 / 3 * 100%);
+  }
+  .left-5 {
+    left: calc(var(--spacing) * 5);
+  }
+  .left-\\[-55px\\] {
+    left: -55px;
+  }
+  .left-\\[-65px\\] {
+    left: -65px;
+  }
+  .left-\\[-70px\\] {
+    left: -70px;
+  }
+  .left-\\[-95px\\] {
+    left: -95px;
+  }
+  .left-\\[16\\%\\] {
+    left: 16%;
+  }
+  .left-\\[70px\\] {
+    left: 70px;
+  }
+  .left-\\[120px\\] {
+    left: 120px;
+  }
+  .left-\\[130px\\] {
+    left: 130px;
+  }
+  .left-\\[180px\\] {
+    left: 180px;
+  }
+  .left-\\[250px\\] {
+    left: 250px;
+  }
+  .left-\\[300px\\] {
+    left: 300px;
   }
   .left-\\[700px\\] {
     left: 700px;
   }
+  .left-\\[720px\\] {
+    left: 720px;
+  }
+  .float-right {
+    float: right;
+  }
+  .m-\\[4px\\] {
+    margin: 4px;
+  }
   .mx-auto {
     margin-inline: auto;
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-1\\.5 {
+    margin-top: calc(var(--spacing) * 1.5);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -699,8 +886,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-7 {
+    margin-top: calc(var(--spacing) * 7);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-9 {
+    margin-top: calc(var(--spacing) * 9);
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
@@ -723,6 +919,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .mt-28 {
     margin-top: calc(var(--spacing) * 28);
   }
+  .mt-32 {
+    margin-top: calc(var(--spacing) * 32);
+  }
   .mt-36 {
     margin-top: calc(var(--spacing) * 36);
   }
@@ -732,11 +931,29 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .mt-44 {
     margin-top: calc(var(--spacing) * 44);
   }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
+  }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
+  }
+  .ml-\\[220px\\] {
+    margin-left: 220px;
+  }
+  .ml-\\[240px\\] {
+    margin-left: 240px;
+  }
+  .ml-\\[260px\\] {
+    margin-left: 260px;
   }
   .flex {
     display: flex;
@@ -744,32 +961,155 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .grid {
     display: grid;
   }
+  .hidden {
+    display: none;
+  }
+  .inline {
+    display: inline;
+  }
   .inline-block {
     display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .h-\\[1px\\] {
+    height: 1px;
+  }
+  .h-\\[2px\\] {
+    height: 2px;
+  }
+  .h-\\[3px\\] {
+    height: 3px;
   }
   .h-\\[4px\\] {
     height: 4px;
   }
+  .h-\\[5px\\] {
+    height: 5px;
+  }
+  .h-\\[14px\\] {
+    height: 14px;
+  }
+  .h-\\[16px\\] {
+    height: 16px;
+  }
+  .h-\\[18px\\] {
+    height: 18px;
+  }
+  .h-\\[22px\\] {
+    height: 22px;
+  }
+  .h-\\[24px\\] {
+    height: 24px;
+  }
+  .h-\\[26px\\] {
+    height: 26px;
+  }
   .h-\\[28px\\] {
     height: 28px;
+  }
+  .h-\\[30px\\] {
+    height: 30px;
   }
   .h-\\[32px\\] {
     height: 32px;
   }
+  .h-\\[34px\\] {
+    height: 34px;
+  }
+  .h-\\[38px\\] {
+    height: 38px;
+  }
+  .h-\\[42px\\] {
+    height: 42px;
+  }
+  .h-\\[46px\\] {
+    height: 46px;
+  }
+  .h-\\[52px\\] {
+    height: 52px;
+  }
+  .h-\\[54px\\] {
+    height: 54px;
+  }
+  .h-\\[56px\\] {
+    height: 56px;
+  }
   .h-\\[58px\\] {
     height: 58px;
+  }
+  .h-\\[64px\\] {
+    height: 64px;
+  }
+  .h-\\[66px\\] {
+    height: 66px;
   }
   .h-\\[70px\\] {
     height: 70px;
   }
+  .h-\\[72px\\] {
+    height: 72px;
+  }
+  .h-\\[76px\\] {
+    height: 76px;
+  }
+  .h-\\[82px\\] {
+    height: 82px;
+  }
+  .h-\\[90px\\] {
+    height: 90px;
+  }
+  .h-\\[94px\\] {
+    height: 94px;
+  }
   .h-\\[100px\\] {
     height: 100px;
+  }
+  .h-\\[103px\\] {
+    height: 103px;
+  }
+  .h-\\[120px\\] {
+    height: 120px;
+  }
+  .h-\\[130px\\] {
+    height: 130px;
+  }
+  .h-\\[142px\\] {
+    height: 142px;
   }
   .h-\\[150px\\] {
     height: 150px;
   }
   .h-\\[160px\\] {
     height: 160px;
+  }
+  .h-\\[180px\\] {
+    height: 180px;
+  }
+  .h-\\[220px\\] {
+    height: 220px;
+  }
+  .h-\\[285px\\] {
+    height: 285px;
+  }
+  .h-\\[290px\\] {
+    height: 290px;
+  }
+  .h-\\[300px\\] {
+    height: 300px;
+  }
+  .h-\\[320px\\] {
+    height: 320px;
+  }
+  .h-\\[390px\\] {
+    height: 390px;
+  }
+  .h-\\[430px\\] {
+    height: 430px;
+  }
+  .h-\\[480px\\] {
+    height: 480px;
   }
   .h-\\[500px\\] {
     height: 500px;
@@ -783,11 +1123,26 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .h-\\[560px\\] {
     height: 560px;
   }
+  .h-\\[570px\\] {
+    height: 570px;
+  }
+  .h-\\[590px\\] {
+    height: 590px;
+  }
   .h-\\[600px\\] {
     height: 600px;
   }
+  .h-\\[610px\\] {
+    height: 610px;
+  }
+  .h-\\[620px\\] {
+    height: 620px;
+  }
   .h-\\[650px\\] {
     height: 650px;
+  }
+  .h-\\[680px\\] {
+    height: 680px;
   }
   .h-full {
     height: 100%;
@@ -795,14 +1150,68 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .min-h-\\[50px\\] {
     min-height: 50px;
   }
+  .min-h-\\[320px\\] {
+    min-height: 320px;
+  }
+  .min-h-\\[390px\\] {
+    min-height: 390px;
+  }
+  .w-\\[1px\\] {
+    width: 1px;
+  }
+  .w-\\[2px\\] {
+    width: 2px;
+  }
+  .w-\\[3px\\] {
+    width: 3px;
+  }
   .w-\\[4px\\] {
     width: 4px;
+  }
+  .w-\\[5px\\] {
+    width: 5px;
+  }
+  .w-\\[8px\\] {
+    width: 8px;
+  }
+  .w-\\[14px\\] {
+    width: 14px;
+  }
+  .w-\\[16px\\] {
+    width: 16px;
+  }
+  .w-\\[18px\\] {
+    width: 18px;
+  }
+  .w-\\[22px\\] {
+    width: 22px;
+  }
+  .w-\\[24px\\] {
+    width: 24px;
+  }
+  .w-\\[26px\\] {
+    width: 26px;
   }
   .w-\\[28px\\] {
     width: 28px;
   }
+  .w-\\[30px\\] {
+    width: 30px;
+  }
   .w-\\[32px\\] {
     width: 32px;
+  }
+  .w-\\[34px\\] {
+    width: 34px;
+  }
+  .w-\\[44px\\] {
+    width: 44px;
+  }
+  .w-\\[46px\\] {
+    width: 46px;
+  }
+  .w-\\[54px\\] {
+    width: 54px;
   }
   .w-\\[60px\\] {
     width: 60px;
@@ -810,17 +1219,56 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .w-\\[70px\\] {
     width: 70px;
   }
+  .w-\\[72px\\] {
+    width: 72px;
+  }
+  .w-\\[90px\\] {
+    width: 90px;
+  }
+  .w-\\[150px\\] {
+    width: 150px;
+  }
+  .w-\\[220px\\] {
+    width: 220px;
+  }
+  .w-\\[230px\\] {
+    width: 230px;
+  }
+  .w-\\[260px\\] {
+    width: 260px;
+  }
+  .w-\\[300px\\] {
+    width: 300px;
+  }
   .w-\\[380px\\] {
     width: 380px;
+  }
+  .w-\\[540px\\] {
+    width: 540px;
   }
   .w-\\[900px\\] {
     width: 900px;
   }
+  .w-\\[1300px\\] {
+    width: 1300px;
+  }
+  .w-\\[1320px\\] {
+    width: 1320px;
+  }
   .w-full {
     width: 100%;
   }
+  .max-w-\\[220px\\] {
+    max-width: 220px;
+  }
+  .max-w-\\[550px\\] {
+    max-width: 550px;
+  }
   .max-w-\\[650px\\] {
     max-width: 650px;
+  }
+  .max-w-\\[770px\\] {
+    max-width: 770px;
   }
   .max-w-\\[1300px\\] {
     max-width: 1300px;
@@ -830,6 +1278,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   }
   .max-w-\\[1550px\\] {
     max-width: 1550px;
+  }
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
+  .min-w-\\[90px\\] {
+    min-width: 90px;
   }
   .flex-1 {
     flex: 1;
@@ -860,20 +1314,92 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
+  .grid-cols-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
   .grid-cols-\\[1\\.6fr_1fr_1fr_1fr\\] {
     grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  }
+  .grid-cols-\\[1\\.25fr_0\\.75fr\\] {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+  .grid-cols-\\[1fr_1\\.2fr_100px\\] {
+    grid-template-columns: 1fr 1.2fr 100px;
+  }
+  .grid-cols-\\[1fr_120px_1fr\\] {
+    grid-template-columns: 1fr 120px 1fr;
+  }
+  .grid-cols-\\[1fr_210px_1fr\\] {
+    grid-template-columns: 1fr 210px 1fr;
+  }
+  .grid-cols-\\[1fr_360px_1fr\\] {
+    grid-template-columns: 1fr 360px 1fr;
   }
   .grid-cols-\\[70px_260px_1fr_110px\\] {
     grid-template-columns: 70px 260px 1fr 110px;
   }
+  .grid-cols-\\[120px_repeat\\(13\\,1fr\\)\\] {
+    grid-template-columns: 120px repeat(13,1fr);
+  }
+  .grid-cols-\\[140px_1fr\\] {
+    grid-template-columns: 140px 1fr;
+  }
+  .grid-cols-\\[180px_1fr\\] {
+    grid-template-columns: 180px 1fr;
+  }
+  .grid-cols-\\[200px_1320px\\] {
+    grid-template-columns: 200px 1320px;
+  }
+  .grid-cols-\\[210px_1fr_110px\\] {
+    grid-template-columns: 210px 1fr 110px;
+  }
+  .grid-cols-\\[210px_1300px_140px\\] {
+    grid-template-columns: 210px 1300px 140px;
+  }
+  .grid-cols-\\[220px_1fr_120px\\] {
+    grid-template-columns: 220px 1fr 120px;
+  }
+  .grid-cols-\\[220px_1fr_220px\\] {
+    grid-template-columns: 220px 1fr 220px;
+  }
+  .grid-cols-\\[230px_1fr_110px\\] {
+    grid-template-columns: 230px 1fr 110px;
+  }
+  .grid-cols-\\[230px_1320px_120px\\] {
+    grid-template-columns: 230px 1320px 120px;
+  }
+  .grid-cols-\\[240px_1fr\\] {
+    grid-template-columns: 240px 1fr;
+  }
+  .grid-cols-\\[250px_1fr\\] {
+    grid-template-columns: 250px 1fr;
+  }
+  .grid-cols-\\[260px_1fr_150px\\] {
+    grid-template-columns: 260px 1fr 150px;
+  }
+  .grid-cols-\\[280px_1fr_180px_180px_180px\\] {
+    grid-template-columns: 280px 1fr 180px 180px 180px;
+  }
+  .grid-cols-\\[360px_repeat\\(4\\,1fr\\)\\] {
+    grid-template-columns: 360px repeat(4,1fr);
+  }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
   }
   .items-end {
     align-items: flex-end;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .items-stretch {
+    align-items: stretch;
   }
   .justify-between {
     justify-content: space-between;
@@ -884,8 +1410,26 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .justify-end {
     justify-content: flex-end;
   }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
   .gap-7 {
     gap: calc(var(--spacing) * 7);
@@ -902,14 +1446,36 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .gap-12 {
     gap: calc(var(--spacing) * 12);
   }
+  .gap-14 {
+    gap: calc(var(--spacing) * 14);
+  }
   .gap-16 {
     gap: calc(var(--spacing) * 16);
   }
   .gap-20 {
     gap: calc(var(--spacing) * 20);
   }
+  .gap-24 {
+    gap: calc(var(--spacing) * 24);
+  }
   .gap-28 {
     gap: calc(var(--spacing) * 28);
+  }
+  .gap-\\[420px\\] {
+    gap: 420px;
+  }
+  .gap-\\[480px\\] {
+    gap: 480px;
+  }
+  .gap-\\[520px\\] {
+    gap: 520px;
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .space-y-4 {
     :where(& > :not(:last-child)) {
@@ -925,6 +1491,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
       margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
   .space-y-7 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
@@ -932,8 +1505,59 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
       margin-block-end: calc(calc(var(--spacing) * 7) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .space-y-8 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-9 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 9) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 9) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-10 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-12 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-14 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 14) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 14) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .gap-x-8 {
+    column-gap: calc(var(--spacing) * 8);
+  }
+  .gap-y-8 {
+    row-gap: calc(var(--spacing) * 8);
+  }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-visible {
+    overflow: visible;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border-2 {
     border-style: var(--tw-border-style);
@@ -947,9 +1571,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
     border-style: var(--tw-border-style);
     border-width: 5px;
   }
+  .border-x-2 {
+    border-inline-style: var(--tw-border-style);
+    border-inline-width: 2px;
+  }
   .border-t-2 {
     border-top-style: var(--tw-border-style);
     border-top-width: 2px;
+  }
+  .border-r-0 {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 0px;
   }
   .border-r-2 {
     border-right-style: var(--tw-border-style);
@@ -967,18 +1599,41 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
     border-left-style: var(--tw-border-style);
     border-left-width: 2px;
   }
+  .border-l-\\[6px\\] {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 6px;
+  }
   .border-l-\\[8px\\] {
     border-left-style: var(--tw-border-style);
     border-left-width: 8px;
   }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
   .border-ink {
     border-color: var(--color-ink);
+  }
+  .border-ink\\/20 {
+    border-color: color-mix(in srgb, #111111 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-ink) 20%, transparent);
+    }
   }
   .border-yellow {
     border-color: var(--color-yellow);
   }
   .bg-ink {
     background-color: var(--color-ink);
+  }
+  .bg-ink\\/10 {
+    background-color: color-mix(in srgb, #111111 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-ink) 10%, transparent);
+    }
+  }
+  .bg-muted {
+    background-color: var(--color-muted);
   }
   .bg-paper {
     background-color: var(--color-paper);
@@ -989,8 +1644,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-white\\/80 {
+    background-color: color-mix(in srgb, #fff 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 80%, transparent);
+    }
+  }
   .bg-yellow {
     background-color: var(--color-yellow);
+  }
+  .bg-yellow\\/70 {
+    background-color: color-mix(in srgb, #ffd43b 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-yellow) 70%, transparent);
+    }
   }
   .object-contain {
     object-fit: contain;
@@ -998,11 +1665,32 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .object-cover {
     object-fit: cover;
   }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .p-7 {
+    padding: calc(var(--spacing) * 7);
+  }
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
+  }
+  .p-12 {
+    padding: calc(var(--spacing) * 12);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -1022,6 +1710,21 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
   }
+  .px-12 {
+    padding-inline: calc(var(--spacing) * 12);
+  }
+  .px-14 {
+    padding-inline: calc(var(--spacing) * 14);
+  }
+  .px-16 {
+    padding-inline: calc(var(--spacing) * 16);
+  }
+  .py-0\\.5 {
+    padding-block: calc(var(--spacing) * 0.5);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -1037,11 +1740,35 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
+  .py-\\[5px\\] {
+    padding-block: 5px;
+  }
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
+  }
+  .pt-7 {
+    padding-top: calc(var(--spacing) * 7);
+  }
+  .pr-14 {
+    padding-right: calc(var(--spacing) * 14);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pl-7 {
+    padding-left: calc(var(--spacing) * 7);
+  }
   .pl-8 {
     padding-left: calc(var(--spacing) * 8);
+  }
+  .pl-14 {
+    padding-left: calc(var(--spacing) * 14);
   }
   .text-center {
     text-align: center;
@@ -1049,14 +1776,41 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-right {
     text-align: right;
   }
+  .text-\\[12px\\] {
+    font-size: 12px;
+  }
+  .text-\\[13px\\] {
+    font-size: 13px;
+  }
+  .text-\\[14px\\] {
+    font-size: 14px;
+  }
+  .text-\\[15px\\] {
+    font-size: 15px;
+  }
+  .text-\\[16px\\] {
+    font-size: 16px;
+  }
+  .text-\\[17px\\] {
+    font-size: 17px;
+  }
+  .text-\\[18px\\] {
+    font-size: 18px;
+  }
   .text-\\[19px\\] {
     font-size: 19px;
   }
   .text-\\[20px\\] {
     font-size: 20px;
   }
+  .text-\\[21px\\] {
+    font-size: 21px;
+  }
   .text-\\[22px\\] {
     font-size: 22px;
+  }
+  .text-\\[23px\\] {
+    font-size: 23px;
   }
   .text-\\[24px\\] {
     font-size: 24px;
@@ -1073,8 +1827,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-\\[28px\\] {
     font-size: 28px;
   }
+  .text-\\[29px\\] {
+    font-size: 29px;
+  }
   .text-\\[30px\\] {
     font-size: 30px;
+  }
+  .text-\\[31px\\] {
+    font-size: 31px;
   }
   .text-\\[32px\\] {
     font-size: 32px;
@@ -1088,6 +1848,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-\\[36px\\] {
     font-size: 36px;
   }
+  .text-\\[38px\\] {
+    font-size: 38px;
+  }
+  .text-\\[39px\\] {
+    font-size: 39px;
+  }
   .text-\\[40px\\] {
     font-size: 40px;
   }
@@ -1097,8 +1863,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-\\[44px\\] {
     font-size: 44px;
   }
+  .text-\\[46px\\] {
+    font-size: 46px;
+  }
+  .text-\\[48px\\] {
+    font-size: 48px;
+  }
+  .text-\\[50px\\] {
+    font-size: 50px;
+  }
   .text-\\[52px\\] {
     font-size: 52px;
+  }
+  .text-\\[54px\\] {
+    font-size: 54px;
   }
   .text-\\[58px\\] {
     font-size: 58px;
@@ -1112,6 +1890,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-\\[64px\\] {
     font-size: 64px;
   }
+  .text-\\[68px\\] {
+    font-size: 68px;
+  }
   .text-\\[70px\\] {
     font-size: 70px;
   }
@@ -1124,6 +1905,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-\\[80px\\] {
     font-size: 80px;
   }
+  .text-\\[82px\\] {
+    font-size: 82px;
+  }
+  .text-\\[84px\\] {
+    font-size: 84px;
+  }
   .text-\\[88px\\] {
     font-size: 88px;
   }
@@ -1133,14 +1920,34 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-\\[92px\\] {
     font-size: 92px;
   }
+  .text-\\[118px\\] {
+    font-size: 118px;
+  }
   .text-\\[120px\\] {
     font-size: 120px;
   }
   .text-\\[150px\\] {
     font-size: 150px;
   }
+  .text-\\[160px\\] {
+    font-size: 160px;
+  }
   .text-\\[180px\\] {
     font-size: 180px;
+  }
+  .text-\\[200px\\] {
+    font-size: 200px;
+  }
+  .text-\\[205px\\] {
+    font-size: 205px;
+  }
+  .leading-\\[1\\.1\\] {
+    --tw-leading: 1.1;
+    line-height: 1.1;
+  }
+  .leading-\\[1\\.2\\] {
+    --tw-leading: 1.2;
+    line-height: 1.2;
   }
   .leading-\\[1\\.4\\] {
     --tw-leading: 1.4;
@@ -1162,13 +1969,41 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
     --tw-leading: 1.15;
     line-height: 1.15;
   }
+  .leading-\\[1\\.25\\] {
+    --tw-leading: 1.25;
+    line-height: 1.25;
+  }
+  .leading-\\[1\\.35\\] {
+    --tw-leading: 1.35;
+    line-height: 1.35;
+  }
+  .leading-\\[1\\.45\\] {
+    --tw-leading: 1.45;
+    line-height: 1.45;
+  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
   }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\\[-0\\.03em\\] {
+    --tw-tracking: -0.03em;
+    letter-spacing: -0.03em;
+  }
+  .tracking-\\[-0\\.04em\\] {
+    --tw-tracking: -0.04em;
+    letter-spacing: -0.04em;
   }
   .tracking-\\[-0\\.05em\\] {
     --tw-tracking: -0.05em;
@@ -1186,9 +2021,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
     --tw-tracking: -0.08em;
     letter-spacing: -0.08em;
   }
+  .tracking-\\[-0\\.09em\\] {
+    --tw-tracking: -0.09em;
+    letter-spacing: -0.09em;
+  }
   .tracking-\\[-0\\.045em\\] {
     --tw-tracking: -0.045em;
     letter-spacing: -0.045em;
+  }
+  .tracking-\\[0\\.1em\\] {
+    --tw-tracking: 0.1em;
+    letter-spacing: 0.1em;
   }
   .tracking-\\[0\\.08em\\] {
     --tw-tracking: 0.08em;
@@ -1197,6 +2040,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .tracking-\\[0\\.12em\\] {
     --tw-tracking: 0.12em;
     letter-spacing: 0.12em;
+  }
+  .tracking-\\[0\\.18em\\] {
+    --tw-tracking: 0.18em;
+    letter-spacing: 0.18em;
+  }
+  .tracking-\\[7px\\] {
+    --tw-tracking: 7px;
+    letter-spacing: 7px;
+  }
+  .tracking-\\[8px\\] {
+    --tw-tracking: 8px;
+    letter-spacing: 8px;
   }
   .whitespace-nowrap {
     white-space: nowrap;
@@ -1210,10 +2065,46 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*! tailwindcss v4.2.0 | MIT License |
   .text-white {
     color: var(--color-white);
   }
+  .text-yellow {
+    color: var(--color-yellow);
+  }
+  .opacity-20 {
+    opacity: 20%;
+  }
+  .opacity-25 {
+    opacity: 25%;
+  }
+  .opacity-70 {
+    opacity: 70%;
+  }
+  .mix-blend-difference {
+    mix-blend-mode: difference;
+  }
+  .ring {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .first\\:border-t-0 {
+    &:first-child {
+      border-top-style: var(--tw-border-style);
+      border-top-width: 0px;
+    }
+  }
   .last\\:border-r-0 {
     &:last-child {
       border-right-style: var(--tw-border-style);
       border-right-width: 0px;
+    }
+  }
+  .last\\:border-b-0 {
+    &:last-child {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 0px;
     }
   }
 }
@@ -1281,6 +2172,71 @@ html, body {
   syntax: "*";
   inherits: false;
 }
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -1297,10 +2253,24 @@ html, body {
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
     }
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA,gEAAgE;AAChE,iBAAiB;AACjB,yCAAyC;AACzC;EACE;IACE;6DACyD;IACzD;iDAC6C;IAC7C,mBAAmB;IACnB,kBAAkB;IAClB,2BAA2B;IAC3B,uCAAuC;IACvC,wEAAwE;IACxE;;KAEC;IACD,4CAA4C;IAC5C;;KAEC;IACD;;KAEC;IACD,sBAAsB;IACtB,oBAAoB;IACpB,uBAAuB;IACvB,sBAAsB;IACtB,qBAAqB;EACvB;AACF;AACA;EACE;IACE,sBAAsB;IACtB,SAAS;IACT,UAAU;IACV,eAAe;EACjB;EACA;IACE,gBAAgB;IAChB,8BAA8B;IAC9B,WAAW;IACX,6JAA6J;IAC7J,mEAAmE;IACnE,yEAAyE;IACzE,wCAAwC;EAC1C;EACA;IACE,oBAAoB;EACtB;EACA;IACE,SAAS;IACT,cAAc;IACd,qBAAqB;EACvB;EACA;IACE,yCAAyC;IACzC,iCAAiC;EACnC;EACA;IACE,kBAAkB;IAClB,oBAAoB;EACtB;EACA;IACE,cAAc;IACd,gCAAgC;IAChC,wBAAwB;EAC1B;EACA;IACE,mBAAmB;EACrB;EACA;IACE,kJAAkJ;IAClJ,0EAA0E;IAC1E,8EAA8E;IAC9E,cAAc;EAChB;EACA;IACE,cAAc;EAChB;EACA;IACE,cAAc;IACd,cAAc;IACd,kBAAkB;IAClB,wBAAwB;EAC1B;EACA;IACE,eAAe;EACjB;EACA;IACE,WAAW;EACb;EACA;IACE,cAAc;IACd,qBAAqB;IACrB,yBAAyB;EAC3B;EACA;IACE,aAAa;EACf;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,kBAAkB;EACpB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,cAAc;IACd,sBAAsB;EACxB;EACA;IACE,eAAe;IACf,YAAY;EACd;EACA;IACE,aAAa;IACb,8BAA8B;IAC9B,gCAAgC;IAChC,uBAAuB;IACvB,cAAc;IACd,gBAAgB;IAChB,6BAA6B;IAC7B,UAAU;EACZ;EACA;IACE,mBAAmB;EACrB;EACA;IACE,0BAA0B;EAC5B;EACA;IACE,sBAAsB;EACxB;EACA;IACE,UAAU;IACV,mBAAmB;IACnB;MACE,yDAAyD;IAC3D;EACF;EACA;IACE,gBAAgB;EAClB;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,eAAe;IACf,mBAAmB;EACrB;EACA;IACE,oBAAoB;EACtB;EACA;IACE,UAAU;EACZ;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,kBAAkB;EACpB;EACA;IACE,YAAY;EACd;EACA;IACE,wBAAwB;EAC1B;AACF;AACA;EACE;IACE,kBAAkB;EACpB;EACA;IACE,kBAAkB;EACpB;EACA;IACE,kCAAkC;EACpC;EACA;IACE,gCAAgC;EAClC;EACA;IACE,SAAS;EACX;EACA;IACE,UAAU;EACZ;EACA;IACE,+BAA+B;EACjC;EACA;IACE,aAAa;EACf;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,qBAAqB;EACvB;EACA;IACE,8BAA8B;EAChC;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,WAAW;EACb;EACA;IACE,mBAAmB;EACrB;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,qBAAqB;EACvB;EACA;IACE,WAAW;EACb;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,YAAY;EACd;EACA;IACE,gBAAgB;EAClB;EACA;IACE,UAAU;EACZ;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,WAAW;EACb;EACA;IACE,gBAAgB;EAClB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,OAAO;EACT;EACA;IACE,YAAY;EACd;EACA;IACE,+CAA+C;IAC/C,sDAAsD;EACxD;EACA;IACE,+CAA+C;IAC/C,sDAAsD;EACxD;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,0GAA0G;EAC5G;EACA;IACE,gDAAgD;EAClD;EACA;IACE,gDAAgD;EAClD;EACA;IACE,gDAAgD;EAClD;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,2CAA2C;EAC7C;EACA;IACE,sBAAsB;EACxB;EACA;IACE,mBAAmB;EACrB;EACA;IACE,qBAAqB;EACvB;EACA;IACE,8BAA8B;EAChC;EACA;IACE,uBAAuB;EACzB;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE,gBAAgB;EAClB;EACA;IACE,oCAAoC;IACpC,iBAAiB;EACnB;EACA;IACE,oCAAoC;IACpC,iBAAiB;EACnB;EACA;IACE,oCAAoC;IACpC,iBAAiB;EACnB;EACA;IACE,wCAAwC;IACxC,qBAAqB;EACvB;EACA;IACE,0CAA0C;IAC1C,uBAAuB;EACzB;EACA;IACE,2CAA2C;IAC3C,wBAAwB;EAC1B;EACA;IACE,2CAA2C;IAC3C,wBAAwB;EAC1B;EACA;IACE,yCAAyC;IACzC,sBAAsB;EACxB;EACA;IACE,yCAAyC;IACzC,sBAAsB;EACxB;EACA;IACE,8BAA8B;EAChC;EACA;IACE,iCAAiC;EACnC;EACA;IACE,kCAAkC;EACpC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,mCAAmC;EACrC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,mBAAmB;EACrB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,iCAAiC;EACnC;EACA;IACE,kCAAkC;EACpC;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,kBAAkB;EACpB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,eAAe;IACf,cAAc;EAChB;EACA;IACE,6CAA6C;IAC7C,wCAAwC;EAC1C;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,uBAAuB;IACvB,wBAAwB;EAC1B;EACA;IACE,qBAAqB;IACrB,sBAAsB;EACxB;EACA;IACE,qBAAqB;IACrB,sBAAsB;EACxB;EACA;IACE,mBAAmB;EACrB;EACA;IACE,uBAAuB;EACzB;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,yBAAyB;EAC3B;EACA;IACE;MACE,0CAA0C;MAC1C,uBAAuB;IACzB;EACF;AACF;AACA;EACE,SAAS;EACT,UAAU;AACZ;AACA;EACE,sBAAsB;AACxB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;EACf,oBAAoB;AACtB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE;IACE;MACE,mBAAmB;MACnB,mBAAmB;MACnB,mBAAmB;MACnB,sBAAsB;MACtB,sBAAsB;MACtB,sBAAsB;MACtB,oBAAoB;MACpB,oBAAoB;MACpB,uBAAuB;MACvB,wBAAwB;MACxB,qBAAqB;MACrB,yBAAyB;MACzB,sBAAsB;IACxB;EACF;AACF","sourcesContent":["/*! tailwindcss v4.2.0 | MIT License | https://tailwindcss.com */\n@layer properties;\n@layer theme, base, components, utilities;\n@layer theme {\n  :root, :host {\n    --font-sans: ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\",\n      \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,\n      \"Liberation Mono\", \"Courier New\", monospace;\n    --color-white: #fff;\n    --spacing: 0.25rem;\n    --font-weight-semibold: 600;\n    --default-font-family: var(--font-sans);\n    --default-font-feature-settings: var(--font-sans--font-feature-settings);\n    --default-font-variation-settings: var(\n      --font-sans--font-variation-settings\n    );\n    --default-mono-font-family: var(--font-mono);\n    --default-mono-font-feature-settings: var(\n      --font-mono--font-feature-settings\n    );\n    --default-mono-font-variation-settings: var(\n      --font-mono--font-variation-settings\n    );\n    --color-paper: #fafaf7;\n    --color-ink: #111111;\n    --color-yellow: #ffd43b;\n    --color-muted: #737373;\n    --color-soft: #ecece7;\n  }\n}\n@layer base {\n  *, ::after, ::before, ::backdrop, ::file-selector-button {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    border: 0 solid;\n  }\n  html, :host {\n    line-height: 1.5;\n    -webkit-text-size-adjust: 100%;\n    tab-size: 4;\n    font-family: var( --default-font-family, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" );\n    font-feature-settings: var(--default-font-feature-settings, normal);\n    font-variation-settings: var( --default-font-variation-settings, normal );\n    -webkit-tap-highlight-color: transparent;\n  }\n  body {\n    line-height: inherit;\n  }\n  hr {\n    height: 0;\n    color: inherit;\n    border-top-width: 1px;\n  }\n  abbr:where([title]) {\n    -webkit-text-decoration: underline dotted;\n    text-decoration: underline dotted;\n  }\n  h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-weight: inherit;\n  }\n  a {\n    color: inherit;\n    -webkit-text-decoration: inherit;\n    text-decoration: inherit;\n  }\n  b, strong {\n    font-weight: bolder;\n  }\n  code, kbd, samp, pre {\n    font-family: var( --default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace );\n    font-feature-settings: var( --default-mono-font-feature-settings, normal );\n    font-variation-settings: var( --default-mono-font-variation-settings, normal );\n    font-size: 1em;\n  }\n  small {\n    font-size: 80%;\n  }\n  sub, sup {\n    font-size: 75%;\n    line-height: 0;\n    position: relative;\n    vertical-align: baseline;\n  }\n  sub {\n    bottom: -0.25em;\n  }\n  sup {\n    top: -0.5em;\n  }\n  table {\n    text-indent: 0;\n    border-color: inherit;\n    border-collapse: collapse;\n  }\n  :-moz-focusring {\n    outline: auto;\n  }\n  progress {\n    vertical-align: baseline;\n  }\n  summary {\n    display: list-item;\n  }\n  ol, ul, menu {\n    list-style: none;\n  }\n  img, svg, video, canvas, audio, iframe, embed, object {\n    display: block;\n    vertical-align: middle;\n  }\n  img, video {\n    max-width: 100%;\n    height: auto;\n  }\n  button, input, select, optgroup, textarea, ::file-selector-button {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    border-radius: 0;\n    background-color: transparent;\n    opacity: 1;\n  }\n  :where(select:is([multiple], [size])) optgroup {\n    font-weight: bolder;\n  }\n  :where(select:is([multiple], [size])) optgroup option {\n    padding-inline-start: 20px;\n  }\n  ::file-selector-button {\n    margin-inline-end: 4px;\n  }\n  ::placeholder {\n    opacity: 1;\n    color: currentColor;\n    @supports (color: color-mix(in lab, red, red)) {\n      color: color-mix(in oklab, currentColor 50%, transparent);\n    }\n  }\n  textarea {\n    resize: vertical;\n  }\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n  ::-webkit-date-and-time-value {\n    min-height: 1lh;\n    text-align: inherit;\n  }\n  ::-webkit-datetime-edit {\n    display: inline-flex;\n  }\n  ::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n  }\n  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {\n    padding-block: 0;\n  }\n  :-moz-ui-invalid {\n    box-shadow: none;\n  }\n  button, input:where([type=\"button\"], [type=\"reset\"], [type=\"submit\"]), ::file-selector-button {\n    appearance: button;\n  }\n  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {\n    height: auto;\n  }\n  [hidden]:where(:not([hidden=\"until-found\"])) {\n    display: none !important;\n  }\n}\n@layer utilities {\n  .absolute {\n    position: absolute;\n  }\n  .relative {\n    position: relative;\n  }\n  .start {\n    inset-inline-start: var(--spacing);\n  }\n  .end {\n    inset-inline-end: var(--spacing);\n  }\n  .top-\\[77px\\] {\n    top: 77px;\n  }\n  .top-\\[240px\\] {\n    top: 240px;\n  }\n  .right-0 {\n    right: calc(var(--spacing) * 0);\n  }\n  .bottom-\\[-40px\\] {\n    bottom: -40px;\n  }\n  .bottom-\\[50px\\] {\n    bottom: 50px;\n  }\n  .bottom-\\[60px\\] {\n    bottom: 60px;\n  }\n  .-left-\\[50px\\] {\n    left: calc(50px * -1);\n  }\n  .left-0 {\n    left: calc(var(--spacing) * 0);\n  }\n  .left-1\\/2 {\n    left: calc(1 / 2 * 100%);\n  }\n  .left-\\[60px\\] {\n    left: 60px;\n  }\n  .left-\\[64px\\] {\n    left: 64px;\n  }\n  .left-\\[700px\\] {\n    left: 700px;\n  }\n  .mx-auto {\n    margin-inline: auto;\n  }\n  .mt-2 {\n    margin-top: calc(var(--spacing) * 2);\n  }\n  .mt-3 {\n    margin-top: calc(var(--spacing) * 3);\n  }\n  .mt-4 {\n    margin-top: calc(var(--spacing) * 4);\n  }\n  .mt-5 {\n    margin-top: calc(var(--spacing) * 5);\n  }\n  .mt-8 {\n    margin-top: calc(var(--spacing) * 8);\n  }\n  .mt-10 {\n    margin-top: calc(var(--spacing) * 10);\n  }\n  .mt-12 {\n    margin-top: calc(var(--spacing) * 12);\n  }\n  .mt-14 {\n    margin-top: calc(var(--spacing) * 14);\n  }\n  .mt-16 {\n    margin-top: calc(var(--spacing) * 16);\n  }\n  .mt-20 {\n    margin-top: calc(var(--spacing) * 20);\n  }\n  .mt-24 {\n    margin-top: calc(var(--spacing) * 24);\n  }\n  .mt-28 {\n    margin-top: calc(var(--spacing) * 28);\n  }\n  .mt-36 {\n    margin-top: calc(var(--spacing) * 36);\n  }\n  .mt-40 {\n    margin-top: calc(var(--spacing) * 40);\n  }\n  .mt-44 {\n    margin-top: calc(var(--spacing) * 44);\n  }\n  .mb-3 {\n    margin-bottom: calc(var(--spacing) * 3);\n  }\n  .mb-4 {\n    margin-bottom: calc(var(--spacing) * 4);\n  }\n  .flex {\n    display: flex;\n  }\n  .grid {\n    display: grid;\n  }\n  .inline-block {\n    display: inline-block;\n  }\n  .h-\\[4px\\] {\n    height: 4px;\n  }\n  .h-\\[28px\\] {\n    height: 28px;\n  }\n  .h-\\[32px\\] {\n    height: 32px;\n  }\n  .h-\\[58px\\] {\n    height: 58px;\n  }\n  .h-\\[70px\\] {\n    height: 70px;\n  }\n  .h-\\[100px\\] {\n    height: 100px;\n  }\n  .h-\\[150px\\] {\n    height: 150px;\n  }\n  .h-\\[160px\\] {\n    height: 160px;\n  }\n  .h-\\[500px\\] {\n    height: 500px;\n  }\n  .h-\\[520px\\] {\n    height: 520px;\n  }\n  .h-\\[550px\\] {\n    height: 550px;\n  }\n  .h-\\[560px\\] {\n    height: 560px;\n  }\n  .h-\\[600px\\] {\n    height: 600px;\n  }\n  .h-\\[650px\\] {\n    height: 650px;\n  }\n  .h-full {\n    height: 100%;\n  }\n  .min-h-\\[50px\\] {\n    min-height: 50px;\n  }\n  .w-\\[4px\\] {\n    width: 4px;\n  }\n  .w-\\[28px\\] {\n    width: 28px;\n  }\n  .w-\\[32px\\] {\n    width: 32px;\n  }\n  .w-\\[60px\\] {\n    width: 60px;\n  }\n  .w-\\[70px\\] {\n    width: 70px;\n  }\n  .w-\\[380px\\] {\n    width: 380px;\n  }\n  .w-\\[900px\\] {\n    width: 900px;\n  }\n  .w-full {\n    width: 100%;\n  }\n  .max-w-\\[650px\\] {\n    max-width: 650px;\n  }\n  .max-w-\\[1300px\\] {\n    max-width: 1300px;\n  }\n  .max-w-\\[1500px\\] {\n    max-width: 1500px;\n  }\n  .max-w-\\[1550px\\] {\n    max-width: 1550px;\n  }\n  .flex-1 {\n    flex: 1;\n  }\n  .grow {\n    flex-grow: 1;\n  }\n  .-translate-x-1\\/2 {\n    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .-translate-y-1\\/2 {\n    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .-rotate-90 {\n    rotate: calc(90deg * -1);\n  }\n  .transform {\n    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);\n  }\n  .grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n  .grid-cols-3 {\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n  }\n  .grid-cols-5 {\n    grid-template-columns: repeat(5, minmax(0, 1fr));\n  }\n  .grid-cols-\\[1\\.6fr_1fr_1fr_1fr\\] {\n    grid-template-columns: 1.6fr 1fr 1fr 1fr;\n  }\n  .grid-cols-\\[70px_260px_1fr_110px\\] {\n    grid-template-columns: 70px 260px 1fr 110px;\n  }\n  .flex-col {\n    flex-direction: column;\n  }\n  .items-center {\n    align-items: center;\n  }\n  .items-end {\n    align-items: flex-end;\n  }\n  .justify-between {\n    justify-content: space-between;\n  }\n  .justify-center {\n    justify-content: center;\n  }\n  .justify-end {\n    justify-content: flex-end;\n  }\n  .gap-5 {\n    gap: calc(var(--spacing) * 5);\n  }\n  .gap-7 {\n    gap: calc(var(--spacing) * 7);\n  }\n  .gap-8 {\n    gap: calc(var(--spacing) * 8);\n  }\n  .gap-9 {\n    gap: calc(var(--spacing) * 9);\n  }\n  .gap-10 {\n    gap: calc(var(--spacing) * 10);\n  }\n  .gap-12 {\n    gap: calc(var(--spacing) * 12);\n  }\n  .gap-16 {\n    gap: calc(var(--spacing) * 16);\n  }\n  .gap-20 {\n    gap: calc(var(--spacing) * 20);\n  }\n  .gap-28 {\n    gap: calc(var(--spacing) * 28);\n  }\n  .space-y-4 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-5 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-7 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 7) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 7) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .overflow-hidden {\n    overflow: hidden;\n  }\n  .border-2 {\n    border-style: var(--tw-border-style);\n    border-width: 2px;\n  }\n  .border-\\[4px\\] {\n    border-style: var(--tw-border-style);\n    border-width: 4px;\n  }\n  .border-\\[5px\\] {\n    border-style: var(--tw-border-style);\n    border-width: 5px;\n  }\n  .border-t-2 {\n    border-top-style: var(--tw-border-style);\n    border-top-width: 2px;\n  }\n  .border-r-2 {\n    border-right-style: var(--tw-border-style);\n    border-right-width: 2px;\n  }\n  .border-b-0 {\n    border-bottom-style: var(--tw-border-style);\n    border-bottom-width: 0px;\n  }\n  .border-b-2 {\n    border-bottom-style: var(--tw-border-style);\n    border-bottom-width: 2px;\n  }\n  .border-l-2 {\n    border-left-style: var(--tw-border-style);\n    border-left-width: 2px;\n  }\n  .border-l-\\[8px\\] {\n    border-left-style: var(--tw-border-style);\n    border-left-width: 8px;\n  }\n  .border-ink {\n    border-color: var(--color-ink);\n  }\n  .border-yellow {\n    border-color: var(--color-yellow);\n  }\n  .bg-ink {\n    background-color: var(--color-ink);\n  }\n  .bg-paper {\n    background-color: var(--color-paper);\n  }\n  .bg-soft {\n    background-color: var(--color-soft);\n  }\n  .bg-white {\n    background-color: var(--color-white);\n  }\n  .bg-yellow {\n    background-color: var(--color-yellow);\n  }\n  .object-contain {\n    object-fit: contain;\n  }\n  .object-cover {\n    object-fit: cover;\n  }\n  .p-8 {\n    padding: calc(var(--spacing) * 8);\n  }\n  .p-10 {\n    padding: calc(var(--spacing) * 10);\n  }\n  .px-4 {\n    padding-inline: calc(var(--spacing) * 4);\n  }\n  .px-5 {\n    padding-inline: calc(var(--spacing) * 5);\n  }\n  .px-6 {\n    padding-inline: calc(var(--spacing) * 6);\n  }\n  .px-7 {\n    padding-inline: calc(var(--spacing) * 7);\n  }\n  .px-8 {\n    padding-inline: calc(var(--spacing) * 8);\n  }\n  .px-10 {\n    padding-inline: calc(var(--spacing) * 10);\n  }\n  .py-2 {\n    padding-block: calc(var(--spacing) * 2);\n  }\n  .py-3 {\n    padding-block: calc(var(--spacing) * 3);\n  }\n  .py-4 {\n    padding-block: calc(var(--spacing) * 4);\n  }\n  .py-5 {\n    padding-block: calc(var(--spacing) * 5);\n  }\n  .py-6 {\n    padding-block: calc(var(--spacing) * 6);\n  }\n  .py-8 {\n    padding-block: calc(var(--spacing) * 8);\n  }\n  .pl-8 {\n    padding-left: calc(var(--spacing) * 8);\n  }\n  .text-center {\n    text-align: center;\n  }\n  .text-right {\n    text-align: right;\n  }\n  .text-\\[19px\\] {\n    font-size: 19px;\n  }\n  .text-\\[20px\\] {\n    font-size: 20px;\n  }\n  .text-\\[22px\\] {\n    font-size: 22px;\n  }\n  .text-\\[24px\\] {\n    font-size: 24px;\n  }\n  .text-\\[25px\\] {\n    font-size: 25px;\n  }\n  .text-\\[26px\\] {\n    font-size: 26px;\n  }\n  .text-\\[27px\\] {\n    font-size: 27px;\n  }\n  .text-\\[28px\\] {\n    font-size: 28px;\n  }\n  .text-\\[30px\\] {\n    font-size: 30px;\n  }\n  .text-\\[32px\\] {\n    font-size: 32px;\n  }\n  .text-\\[34px\\] {\n    font-size: 34px;\n  }\n  .text-\\[35px\\] {\n    font-size: 35px;\n  }\n  .text-\\[36px\\] {\n    font-size: 36px;\n  }\n  .text-\\[40px\\] {\n    font-size: 40px;\n  }\n  .text-\\[42px\\] {\n    font-size: 42px;\n  }\n  .text-\\[44px\\] {\n    font-size: 44px;\n  }\n  .text-\\[52px\\] {\n    font-size: 52px;\n  }\n  .text-\\[58px\\] {\n    font-size: 58px;\n  }\n  .text-\\[60px\\] {\n    font-size: 60px;\n  }\n  .text-\\[62px\\] {\n    font-size: 62px;\n  }\n  .text-\\[64px\\] {\n    font-size: 64px;\n  }\n  .text-\\[70px\\] {\n    font-size: 70px;\n  }\n  .text-\\[72px\\] {\n    font-size: 72px;\n  }\n  .text-\\[76px\\] {\n    font-size: 76px;\n  }\n  .text-\\[80px\\] {\n    font-size: 80px;\n  }\n  .text-\\[88px\\] {\n    font-size: 88px;\n  }\n  .text-\\[90px\\] {\n    font-size: 90px;\n  }\n  .text-\\[92px\\] {\n    font-size: 92px;\n  }\n  .text-\\[120px\\] {\n    font-size: 120px;\n  }\n  .text-\\[150px\\] {\n    font-size: 150px;\n  }\n  .text-\\[180px\\] {\n    font-size: 180px;\n  }\n  .leading-\\[1\\.4\\] {\n    --tw-leading: 1.4;\n    line-height: 1.4;\n  }\n  .leading-\\[1\\.05\\] {\n    --tw-leading: 1.05;\n    line-height: 1.05;\n  }\n  .leading-\\[1\\.5\\] {\n    --tw-leading: 1.5;\n    line-height: 1.5;\n  }\n  .leading-\\[1\\.08\\] {\n    --tw-leading: 1.08;\n    line-height: 1.08;\n  }\n  .leading-\\[1\\.15\\] {\n    --tw-leading: 1.15;\n    line-height: 1.15;\n  }\n  .leading-none {\n    --tw-leading: 1;\n    line-height: 1;\n  }\n  .font-semibold {\n    --tw-font-weight: var(--font-weight-semibold);\n    font-weight: var(--font-weight-semibold);\n  }\n  .tracking-\\[-0\\.05em\\] {\n    --tw-tracking: -0.05em;\n    letter-spacing: -0.05em;\n  }\n  .tracking-\\[-0\\.06em\\] {\n    --tw-tracking: -0.06em;\n    letter-spacing: -0.06em;\n  }\n  .tracking-\\[-0\\.07em\\] {\n    --tw-tracking: -0.07em;\n    letter-spacing: -0.07em;\n  }\n  .tracking-\\[-0\\.08em\\] {\n    --tw-tracking: -0.08em;\n    letter-spacing: -0.08em;\n  }\n  .tracking-\\[-0\\.045em\\] {\n    --tw-tracking: -0.045em;\n    letter-spacing: -0.045em;\n  }\n  .tracking-\\[0\\.08em\\] {\n    --tw-tracking: 0.08em;\n    letter-spacing: 0.08em;\n  }\n  .tracking-\\[0\\.12em\\] {\n    --tw-tracking: 0.12em;\n    letter-spacing: 0.12em;\n  }\n  .whitespace-nowrap {\n    white-space: nowrap;\n  }\n  .text-ink {\n    color: var(--color-ink);\n  }\n  .text-muted {\n    color: var(--color-muted);\n  }\n  .text-white {\n    color: var(--color-white);\n  }\n  .last\\:border-r-0 {\n    &:last-child {\n      border-right-style: var(--tw-border-style);\n      border-right-width: 0px;\n    }\n  }\n}\nhtml, body {\n  margin: 0;\n  padding: 0;\n}\n* {\n  box-sizing: border-box;\n}\n@property --tw-translate-x {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-translate-y {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-translate-z {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-rotate-x {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-rotate-y {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-rotate-z {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-skew-x {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-skew-y {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-space-y-reverse {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-border-style {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: solid;\n}\n@property --tw-leading {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-font-weight {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-tracking {\n  syntax: \"*\";\n  inherits: false;\n}\n@layer properties {\n  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {\n    *, ::before, ::after, ::backdrop {\n      --tw-translate-x: 0;\n      --tw-translate-y: 0;\n      --tw-translate-z: 0;\n      --tw-rotate-x: initial;\n      --tw-rotate-y: initial;\n      --tw-rotate-z: initial;\n      --tw-skew-x: initial;\n      --tw-skew-y: initial;\n      --tw-space-y-reverse: 0;\n      --tw-border-style: solid;\n      --tw-leading: initial;\n      --tw-font-weight: initial;\n      --tw-tracking: initial;\n    }\n  }\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA,gEAAgE;AAChE,iBAAiB;AACjB,yCAAyC;AACzC;EACE;IACE;6DACyD;IACzD;iDAC6C;IAC7C,mBAAmB;IACnB,kBAAkB;IAClB,yBAAyB;IACzB,2BAA2B;IAC3B,qBAAqB;IACrB,oCAAoC;IACpC,kEAAkE;IAClE,uCAAuC;IACvC,wEAAwE;IACxE;;KAEC;IACD,4CAA4C;IAC5C;;KAEC;IACD;;KAEC;IACD,sBAAsB;IACtB,oBAAoB;IACpB,uBAAuB;IACvB,sBAAsB;IACtB,qBAAqB;EACvB;AACF;AACA;EACE;IACE,sBAAsB;IACtB,SAAS;IACT,UAAU;IACV,eAAe;EACjB;EACA;IACE,gBAAgB;IAChB,8BAA8B;IAC9B,WAAW;IACX,6JAA6J;IAC7J,mEAAmE;IACnE,yEAAyE;IACzE,wCAAwC;EAC1C;EACA;IACE,oBAAoB;EACtB;EACA;IACE,SAAS;IACT,cAAc;IACd,qBAAqB;EACvB;EACA;IACE,yCAAyC;IACzC,iCAAiC;EACnC;EACA;IACE,kBAAkB;IAClB,oBAAoB;EACtB;EACA;IACE,cAAc;IACd,gCAAgC;IAChC,wBAAwB;EAC1B;EACA;IACE,mBAAmB;EACrB;EACA;IACE,kJAAkJ;IAClJ,0EAA0E;IAC1E,8EAA8E;IAC9E,cAAc;EAChB;EACA;IACE,cAAc;EAChB;EACA;IACE,cAAc;IACd,cAAc;IACd,kBAAkB;IAClB,wBAAwB;EAC1B;EACA;IACE,eAAe;EACjB;EACA;IACE,WAAW;EACb;EACA;IACE,cAAc;IACd,qBAAqB;IACrB,yBAAyB;EAC3B;EACA;IACE,aAAa;EACf;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,kBAAkB;EACpB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,cAAc;IACd,sBAAsB;EACxB;EACA;IACE,eAAe;IACf,YAAY;EACd;EACA;IACE,aAAa;IACb,8BAA8B;IAC9B,gCAAgC;IAChC,uBAAuB;IACvB,cAAc;IACd,gBAAgB;IAChB,6BAA6B;IAC7B,UAAU;EACZ;EACA;IACE,mBAAmB;EACrB;EACA;IACE,0BAA0B;EAC5B;EACA;IACE,sBAAsB;EACxB;EACA;IACE,UAAU;IACV,mBAAmB;IACnB;MACE,yDAAyD;IAC3D;EACF;EACA;IACE,gBAAgB;EAClB;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,eAAe;IACf,mBAAmB;EACrB;EACA;IACE,oBAAoB;EACtB;EACA;IACE,UAAU;EACZ;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,kBAAkB;EACpB;EACA;IACE,YAAY;EACd;EACA;IACE,wBAAwB;EAC1B;AACF;AACA;EACE;IACE,oBAAoB;EACtB;EACA;IACE,kBAAkB;EACpB;EACA;IACE,eAAe;EACjB;EACA;IACE,kBAAkB;EACpB;EACA;IACE,+BAA+B;EACjC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,kCAAkC;EACpC;EACA;IACE,gCAAgC;EAClC;EACA;IACE,mBAAmB;EACrB;EACA;IACE,oBAAoB;EACtB;EACA;IACE,oBAAoB;EACtB;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,uBAAuB;EACzB;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,UAAU;EACZ;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,+BAA+B;EACjC;EACA;IACE,+BAA+B;EACjC;EACA;IACE,SAAS;EACX;EACA;IACE,SAAS;EACX;EACA;IACE,UAAU;EACZ;EACA;IACE,WAAW;EACb;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,uBAAuB;EACzB;EACA;IACE,gCAAgC;EAClC;EACA;IACE,0BAA0B;EAC5B;EACA;IACE,gCAAgC;EAClC;EACA;IACE,gCAAgC;EAClC;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,aAAa;EACf;EACA;IACE,qBAAqB;EACvB;EACA;IACE,qBAAqB;EACvB;EACA;IACE,sBAAsB;EACxB;EACA;IACE,8BAA8B;EAChC;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,8BAA8B;EAChC;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,SAAS;EACX;EACA;IACE,UAAU;EACZ;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,YAAY;EACd;EACA;IACE,WAAW;EACb;EACA;IACE,mBAAmB;EACrB;EACA;IACE,oCAAoC;EACtC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,gBAAgB;EAClB;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,kBAAkB;EACpB;EACA;IACE,kBAAkB;EACpB;EACA;IACE,kBAAkB;EACpB;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,eAAe;EACjB;EACA;IACE,qBAAqB;EACvB;EACA;IACE,cAAc;EAChB;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,YAAY;EACd;EACA;IACE,gBAAgB;EAClB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,WAAW;EACb;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,aAAa;EACf;EACA;IACE,aAAa;EACf;EACA;IACE,WAAW;EACb;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,mCAAmC;EACrC;EACA;IACE,eAAe;EACjB;EACA;IACE,OAAO;EACT;EACA;IACE,YAAY;EACd;EACA;IACE,+CAA+C;IAC/C,sDAAsD;EACxD;EACA;IACE,+CAA+C;IAC/C,sDAAsD;EACxD;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,0GAA0G;EAC5G;EACA;IACE,gDAAgD;EAClD;EACA;IACE,gDAAgD;EAClD;EACA;IACE,gDAAgD;EAClD;EACA;IACE,iDAAiD;EACnD;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,oCAAoC;EACtC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,2CAA2C;EAC7C;EACA;IACE,2CAA2C;EAC7C;EACA;IACE,gCAAgC;EAClC;EACA;IACE,gCAAgC;EAClC;EACA;IACE,mCAAmC;EACrC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,sCAAsC;EACxC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,gCAAgC;EAClC;EACA;IACE,gCAAgC;EAClC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,kDAAkD;EACpD;EACA;IACE,0CAA0C;EAC5C;EACA;IACE,sBAAsB;EACxB;EACA;IACE,eAAe;EACjB;EACA;IACE,mBAAmB;EACrB;EACA;IACE,qBAAqB;EACvB;EACA;IACE,uBAAuB;EACzB;EACA;IACE,oBAAoB;EACtB;EACA;IACE,8BAA8B;EAChC;EACA;IACE,uBAAuB;EACzB;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,2BAA2B;EAC7B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,6BAA6B;EAC/B;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,8BAA8B;EAChC;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE,UAAU;EACZ;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,8EAA8E;MAC9E,sFAAsF;IACxF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,+EAA+E;MAC/E,uFAAuF;IACzF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,+EAA+E;MAC/E,uFAAuF;IACzF;EACF;EACA;IACE;MACE,uBAAuB;MACvB,+EAA+E;MAC/E,uFAAuF;IACzF;EACF;EACA;IACE,oCAAoC;EACtC;EACA;IACE,iCAAiC;EACnC;EACA;IACE,gBAAgB;EAClB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,mCAAmC;EACrC;EACA;IACE,oCAAoC;IACpC,iBAAiB;EACnB;EACA;IACE,oCAAoC;IACpC,iBAAiB;EACnB;EACA;IACE,oCAAoC;IACpC,iBAAiB;EACnB;EACA;IACE,oCAAoC;IACpC,iBAAiB;EACnB;EACA;IACE,2CAA2C;IAC3C,wBAAwB;EAC1B;EACA;IACE,wCAAwC;IACxC,qBAAqB;EACvB;EACA;IACE,0CAA0C;IAC1C,uBAAuB;EACzB;EACA;IACE,0CAA0C;IAC1C,uBAAuB;EACzB;EACA;IACE,2CAA2C;IAC3C,wBAAwB;EAC1B;EACA;IACE,2CAA2C;IAC3C,wBAAwB;EAC1B;EACA;IACE,yCAAyC;IACzC,sBAAsB;EACxB;EACA;IACE,yCAAyC;IACzC,sBAAsB;EACxB;EACA;IACE,yCAAyC;IACzC,sBAAsB;EACxB;EACA;IACE,yBAAyB;IACzB,oBAAoB;EACtB;EACA;IACE,8BAA8B;EAChC;EACA;IACE,0DAA0D;IAC1D;MACE,oEAAoE;IACtE;EACF;EACA;IACE,iCAAiC;EACnC;EACA;IACE,kCAAkC;EACpC;EACA;IACE,8DAA8D;IAC9D;MACE,wEAAwE;IAC1E;EACF;EACA;IACE,oCAAoC;EACtC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,mCAAmC;EACrC;EACA;IACE,oCAAoC;EACtC;EACA;IACE,2DAA2D;IAC3D;MACE,0EAA0E;IAC5E;EACF;EACA;IACE,qCAAqC;EACvC;EACA;IACE,8DAA8D;IAC9D;MACE,2EAA2E;IAC7E;EACF;EACA;IACE,mBAAmB;EACrB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,iCAAiC;EACnC;EACA;IACE,iCAAiC;EACnC;EACA;IACE,iCAAiC;EACnC;EACA;IACE,iCAAiC;EACnC;EACA;IACE,iCAAiC;EACnC;EACA;IACE,kCAAkC;EACpC;EACA;IACE,kCAAkC;EACpC;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,yCAAyC;EAC3C;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,kBAAkB;EACpB;EACA;IACE,qCAAqC;EACvC;EACA;IACE,qCAAqC;EACvC;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,wCAAwC;EAC1C;EACA;IACE,sCAAsC;EACxC;EACA;IACE,sCAAsC;EACxC;EACA;IACE,uCAAuC;EACzC;EACA;IACE,kBAAkB;EACpB;EACA;IACE,iBAAiB;EACnB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,eAAe;EACjB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,gBAAgB;EAClB;EACA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;EACA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;EACA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,kBAAkB;IAClB,iBAAiB;EACnB;EACA;IACE,eAAe;IACf,cAAc;EAChB;EACA;IACE,kCAAkC;IAClC,iCAAiC;EACnC;EACA;IACE,2CAA2C;IAC3C,sCAAsC;EACxC;EACA;IACE,6CAA6C;IAC7C,wCAAwC;EAC1C;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,sBAAsB;IACtB,uBAAuB;EACzB;EACA;IACE,uBAAuB;IACvB,wBAAwB;EAC1B;EACA;IACE,oBAAoB;IACpB,qBAAqB;EACvB;EACA;IACE,qBAAqB;IACrB,sBAAsB;EACxB;EACA;IACE,qBAAqB;IACrB,sBAAsB;EACxB;EACA;IACE,qBAAqB;IACrB,sBAAsB;EACxB;EACA;IACE,kBAAkB;IAClB,mBAAmB;EACrB;EACA;IACE,kBAAkB;IAClB,mBAAmB;EACrB;EACA;IACE,mBAAmB;EACrB;EACA;IACE,uBAAuB;EACzB;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,0BAA0B;EAC5B;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,YAAY;EACd;EACA;IACE,0BAA0B;EAC5B;EACA;IACE,wHAAwH;IACxH,sIAAsI;EACxI;EACA;IACE,yUAAyU;IACzU,qFAAqF;IACrF,2EAA2E;EAC7E;EACA;IACE;MACE,wCAAwC;MACxC,qBAAqB;IACvB;EACF;EACA;IACE;MACE,0CAA0C;MAC1C,uBAAuB;IACzB;EACF;EACA;IACE;MACE,2CAA2C;MAC3C,wBAAwB;IAC1B;EACF;AACF;AACA;EACE,SAAS;EACT,UAAU;AACZ;AACA;EACE,sBAAsB;AACxB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;EACf,oBAAoB;AACtB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;EACf,wBAAwB;AAC1B;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,sBAAsB;EACtB,eAAe;EACf,mBAAmB;AACrB;AACA;EACE,WAAW;EACX,eAAe;EACf,wBAAwB;AAC1B;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,sBAAsB;EACtB,eAAe;EACf,mBAAmB;AACrB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;EACf,wBAAwB;AAC1B;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,WAAW;EACX,eAAe;EACf,wBAAwB;AAC1B;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,kBAAkB;EAClB,eAAe;EACf,kBAAkB;AACpB;AACA;EACE,WAAW;EACX,eAAe;EACf,mBAAmB;AACrB;AACA;EACE,WAAW;EACX,eAAe;EACf,wBAAwB;AAC1B;AACA;EACE;IACE;MACE,mBAAmB;MACnB,mBAAmB;MACnB,mBAAmB;MACnB,sBAAsB;MACtB,sBAAsB;MACtB,sBAAsB;MACtB,oBAAoB;MACpB,oBAAoB;MACpB,uBAAuB;MACvB,wBAAwB;MACxB,qBAAqB;MACrB,yBAAyB;MACzB,sBAAsB;MACtB,sBAAsB;MACtB,0BAA0B;MAC1B,uBAAuB;MACvB,4BAA4B;MAC5B,gCAAgC;MAChC,6BAA6B;MAC7B,wBAAwB;MACxB,2BAA2B;MAC3B,8BAA8B;MAC9B,iCAAiC;MACjC,wBAAwB;MACxB,2BAA2B;MAC3B,4BAA4B;MAC5B,kCAAkC;IACpC;EACF;AACF","sourcesContent":["/*! tailwindcss v4.2.0 | MIT License | https://tailwindcss.com */\n@layer properties;\n@layer theme, base, components, utilities;\n@layer theme {\n  :root, :host {\n    --font-sans: ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\",\n      \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,\n      \"Liberation Mono\", \"Courier New\", monospace;\n    --color-white: #fff;\n    --spacing: 0.25rem;\n    --font-weight-normal: 400;\n    --font-weight-semibold: 600;\n    --leading-tight: 1.25;\n    --default-transition-duration: 150ms;\n    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    --default-font-family: var(--font-sans);\n    --default-font-feature-settings: var(--font-sans--font-feature-settings);\n    --default-font-variation-settings: var(\n      --font-sans--font-variation-settings\n    );\n    --default-mono-font-family: var(--font-mono);\n    --default-mono-font-feature-settings: var(\n      --font-mono--font-feature-settings\n    );\n    --default-mono-font-variation-settings: var(\n      --font-mono--font-variation-settings\n    );\n    --color-paper: #fafaf7;\n    --color-ink: #111111;\n    --color-yellow: #ffd43b;\n    --color-muted: #737373;\n    --color-soft: #ecece7;\n  }\n}\n@layer base {\n  *, ::after, ::before, ::backdrop, ::file-selector-button {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    border: 0 solid;\n  }\n  html, :host {\n    line-height: 1.5;\n    -webkit-text-size-adjust: 100%;\n    tab-size: 4;\n    font-family: var( --default-font-family, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" );\n    font-feature-settings: var(--default-font-feature-settings, normal);\n    font-variation-settings: var( --default-font-variation-settings, normal );\n    -webkit-tap-highlight-color: transparent;\n  }\n  body {\n    line-height: inherit;\n  }\n  hr {\n    height: 0;\n    color: inherit;\n    border-top-width: 1px;\n  }\n  abbr:where([title]) {\n    -webkit-text-decoration: underline dotted;\n    text-decoration: underline dotted;\n  }\n  h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-weight: inherit;\n  }\n  a {\n    color: inherit;\n    -webkit-text-decoration: inherit;\n    text-decoration: inherit;\n  }\n  b, strong {\n    font-weight: bolder;\n  }\n  code, kbd, samp, pre {\n    font-family: var( --default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace );\n    font-feature-settings: var( --default-mono-font-feature-settings, normal );\n    font-variation-settings: var( --default-mono-font-variation-settings, normal );\n    font-size: 1em;\n  }\n  small {\n    font-size: 80%;\n  }\n  sub, sup {\n    font-size: 75%;\n    line-height: 0;\n    position: relative;\n    vertical-align: baseline;\n  }\n  sub {\n    bottom: -0.25em;\n  }\n  sup {\n    top: -0.5em;\n  }\n  table {\n    text-indent: 0;\n    border-color: inherit;\n    border-collapse: collapse;\n  }\n  :-moz-focusring {\n    outline: auto;\n  }\n  progress {\n    vertical-align: baseline;\n  }\n  summary {\n    display: list-item;\n  }\n  ol, ul, menu {\n    list-style: none;\n  }\n  img, svg, video, canvas, audio, iframe, embed, object {\n    display: block;\n    vertical-align: middle;\n  }\n  img, video {\n    max-width: 100%;\n    height: auto;\n  }\n  button, input, select, optgroup, textarea, ::file-selector-button {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    border-radius: 0;\n    background-color: transparent;\n    opacity: 1;\n  }\n  :where(select:is([multiple], [size])) optgroup {\n    font-weight: bolder;\n  }\n  :where(select:is([multiple], [size])) optgroup option {\n    padding-inline-start: 20px;\n  }\n  ::file-selector-button {\n    margin-inline-end: 4px;\n  }\n  ::placeholder {\n    opacity: 1;\n    color: currentColor;\n    @supports (color: color-mix(in lab, red, red)) {\n      color: color-mix(in oklab, currentColor 50%, transparent);\n    }\n  }\n  textarea {\n    resize: vertical;\n  }\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n  ::-webkit-date-and-time-value {\n    min-height: 1lh;\n    text-align: inherit;\n  }\n  ::-webkit-datetime-edit {\n    display: inline-flex;\n  }\n  ::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n  }\n  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {\n    padding-block: 0;\n  }\n  :-moz-ui-invalid {\n    box-shadow: none;\n  }\n  button, input:where([type=\"button\"], [type=\"reset\"], [type=\"submit\"]), ::file-selector-button {\n    appearance: button;\n  }\n  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {\n    height: auto;\n  }\n  [hidden]:where(:not([hidden=\"until-found\"])) {\n    display: none !important;\n  }\n}\n@layer utilities {\n  .pointer-events-none {\n    pointer-events: none;\n  }\n  .absolute {\n    position: absolute;\n  }\n  .fixed {\n    position: fixed;\n  }\n  .relative {\n    position: relative;\n  }\n  .inset-0 {\n    inset: calc(var(--spacing) * 0);\n  }\n  .inset-y-0 {\n    inset-block: calc(var(--spacing) * 0);\n  }\n  .start {\n    inset-inline-start: var(--spacing);\n  }\n  .end {\n    inset-inline-end: var(--spacing);\n  }\n  .-top-\\[9px\\] {\n    top: calc(9px * -1);\n  }\n  .-top-\\[32px\\] {\n    top: calc(32px * -1);\n  }\n  .-top-\\[34px\\] {\n    top: calc(34px * -1);\n  }\n  .top-0 {\n    top: calc(var(--spacing) * 0);\n  }\n  .top-1\\/2 {\n    top: calc(1 / 2 * 100%);\n  }\n  .top-4 {\n    top: calc(var(--spacing) * 4);\n  }\n  .top-5 {\n    top: calc(var(--spacing) * 5);\n  }\n  .top-\\[-10px\\] {\n    top: -10px;\n  }\n  .top-\\[10px\\] {\n    top: 10px;\n  }\n  .top-\\[15px\\] {\n    top: 15px;\n  }\n  .top-\\[20px\\] {\n    top: 20px;\n  }\n  .top-\\[22px\\] {\n    top: 22px;\n  }\n  .top-\\[24px\\] {\n    top: 24px;\n  }\n  .top-\\[70px\\] {\n    top: 70px;\n  }\n  .top-\\[74px\\] {\n    top: 74px;\n  }\n  .top-\\[77px\\] {\n    top: 77px;\n  }\n  .top-\\[240px\\] {\n    top: 240px;\n  }\n  .top-\\[250px\\] {\n    top: 250px;\n  }\n  .top-\\[260px\\] {\n    top: 260px;\n  }\n  .top-\\[300px\\] {\n    top: 300px;\n  }\n  .right-0 {\n    right: calc(var(--spacing) * 0);\n  }\n  .right-5 {\n    right: calc(var(--spacing) * 5);\n  }\n  .right-\\[5\\%\\] {\n    right: 5%;\n  }\n  .right-\\[8\\%\\] {\n    right: 8%;\n  }\n  .right-\\[10\\%\\] {\n    right: 10%;\n  }\n  .right-\\[70px\\] {\n    right: 70px;\n  }\n  .right-\\[120px\\] {\n    right: 120px;\n  }\n  .right-\\[130px\\] {\n    right: 130px;\n  }\n  .right-\\[180px\\] {\n    right: 180px;\n  }\n  .right-\\[250px\\] {\n    right: 250px;\n  }\n  .right-\\[300px\\] {\n    right: 300px;\n  }\n  .-bottom-\\[42px\\] {\n    bottom: calc(42px * -1);\n  }\n  .bottom-1 {\n    bottom: calc(var(--spacing) * 1);\n  }\n  .bottom-1\\/2 {\n    bottom: calc(1 / 2 * 100%);\n  }\n  .bottom-4 {\n    bottom: calc(var(--spacing) * 4);\n  }\n  .bottom-5 {\n    bottom: calc(var(--spacing) * 5);\n  }\n  .bottom-\\[-40px\\] {\n    bottom: -40px;\n  }\n  .bottom-\\[-42px\\] {\n    bottom: -42px;\n  }\n  .bottom-\\[-44px\\] {\n    bottom: -44px;\n  }\n  .bottom-\\[-48px\\] {\n    bottom: -48px;\n  }\n  .bottom-\\[-50px\\] {\n    bottom: -50px;\n  }\n  .bottom-\\[20px\\] {\n    bottom: 20px;\n  }\n  .bottom-\\[22px\\] {\n    bottom: 22px;\n  }\n  .bottom-\\[115px\\] {\n    bottom: 115px;\n  }\n  .-left-\\[50px\\] {\n    left: calc(50px * -1);\n  }\n  .-left-\\[55px\\] {\n    left: calc(55px * -1);\n  }\n  .-left-\\[145px\\] {\n    left: calc(145px * -1);\n  }\n  .left-0 {\n    left: calc(var(--spacing) * 0);\n  }\n  .left-1\\/2 {\n    left: calc(1 / 2 * 100%);\n  }\n  .left-1\\/3 {\n    left: calc(1 / 3 * 100%);\n  }\n  .left-2\\/3 {\n    left: calc(2 / 3 * 100%);\n  }\n  .left-5 {\n    left: calc(var(--spacing) * 5);\n  }\n  .left-\\[-55px\\] {\n    left: -55px;\n  }\n  .left-\\[-65px\\] {\n    left: -65px;\n  }\n  .left-\\[-70px\\] {\n    left: -70px;\n  }\n  .left-\\[-95px\\] {\n    left: -95px;\n  }\n  .left-\\[16\\%\\] {\n    left: 16%;\n  }\n  .left-\\[70px\\] {\n    left: 70px;\n  }\n  .left-\\[120px\\] {\n    left: 120px;\n  }\n  .left-\\[130px\\] {\n    left: 130px;\n  }\n  .left-\\[180px\\] {\n    left: 180px;\n  }\n  .left-\\[250px\\] {\n    left: 250px;\n  }\n  .left-\\[300px\\] {\n    left: 300px;\n  }\n  .left-\\[700px\\] {\n    left: 700px;\n  }\n  .left-\\[720px\\] {\n    left: 720px;\n  }\n  .float-right {\n    float: right;\n  }\n  .m-\\[4px\\] {\n    margin: 4px;\n  }\n  .mx-auto {\n    margin-inline: auto;\n  }\n  .mt-1 {\n    margin-top: calc(var(--spacing) * 1);\n  }\n  .mt-1\\.5 {\n    margin-top: calc(var(--spacing) * 1.5);\n  }\n  .mt-2 {\n    margin-top: calc(var(--spacing) * 2);\n  }\n  .mt-3 {\n    margin-top: calc(var(--spacing) * 3);\n  }\n  .mt-4 {\n    margin-top: calc(var(--spacing) * 4);\n  }\n  .mt-5 {\n    margin-top: calc(var(--spacing) * 5);\n  }\n  .mt-6 {\n    margin-top: calc(var(--spacing) * 6);\n  }\n  .mt-7 {\n    margin-top: calc(var(--spacing) * 7);\n  }\n  .mt-8 {\n    margin-top: calc(var(--spacing) * 8);\n  }\n  .mt-9 {\n    margin-top: calc(var(--spacing) * 9);\n  }\n  .mt-10 {\n    margin-top: calc(var(--spacing) * 10);\n  }\n  .mt-12 {\n    margin-top: calc(var(--spacing) * 12);\n  }\n  .mt-14 {\n    margin-top: calc(var(--spacing) * 14);\n  }\n  .mt-16 {\n    margin-top: calc(var(--spacing) * 16);\n  }\n  .mt-20 {\n    margin-top: calc(var(--spacing) * 20);\n  }\n  .mt-24 {\n    margin-top: calc(var(--spacing) * 24);\n  }\n  .mt-28 {\n    margin-top: calc(var(--spacing) * 28);\n  }\n  .mt-32 {\n    margin-top: calc(var(--spacing) * 32);\n  }\n  .mt-36 {\n    margin-top: calc(var(--spacing) * 36);\n  }\n  .mt-40 {\n    margin-top: calc(var(--spacing) * 40);\n  }\n  .mt-44 {\n    margin-top: calc(var(--spacing) * 44);\n  }\n  .mt-auto {\n    margin-top: auto;\n  }\n  .mb-2 {\n    margin-bottom: calc(var(--spacing) * 2);\n  }\n  .mb-3 {\n    margin-bottom: calc(var(--spacing) * 3);\n  }\n  .mb-4 {\n    margin-bottom: calc(var(--spacing) * 4);\n  }\n  .ml-3 {\n    margin-left: calc(var(--spacing) * 3);\n  }\n  .ml-\\[220px\\] {\n    margin-left: 220px;\n  }\n  .ml-\\[240px\\] {\n    margin-left: 240px;\n  }\n  .ml-\\[260px\\] {\n    margin-left: 260px;\n  }\n  .flex {\n    display: flex;\n  }\n  .grid {\n    display: grid;\n  }\n  .hidden {\n    display: none;\n  }\n  .inline {\n    display: inline;\n  }\n  .inline-block {\n    display: inline-block;\n  }\n  .table {\n    display: table;\n  }\n  .h-\\[1px\\] {\n    height: 1px;\n  }\n  .h-\\[2px\\] {\n    height: 2px;\n  }\n  .h-\\[3px\\] {\n    height: 3px;\n  }\n  .h-\\[4px\\] {\n    height: 4px;\n  }\n  .h-\\[5px\\] {\n    height: 5px;\n  }\n  .h-\\[14px\\] {\n    height: 14px;\n  }\n  .h-\\[16px\\] {\n    height: 16px;\n  }\n  .h-\\[18px\\] {\n    height: 18px;\n  }\n  .h-\\[22px\\] {\n    height: 22px;\n  }\n  .h-\\[24px\\] {\n    height: 24px;\n  }\n  .h-\\[26px\\] {\n    height: 26px;\n  }\n  .h-\\[28px\\] {\n    height: 28px;\n  }\n  .h-\\[30px\\] {\n    height: 30px;\n  }\n  .h-\\[32px\\] {\n    height: 32px;\n  }\n  .h-\\[34px\\] {\n    height: 34px;\n  }\n  .h-\\[38px\\] {\n    height: 38px;\n  }\n  .h-\\[42px\\] {\n    height: 42px;\n  }\n  .h-\\[46px\\] {\n    height: 46px;\n  }\n  .h-\\[52px\\] {\n    height: 52px;\n  }\n  .h-\\[54px\\] {\n    height: 54px;\n  }\n  .h-\\[56px\\] {\n    height: 56px;\n  }\n  .h-\\[58px\\] {\n    height: 58px;\n  }\n  .h-\\[64px\\] {\n    height: 64px;\n  }\n  .h-\\[66px\\] {\n    height: 66px;\n  }\n  .h-\\[70px\\] {\n    height: 70px;\n  }\n  .h-\\[72px\\] {\n    height: 72px;\n  }\n  .h-\\[76px\\] {\n    height: 76px;\n  }\n  .h-\\[82px\\] {\n    height: 82px;\n  }\n  .h-\\[90px\\] {\n    height: 90px;\n  }\n  .h-\\[94px\\] {\n    height: 94px;\n  }\n  .h-\\[100px\\] {\n    height: 100px;\n  }\n  .h-\\[103px\\] {\n    height: 103px;\n  }\n  .h-\\[120px\\] {\n    height: 120px;\n  }\n  .h-\\[130px\\] {\n    height: 130px;\n  }\n  .h-\\[142px\\] {\n    height: 142px;\n  }\n  .h-\\[150px\\] {\n    height: 150px;\n  }\n  .h-\\[160px\\] {\n    height: 160px;\n  }\n  .h-\\[180px\\] {\n    height: 180px;\n  }\n  .h-\\[220px\\] {\n    height: 220px;\n  }\n  .h-\\[285px\\] {\n    height: 285px;\n  }\n  .h-\\[290px\\] {\n    height: 290px;\n  }\n  .h-\\[300px\\] {\n    height: 300px;\n  }\n  .h-\\[320px\\] {\n    height: 320px;\n  }\n  .h-\\[390px\\] {\n    height: 390px;\n  }\n  .h-\\[430px\\] {\n    height: 430px;\n  }\n  .h-\\[480px\\] {\n    height: 480px;\n  }\n  .h-\\[500px\\] {\n    height: 500px;\n  }\n  .h-\\[520px\\] {\n    height: 520px;\n  }\n  .h-\\[550px\\] {\n    height: 550px;\n  }\n  .h-\\[560px\\] {\n    height: 560px;\n  }\n  .h-\\[570px\\] {\n    height: 570px;\n  }\n  .h-\\[590px\\] {\n    height: 590px;\n  }\n  .h-\\[600px\\] {\n    height: 600px;\n  }\n  .h-\\[610px\\] {\n    height: 610px;\n  }\n  .h-\\[620px\\] {\n    height: 620px;\n  }\n  .h-\\[650px\\] {\n    height: 650px;\n  }\n  .h-\\[680px\\] {\n    height: 680px;\n  }\n  .h-full {\n    height: 100%;\n  }\n  .min-h-\\[50px\\] {\n    min-height: 50px;\n  }\n  .min-h-\\[320px\\] {\n    min-height: 320px;\n  }\n  .min-h-\\[390px\\] {\n    min-height: 390px;\n  }\n  .w-\\[1px\\] {\n    width: 1px;\n  }\n  .w-\\[2px\\] {\n    width: 2px;\n  }\n  .w-\\[3px\\] {\n    width: 3px;\n  }\n  .w-\\[4px\\] {\n    width: 4px;\n  }\n  .w-\\[5px\\] {\n    width: 5px;\n  }\n  .w-\\[8px\\] {\n    width: 8px;\n  }\n  .w-\\[14px\\] {\n    width: 14px;\n  }\n  .w-\\[16px\\] {\n    width: 16px;\n  }\n  .w-\\[18px\\] {\n    width: 18px;\n  }\n  .w-\\[22px\\] {\n    width: 22px;\n  }\n  .w-\\[24px\\] {\n    width: 24px;\n  }\n  .w-\\[26px\\] {\n    width: 26px;\n  }\n  .w-\\[28px\\] {\n    width: 28px;\n  }\n  .w-\\[30px\\] {\n    width: 30px;\n  }\n  .w-\\[32px\\] {\n    width: 32px;\n  }\n  .w-\\[34px\\] {\n    width: 34px;\n  }\n  .w-\\[44px\\] {\n    width: 44px;\n  }\n  .w-\\[46px\\] {\n    width: 46px;\n  }\n  .w-\\[54px\\] {\n    width: 54px;\n  }\n  .w-\\[60px\\] {\n    width: 60px;\n  }\n  .w-\\[70px\\] {\n    width: 70px;\n  }\n  .w-\\[72px\\] {\n    width: 72px;\n  }\n  .w-\\[90px\\] {\n    width: 90px;\n  }\n  .w-\\[150px\\] {\n    width: 150px;\n  }\n  .w-\\[220px\\] {\n    width: 220px;\n  }\n  .w-\\[230px\\] {\n    width: 230px;\n  }\n  .w-\\[260px\\] {\n    width: 260px;\n  }\n  .w-\\[300px\\] {\n    width: 300px;\n  }\n  .w-\\[380px\\] {\n    width: 380px;\n  }\n  .w-\\[540px\\] {\n    width: 540px;\n  }\n  .w-\\[900px\\] {\n    width: 900px;\n  }\n  .w-\\[1300px\\] {\n    width: 1300px;\n  }\n  .w-\\[1320px\\] {\n    width: 1320px;\n  }\n  .w-full {\n    width: 100%;\n  }\n  .max-w-\\[220px\\] {\n    max-width: 220px;\n  }\n  .max-w-\\[550px\\] {\n    max-width: 550px;\n  }\n  .max-w-\\[650px\\] {\n    max-width: 650px;\n  }\n  .max-w-\\[770px\\] {\n    max-width: 770px;\n  }\n  .max-w-\\[1300px\\] {\n    max-width: 1300px;\n  }\n  .max-w-\\[1500px\\] {\n    max-width: 1500px;\n  }\n  .max-w-\\[1550px\\] {\n    max-width: 1550px;\n  }\n  .min-w-0 {\n    min-width: calc(var(--spacing) * 0);\n  }\n  .min-w-\\[90px\\] {\n    min-width: 90px;\n  }\n  .flex-1 {\n    flex: 1;\n  }\n  .grow {\n    flex-grow: 1;\n  }\n  .-translate-x-1\\/2 {\n    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .-translate-y-1\\/2 {\n    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .-rotate-90 {\n    rotate: calc(90deg * -1);\n  }\n  .transform {\n    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);\n  }\n  .grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n  .grid-cols-3 {\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n  }\n  .grid-cols-5 {\n    grid-template-columns: repeat(5, minmax(0, 1fr));\n  }\n  .grid-cols-10 {\n    grid-template-columns: repeat(10, minmax(0, 1fr));\n  }\n  .grid-cols-\\[1\\.6fr_1fr_1fr_1fr\\] {\n    grid-template-columns: 1.6fr 1fr 1fr 1fr;\n  }\n  .grid-cols-\\[1\\.25fr_0\\.75fr\\] {\n    grid-template-columns: 1.25fr 0.75fr;\n  }\n  .grid-cols-\\[1fr_1\\.2fr_100px\\] {\n    grid-template-columns: 1fr 1.2fr 100px;\n  }\n  .grid-cols-\\[1fr_120px_1fr\\] {\n    grid-template-columns: 1fr 120px 1fr;\n  }\n  .grid-cols-\\[1fr_210px_1fr\\] {\n    grid-template-columns: 1fr 210px 1fr;\n  }\n  .grid-cols-\\[1fr_360px_1fr\\] {\n    grid-template-columns: 1fr 360px 1fr;\n  }\n  .grid-cols-\\[70px_260px_1fr_110px\\] {\n    grid-template-columns: 70px 260px 1fr 110px;\n  }\n  .grid-cols-\\[120px_repeat\\(13\\,1fr\\)\\] {\n    grid-template-columns: 120px repeat(13,1fr);\n  }\n  .grid-cols-\\[140px_1fr\\] {\n    grid-template-columns: 140px 1fr;\n  }\n  .grid-cols-\\[180px_1fr\\] {\n    grid-template-columns: 180px 1fr;\n  }\n  .grid-cols-\\[200px_1320px\\] {\n    grid-template-columns: 200px 1320px;\n  }\n  .grid-cols-\\[210px_1fr_110px\\] {\n    grid-template-columns: 210px 1fr 110px;\n  }\n  .grid-cols-\\[210px_1300px_140px\\] {\n    grid-template-columns: 210px 1300px 140px;\n  }\n  .grid-cols-\\[220px_1fr_120px\\] {\n    grid-template-columns: 220px 1fr 120px;\n  }\n  .grid-cols-\\[220px_1fr_220px\\] {\n    grid-template-columns: 220px 1fr 220px;\n  }\n  .grid-cols-\\[230px_1fr_110px\\] {\n    grid-template-columns: 230px 1fr 110px;\n  }\n  .grid-cols-\\[230px_1320px_120px\\] {\n    grid-template-columns: 230px 1320px 120px;\n  }\n  .grid-cols-\\[240px_1fr\\] {\n    grid-template-columns: 240px 1fr;\n  }\n  .grid-cols-\\[250px_1fr\\] {\n    grid-template-columns: 250px 1fr;\n  }\n  .grid-cols-\\[260px_1fr_150px\\] {\n    grid-template-columns: 260px 1fr 150px;\n  }\n  .grid-cols-\\[280px_1fr_180px_180px_180px\\] {\n    grid-template-columns: 280px 1fr 180px 180px 180px;\n  }\n  .grid-cols-\\[360px_repeat\\(4\\,1fr\\)\\] {\n    grid-template-columns: 360px repeat(4,1fr);\n  }\n  .flex-col {\n    flex-direction: column;\n  }\n  .flex-wrap {\n    flex-wrap: wrap;\n  }\n  .items-center {\n    align-items: center;\n  }\n  .items-end {\n    align-items: flex-end;\n  }\n  .items-start {\n    align-items: flex-start;\n  }\n  .items-stretch {\n    align-items: stretch;\n  }\n  .justify-between {\n    justify-content: space-between;\n  }\n  .justify-center {\n    justify-content: center;\n  }\n  .justify-end {\n    justify-content: flex-end;\n  }\n  .justify-start {\n    justify-content: flex-start;\n  }\n  .gap-1 {\n    gap: calc(var(--spacing) * 1);\n  }\n  .gap-2 {\n    gap: calc(var(--spacing) * 2);\n  }\n  .gap-3 {\n    gap: calc(var(--spacing) * 3);\n  }\n  .gap-4 {\n    gap: calc(var(--spacing) * 4);\n  }\n  .gap-5 {\n    gap: calc(var(--spacing) * 5);\n  }\n  .gap-6 {\n    gap: calc(var(--spacing) * 6);\n  }\n  .gap-7 {\n    gap: calc(var(--spacing) * 7);\n  }\n  .gap-8 {\n    gap: calc(var(--spacing) * 8);\n  }\n  .gap-9 {\n    gap: calc(var(--spacing) * 9);\n  }\n  .gap-10 {\n    gap: calc(var(--spacing) * 10);\n  }\n  .gap-12 {\n    gap: calc(var(--spacing) * 12);\n  }\n  .gap-14 {\n    gap: calc(var(--spacing) * 14);\n  }\n  .gap-16 {\n    gap: calc(var(--spacing) * 16);\n  }\n  .gap-20 {\n    gap: calc(var(--spacing) * 20);\n  }\n  .gap-24 {\n    gap: calc(var(--spacing) * 24);\n  }\n  .gap-28 {\n    gap: calc(var(--spacing) * 28);\n  }\n  .gap-\\[420px\\] {\n    gap: 420px;\n  }\n  .gap-\\[480px\\] {\n    gap: 480px;\n  }\n  .gap-\\[520px\\] {\n    gap: 520px;\n  }\n  .space-y-3 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-4 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-5 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-6 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-7 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 7) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 7) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-8 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-9 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 9) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 9) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-10 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-12 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .space-y-14 {\n    :where(& > :not(:last-child)) {\n      --tw-space-y-reverse: 0;\n      margin-block-start: calc(calc(var(--spacing) * 14) * var(--tw-space-y-reverse));\n      margin-block-end: calc(calc(var(--spacing) * 14) * calc(1 - var(--tw-space-y-reverse)));\n    }\n  }\n  .gap-x-8 {\n    column-gap: calc(var(--spacing) * 8);\n  }\n  .gap-y-8 {\n    row-gap: calc(var(--spacing) * 8);\n  }\n  .overflow-hidden {\n    overflow: hidden;\n  }\n  .overflow-visible {\n    overflow: visible;\n  }\n  .rounded-full {\n    border-radius: calc(infinity * 1px);\n  }\n  .border {\n    border-style: var(--tw-border-style);\n    border-width: 1px;\n  }\n  .border-2 {\n    border-style: var(--tw-border-style);\n    border-width: 2px;\n  }\n  .border-\\[4px\\] {\n    border-style: var(--tw-border-style);\n    border-width: 4px;\n  }\n  .border-\\[5px\\] {\n    border-style: var(--tw-border-style);\n    border-width: 5px;\n  }\n  .border-x-2 {\n    border-inline-style: var(--tw-border-style);\n    border-inline-width: 2px;\n  }\n  .border-t-2 {\n    border-top-style: var(--tw-border-style);\n    border-top-width: 2px;\n  }\n  .border-r-0 {\n    border-right-style: var(--tw-border-style);\n    border-right-width: 0px;\n  }\n  .border-r-2 {\n    border-right-style: var(--tw-border-style);\n    border-right-width: 2px;\n  }\n  .border-b-0 {\n    border-bottom-style: var(--tw-border-style);\n    border-bottom-width: 0px;\n  }\n  .border-b-2 {\n    border-bottom-style: var(--tw-border-style);\n    border-bottom-width: 2px;\n  }\n  .border-l-2 {\n    border-left-style: var(--tw-border-style);\n    border-left-width: 2px;\n  }\n  .border-l-\\[6px\\] {\n    border-left-style: var(--tw-border-style);\n    border-left-width: 6px;\n  }\n  .border-l-\\[8px\\] {\n    border-left-style: var(--tw-border-style);\n    border-left-width: 8px;\n  }\n  .border-dashed {\n    --tw-border-style: dashed;\n    border-style: dashed;\n  }\n  .border-ink {\n    border-color: var(--color-ink);\n  }\n  .border-ink\\/20 {\n    border-color: color-mix(in srgb, #111111 20%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      border-color: color-mix(in oklab, var(--color-ink) 20%, transparent);\n    }\n  }\n  .border-yellow {\n    border-color: var(--color-yellow);\n  }\n  .bg-ink {\n    background-color: var(--color-ink);\n  }\n  .bg-ink\\/10 {\n    background-color: color-mix(in srgb, #111111 10%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-ink) 10%, transparent);\n    }\n  }\n  .bg-muted {\n    background-color: var(--color-muted);\n  }\n  .bg-paper {\n    background-color: var(--color-paper);\n  }\n  .bg-soft {\n    background-color: var(--color-soft);\n  }\n  .bg-white {\n    background-color: var(--color-white);\n  }\n  .bg-white\\/80 {\n    background-color: color-mix(in srgb, #fff 80%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 80%, transparent);\n    }\n  }\n  .bg-yellow {\n    background-color: var(--color-yellow);\n  }\n  .bg-yellow\\/70 {\n    background-color: color-mix(in srgb, #ffd43b 70%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-yellow) 70%, transparent);\n    }\n  }\n  .object-contain {\n    object-fit: contain;\n  }\n  .object-cover {\n    object-fit: cover;\n  }\n  .p-4 {\n    padding: calc(var(--spacing) * 4);\n  }\n  .p-5 {\n    padding: calc(var(--spacing) * 5);\n  }\n  .p-6 {\n    padding: calc(var(--spacing) * 6);\n  }\n  .p-7 {\n    padding: calc(var(--spacing) * 7);\n  }\n  .p-8 {\n    padding: calc(var(--spacing) * 8);\n  }\n  .p-10 {\n    padding: calc(var(--spacing) * 10);\n  }\n  .p-12 {\n    padding: calc(var(--spacing) * 12);\n  }\n  .px-2 {\n    padding-inline: calc(var(--spacing) * 2);\n  }\n  .px-3 {\n    padding-inline: calc(var(--spacing) * 3);\n  }\n  .px-4 {\n    padding-inline: calc(var(--spacing) * 4);\n  }\n  .px-5 {\n    padding-inline: calc(var(--spacing) * 5);\n  }\n  .px-6 {\n    padding-inline: calc(var(--spacing) * 6);\n  }\n  .px-7 {\n    padding-inline: calc(var(--spacing) * 7);\n  }\n  .px-8 {\n    padding-inline: calc(var(--spacing) * 8);\n  }\n  .px-10 {\n    padding-inline: calc(var(--spacing) * 10);\n  }\n  .px-12 {\n    padding-inline: calc(var(--spacing) * 12);\n  }\n  .px-14 {\n    padding-inline: calc(var(--spacing) * 14);\n  }\n  .px-16 {\n    padding-inline: calc(var(--spacing) * 16);\n  }\n  .py-0\\.5 {\n    padding-block: calc(var(--spacing) * 0.5);\n  }\n  .py-1 {\n    padding-block: calc(var(--spacing) * 1);\n  }\n  .py-2 {\n    padding-block: calc(var(--spacing) * 2);\n  }\n  .py-3 {\n    padding-block: calc(var(--spacing) * 3);\n  }\n  .py-4 {\n    padding-block: calc(var(--spacing) * 4);\n  }\n  .py-5 {\n    padding-block: calc(var(--spacing) * 5);\n  }\n  .py-6 {\n    padding-block: calc(var(--spacing) * 6);\n  }\n  .py-7 {\n    padding-block: calc(var(--spacing) * 7);\n  }\n  .py-8 {\n    padding-block: calc(var(--spacing) * 8);\n  }\n  .py-\\[5px\\] {\n    padding-block: 5px;\n  }\n  .pt-6 {\n    padding-top: calc(var(--spacing) * 6);\n  }\n  .pt-7 {\n    padding-top: calc(var(--spacing) * 7);\n  }\n  .pr-14 {\n    padding-right: calc(var(--spacing) * 14);\n  }\n  .pb-4 {\n    padding-bottom: calc(var(--spacing) * 4);\n  }\n  .pl-7 {\n    padding-left: calc(var(--spacing) * 7);\n  }\n  .pl-8 {\n    padding-left: calc(var(--spacing) * 8);\n  }\n  .pl-14 {\n    padding-left: calc(var(--spacing) * 14);\n  }\n  .text-center {\n    text-align: center;\n  }\n  .text-right {\n    text-align: right;\n  }\n  .text-\\[12px\\] {\n    font-size: 12px;\n  }\n  .text-\\[13px\\] {\n    font-size: 13px;\n  }\n  .text-\\[14px\\] {\n    font-size: 14px;\n  }\n  .text-\\[15px\\] {\n    font-size: 15px;\n  }\n  .text-\\[16px\\] {\n    font-size: 16px;\n  }\n  .text-\\[17px\\] {\n    font-size: 17px;\n  }\n  .text-\\[18px\\] {\n    font-size: 18px;\n  }\n  .text-\\[19px\\] {\n    font-size: 19px;\n  }\n  .text-\\[20px\\] {\n    font-size: 20px;\n  }\n  .text-\\[21px\\] {\n    font-size: 21px;\n  }\n  .text-\\[22px\\] {\n    font-size: 22px;\n  }\n  .text-\\[23px\\] {\n    font-size: 23px;\n  }\n  .text-\\[24px\\] {\n    font-size: 24px;\n  }\n  .text-\\[25px\\] {\n    font-size: 25px;\n  }\n  .text-\\[26px\\] {\n    font-size: 26px;\n  }\n  .text-\\[27px\\] {\n    font-size: 27px;\n  }\n  .text-\\[28px\\] {\n    font-size: 28px;\n  }\n  .text-\\[29px\\] {\n    font-size: 29px;\n  }\n  .text-\\[30px\\] {\n    font-size: 30px;\n  }\n  .text-\\[31px\\] {\n    font-size: 31px;\n  }\n  .text-\\[32px\\] {\n    font-size: 32px;\n  }\n  .text-\\[34px\\] {\n    font-size: 34px;\n  }\n  .text-\\[35px\\] {\n    font-size: 35px;\n  }\n  .text-\\[36px\\] {\n    font-size: 36px;\n  }\n  .text-\\[38px\\] {\n    font-size: 38px;\n  }\n  .text-\\[39px\\] {\n    font-size: 39px;\n  }\n  .text-\\[40px\\] {\n    font-size: 40px;\n  }\n  .text-\\[42px\\] {\n    font-size: 42px;\n  }\n  .text-\\[44px\\] {\n    font-size: 44px;\n  }\n  .text-\\[46px\\] {\n    font-size: 46px;\n  }\n  .text-\\[48px\\] {\n    font-size: 48px;\n  }\n  .text-\\[50px\\] {\n    font-size: 50px;\n  }\n  .text-\\[52px\\] {\n    font-size: 52px;\n  }\n  .text-\\[54px\\] {\n    font-size: 54px;\n  }\n  .text-\\[58px\\] {\n    font-size: 58px;\n  }\n  .text-\\[60px\\] {\n    font-size: 60px;\n  }\n  .text-\\[62px\\] {\n    font-size: 62px;\n  }\n  .text-\\[64px\\] {\n    font-size: 64px;\n  }\n  .text-\\[68px\\] {\n    font-size: 68px;\n  }\n  .text-\\[70px\\] {\n    font-size: 70px;\n  }\n  .text-\\[72px\\] {\n    font-size: 72px;\n  }\n  .text-\\[76px\\] {\n    font-size: 76px;\n  }\n  .text-\\[80px\\] {\n    font-size: 80px;\n  }\n  .text-\\[82px\\] {\n    font-size: 82px;\n  }\n  .text-\\[84px\\] {\n    font-size: 84px;\n  }\n  .text-\\[88px\\] {\n    font-size: 88px;\n  }\n  .text-\\[90px\\] {\n    font-size: 90px;\n  }\n  .text-\\[92px\\] {\n    font-size: 92px;\n  }\n  .text-\\[118px\\] {\n    font-size: 118px;\n  }\n  .text-\\[120px\\] {\n    font-size: 120px;\n  }\n  .text-\\[150px\\] {\n    font-size: 150px;\n  }\n  .text-\\[160px\\] {\n    font-size: 160px;\n  }\n  .text-\\[180px\\] {\n    font-size: 180px;\n  }\n  .text-\\[200px\\] {\n    font-size: 200px;\n  }\n  .text-\\[205px\\] {\n    font-size: 205px;\n  }\n  .leading-\\[1\\.1\\] {\n    --tw-leading: 1.1;\n    line-height: 1.1;\n  }\n  .leading-\\[1\\.2\\] {\n    --tw-leading: 1.2;\n    line-height: 1.2;\n  }\n  .leading-\\[1\\.4\\] {\n    --tw-leading: 1.4;\n    line-height: 1.4;\n  }\n  .leading-\\[1\\.05\\] {\n    --tw-leading: 1.05;\n    line-height: 1.05;\n  }\n  .leading-\\[1\\.5\\] {\n    --tw-leading: 1.5;\n    line-height: 1.5;\n  }\n  .leading-\\[1\\.08\\] {\n    --tw-leading: 1.08;\n    line-height: 1.08;\n  }\n  .leading-\\[1\\.15\\] {\n    --tw-leading: 1.15;\n    line-height: 1.15;\n  }\n  .leading-\\[1\\.25\\] {\n    --tw-leading: 1.25;\n    line-height: 1.25;\n  }\n  .leading-\\[1\\.35\\] {\n    --tw-leading: 1.35;\n    line-height: 1.35;\n  }\n  .leading-\\[1\\.45\\] {\n    --tw-leading: 1.45;\n    line-height: 1.45;\n  }\n  .leading-none {\n    --tw-leading: 1;\n    line-height: 1;\n  }\n  .leading-tight {\n    --tw-leading: var(--leading-tight);\n    line-height: var(--leading-tight);\n  }\n  .font-normal {\n    --tw-font-weight: var(--font-weight-normal);\n    font-weight: var(--font-weight-normal);\n  }\n  .font-semibold {\n    --tw-font-weight: var(--font-weight-semibold);\n    font-weight: var(--font-weight-semibold);\n  }\n  .tracking-\\[-0\\.03em\\] {\n    --tw-tracking: -0.03em;\n    letter-spacing: -0.03em;\n  }\n  .tracking-\\[-0\\.04em\\] {\n    --tw-tracking: -0.04em;\n    letter-spacing: -0.04em;\n  }\n  .tracking-\\[-0\\.05em\\] {\n    --tw-tracking: -0.05em;\n    letter-spacing: -0.05em;\n  }\n  .tracking-\\[-0\\.06em\\] {\n    --tw-tracking: -0.06em;\n    letter-spacing: -0.06em;\n  }\n  .tracking-\\[-0\\.07em\\] {\n    --tw-tracking: -0.07em;\n    letter-spacing: -0.07em;\n  }\n  .tracking-\\[-0\\.08em\\] {\n    --tw-tracking: -0.08em;\n    letter-spacing: -0.08em;\n  }\n  .tracking-\\[-0\\.09em\\] {\n    --tw-tracking: -0.09em;\n    letter-spacing: -0.09em;\n  }\n  .tracking-\\[-0\\.045em\\] {\n    --tw-tracking: -0.045em;\n    letter-spacing: -0.045em;\n  }\n  .tracking-\\[0\\.1em\\] {\n    --tw-tracking: 0.1em;\n    letter-spacing: 0.1em;\n  }\n  .tracking-\\[0\\.08em\\] {\n    --tw-tracking: 0.08em;\n    letter-spacing: 0.08em;\n  }\n  .tracking-\\[0\\.12em\\] {\n    --tw-tracking: 0.12em;\n    letter-spacing: 0.12em;\n  }\n  .tracking-\\[0\\.18em\\] {\n    --tw-tracking: 0.18em;\n    letter-spacing: 0.18em;\n  }\n  .tracking-\\[7px\\] {\n    --tw-tracking: 7px;\n    letter-spacing: 7px;\n  }\n  .tracking-\\[8px\\] {\n    --tw-tracking: 8px;\n    letter-spacing: 8px;\n  }\n  .whitespace-nowrap {\n    white-space: nowrap;\n  }\n  .text-ink {\n    color: var(--color-ink);\n  }\n  .text-muted {\n    color: var(--color-muted);\n  }\n  .text-white {\n    color: var(--color-white);\n  }\n  .text-yellow {\n    color: var(--color-yellow);\n  }\n  .opacity-20 {\n    opacity: 20%;\n  }\n  .opacity-25 {\n    opacity: 25%;\n  }\n  .opacity-70 {\n    opacity: 70%;\n  }\n  .mix-blend-difference {\n    mix-blend-mode: difference;\n  }\n  .ring {\n    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n  .transition {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n  .first\\:border-t-0 {\n    &:first-child {\n      border-top-style: var(--tw-border-style);\n      border-top-width: 0px;\n    }\n  }\n  .last\\:border-r-0 {\n    &:last-child {\n      border-right-style: var(--tw-border-style);\n      border-right-width: 0px;\n    }\n  }\n  .last\\:border-b-0 {\n    &:last-child {\n      border-bottom-style: var(--tw-border-style);\n      border-bottom-width: 0px;\n    }\n  }\n}\nhtml, body {\n  margin: 0;\n  padding: 0;\n}\n* {\n  box-sizing: border-box;\n}\n@property --tw-translate-x {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-translate-y {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-translate-z {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-rotate-x {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-rotate-y {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-rotate-z {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-skew-x {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-skew-y {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-space-y-reverse {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-border-style {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: solid;\n}\n@property --tw-leading {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-font-weight {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-tracking {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-shadow-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-shadow-alpha {\n  syntax: \"<percentage>\";\n  inherits: false;\n  initial-value: 100%;\n}\n@property --tw-inset-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-inset-shadow-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-inset-shadow-alpha {\n  syntax: \"<percentage>\";\n  inherits: false;\n  initial-value: 100%;\n}\n@property --tw-ring-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-ring-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-inset-ring-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-inset-ring-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-ring-inset {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-ring-offset-width {\n  syntax: \"<length>\";\n  inherits: false;\n  initial-value: 0px;\n}\n@property --tw-ring-offset-color {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: #fff;\n}\n@property --tw-ring-offset-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@layer properties {\n  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {\n    *, ::before, ::after, ::backdrop {\n      --tw-translate-x: 0;\n      --tw-translate-y: 0;\n      --tw-translate-z: 0;\n      --tw-rotate-x: initial;\n      --tw-rotate-y: initial;\n      --tw-rotate-z: initial;\n      --tw-skew-x: initial;\n      --tw-skew-y: initial;\n      --tw-space-y-reverse: 0;\n      --tw-border-style: solid;\n      --tw-leading: initial;\n      --tw-font-weight: initial;\n      --tw-tracking: initial;\n      --tw-shadow: 0 0 #0000;\n      --tw-shadow-color: initial;\n      --tw-shadow-alpha: 100%;\n      --tw-inset-shadow: 0 0 #0000;\n      --tw-inset-shadow-color: initial;\n      --tw-inset-shadow-alpha: 100%;\n      --tw-ring-color: initial;\n      --tw-ring-shadow: 0 0 #0000;\n      --tw-inset-ring-color: initial;\n      --tw-inset-ring-shadow: 0 0 #0000;\n      --tw-ring-inset: initial;\n      --tw-ring-offset-width: 0px;\n      --tw-ring-offset-color: #fff;\n      --tw-ring-offset-shadow: 0 0 #0000;\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* export default */ const __rspack_default_export = (___CSS_LOADER_EXPORT___);
 
@@ -18946,7 +19916,7 @@ function styleTagTransform(css, styleElement) {
 module.exports = styleTagTransform;
 
 },
-2851(__unused_rspack_module, __unused_rspack___webpack_exports__, __webpack_require__) {
+8931(__unused_rspack_module, __unused_rspack___webpack_exports__, __webpack_require__) {
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/remotion@4.0.507_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/remotion/dist/esm/index.mjs
@@ -19000,7 +19970,137 @@ var update = injectStylesIntoStyleTag_default()(index_js_src/* ["default"] */.A,
 
 
 
-       /* export default */ const src = (index_js_src/* ["default"] */.A && index_js_src/* ["default"].locals */.A.locals ? index_js_src/* ["default"].locals */.A.locals : undefined);
+       /* export default */ const src_0 = (index_js_src/* ["default"] */.A && index_js_src/* ["default"].locals */.A.locals ? index_js_src/* ["default"].locals */.A.locals : undefined);
+
+;// CONCATENATED MODULE: ./src/style/theme.ts
+/**
+ * Finance Motion — 设计系统 / Design System
+ *
+ * 风格方向：Soft Brutalism + Financial Editorial（柔和粗野主义 + 财经编辑风）
+ *
+ * 使用原则：
+ * - 颜色、边框、阴影优先用本文件的常量（SVG / inline style）
+ * - 布局和排版优先用 Tailwind class（见 style/index.css 中的 @theme）
+ * - 动画时长见 animation；场景统一用 lib/motion.ts + lib/chartMotion.ts
+ *
+ * 避免：渐变、发光、玻璃拟态、强模糊、随意配色
+ * 说明：标准图表偏硬切淡入；表达/结构层可用 springIn（受控 overshoot），不要随意加 CSS transition
+ */ // ---------------------------------------------------------------------------
+// 色板 / Colors
+// ---------------------------------------------------------------------------
+/** 所有品牌色。yellow = 强调，ink = 主信息，muted = 次要信息 */ const colors = {
+    /** 画布背景 — 暖白纸张色 */ paper: "#FAFAF7",
+    /** 主文字、边框、阴影 — 近黑 */ ink: "#111111",
+    /** 强调色 — 用于高亮数字、标签、图表重点 */ yellow: "#FFD43B",
+    /** 次要文字、注释、轴标签 */ muted: "#737373",
+    /** 分隔线、图表底色、浅背景块 */ soft: "#ECECE7",
+    /** 卡片默认背景（非 yellow 强调时） */ white: "#FFFFFF"
+};
+// ---------------------------------------------------------------------------
+// 边框 / Borders
+// ---------------------------------------------------------------------------
+const borders = {
+    /** 标准边框宽度（px）— 全局统一 2px */ width: 2,
+    /** 边框颜色 */ color: colors.ink,
+    /** Tailwind 边框 class 组合 */ className: "border-2 border-ink"
+};
+// ---------------------------------------------------------------------------
+// 阴影 / Shadows
+// ---------------------------------------------------------------------------
+/** 粗野主义硬阴影：无模糊，纯黑偏移（大→小用于层级） */ const shadows = {
+    brutal: `6px 6px 0 ${colors.ink}`,
+    brutalMd: `4px 4px 0 ${colors.ink}`,
+    brutalSm: `3px 3px 0 ${colors.ink}`
+};
+// ---------------------------------------------------------------------------
+// 间距 / Spacing
+// ---------------------------------------------------------------------------
+const spacing = {
+    /** Frame 内边距（px）— 与 Source 左侧对齐 */ framePadding: 64,
+    /** Source 组件距底部 */ sourceBottom: 50,
+    /** Ticker overlay 定位 */ tickerBottom: 60,
+    tickerLeft: 60
+};
+// ---------------------------------------------------------------------------
+// 布局 / Layout
+// ---------------------------------------------------------------------------
+const layout = {
+    /** Frame 背景网格单元大小（px） */ gridSize: 48,
+    /** 网格线透明度（0–1） */ gridOpacity: 0.025,
+    /** 默认视频尺寸 — 与 config.ts 保持一致 */ width: 1920,
+    height: 1080
+};
+// ---------------------------------------------------------------------------
+// 字体 / Typography
+// ---------------------------------------------------------------------------
+const typography = {
+    /** 字体族名称 — 须与 fonts.ts 中 loadFont 的 family 一致 */ fontFamily: "IBM Plex Mono",
+    /** 字重 */ weight: {
+        regular: 400,
+        semibold: 600
+    }
+};
+/**
+ * 常用排版 Tailwind class（复制到 className 即可）
+ * 大标题、大数字场景可在此基础上加大字号
+ */ const textClasses = {
+    eyebrow: "text-[26px] tracking-[0.12em] text-muted",
+    title: "text-[62px] font-semibold leading-[1.05] tracking-[-0.05em]",
+    titleLg: "text-[64px] font-semibold tracking-[-0.05em]",
+    subtitle: "text-[26px] leading-[1.4] text-muted",
+    body: "text-[22px] text-muted",
+    source: "text-[19px] tracking-[0.08em] text-muted",
+    tag: "text-[22px] font-semibold"
+};
+// ---------------------------------------------------------------------------
+// 图表 / Charts（SVG 内联样式用）
+// ---------------------------------------------------------------------------
+const chart = {
+    strokeWidth: 8,
+    strokeLinecap: "square",
+    dotRadius: 10,
+    dotStrokeWidth: 3,
+    guideOpacity: 0.12,
+    donutStrokeWidth: 55,
+    colors: {
+        primary: colors.ink,
+        emphasis: colors.yellow,
+        track: colors.soft,
+        label: colors.muted
+    }
+};
+// ---------------------------------------------------------------------------
+// 动画节奏 / Animation timing（帧数，30fps）
+// ---------------------------------------------------------------------------
+const theme_animation = {
+    /** 元素入场默认时长 */ entranceFrames: 12,
+    entranceMin: 10,
+    entranceMax: 18,
+    /** 图表增长动画 */ chartGrowFrames: 30,
+    chartGrowMin: 20,
+    chartGrowMax: 40,
+    /** 折线绘制 */ lineDrawFrames: 50,
+    /** 列表/条形图逐项延迟 */ staggerFrames: 8,
+    staggerMin: 5,
+    staggerMax: 10
+};
+// ---------------------------------------------------------------------------
+// 工具函数 / Helpers
+// ---------------------------------------------------------------------------
+/** Frame 背景网格 CSS backgroundImage */ function gridBackgroundImage() {
+    const line = `rgba(0,0,0,${layout.gridOpacity})`;
+    return `
+    linear-gradient(${line} 1px, transparent 1px),
+    linear-gradient(90deg, ${line} 1px, transparent 1px)
+  `;
+}
+
+;// CONCATENATED MODULE: ./src/config.ts
+/** 视频全局参数 — 尺寸与 theme.layout 保持一致 */ 
+const VIDEO_WIDTH = layout.width;
+const VIDEO_HEIGHT = layout.height;
+const VIDEO_FPS = 30;
+/** 标准场景默认时长（5s @ 30fps）；表达/结构可在 compositions.ts 覆盖 */ const SCENE_DURATION = 150;
 
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@remotion+fonts@4.0.507_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/@remotion/fonts/dist/esm/index.mjs
 // src/get-font-format.ts
@@ -19070,19 +20170,105 @@ var loadFont = async (options) => {
 };
 
 
-;// CONCATENATED MODULE: ./src/fonts.ts
+;// CONCATENATED MODULE: ./src/assets/index.ts
+
+/**
+ * Assets 资源管理
+ *
+ * 目录结构（均在 public/ 下）：
+ *
+ *   public/
+ *   ├── fonts/                 字体（已由 fonts.ts 加载）
+ *   └── images/
+ *       ├── maps/              地图 PNG/SVG
+ *       ├── screenshots/       年报、界面截图
+ *       ├── photos/            人物、产品照片
+ *       └── logos/             品牌 logo
+ *
+ * 使用方式：
+ * 1. 把文件放进对应目录
+ * 2. 在下方 images 中注册 key
+ * 3. 场景里用 src="maps.world" 或 getImageSrc("maps/world.png")
+ */ // ---------------------------------------------------------------------------
+// 路径常量
+// ---------------------------------------------------------------------------
+const assetDirs = {
+    fonts: "fonts",
+    images: "images",
+    maps: "images/maps",
+    screenshots: "images/screenshots",
+    photos: "images/photos",
+    logos: "images/logos"
+};
+// ---------------------------------------------------------------------------
+// 字体文件（供 style/fonts.ts 使用）
+// ---------------------------------------------------------------------------
+const fontPaths = {
+    monoRegular: (0,esm/* .staticFile */.dQ)(`${assetDirs.fonts}/IBMPlexMono-Regular.woff2`),
+    monoSemiBold: (0,esm/* .staticFile */.dQ)(`${assetDirs.fonts}/IBMPlexMono-SemiBold.woff2`)
+};
+// ---------------------------------------------------------------------------
+// 图片注册表 — 添加资源时在此登记
+// ---------------------------------------------------------------------------
+/**
+ * 按分类注册图片。key 为简短标识，值为 public 下的相对路径（不含 public/）
+ *
+ * 示例：
+ *   maps: { world: "images/maps/world.png" }
+ *   使用时：getImageSrc("world", "maps")
+ */ const assets_images = {
+    maps: {
+    },
+    screenshots: {
+    },
+    photos: {
+    },
+    logos: {
+    }
+};
+// ---------------------------------------------------------------------------
+// 解析函数
+// ---------------------------------------------------------------------------
+/**
+ * 将资源引用解析为 Remotion staticFile URL
+ *
+ * @param ref - 注册表 key，或相对于 public/ 的路径（如 images/maps/world.png）
+ * @param category - 若提供，优先在 images[category] 中查找 key
+ */ function getImageSrc(ref, category) {
+    if (category) {
+        const registered = assets_images[category][ref];
+        if (registered) {
+            return (0,esm/* .staticFile */.dQ)(registered);
+        }
+    }
+    // 已是完整 public 相对路径
+    if (ref.includes("/")) {
+        return (0,esm/* .staticFile */.dQ)(ref);
+    }
+    // 默认当作 images/ 下的文件名
+    return (0,esm/* .staticFile */.dQ)(`${assetDirs.images}/${ref}`);
+}
+/** 任意 public 相对路径 → staticFile URL */ function assetUrl(publicPath) {
+    return staticFile(publicPath);
+}
+
+;// CONCATENATED MODULE: ./src/style/fonts.ts
 
 
-const MONO_FONT = "IBM Plex Mono";
+
+/**
+ * 加载 IBM Plex Mono（Regular + SemiBold）
+ * 在 Frame 首次渲染前执行；index.ts 也会提前 import 本文件
+ */ const MONO_FONT = typography.fontFamily;
 loadFont({
     family: MONO_FONT,
-    url: (0,esm/* .staticFile */.dQ)("fonts/IBMPlexMono-Regular.woff2"),
+    url: fontPaths.monoRegular,
     weight: "400",
     format: "woff2"
 });
 loadFont({
     family: MONO_FONT,
-    url: (0,esm/* .staticFile */.dQ)("fonts/IBMPlexMono-SemiBold.woff2"),
+    url: fontPaths.monoSemiBold,
     weight: "600",
     format: "woff2"
 });
@@ -19092,43 +20278,57 @@ loadFont({
 
 
 
+
 const Frame = ({ children })=>{
     return /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .AbsoluteFill */.H1, {
         className: "bg-paper text-ink",
         style: {
             fontFamily: MONO_FONT,
-            padding: 64,
-            backgroundImage: `
-          linear-gradient(
-            rgba(0,0,0,0.025) 1px,
-            transparent 1px
-          ),
-          linear-gradient(
-            90deg,
-            rgba(0,0,0,0.025) 1px,
-            transparent 1px
-          )
-        `,
-            backgroundSize: "48px 48px"
+            padding: spacing.framePadding,
+            backgroundImage: gridBackgroundImage(),
+            backgroundSize: `${layout.gridSize}px ${layout.gridSize}px`
+        },
+        children: children
+    });
+};
+
+;// CONCATENATED MODULE: ./src/components/BrutalCard.tsx
+
+
+
+const BrutalCard = ({ children, yellow = false, className = "" })=>{
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: `
+        border-2 border-ink
+        ${yellow ? "bg-yellow" : "bg-white"}
+        ${className}
+      `,
+        style: {
+            boxShadow: shadows.brutal
         },
         children: children
     });
 };
 
 ;// CONCATENATED MODULE: ./src/lib/motion.ts
+/**
+ * Core motion helpers — fade / slide / spring / reveal / count.
+ * Deterministic frame-driven animation only (no CSS transitions).
+ */ 
 
-const easeOut = esm/* .Easing.out */.GS.out(esm/* .Easing.cubic */.GS.cubic);
-const motion_progress = (frame, delay = 0, duration = 12)=>(0,esm/* .interpolate */.GW)(frame, [
-        delay,
-        delay + duration
+const tween = (frame, start = 0, duration = 15, easing = esm/* .Easing.out */.GS.out(esm/* .Easing.cubic */.GS.cubic))=>(0,esm/* .interpolate */.GW)(frame, [
+        start,
+        start + duration
     ], [
         0,
         1
     ], {
         extrapolateLeft: "clamp",
         extrapolateRight: "clamp",
-        easing: easeOut
+        easing
     });
+/** Alias used by former editorial scenes */ const motion_reveal = tween;
+const motion_progress = (frame, delay = 0, duration = theme_animation.entranceFrames)=>tween(frame, delay, duration);
 const fadeUp = (frame, delay = 0, distance = 18)=>{
     const p = motion_progress(frame, delay);
     return {
@@ -19143,9 +20343,7 @@ const fadeLeft = (frame, delay = 0, distance = 22)=>{
         transform: `translateX(${(1 - p) * distance}px)`
     };
 };
-const grow = (frame, delay = 0, duration = 18)=>{
-    return motion_progress(frame, delay, duration);
-};
+const grow = (frame, delay = 0, duration = animation.chartGrowFrames)=>motion_progress(frame, delay, duration);
 const scaleIn = (frame, delay = 0)=>{
     const p = motion_progress(frame, delay);
     return {
@@ -19159,8 +20357,207 @@ const highlight = (frame, delay = 0, duration = 20)=>{
         backgroundSize: `${p * 100}% 100%`
     };
 };
+const springIn = ({ frame, fps, delay = 0, damping = 17, stiffness = 145, mass = 0.8 })=>(0,esm/* .spring */.oz)({
+        fps,
+        frame: Math.max(0, frame - delay),
+        config: {
+            damping,
+            stiffness,
+            mass
+        }
+    });
+const floatY = (frame, amplitude = 5, period = 110, phase = 0)=>Math.sin((frame + phase) / period * Math.PI * 2) * amplitude;
+const floatX = (frame, amplitude = 4, period = 130, phase = 0)=>Math.cos((frame + phase) / period * Math.PI * 2) * amplitude;
+const countTo = (frame, value, start = 0, duration = 30)=>value * tween(frame, start, duration);
+const slideUpStyle = (frame, start = 0, distance = 18)=>{
+    const p = motion_reveal(frame, start);
+    return {
+        opacity: p,
+        transform: `translateY(${(1 - p) * distance}px)`
+    };
+};
+const motion_count = (frame, start, duration, from, to)=>interpolate(frame, [
+        start,
+        start + duration
+    ], [
+        from,
+        to
+    ], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+        easing: Easing.out(Easing.cubic)
+    });
+/** Shared ink palette for scenes that previously used editorialViz.palette */ const palette = {
+    paper: "#FAFAF7",
+    ink: "#111111",
+    yellow: "#FFD43B",
+    muted: "#737373",
+    soft: "#ECECE7",
+    soft2: "#E1E1DB",
+    white: "#FFFFFF"
+};
 
-;// CONCATENATED MODULE: ./src/scenes/BarChart.tsx
+;// CONCATENATED MODULE: ./src/scenes/metrics/HeroMetric.tsx
+
+
+
+
+
+
+const HeroMetric = ({ company = "AIRBNB", label = "FY2025 REVENUE", value = 11.1, suffix = "B", growth = 12 })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const number = (0,esm/* .interpolate */.GW)(frame, [
+        10,
+        50
+    ], [
+        0,
+        value
+    ], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp"
+    });
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)(Frame, {
+        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+            className: "flex h-full flex-col justify-between",
+            children: [
+                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                    className: "flex justify-between",
+                    style: fadeUp(frame, 0),
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "text-[28px] font-semibold",
+                            children: company
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: " border-2 border-ink bg-yellow px-5 py-2 text-[22px] font-semibold ",
+                            children: "2025"
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: " mb-4 text-[28px] tracking-[0.12em] text-muted ",
+                            style: fadeUp(frame, 5),
+                            children: label
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: " text-[150px] font-semibold leading-none tracking-[-0.07em] ",
+                            style: fadeUp(frame, 8),
+                            children: [
+                                "$",
+                                number.toFixed(1),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                    className: "text-[80px]",
+                                    children: suffix
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "mt-8 flex items-center gap-5",
+                            style: fadeUp(frame, 28),
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)(BrutalCard, {
+                                    yellow: true,
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: " px-6 py-4 text-[36px] font-semibold ",
+                                        children: [
+                                            "▲ +",
+                                            growth,
+                                            "%"
+                                        ]
+                                    })
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[26px] text-muted",
+                                    children: "year over year"
+                                })
+                            ]
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                    className: "text-[22px] text-muted",
+                    style: fadeUp(frame, 40),
+                    children: "SOURCE / COMPANY FILINGS"
+                })
+            ]
+        })
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/narrative/SideBySideCompare.tsx
+
+
+
+
+
+
+const companies = [
+    {
+        icon: "🏠",
+        name: "AIRBNB",
+        value: "$11.1B",
+        subtitle: "Revenue"
+    },
+    {
+        icon: "🏨",
+        name: "MARRIOTT",
+        value: "$25.1B",
+        subtitle: "Revenue"
+    }
+];
+const SideBySideCompare = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "text-[30px] text-muted",
+                style: fadeUp(frame, 0),
+                children: "REVENUE / FY2025"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: " mt-8 text-[64px] font-semibold tracking-[-0.05em] ",
+                style: fadeUp(frame, 4),
+                children: [
+                    "Same travel market.",
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("br", {}),
+                    "Very different machines."
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 grid grid-cols-2 gap-12",
+                children: companies.map((company, index)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        style: fadeUp(frame, 12 + index * 8),
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(BrutalCard, {
+                            yellow: index === 0,
+                            className: "p-10",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[72px]",
+                                    children: company.icon
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: " mt-5 text-[30px] font-semibold ",
+                                    children: company.name
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: " mt-16 text-[88px] font-semibold tracking-[-0.06em] ",
+                                    children: company.value
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: " mt-3 text-[24px] text-muted ",
+                                    children: company.subtitle
+                                })
+                            ]
+                        })
+                    }, company.name))
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/BarChart.tsx
 
 
 
@@ -19260,184 +20657,7 @@ const BarChart = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/components/BrutalCard.tsx
-
-
-const BrutalCard = ({ children, yellow = false, className = "" })=>{
-    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-        className: `
-        border-2 border-ink
-        ${yellow ? "bg-yellow" : "bg-white"}
-        ${className}
-      `,
-        style: {
-            boxShadow: "6px 6px 0 #111111"
-        },
-        children: children
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/BigNumber.tsx
-
-
-
-
-
-
-const BigNumber = ({ company = "AIRBNB", label = "FY2025 REVENUE", value = 11.1, suffix = "B", growth = 12 })=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    const number = (0,esm/* .interpolate */.GW)(frame, [
-        10,
-        50
-    ], [
-        0,
-        value
-    ], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp"
-    });
-    return /*#__PURE__*/ (0,jsx_runtime.jsx)(Frame, {
-        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-            className: "flex h-full flex-col justify-between",
-            children: [
-                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                    className: "flex justify-between",
-                    style: fadeUp(frame, 0),
-                    children: [
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                            className: "text-[28px] font-semibold",
-                            children: company
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                            className: " border-2 border-ink bg-yellow px-5 py-2 text-[22px] font-semibold ",
-                            children: "2025"
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                    children: [
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                            className: " mb-4 text-[28px] tracking-[0.12em] text-muted ",
-                            style: fadeUp(frame, 5),
-                            children: label
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                            className: " text-[150px] font-semibold leading-none tracking-[-0.07em] ",
-                            style: fadeUp(frame, 8),
-                            children: [
-                                "$",
-                                number.toFixed(1),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
-                                    className: "text-[80px]",
-                                    children: suffix
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                            className: "mt-8 flex items-center gap-5",
-                            style: fadeUp(frame, 28),
-                            children: [
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)(BrutalCard, {
-                                    yellow: true,
-                                    children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                                        className: " px-6 py-4 text-[36px] font-semibold ",
-                                        children: [
-                                            "▲ +",
-                                            growth,
-                                            "%"
-                                        ]
-                                    })
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: "text-[26px] text-muted",
-                                    children: "year over year"
-                                })
-                            ]
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                    className: "text-[22px] text-muted",
-                    style: fadeUp(frame, 40),
-                    children: "SOURCE / COMPANY FILINGS"
-                })
-            ]
-        })
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/Compare.tsx
-
-
-
-
-
-
-const companies = [
-    {
-        icon: "🏠",
-        name: "AIRBNB",
-        value: "$11.1B",
-        subtitle: "Revenue"
-    },
-    {
-        icon: "🏨",
-        name: "MARRIOTT",
-        value: "$25.1B",
-        subtitle: "Revenue"
-    }
-];
-const Compare = ()=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "text-[30px] text-muted",
-                style: fadeUp(frame, 0),
-                children: "REVENUE / FY2025"
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: " mt-8 text-[64px] font-semibold tracking-[-0.05em] ",
-                style: fadeUp(frame, 4),
-                children: [
-                    "Same travel market.",
-                    /*#__PURE__*/ (0,jsx_runtime.jsx)("br", {}),
-                    "Very different machines."
-                ]
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-16 grid grid-cols-2 gap-12",
-                children: companies.map((company, index)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                        style: fadeUp(frame, 12 + index * 8),
-                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(BrutalCard, {
-                            yellow: index === 0,
-                            className: "p-10",
-                            children: [
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: "text-[72px]",
-                                    children: company.icon
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: " mt-5 text-[30px] font-semibold ",
-                                    children: company.name
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: " mt-16 text-[88px] font-semibold tracking-[-0.06em] ",
-                                    children: company.value
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: " mt-3 text-[24px] text-muted ",
-                                    children: company.subtitle
-                                })
-                            ]
-                        })
-                    }, company.name))
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/Flow.tsx
+;// CONCATENATED MODULE: ./src/scenes/diagrams/flow/FlowDiagram.tsx
 
 
 
@@ -19464,7 +20684,7 @@ const Node = ({ emoji, title, subtitle, yellow = false })=>{
         ]
     });
 };
-const Flow = ()=>{
+const FlowDiagram = ()=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
@@ -19533,35 +20753,35 @@ const Flow = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/Ranking.tsx
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/RankingChart.tsx
 
 
 
 
 
-const Ranking_data = [
+const RankingChart_data = [
     {
-        name: "GOOGLE",
-        icon: "🔎",
-        value: 46
+        name: "BOOKING",
+        icon: "🌐",
+        value: 38
     },
     {
-        name: "META",
-        icon: "👥",
-        value: 23
+        name: "AIRBNB",
+        icon: "🏠",
+        value: 28
     },
     {
-        name: "AMAZON",
-        icon: "📦",
-        value: 14
+        name: "EXPEDIA",
+        icon: "✈️",
+        value: 18
     },
     {
-        name: "TIKTOK",
-        icon: "🎵",
-        value: 8
+        name: "MARRIOTT",
+        icon: "🏨",
+        value: 12
     }
 ];
-const Ranking = ()=>{
+const RankingChart = ()=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
@@ -19570,17 +20790,17 @@ const Ranking = ()=>{
                 children: [
                     /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                         className: " text-[28px] text-muted ",
-                        children: "DIGITAL AD MARKET"
+                        children: "DIGITAL TRAVEL BOOKINGS"
                     }),
                     /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                         className: " mt-3 text-[64px] font-semibold ",
-                        children: "The market is concentrated."
+                        children: "The online travel market is concentrated."
                     })
                 ]
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                 className: "mt-20 space-y-7",
-                children: Ranking_data.map((item, index)=>{
+                children: RankingChart_data.map((item, index)=>{
                     const p = (0,esm/* .interpolate */.GW)(frame, [
                         10 + index * 8,
                         30 + index * 8
@@ -19626,42 +20846,108 @@ const Ranking = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/DemoReel.tsx
+;// CONCATENATED MODULE: ./src/components/Tag.tsx
+
+
+const Tag = ({ children, yellow = false })=>{
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+        className: `
+        inline-block
+        border-2 border-ink
+        px-4 py-2
+        text-[22px]
+        font-semibold
+        ${yellow ? "bg-yellow" : "bg-white"}
+      `,
+        children: children
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/narrative/KeyTakeaway.tsx
+
+
+
+
+
+const KeyTakeaway = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const p = (0,esm/* .interpolate */.GW)(frame, [
+        5,
+        25
+    ], [
+        0,
+        1
+    ], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp"
+    });
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)(Frame, {
+        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+            className: "flex h-full flex-col justify-center",
+            children: [
+                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                    style: {
+                        opacity: p
+                    },
+                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Tag, {
+                        yellow: true,
+                        children: "THE KEY POINT"
+                    })
+                }),
+                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                    className: " mt-12 max-w-[1500px] text-[92px] font-semibold leading-[1.08] tracking-[-0.06em] ",
+                    style: {
+                        opacity: p,
+                        transform: `translateY(${(1 - p) * 25}px)`
+                    },
+                    children: "Airbnb does not need to build a hotel to add another room."
+                })
+            ]
+        })
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/media/QuoteCard.tsx
 
 
 
 
 
 
-
-
-
-const DemoReel = ()=>{
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(esm/* .AbsoluteFill */.H1, {
+const QuoteCard = ({ quote = "We believe travel is fundamentally changing.", author = "BRIAN CHESKY", role = "CEO / AIRBNB" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Sequence */.gd, {
-                durationInFrames: (/* inlined export .SCENE_DURATION */150),
-                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(BigNumber, {})
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-8",
+                style: fadeUp(frame, 0),
+                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Tag, {
+                    yellow: true,
+                    children: "QUOTE"
+                })
             }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Sequence */.gd, {
-                from: (/* inlined export .SCENE_DURATION */150),
-                durationInFrames: (/* inlined export .SCENE_DURATION */150),
-                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Compare, {})
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: " mt-24 max-w-[1550px] text-[76px] font-semibold leading-[1.15] tracking-[-0.045em] ",
+                style: fadeUp(frame, 8),
+                children: [
+                    "“",
+                    quote,
+                    "”"
+                ]
             }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Sequence */.gd, {
-                from: (/* inlined export .SCENE_DURATION */150) * 2,
-                durationInFrames: (/* inlined export .SCENE_DURATION */150),
-                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(BarChart, {})
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Sequence */.gd, {
-                from: (/* inlined export .SCENE_DURATION */150) * 3,
-                durationInFrames: (/* inlined export .SCENE_DURATION */150),
-                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Flow, {})
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Sequence */.gd, {
-                from: (/* inlined export .SCENE_DURATION */150) * 4,
-                durationInFrames: (/* inlined export .SCENE_DURATION */150),
-                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Ranking, {})
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-16 border-l-[8px] border-yellow pl-8",
+                style: fadeUp(frame, 25),
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "text-[30px] font-semibold",
+                        children: author
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "mt-2 text-[22px] text-muted",
+                        children: role
+                    })
+                ]
             })
         ]
     });
@@ -19672,22 +20958,23 @@ const DemoReel = ()=>{
 
 
 
+
 const SceneHeader = ({ eyebrow, title, subtitle })=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
         children: [
             eyebrow && /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "text-[26px] tracking-[0.12em] text-muted",
+                className: textClasses.eyebrow,
                 style: fadeUp(frame, 0),
                 children: eyebrow
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-3 max-w-[1500px] text-[62px] font-semibold leading-[1.05] tracking-[-0.05em]",
+                className: `mt-3 max-w-[1500px] ${textClasses.title}`,
                 style: fadeUp(frame, 4),
                 children: title
             }),
             subtitle && /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-4 max-w-[1300px] text-[26px] leading-[1.4] text-muted",
+                className: `mt-4 max-w-[1300px] ${textClasses.subtitle}`,
                 style: fadeUp(frame, 10),
                 children: subtitle
             })
@@ -19695,14 +20982,712 @@ const SceneHeader = ({ eyebrow, title, subtitle })=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/BeforeAfter.tsx
+;// CONCATENATED MODULE: ./src/components/Source.tsx
+
+
+
+
+
+const Source = ({ children })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+        className: `absolute text-muted ${textClasses.source}`,
+        style: {
+            ...fadeUp(frame, 45),
+            bottom: spacing.sourceBottom,
+            left: spacing.framePadding
+        },
+        children: [
+            "SOURCE / ",
+            children
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/LineChart.tsx
 
 
 
 
 
 
-const BeforeAfter = ()=>{
+
+const DEFAULT_DATA = [
+    {
+        label: "2020",
+        value: 3.4
+    },
+    {
+        label: "2021",
+        value: 6.0
+    },
+    {
+        label: "2022",
+        value: 8.4
+    },
+    {
+        label: "2023",
+        value: 9.9
+    },
+    {
+        label: "2024",
+        value: 11.1
+    }
+];
+const LineChart = ({ eyebrow = "AIRBNB / REVENUE", title = "Growth resumed after the pandemic.", data = DEFAULT_DATA })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const lineProgress = (0,esm/* .interpolate */.GW)(frame, [
+        15,
+        65
+    ], [
+        0,
+        1
+    ], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp"
+    });
+    const width = 1500;
+    const height = 520;
+    const max = Math.max(...data.map((x)=>x.value));
+    const min = Math.min(...data.map((x)=>x.value));
+    const points = data.map((item, index)=>{
+        const x = index / Math.max(1, data.length - 1) * width;
+        const normalized = (item.value - min) / Math.max(0.0001, max - min);
+        const y = height - 50 - normalized * (height - 100);
+        return {
+            ...item,
+            x,
+            y
+        };
+    });
+    const path = points.map((p, i)=>`${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                    width: width,
+                    height: height,
+                    viewBox: `0 0 ${width} ${height}`,
+                    children: [
+                        [
+                            0.25,
+                            0.5,
+                            0.75
+                        ].map((ratio)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                x1: 0,
+                                x2: width,
+                                y1: height * ratio,
+                                y2: height * ratio,
+                                stroke: chart.colors.primary,
+                                strokeOpacity: chart.guideOpacity,
+                                strokeWidth: 2
+                            }, ratio)),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                            d: path,
+                            fill: "none",
+                            stroke: chart.colors.primary,
+                            strokeWidth: chart.strokeWidth,
+                            strokeLinecap: chart.strokeLinecap,
+                            strokeLinejoin: "miter",
+                            strokeDasharray: 4000,
+                            strokeDashoffset: 4000 * (1 - lineProgress)
+                        }),
+                        points.map((point, index)=>{
+                            const dotProgress = (0,esm/* .interpolate */.GW)(frame, [
+                                25 + index * 6,
+                                35 + index * 6
+                            ], [
+                                0,
+                                1
+                            ], {
+                                extrapolateLeft: "clamp",
+                                extrapolateRight: "clamp"
+                            });
+                            const isLatest = index === points.length - 1;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                opacity: dotProgress,
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                        cx: point.x,
+                                        cy: point.y,
+                                        r: chart.dotRadius,
+                                        fill: isLatest ? chart.colors.emphasis : chart.colors.primary,
+                                        stroke: chart.colors.primary,
+                                        strokeWidth: chart.dotStrokeWidth
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                                        x: point.x,
+                                        y: point.y - 25,
+                                        textAnchor: "middle",
+                                        fontSize: 24,
+                                        fontFamily: typography.fontFamily,
+                                        fontWeight: typography.weight.semibold,
+                                        children: [
+                                            "$",
+                                            point.value,
+                                            "B"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                        x: point.x,
+                                        y: height - 10,
+                                        textAnchor: "middle",
+                                        fontSize: 21,
+                                        fontFamily: typography.fontFamily,
+                                        fill: chart.colors.label,
+                                        children: point.label
+                                    })
+                                ]
+                            }, point.label);
+                        })
+                    ]
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: "COMPANY FILINGS"
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/CandlestickChart.tsx
+
+
+
+
+
+const CandlestickChart_data = [
+    {
+        open: 100,
+        close: 112,
+        high: 118,
+        low: 95
+    },
+    {
+        open: 112,
+        close: 108,
+        high: 121,
+        low: 104
+    },
+    {
+        open: 108,
+        close: 125,
+        high: 129,
+        low: 105
+    },
+    {
+        open: 125,
+        close: 138,
+        high: 144,
+        low: 121
+    },
+    {
+        open: 138,
+        close: 132,
+        high: 146,
+        low: 128
+    }
+];
+const CandlestickChart = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const min = 90;
+    const max = 150;
+    const chartHeight = 500;
+    const Y = (value)=>chartHeight - (value - min) / (max - min) * chartHeight;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "ABNB STOCK",
+                title: "Investors repriced Airbnb through the cycle."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 flex h-[520px] items-end justify-center gap-20 border-b-2 border-ink",
+                children: CandlestickChart_data.map((candle, index)=>{
+                    const p = (0,esm/* .interpolate */.GW)(frame, [
+                        10 + index * 7,
+                        24 + index * 7
+                    ], [
+                        0,
+                        1
+                    ], {
+                        extrapolateLeft: "clamp",
+                        extrapolateRight: "clamp"
+                    });
+                    const rising = candle.close >= candle.open;
+                    const top = Y(Math.max(candle.open, candle.close));
+                    const bottom = Y(Math.min(candle.open, candle.close));
+                    const bodyHeight = Math.abs(bottom - top);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "relative h-[500px] w-[60px]",
+                        style: {
+                            opacity: p
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "absolute left-1/2 w-[4px] -translate-x-1/2 bg-ink",
+                                style: {
+                                    top: Y(candle.high),
+                                    height: Y(candle.low) - Y(candle.high)
+                                }
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: `
+                  absolute
+                  left-0
+                  w-full
+                  border-2 border-ink
+                  ${rising ? "bg-yellow" : "bg-white"}
+                `,
+                                style: {
+                                    top,
+                                    height: Math.max(8, bodyHeight)
+                                }
+                            })
+                        ]
+                    }, index);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/DonutChart.tsx
+
+
+
+
+
+
+const DonutChart = ({ value = 72 })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const p = (0,esm/* .interpolate */.GW)(frame, [
+        15,
+        55
+    ], [
+        0,
+        value / 100
+    ], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp"
+    });
+    const r = 190;
+    const circumference = 2 * Math.PI * r;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "REVENUE MIX",
+                title: "Stays still dominate Airbnb revenue."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-16 flex items-center gap-28",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                        width: 500,
+                        height: 500,
+                        viewBox: "0 0 500 500",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                cx: 250,
+                                cy: 250,
+                                r: r,
+                                fill: "none",
+                                stroke: chart.colors.track,
+                                strokeWidth: chart.donutStrokeWidth
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                cx: 250,
+                                cy: 250,
+                                r: r,
+                                fill: "none",
+                                stroke: chart.colors.emphasis,
+                                strokeWidth: chart.donutStrokeWidth,
+                                strokeLinecap: "butt",
+                                strokeDasharray: circumference,
+                                strokeDashoffset: circumference * (1 - p),
+                                transform: "rotate(-90 250 250)"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                                x: 250,
+                                y: 270,
+                                textAnchor: "middle",
+                                fontSize: 90,
+                                fontWeight: typography.weight.semibold,
+                                fontFamily: typography.fontFamily,
+                                children: [
+                                    Math.round(p * 100),
+                                    "%"
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[34px] font-semibold",
+                                children: "STAYS & NIGHTS"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mt-5 max-w-[650px] text-[28px] leading-[1.5] text-muted",
+                                children: "Short-term rentals remain the core revenue engine."
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/WaterfallChart.tsx
+
+
+
+
+
+const WaterfallChart_data = [
+    {
+        label: "REVENUE",
+        value: 100,
+        type: "start"
+    },
+    {
+        label: "COGS",
+        value: -25,
+        type: "negative"
+    },
+    {
+        label: "SALES",
+        value: -15,
+        type: "negative"
+    },
+    {
+        label: "R&D",
+        value: -12,
+        type: "negative"
+    },
+    {
+        label: "PROFIT",
+        value: 48,
+        type: "end"
+    }
+];
+const WaterfallChart = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "UNIT ECONOMICS",
+                title: "From $100 of revenue to $48 of profit."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-24 flex h-[550px] items-end gap-12 border-b-2 border-ink",
+                children: WaterfallChart_data.map((item, index)=>{
+                    const p = (0,esm/* .interpolate */.GW)(frame, [
+                        10 + index * 8,
+                        32 + index * 8
+                    ], [
+                        0,
+                        1
+                    ], {
+                        extrapolateLeft: "clamp",
+                        extrapolateRight: "clamp"
+                    });
+                    const h = Math.abs(item.value) * 4.5 * p;
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "flex flex-1 flex-col items-center justify-end",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "mb-3 text-[25px] font-semibold",
+                                children: [
+                                    item.value > 0 ? "" : "−",
+                                    "$",
+                                    Math.abs(item.value)
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: `
+                  w-full
+                  border-2 border-ink
+                  ${item.type === "negative" ? "bg-white" : "bg-yellow"}
+                `,
+                                style: {
+                                    height: h
+                                }
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mt-4 min-h-[50px] text-center text-[19px] text-muted",
+                                children: item.label
+                            })
+                        ]
+                    }, item.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/tables/MetricTable.tsx
+
+
+
+
+
+const MetricTable_rows = [
+    [
+        "Airbnb",
+        "$11.1B",
+        "23%",
+        "$92B"
+    ],
+    [
+        "Booking",
+        "$23.7B",
+        "31%",
+        "$175B"
+    ],
+    [
+        "Marriott",
+        "$25.1B",
+        "12%",
+        "$75B"
+    ],
+    [
+        "Hilton",
+        "$11.7B",
+        "18%",
+        "$52B"
+    ]
+];
+const MetricTable = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "COMPETITORS",
+                title: "Same market. Different economics."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-16 border-2 border-ink",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: " grid grid-cols-[1.6fr_1fr_1fr_1fr] bg-yellow text-[22px] font-semibold ",
+                        children: [
+                            "COMPANY",
+                            "REVENUE",
+                            "MARGIN",
+                            "VALUE"
+                        ].map((x)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "border-r-2 border-ink px-7 py-5 last:border-r-0",
+                                children: x
+                            }, x))
+                    }),
+                    MetricTable_rows.map((row, index)=>{
+                        const p = (0,esm/* .interpolate */.GW)(frame, [
+                            12 + index * 8,
+                            24 + index * 8
+                        ], [
+                            0,
+                            1
+                        ], {
+                            extrapolateLeft: "clamp",
+                            extrapolateRight: "clamp"
+                        });
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: " grid grid-cols-[1.6fr_1fr_1fr_1fr] border-t-2 border-ink bg-white text-[25px] ",
+                            style: {
+                                opacity: p
+                            },
+                            children: row.map((cell, cellIndex)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: `
+                    border-r-2 border-ink
+                    px-7 py-6
+                    last:border-r-0
+                    ${cellIndex === 0 ? "font-semibold" : ""}
+                  `,
+                                    children: cell
+                                }, cellIndex))
+                        }, row[0]);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/metrics/MetricGrid.tsx
+
+
+
+
+
+
+const MetricGrid_data = [
+    {
+        icon: "💰",
+        label: "REVENUE",
+        value: "$11.1B",
+        change: "+12%"
+    },
+    {
+        icon: "📈",
+        label: "NET INCOME",
+        value: "$2.6B",
+        change: "+18%"
+    },
+    {
+        icon: "👤",
+        label: "ACTIVE USERS",
+        value: "220M",
+        change: "+9%"
+    },
+    {
+        icon: "⚙️",
+        label: "MARGIN",
+        value: "23%",
+        change: "+3pt"
+    }
+];
+const MetricGrid = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "FY2025",
+                title: "The company in four numbers."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 grid grid-cols-2 gap-8",
+                children: MetricGrid_data.map((item, index)=>{
+                    const p = (0,esm/* .interpolate */.GW)(frame, [
+                        10 + index * 6,
+                        24 + index * 6
+                    ], [
+                        0,
+                        1
+                    ], {
+                        extrapolateLeft: "clamp",
+                        extrapolateRight: "clamp"
+                    });
+                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        style: {
+                            opacity: p,
+                            transform: `translateY(${(1 - p) * 18}px)`
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(BrutalCard, {
+                            yellow: index === 0,
+                            className: "p-8",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "flex justify-between",
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "text-[44px]",
+                                            children: item.icon
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "text-[24px] font-semibold",
+                                            children: item.change
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-8 text-[22px] text-muted",
+                                    children: item.label
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-2 text-[72px] font-semibold tracking-[-0.06em]",
+                                    children: item.value
+                                })
+                            ]
+                        })
+                    }, item.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/narrative/BulletReveal.tsx
+
+
+
+
+
+const bullets = [
+    {
+        icon: "🏠",
+        text: "Does not own most inventory."
+    },
+    {
+        icon: "💻",
+        text: "Runs a software marketplace."
+    },
+    {
+        icon: "💰",
+        text: "Takes a fee from transactions."
+    },
+    {
+        icon: "🌍",
+        text: "Scales internationally."
+    }
+];
+const BulletReveal = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "WHY IT MATTERS",
+                title: "Four ideas explain the entire business."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 space-y-5",
+                children: bullets.map((bullet, index)=>{
+                    const p = (0,esm/* .interpolate */.GW)(frame, [
+                        10 + index * 12,
+                        22 + index * 12
+                    ], [
+                        0,
+                        1
+                    ], {
+                        extrapolateLeft: "clamp",
+                        extrapolateRight: "clamp"
+                    });
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: " flex items-center gap-8 border-b-2 border-ink py-6 ",
+                        style: {
+                            opacity: p,
+                            transform: `translateX(${(1 - p) * 25}px)`
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[52px]",
+                                children: bullet.icon
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[35px] font-semibold",
+                                children: bullet.text
+                            })
+                        ]
+                    }, bullet.text);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/narrative/BeforeAfterCompare.tsx
+
+
+
+
+
+
+const BeforeAfterCompare = ()=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     const left = (0,esm/* .interpolate */.GW)(frame, [
         10,
@@ -19804,411 +21789,7 @@ const BeforeAfter = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/BulletReveal.tsx
-
-
-
-
-
-const bullets = [
-    {
-        icon: "🏠",
-        text: "Does not own most inventory."
-    },
-    {
-        icon: "💻",
-        text: "Runs a software marketplace."
-    },
-    {
-        icon: "💰",
-        text: "Takes a fee from transactions."
-    },
-    {
-        icon: "🌍",
-        text: "Scales internationally."
-    }
-];
-const BulletReveal = ()=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
-                eyebrow: "WHY IT MATTERS",
-                title: "Four ideas explain the entire business."
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-16 space-y-5",
-                children: bullets.map((bullet, index)=>{
-                    const p = (0,esm/* .interpolate */.GW)(frame, [
-                        10 + index * 12,
-                        22 + index * 12
-                    ], [
-                        0,
-                        1
-                    ], {
-                        extrapolateLeft: "clamp",
-                        extrapolateRight: "clamp"
-                    });
-                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                        className: " flex items-center gap-8 border-b-2 border-ink py-6 ",
-                        style: {
-                            opacity: p,
-                            transform: `translateX(${(1 - p) * 25}px)`
-                        },
-                        children: [
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: "text-[52px]",
-                                children: bullet.icon
-                            }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: "text-[35px] font-semibold",
-                                children: bullet.text
-                            })
-                        ]
-                    }, bullet.text);
-                })
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/components/Tag.tsx
-
-
-const Tag = ({ children, yellow = false })=>{
-    return /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
-        className: `
-        inline-block
-        border-2 border-ink
-        px-4 py-2
-        text-[22px]
-        font-semibold
-        ${yellow ? "bg-yellow" : "bg-white"}
-      `,
-        children: children
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/Callout.tsx
-
-
-
-
-
-const Callout = ()=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    const p = (0,esm/* .interpolate */.GW)(frame, [
-        5,
-        25
-    ], [
-        0,
-        1
-    ], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp"
-    });
-    return /*#__PURE__*/ (0,jsx_runtime.jsx)(Frame, {
-        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-            className: "flex h-full flex-col justify-center",
-            children: [
-                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                    style: {
-                        opacity: p
-                    },
-                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Tag, {
-                        yellow: true,
-                        children: "THE KEY POINT"
-                    })
-                }),
-                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                    className: " mt-12 max-w-[1500px] text-[92px] font-semibold leading-[1.08] tracking-[-0.06em] ",
-                    style: {
-                        opacity: p,
-                        transform: `translateY(${(1 - p) * 25}px)`
-                    },
-                    children: "Airbnb does not need to build a hotel to add another room."
-                })
-            ]
-        })
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/Candlestick.tsx
-
-
-
-
-
-const Candlestick_data = [
-    {
-        open: 100,
-        close: 112,
-        high: 118,
-        low: 95
-    },
-    {
-        open: 112,
-        close: 108,
-        high: 121,
-        low: 104
-    },
-    {
-        open: 108,
-        close: 125,
-        high: 129,
-        low: 105
-    },
-    {
-        open: 125,
-        close: 138,
-        high: 144,
-        low: 121
-    },
-    {
-        open: 138,
-        close: 132,
-        high: 146,
-        low: 128
-    }
-];
-const Candlestick = ()=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    const min = 90;
-    const max = 150;
-    const chartHeight = 500;
-    const Y = (value)=>chartHeight - (value - min) / (max - min) * chartHeight;
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
-                eyebrow: "MARKET",
-                title: "Investors repriced the company quickly."
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-16 flex h-[520px] items-end justify-center gap-20 border-b-2 border-ink",
-                children: Candlestick_data.map((candle, index)=>{
-                    const p = (0,esm/* .interpolate */.GW)(frame, [
-                        10 + index * 7,
-                        24 + index * 7
-                    ], [
-                        0,
-                        1
-                    ], {
-                        extrapolateLeft: "clamp",
-                        extrapolateRight: "clamp"
-                    });
-                    const rising = candle.close >= candle.open;
-                    const top = Y(Math.max(candle.open, candle.close));
-                    const bottom = Y(Math.min(candle.open, candle.close));
-                    const bodyHeight = Math.abs(bottom - top);
-                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                        className: "relative h-[500px] w-[60px]",
-                        style: {
-                            opacity: p
-                        },
-                        children: [
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: "absolute left-1/2 w-[4px] -translate-x-1/2 bg-ink",
-                                style: {
-                                    top: Y(candle.high),
-                                    height: Y(candle.low) - Y(candle.high)
-                                }
-                            }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: `
-                  absolute
-                  left-0
-                  w-full
-                  border-2 border-ink
-                  ${rising ? "bg-yellow" : "bg-white"}
-                `,
-                                style: {
-                                    top,
-                                    height: Math.max(8, bodyHeight)
-                                }
-                            })
-                        ]
-                    }, index);
-                })
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/DataTable.tsx
-
-
-
-
-
-const rows = [
-    [
-        "Airbnb",
-        "$11.1B",
-        "23%",
-        "$92B"
-    ],
-    [
-        "Booking",
-        "$23.7B",
-        "31%",
-        "$175B"
-    ],
-    [
-        "Marriott",
-        "$25.1B",
-        "12%",
-        "$75B"
-    ],
-    [
-        "Hilton",
-        "$11.7B",
-        "18%",
-        "$52B"
-    ]
-];
-const DataTable = ()=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
-                eyebrow: "COMPETITORS",
-                title: "Same market. Different economics."
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: "mt-16 border-2 border-ink",
-                children: [
-                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                        className: " grid grid-cols-[1.6fr_1fr_1fr_1fr] bg-yellow text-[22px] font-semibold ",
-                        children: [
-                            "COMPANY",
-                            "REVENUE",
-                            "MARGIN",
-                            "VALUE"
-                        ].map((x)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: "border-r-2 border-ink px-7 py-5 last:border-r-0",
-                                children: x
-                            }, x))
-                    }),
-                    rows.map((row, index)=>{
-                        const p = (0,esm/* .interpolate */.GW)(frame, [
-                            12 + index * 8,
-                            24 + index * 8
-                        ], [
-                            0,
-                            1
-                        ], {
-                            extrapolateLeft: "clamp",
-                            extrapolateRight: "clamp"
-                        });
-                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                            className: " grid grid-cols-[1.6fr_1fr_1fr_1fr] border-t-2 border-ink bg-white text-[25px] ",
-                            style: {
-                                opacity: p
-                            },
-                            children: row.map((cell, cellIndex)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: `
-                    border-r-2 border-ink
-                    px-7 py-6
-                    last:border-r-0
-                    ${cellIndex === 0 ? "font-semibold" : ""}
-                  `,
-                                    children: cell
-                                }, cellIndex))
-                        }, row[0]);
-                    })
-                ]
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/Donut.tsx
-
-
-
-
-
-const Donut = ({ value = 72 })=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    const p = (0,esm/* .interpolate */.GW)(frame, [
-        15,
-        55
-    ], [
-        0,
-        value / 100
-    ], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp"
-    });
-    const r = 190;
-    const circumference = 2 * Math.PI * r;
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
-                eyebrow: "REVENUE MIX",
-                title: "Most revenue comes from one segment."
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: "mt-16 flex items-center gap-28",
-                children: [
-                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
-                        width: 500,
-                        height: 500,
-                        viewBox: "0 0 500 500",
-                        children: [
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
-                                cx: 250,
-                                cy: 250,
-                                r: r,
-                                fill: "none",
-                                stroke: "#ECECE7",
-                                strokeWidth: 55
-                            }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
-                                cx: 250,
-                                cy: 250,
-                                r: r,
-                                fill: "none",
-                                stroke: "#FFD43B",
-                                strokeWidth: 55,
-                                strokeLinecap: "butt",
-                                strokeDasharray: circumference,
-                                strokeDashoffset: circumference * (1 - p),
-                                transform: "rotate(-90 250 250)"
-                            }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
-                                x: 250,
-                                y: 270,
-                                textAnchor: "middle",
-                                fontSize: 90,
-                                fontWeight: 600,
-                                fontFamily: "IBM Plex Mono",
-                                children: [
-                                    Math.round(p * 100),
-                                    "%"
-                                ]
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                        children: [
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: "text-[34px] font-semibold",
-                                children: "CORE BUSINESS"
-                            }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: "mt-5 max-w-[650px] text-[28px] leading-[1.5] text-muted",
-                                children: "The business remains heavily concentrated in its largest revenue segment."
-                            })
-                        ]
-                    })
-                ]
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/Equation.tsx
+;// CONCATENATED MODULE: ./src/scenes/narrative/EquationCards.tsx
 
 
 
@@ -20233,7 +21814,7 @@ const pieces = [
         text: "COST"
     }
 ];
-const Equation = ()=>{
+const EquationCards = ()=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
@@ -20283,13 +21864,13 @@ const Equation = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/Funnel.tsx
+;// CONCATENATED MODULE: ./src/scenes/diagrams/flow/FunnelDiagram.tsx
 
 
 
 
 
-const stages = [
+const FunnelDiagram_stages = [
     {
         label: "VISITORS",
         value: "100M",
@@ -20311,7 +21892,7 @@ const stages = [
         width: 35
     }
 ];
-const Funnel = ()=>{
+const FunnelDiagram = ()=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
@@ -20321,7 +21902,7 @@ const Funnel = ()=>{
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                 className: "mt-12 space-y-4",
-                children: stages.map((stage, index)=>{
+                children: FunnelDiagram_stages.map((stage, index)=>{
                     const p = (0,esm/* .interpolate */.GW)(frame, [
                         10 + index * 8,
                         28 + index * 8
@@ -20344,7 +21925,7 @@ const Funnel = ()=>{
                   justify-between
                   border-2 border-ink
                   px-8
-                  ${index === stages.length - 1 ? "bg-yellow" : "bg-white"}
+                  ${index === FunnelDiagram_stages.length - 1 ? "bg-yellow" : "bg-white"}
                 `,
                             children: [
                                 /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
@@ -20364,7 +21945,7 @@ const Funnel = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/ImageCard.tsx
+;// CONCATENATED MODULE: ./src/scenes/media/ImageCard.tsx
 
 
 
@@ -20372,8 +21953,10 @@ const Funnel = ()=>{
 
 
 
-const ImageCard = ({ publicPath, title = "BRIAN CHESKY", subtitle = "Co-founder & CEO / Airbnb", emoji = "👤" })=>{
+
+const ImageCard = ({ src, category = "photos", publicPath, title = "BRIAN CHESKY", subtitle = "Co-founder & CEO / Airbnb", emoji = "👤" })=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const imageRef = src ?? publicPath;
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
@@ -20388,8 +21971,8 @@ const ImageCard = ({ publicPath, title = "BRIAN CHESKY", subtitle = "Co-founder 
                     children: [
                         /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                             className: "h-[500px] overflow-hidden bg-soft",
-                            children: publicPath ? /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Img */.E9, {
-                                src: (0,esm/* .staticFile */.dQ)(publicPath),
+                            children: imageRef ? /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Img */.E9, {
+                                src: getImageSrc(imageRef, category),
                                 className: "h-full w-full object-cover",
                                 style: {
                                     transform: `scale(${1.05 - Math.min(frame, 80) / 1600})`
@@ -20419,296 +22002,37 @@ const ImageCard = ({ publicPath, title = "BRIAN CHESKY", subtitle = "Co-founder 
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/KPIGrid.tsx
+;// CONCATENATED MODULE: ./src/scenes/media/LogoCloud.tsx
 
 
 
 
 
 
-const KPIGrid_data = [
-    {
-        icon: "💰",
-        label: "REVENUE",
-        value: "$11.1B",
-        change: "+12%"
-    },
-    {
-        icon: "📈",
-        label: "NET INCOME",
-        value: "$2.6B",
-        change: "+18%"
-    },
-    {
-        icon: "👤",
-        label: "ACTIVE USERS",
-        value: "220M",
-        change: "+9%"
-    },
-    {
-        icon: "⚙️",
-        label: "MARGIN",
-        value: "23%",
-        change: "+3pt"
-    }
-];
-const KPIGrid = ()=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
-                eyebrow: "FY2025",
-                title: "The company in four numbers."
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-16 grid grid-cols-2 gap-8",
-                children: KPIGrid_data.map((item, index)=>{
-                    const p = (0,esm/* .interpolate */.GW)(frame, [
-                        10 + index * 6,
-                        24 + index * 6
-                    ], [
-                        0,
-                        1
-                    ], {
-                        extrapolateLeft: "clamp",
-                        extrapolateRight: "clamp"
-                    });
-                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                        style: {
-                            opacity: p,
-                            transform: `translateY(${(1 - p) * 18}px)`
-                        },
-                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(BrutalCard, {
-                            yellow: index === 0,
-                            className: "p-8",
-                            children: [
-                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                                    className: "flex justify-between",
-                                    children: [
-                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                            className: "text-[44px]",
-                                            children: item.icon
-                                        }),
-                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                            className: "text-[24px] font-semibold",
-                                            children: item.change
-                                        })
-                                    ]
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: "mt-8 text-[22px] text-muted",
-                                    children: item.label
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                    className: "mt-2 text-[72px] font-semibold tracking-[-0.06em]",
-                                    children: item.value
-                                })
-                            ]
-                        })
-                    }, item.label);
-                })
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/components/Source.tsx
-
-
-
-
-const Source = ({ children })=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-        className: "absolute bottom-[50px] left-[64px] text-[19px] tracking-[0.08em] text-muted",
-        style: fadeUp(frame, 45),
-        children: [
-            "SOURCE / ",
-            children
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/LineChart.tsx
-
-
-
-
-
-
-const DEFAULT_DATA = [
-    {
-        label: "2020",
-        value: 3.4
-    },
-    {
-        label: "2021",
-        value: 6.0
-    },
-    {
-        label: "2022",
-        value: 8.4
-    },
-    {
-        label: "2023",
-        value: 9.9
-    },
-    {
-        label: "2024",
-        value: 11.1
-    }
-];
-const LineChart = ({ eyebrow = "AIRBNB / REVENUE", title = "Growth resumed after the pandemic.", data = DEFAULT_DATA })=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    const progress = (0,esm/* .interpolate */.GW)(frame, [
-        15,
-        65
-    ], [
-        0,
-        1
-    ], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp"
-    });
-    const width = 1500;
-    const height = 520;
-    const max = Math.max(...data.map((x)=>x.value));
-    const min = Math.min(...data.map((x)=>x.value));
-    const points = data.map((item, index)=>{
-        const x = index / Math.max(1, data.length - 1) * width;
-        const normalized = (item.value - min) / Math.max(0.0001, max - min);
-        const y = height - 50 - normalized * (height - 100);
-        return {
-            ...item,
-            x,
-            y
-        };
-    });
-    const path = points.map((p, i)=>`${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
-                eyebrow: eyebrow,
-                title: title
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-16",
-                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
-                    width: width,
-                    height: height,
-                    viewBox: `0 0 ${width} ${height}`,
-                    children: [
-                        [
-                            0.25,
-                            0.5,
-                            0.75
-                        ].map((ratio)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
-                                x1: 0,
-                                x2: width,
-                                y1: height * ratio,
-                                y2: height * ratio,
-                                stroke: "#111",
-                                strokeOpacity: 0.12,
-                                strokeWidth: 2
-                            }, ratio)),
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
-                            d: path,
-                            fill: "none",
-                            stroke: "#111",
-                            strokeWidth: 8,
-                            strokeLinecap: "square",
-                            strokeLinejoin: "miter",
-                            strokeDasharray: 4000,
-                            strokeDashoffset: 4000 * (1 - progress)
-                        }),
-                        points.map((point, index)=>{
-                            const dotProgress = (0,esm/* .interpolate */.GW)(frame, [
-                                25 + index * 6,
-                                35 + index * 6
-                            ], [
-                                0,
-                                1
-                            ], {
-                                extrapolateLeft: "clamp",
-                                extrapolateRight: "clamp"
-                            });
-                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
-                                opacity: dotProgress,
-                                children: [
-                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
-                                        cx: point.x,
-                                        cy: point.y,
-                                        r: 10,
-                                        fill: index === points.length - 1 ? "#FFD43B" : "#111111",
-                                        stroke: "#111",
-                                        strokeWidth: 3
-                                    }),
-                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
-                                        x: point.x,
-                                        y: point.y - 25,
-                                        textAnchor: "middle",
-                                        fontSize: 24,
-                                        fontFamily: "IBM Plex Mono",
-                                        fontWeight: 600,
-                                        children: [
-                                            "$",
-                                            point.value,
-                                            "B"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
-                                        x: point.x,
-                                        y: height - 10,
-                                        textAnchor: "middle",
-                                        fontSize: 21,
-                                        fontFamily: "IBM Plex Mono",
-                                        fill: "#737373",
-                                        children: point.label
-                                    })
-                                ]
-                            }, point.label);
-                        })
-                    ]
-                })
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
-                children: "COMPANY FILINGS"
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/LogoCloud.tsx
-
-
-
-
-
-
-const items = [
+const LogoCloud_items = [
     [
-        "🤖",
-        "OPENAI"
+        "🌐",
+        "BOOKING"
     ],
     [
-        "🧠",
-        "ANTHROPIC"
+        "🏠",
+        "AIRBNB"
     ],
     [
-        "🔎",
-        "GOOGLE"
+        "✈️",
+        "EXPEDIA"
     ],
     [
-        "👥",
-        "META"
+        "🏨",
+        "MARRIOTT"
     ],
     [
-        "⚡",
-        "XAI"
+        "🏖️",
+        "VRBO"
     ],
     [
-        "☁️",
-        "AWS"
+        "🛎️",
+        "HILTON"
     ]
 ];
 const LogoCloud = ()=>{
@@ -20717,11 +22041,11 @@ const LogoCloud = ()=>{
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
                 eyebrow: "COMPETITION",
-                title: "Everyone wants a piece of the market."
+                title: "Everyone competes for the same traveler."
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                 className: "mt-20 grid grid-cols-3 gap-8",
-                children: items.map(([icon, name], index)=>{
+                children: LogoCloud_items.map(([icon, name], index)=>{
                     const p = (0,esm/* .interpolate */.GW)(frame, [
                         8 + index * 5,
                         20 + index * 5
@@ -20757,14 +22081,16 @@ const LogoCloud = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/MapCallout.tsx
+;// CONCATENATED MODULE: ./src/scenes/media/MapCallout.tsx
 
 
 
 
 
-const MapCallout = ({ publicPath, x = 76, y = 43, label = "TOKYO" })=>{
+
+const MapCallout = ({ src, category = "maps", publicPath, emoji = "🌍", x = 76, y = 43, label = "TOKYO" })=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const imageRef = src ?? publicPath;
     const p = (0,esm/* .interpolate */.GW)(frame, [
         20,
         35
@@ -20784,12 +22110,12 @@ const MapCallout = ({ publicPath, x = 76, y = 43, label = "TOKYO" })=>{
             /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                 className: "relative mt-10 h-[650px] overflow-hidden border-2 border-ink bg-white",
                 children: [
-                    publicPath ? /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Img */.E9, {
-                        src: (0,esm/* .staticFile */.dQ)(publicPath),
+                    imageRef ? /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Img */.E9, {
+                        src: getImageSrc(imageRef, category),
                         className: "h-full w-full object-contain"
                     }) : /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                        className: " flex h-full items-center justify-center text-[32px] text-muted ",
-                        children: "MAP SVG / PNG"
+                        className: "flex h-full items-center justify-center text-[200px]",
+                        children: emoji
                     }),
                     /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                         className: "absolute",
@@ -20814,14 +22140,14 @@ const MapCallout = ({ publicPath, x = 76, y = 43, label = "TOKYO" })=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/Percentage.tsx
+;// CONCATENATED MODULE: ./src/scenes/metrics/ShareMetric.tsx
 
 
 
 
 
 
-const Percentage = ({ value = 46, label = "GOOGLE SEARCH MARKET SHARE" })=>{
+const ShareMetric = ({ value = 23, label = "AIRBNB OPERATING MARGIN" })=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     const p = (0,esm/* .interpolate */.GW)(frame, [
         15,
@@ -20837,7 +22163,7 @@ const Percentage = ({ value = 46, label = "GOOGLE SEARCH MARKET SHARE" })=>{
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
                 eyebrow: "MARKET SHARE",
-                title: "One company still dominates."
+                title: "Margins recovered post-pandemic."
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                 className: "mt-24",
@@ -20885,53 +22211,7 @@ const Percentage = ({ value = 46, label = "GOOGLE SEARCH MARKET SHARE" })=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/Quote.tsx
-
-
-
-
-
-
-const Quote = ({ quote = "We believe travel is fundamentally changing.", author = "BRIAN CHESKY", role = "CEO / AIRBNB" })=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-8",
-                style: fadeUp(frame, 0),
-                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Tag, {
-                    yellow: true,
-                    children: "QUOTE"
-                })
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: " mt-24 max-w-[1550px] text-[76px] font-semibold leading-[1.15] tracking-[-0.045em] ",
-                style: fadeUp(frame, 8),
-                children: [
-                    "“",
-                    quote,
-                    "”"
-                ]
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: "mt-16 border-l-[8px] border-yellow pl-8",
-                style: fadeUp(frame, 25),
-                children: [
-                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                        className: "text-[30px] font-semibold",
-                        children: author
-                    }),
-                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                        className: "mt-2 text-[22px] text-muted",
-                        children: role
-                    })
-                ]
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/ScatterPlot.tsx
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/ScatterPlot.tsx
 
 
 
@@ -20939,24 +22219,24 @@ const Quote = ({ quote = "We believe travel is fundamentally changing.", author 
 
 const ScatterPlot_data = [
     {
-        name: "A",
-        x: 20,
-        y: 35
-    },
-    {
-        name: "B",
-        x: 45,
-        y: 65
-    },
-    {
-        name: "C",
+        name: "ABNB",
         x: 72,
-        y: 55
+        y: 68
     },
     {
-        name: "D",
-        x: 82,
-        y: 85
+        name: "BKNG",
+        x: 55,
+        y: 42
+    },
+    {
+        name: "EXPE",
+        x: 38,
+        y: 38
+    },
+    {
+        name: "MAR",
+        x: 28,
+        y: 22
     }
 ];
 const ScatterPlot = ()=>{
@@ -20965,7 +22245,7 @@ const ScatterPlot = ()=>{
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
                 eyebrow: "VALUATION",
-                title: "Growth is expensive."
+                title: "Growth companies trade at premium multiples."
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                 className: "relative mt-16 h-[600px] border-b-2 border-l-2 border-ink",
@@ -21006,14 +22286,17 @@ const ScatterPlot = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/ScreenshotZoom.tsx
+;// CONCATENATED MODULE: ./src/scenes/media/ScreenshotZoom.tsx
 
 
 
 
 
-const ScreenshotZoom = ({ publicPath, focusX = 65, focusY = 55 })=>{
+
+
+const ScreenshotZoom = ({ src, category = "screenshots", publicPath, emoji = "📊", focusX = 65, focusY = 55 })=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const imageRef = src ?? publicPath;
     const scale = (0,esm/* .interpolate */.GW)(frame, [
         20,
         70
@@ -21031,27 +22314,31 @@ const ScreenshotZoom = ({ publicPath, focusX = 65, focusY = 55 })=>{
                 title: "The answer is buried in the filing."
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: " mt-10 h-[650px] overflow-hidden border-2 border-ink bg-white ",
+                className: "mt-10 h-[650px] overflow-hidden border-2 border-ink bg-white",
                 style: {
-                    boxShadow: "6px 6px 0 #111"
+                    boxShadow: shadows.brutal
                 },
-                children: publicPath ? /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Img */.E9, {
-                    src: (0,esm/* .staticFile */.dQ)(publicPath),
+                children: imageRef ? /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Img */.E9, {
+                    src: getImageSrc(imageRef, category),
                     className: "h-full w-full object-contain",
                     style: {
                         transformOrigin: `${focusX}% ${focusY}%`,
                         transform: `scale(${scale})`
                     }
                 }) : /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                    className: "flex h-full items-center justify-center text-[32px] text-muted",
-                    children: "DROP SCREENSHOT INTO PUBLIC/"
+                    className: "flex h-full items-center justify-center text-[200px]",
+                    style: {
+                        transformOrigin: `${focusX}% ${focusY}%`,
+                        transform: `scale(${scale})`
+                    },
+                    children: emoji
                 })
             })
         ]
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/StackedBar.tsx
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/StackedBarChart.tsx
 
 
 
@@ -21059,22 +22346,22 @@ const ScreenshotZoom = ({ publicPath, focusX = 65, focusY = 55 })=>{
 
 const segments = [
     {
-        label: "CORE",
-        value: 55,
+        label: "STAYS",
+        value: 82,
         className: "bg-yellow"
     },
     {
-        label: "ADS",
-        value: 25,
+        label: "EXPERIENCES",
+        value: 12,
         className: "bg-ink text-white"
     },
     {
         label: "OTHER",
-        value: 20,
+        value: 6,
         className: "bg-soft"
     }
 ];
-const StackedBar = ()=>{
+const StackedBarChart = ()=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
@@ -21126,55 +22413,7 @@ const StackedBar = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/Ticker.tsx
-
-
-
-const Ticker = ({ company = "AIRBNB", ticker = "ABNB", change = "+4.6%", value = "$92B" })=>{
-    const frame = (0,esm/* .useCurrentFrame */.UC)();
-    const p = (0,esm/* .interpolate */.GW)(frame, [
-        0,
-        15
-    ], [
-        0,
-        1
-    ], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp"
-    });
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-        className: " absolute bottom-[60px] left-[60px] flex border-2 border-ink text-[24px] font-semibold ",
-        style: {
-            opacity: p,
-            transform: `translateY(${(1 - p) * 25}px)`,
-            boxShadow: "6px 6px 0 #111",
-            fontFamily: "IBM Plex Mono"
-        },
-        children: [
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "bg-yellow px-7 py-5",
-                children: company
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "bg-white px-7 py-5",
-                children: ticker
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: "bg-white px-7 py-5",
-                children: [
-                    "▲ ",
-                    change
-                ]
-            }),
-            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "bg-white px-7 py-5",
-                children: value
-            })
-        ]
-    });
-};
-
-;// CONCATENATED MODULE: ./src/scenes/Timeline.tsx
+;// CONCATENATED MODULE: ./src/scenes/narrative/Timeline.tsx
 
 
 
@@ -21202,8 +22441,8 @@ const events = [
         icon: "📉"
     },
     {
-        year: "2020",
-        title: "IPO",
+        year: "2024",
+        title: "IPO scale",
         icon: "📈"
     }
 ];
@@ -21282,13 +22521,13 @@ const Timeline = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/UnitEconomics.tsx
+;// CONCATENATED MODULE: ./src/scenes/diagrams/flow/UnitEconomicsDiagram.tsx
 
 
 
 
 
-const split = [
+const UnitEconomicsDiagram_split = [
     {
         label: "HOST",
         value: 82,
@@ -21300,7 +22539,7 @@ const split = [
         className: "bg-yellow"
     }
 ];
-const UnitEconomics = ()=>{
+const UnitEconomicsDiagram = ()=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
     const p = (0,esm/* .interpolate */.GW)(frame, [
         15,
@@ -21327,7 +22566,7 @@ const UnitEconomics = ()=>{
                     }),
                     /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                         className: "mt-12 flex h-[160px] border-2 border-ink",
-                        children: split.map((item)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        children: UnitEconomicsDiagram_split.map((item)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                                 className: `
                 flex
                 items-center
@@ -21360,85 +22599,469 @@ const UnitEconomics = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/Waterfall.tsx
+;// CONCATENATED MODULE: ./src/lib/chartMotion.ts
+/**
+ * Chart motion helpers — stagger / clamp / path draw progress.
+ */ 
+
+const clamp01 = (v)=>Math.max(0, Math.min(1, v));
+/** List items enter staggered by index */ const chartMotion_stagger = (frame, index, start = 8, gap = 5, duration = 14)=>tween(frame, start + index * gap, duration);
+
+;// CONCATENATED MODULE: ./src/lib/geometry.ts
+/**
+ * Geometry helpers — path smoothing, scales, extents.
+ * Shared by quantitative chart scenes.
+ */ const niceMax = (value)=>{
+    if (!Number.isFinite(value) || value <= 0) return 1;
+    const mag = 10 ** Math.floor(Math.log10(value));
+    return Math.ceil(value / mag) * mag;
+};
+const extent = (values)=>{
+    const finite = values.filter(Number.isFinite);
+    if (!finite.length) return [
+        0,
+        1
+    ];
+    const min = Math.min(...finite);
+    const max = Math.max(...finite);
+    return min === max ? [
+        min - 1,
+        max + 1
+    ] : [
+        min,
+        max
+    ];
+};
+const geometry_scale = (value, domainMin, domainMax, rangeMin, rangeMax)=>{
+    const t = (value - domainMin) / Math.max(1e-9, domainMax - domainMin);
+    return rangeMin + t * (rangeMax - rangeMin);
+};
+const smoothPath = (points)=>{
+    if (!points.length) return "";
+    if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
+    let d = `M ${points[0].x} ${points[0].y}`;
+    for(let i = 1; i < points.length; i++){
+        const a = points[i - 1];
+        const b = points[i];
+        const mid = (a.x + b.x) / 2;
+        d += ` C ${mid} ${a.y}, ${mid} ${b.y}, ${b.x} ${b.y}`;
+    }
+    return d;
+};
+const formatCompact = (value, suffix = "")=>{
+    const abs = Math.abs(value);
+    const sign = value < 0 ? "−" : "";
+    if (abs >= 1000000000) return `${sign}${(abs / 1000000000).toFixed(abs >= 10000000000 ? 0 : 1)}B${suffix}`;
+    if (abs >= 1000000) return `${sign}${(abs / 1000000).toFixed(abs >= 10000000 ? 0 : 1)}M${suffix}`;
+    if (abs >= 1000) return `${sign}${(abs / 1000).toFixed(abs >= 10000 ? 0 : 1)}K${suffix}`;
+    return `${sign}${abs.toFixed(Number.isInteger(abs) ? 0 : 1)}${suffix}`;
+};
+
+;// CONCATENATED MODULE: ./src/components/viz/chartPrimitives.tsx
+
+/**
+ * Chart UI primitives — palette, grid, legend.
+ * Scale / path math lives in lib/geometry.ts (re-exported here for convenience).
+ */ 
+
+
+const VIZ = {
+    paper: colors.paper,
+    ink: colors.ink,
+    yellow: colors.yellow,
+    muted: colors.muted,
+    soft: colors.soft,
+    white: colors.white
+};
+const FONT = `"${typography.fontFamily}", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`;
+const GridLines = ({ width, height, left = 70, right = 40, top = 30, bottom = 60, rows = 4 })=>/*#__PURE__*/ (0,jsx_runtime.jsx)("g", {
+        children: Array.from({
+            length: rows + 1
+        }).map((_, i)=>{
+            const y = top + i / rows * (height - top - bottom);
+            return /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                x1: left,
+                x2: width - right,
+                y1: y,
+                y2: y,
+                stroke: VIZ.ink,
+                strokeOpacity: 0.1,
+                strokeWidth: 2
+            }, i);
+        })
+    });
+const MiniLegend = ({ items })=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: "flex flex-wrap items-center gap-6 text-[18px] text-muted",
+        children: items.map((item)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "flex items-center gap-3",
+                children: [
+                    item.kind === "line" ? /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: `h-[4px] w-[34px] ${item.yellow ? "bg-yellow" : "bg-ink"}`
+                    }) : item.kind === "dot" ? /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: `h-[14px] w-[14px] border-2 border-ink ${item.yellow ? "bg-yellow" : "bg-white"}`
+                    }) : /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: `h-[18px] w-[18px] border-2 border-ink ${item.yellow ? "bg-yellow" : "bg-white"}`
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: item.label
+                    })
+                ]
+            }, item.label))
+    });
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/GroupedBarChart.tsx
 
 
 
 
 
-const Waterfall_data = [
+
+
+
+const DEFAULT = [
     {
-        label: "REVENUE",
-        value: 100,
-        type: "start"
+        label: "2021",
+        a: 42,
+        b: 31,
+        c: 22
     },
     {
-        label: "COGS",
-        value: -25,
-        type: "negative"
+        label: "2022",
+        a: 49,
+        b: 35,
+        c: 25
     },
     {
-        label: "SALES",
-        value: -15,
-        type: "negative"
+        label: "2023",
+        a: 57,
+        b: 41,
+        c: 29
     },
     {
-        label: "R&D",
-        value: -12,
-        type: "negative"
+        label: "2024",
+        a: 63,
+        b: 46,
+        c: 34
     },
     {
-        label: "PROFIT",
-        value: 48,
-        type: "end"
+        label: "2025",
+        a: 71,
+        b: 52,
+        c: 38
     }
 ];
-const Waterfall = ()=>{
+const GroupedBarChart = ({ eyebrow = "GROUPED BARS", title = "Compare several series across the same categories.", data = DEFAULT, labels = [
+    "A",
+    "B",
+    "C"
+], source })=>{
     const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680, height = 600, left = 80, right = 40, top = 30, bottom = 70;
+    const chartH = height - top - bottom;
+    const chartW = width - left - right;
+    const max = niceMax(Math.max(...data.flatMap((d)=>[
+            d.a,
+            d.b,
+            d.c ?? 0
+        ])) * 1.05);
+    const groupW = chartW / data.length;
+    const barW = Math.min(52, groupW / 5);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "flex items-start justify-between gap-10",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                        eyebrow: eyebrow,
+                        title: title
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "mt-4",
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)(MiniLegend, {
+                            items: [
+                                {
+                                    label: labels[0],
+                                    yellow: true
+                                },
+                                {
+                                    label: labels[1]
+                                },
+                                {
+                                    label: labels[2] ?? "",
+                                    kind: "bar"
+                                }
+                            ].filter((x)=>x.label)
+                        })
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-5",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(GridLines, {
+                        width: width,
+                        height: height,
+                        left: left,
+                        right: right,
+                        top: top,
+                        bottom: bottom
+                    }),
+                    data.map((d, i)=>{
+                        const p = chartMotion_stagger(frame, i, 8, 4, 18);
+                        const center = left + groupW * (i + 0.5);
+                        const vals = [
+                            d.a,
+                            d.b,
+                            d.c
+                        ].filter((x)=>x !== undefined);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                vals.map((v, j)=>{
+                                    const h = v / max * chartH * p;
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                        x: center + (j - (vals.length - 1) / 2) * (barW + 8) - barW / 2,
+                                        y: top + chartH - h,
+                                        width: barW,
+                                        height: h,
+                                        fill: j === 0 ? VIZ.yellow : j === 1 ? VIZ.white : VIZ.soft,
+                                        stroke: VIZ.ink,
+                                        strokeWidth: 2
+                                    }, j);
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: center,
+                                    y: height - 25,
+                                    textAnchor: "middle",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 18,
+                                    fill: VIZ.muted,
+                                    children: d.label
+                                })
+                            ]
+                        }, d.label);
+                    })
+                ]
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/PairedBarChart.tsx
+
+
+
+
+
+
+
+
+const PairedBarChart_DEFAULT = [
+    {
+        label: "US",
+        a: 42,
+        b: 57
+    },
+    {
+        label: "EU",
+        a: 34,
+        b: 39
+    },
+    {
+        label: "JAPAN",
+        a: 18,
+        b: 26
+    },
+    {
+        label: "KOREA",
+        a: 15,
+        b: 22
+    }
+];
+const PairedBarChart = ({ eyebrow = "SIDE-BY-SIDE", title = "Two series, one category at a time.", data = PairedBarChart_DEFAULT, aLabel = "2020", bLabel = "2025", suffix = "%", source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const max = niceMax(Math.max(...data.flatMap((d)=>[
+            d.a,
+            d.b
+        ])) * 1.05);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "flex items-start justify-between gap-12",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                        eyebrow: eyebrow,
+                        title: title
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "mt-4 flex gap-6 text-[18px] text-muted",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                className: "flex items-center gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("i", {
+                                        className: "h-[16px] w-[16px] border-2 border-ink bg-white"
+                                    }),
+                                    aLabel
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                className: "flex items-center gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("i", {
+                                        className: "h-[16px] w-[16px] border-2 border-ink bg-yellow"
+                                    }),
+                                    bLabel
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14 space-y-7",
+                children: data.map((row, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[210px_1fr_110px] items-center gap-6",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[24px] font-semibold",
+                                children: row.label
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "space-y-3",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "h-[34px] border-2 border-ink bg-white",
+                                        style: {
+                                            width: `${row.a / max * 100 * p}%`
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "h-[34px] border-2 border-ink bg-yellow",
+                                        style: {
+                                            width: `${row.b / max * 100 * p}%`
+                                        }
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-right text-[22px] font-semibold",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        children: [
+                                            row.a,
+                                            suffix
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        children: [
+                                            row.b,
+                                            suffix
+                                        ]
+                                    })
+                                ]
+                            })
+                        ]
+                    }, row.label);
+                })
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/LollipopChart.tsx
+
+
+
+
+
+
+
+const LollipopChart_DEFAULT = [
+    {
+        label: "US",
+        value: 48,
+        icon: "🇺🇸",
+        highlight: true
+    },
+    {
+        label: "CHINA",
+        value: 31,
+        icon: "🇨🇳"
+    },
+    {
+        label: "EU",
+        value: 26,
+        icon: "🇪🇺"
+    },
+    {
+        label: "JAPAN",
+        value: 12,
+        icon: "🇯🇵"
+    },
+    {
+        label: "KOREA",
+        value: 9,
+        icon: "🇰🇷"
+    }
+];
+const LollipopChart = ({ eyebrow = "RANKING", title = "A lighter alternative to bars.", items = LollipopChart_DEFAULT, suffix = "%" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const max = niceMax(Math.max(...items.map((i)=>i.value)) * 1.05);
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
-                eyebrow: "UNIT ECONOMICS",
-                title: "From $100 of revenue to $48 of profit."
+                eyebrow: eyebrow,
+                title: title
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                className: "mt-24 flex h-[550px] items-end gap-12 border-b-2 border-ink",
-                children: Waterfall_data.map((item, index)=>{
-                    const p = (0,esm/* .interpolate */.GW)(frame, [
-                        10 + index * 8,
-                        32 + index * 8
-                    ], [
-                        0,
-                        1
-                    ], {
-                        extrapolateLeft: "clamp",
-                        extrapolateRight: "clamp"
-                    });
-                    const h = Math.abs(item.value) * 4.5 * p;
+                className: "mt-14 space-y-7",
+                children: items.map((item, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                    const w = item.value / max * 100 * p;
                     return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                        className: "flex flex-1 flex-col items-center justify-end",
+                        className: "grid grid-cols-[230px_1fr_110px] items-center gap-6",
                         children: [
                             /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                                className: "mb-3 text-[25px] font-semibold",
+                                className: "text-[23px] font-semibold",
                                 children: [
-                                    item.value > 0 ? "" : "−",
-                                    "$",
-                                    Math.abs(item.value)
+                                    item.icon,
+                                    " ",
+                                    item.label
                                 ]
                             }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: `
-                  w-full
-                  border-2 border-ink
-                  ${item.type === "negative" ? "bg-white" : "bg-yellow"}
-                `,
-                                style: {
-                                    height: h
-                                }
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "relative h-[42px]",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-1/2 h-[4px] -translate-y-1/2 bg-ink",
+                                        style: {
+                                            width: `${w}%`
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: `absolute top-1/2 h-[28px] w-[28px] -translate-x-1/2 -translate-y-1/2 border-2 border-ink ${item.highlight ? "bg-yellow" : "bg-white"}`,
+                                        style: {
+                                            left: `${w}%`
+                                        }
+                                    })
+                                ]
                             }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
-                                className: "mt-4 min-h-[50px] text-center text-[19px] text-muted",
-                                children: item.label
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-right text-[25px] font-semibold",
+                                children: [
+                                    item.value,
+                                    suffix
+                                ]
                             })
                         ]
                     }, item.label);
@@ -21448,7 +23071,7 @@ const Waterfall = ()=>{
     });
 };
 
-;// CONCATENATED MODULE: ./src/scenes/index.ts
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/DotPlot.tsx
 
 
 
@@ -21456,170 +23079,11453 @@ const Waterfall = ()=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const SCENES = [
+const DotPlot_DEFAULT = [
     {
-        id: "BigNumber",
-        component: BigNumber
+        label: "A",
+        value: 82,
+        group: "US",
+        highlight: true
     },
     {
-        id: "Compare",
-        component: Compare
+        label: "B",
+        value: 71,
+        group: "US"
     },
     {
-        id: "BarChart",
-        component: BarChart
+        label: "C",
+        value: 66,
+        group: "EU"
     },
     {
-        id: "Flow",
-        component: Flow
+        label: "D",
+        value: 59,
+        group: "EU"
     },
     {
-        id: "Ranking",
-        component: Ranking
+        label: "E",
+        value: 48,
+        group: "ASIA"
     },
     {
-        id: "Callout",
-        component: Callout
-    },
-    {
-        id: "Quote",
-        component: Quote
-    },
-    {
-        id: "LineChart",
-        component: LineChart
-    },
-    {
-        id: "Candlestick",
-        component: Candlestick
-    },
-    {
-        id: "Donut",
-        component: Donut
-    },
-    {
-        id: "Waterfall",
-        component: Waterfall
-    },
-    {
-        id: "DataTable",
-        component: DataTable
-    },
-    {
-        id: "KPIGrid",
-        component: KPIGrid
-    },
-    {
-        id: "BulletReveal",
-        component: BulletReveal
-    },
-    {
-        id: "BeforeAfter",
-        component: BeforeAfter
-    },
-    {
-        id: "Equation",
-        component: Equation
-    },
-    {
-        id: "Funnel",
-        component: Funnel
-    },
-    {
-        id: "ImageCard",
-        component: ImageCard
-    },
-    {
-        id: "LogoCloud",
-        component: LogoCloud
-    },
-    {
-        id: "MapCallout",
-        component: MapCallout
-    },
-    {
-        id: "Percentage",
-        component: Percentage
-    },
-    {
-        id: "ScatterPlot",
-        component: ScatterPlot
-    },
-    {
-        id: "ScreenshotZoom",
-        component: ScreenshotZoom
-    },
-    {
-        id: "StackedBar",
-        component: StackedBar
-    },
-    {
-        id: "Timeline",
-        component: Timeline
-    },
-    {
-        id: "UnitEconomics",
-        component: UnitEconomics
-    },
-    {
-        id: "Ticker",
-        component: Ticker
+        label: "F",
+        value: 39,
+        group: "ASIA"
     }
 ];
+const DotPlot = ({ eyebrow = "DOT PLOT", title = "Use dots when the marks should stay visually light.", items = DotPlot_DEFAULT, suffix = "" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const [mn0, mx0] = extent(items.map((i)=>i.value)), pad = (mx0 - mn0) * .15, mn = mn0 - pad, mx = mx0 + pad;
+    const width = 1320;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-14 ml-[260px] flex w-[1320px] justify-between text-[17px] text-muted",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: mn.toFixed(0)
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: mx.toFixed(0)
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-3 space-y-6",
+                children: items.map((it, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 5, 16);
+                    const x = geometry_scale(it.value, mn, mx, 0, width);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[230px_1320px_120px] items-center gap-7",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "text-[22px] font-semibold",
+                                        children: it.label
+                                    }),
+                                    it.group ? /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "ml-3 text-[16px] text-muted",
+                                        children: it.group
+                                    }) : null
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "relative h-[38px]",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-1/2 h-[2px] w-full bg-soft"
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: `absolute top-1/2 h-[26px] w-[26px] -translate-x-1/2 -translate-y-1/2 border-2 border-ink ${it.highlight ? "bg-yellow" : "bg-white"}`,
+                                        style: {
+                                            left: x,
+                                            opacity: p,
+                                            transform: `translate(-50%,-50%) scale(${.8 + .2 * p})`
+                                        }
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-right text-[22px] font-semibold",
+                                children: [
+                                    it.value,
+                                    suffix
+                                ]
+                            })
+                        ]
+                    }, it.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/BulletChart.tsx
+
+
+
+
+
+
+const BulletChart_DEFAULT = [
+    {
+        label: "REVENUE",
+        actual: 84,
+        target: 90,
+        max: 120
+    },
+    {
+        label: "MARGIN",
+        actual: 63,
+        target: 60,
+        max: 100
+    },
+    {
+        label: "USERS",
+        actual: 72,
+        target: 80,
+        max: 100
+    },
+    {
+        label: "FCF",
+        actual: 91,
+        target: 75,
+        max: 110
+    }
+];
+const BulletChart = ({ eyebrow = "TARGET VS ACTUAL", title = "Compact performance dashboard without gauge clutter.", rows = BulletChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 space-y-10",
+                children: rows.map((r, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[220px_1fr_120px] items-center gap-7",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[22px] font-semibold",
+                                children: r.label
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "relative h-[66px] border-2 border-ink bg-soft",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute left-0 top-0 h-full bg-white",
+                                        style: {
+                                            width: "70%"
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute left-0 top-0 h-full bg-yellow",
+                                        style: {
+                                            width: `${r.actual / r.max * 100 * p}%`
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute -top-[9px] h-[82px] w-[5px] bg-ink",
+                                        style: {
+                                            left: `${r.target / r.max * 100}%`
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                        className: "absolute -top-[32px] text-[15px] text-muted",
+                                        style: {
+                                            left: `${r.target / r.max * 100}%`,
+                                            transform: "translateX(-50%)"
+                                        },
+                                        children: [
+                                            "TARGET ",
+                                            r.target
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-right text-[28px] font-semibold",
+                                children: Math.round(r.actual * p)
+                            })
+                        ]
+                    }, r.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/DivergingBarChart.tsx
+
+
+
+
+
+
+const DivergingBarChart_DEFAULT = [
+    {
+        label: "PRICE",
+        value: 18
+    },
+    {
+        label: "VOLUME",
+        value: 9
+    },
+    {
+        label: "FX",
+        value: -6
+    },
+    {
+        label: "WAGES",
+        value: -12
+    },
+    {
+        label: "MIX",
+        value: 7
+    },
+    {
+        label: "TAX",
+        value: -4
+    }
+];
+const DivergingBarChart = ({ eyebrow = "POSITIVE / NEGATIVE", title = "Separate tailwinds from headwinds.", items = DivergingBarChart_DEFAULT, suffix = "%" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const max = Math.max(...items.map((i)=>Math.abs(i.value)), 1);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-14",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-0 h-full w-[3px] bg-ink"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "space-y-6",
+                        children: items.map((it, i)=>{
+                            const p = chartMotion_stagger(frame, i, 8, 5, 18), w = Math.abs(it.value) / max * 100 * p, pos = it.value >= 0;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "grid grid-cols-[1fr_210px_1fr] items-center gap-5",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "flex justify-end",
+                                        children: !pos ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "h-[56px] border-2 border-ink bg-white",
+                                            style: {
+                                                width: `${w}%`
+                                            }
+                                        }) : null
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "text-center text-[21px] font-semibold",
+                                        children: [
+                                            it.label,
+                                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                className: "text-[17px] text-muted",
+                                                children: [
+                                                    it.value > 0 ? "+" : "",
+                                                    it.value,
+                                                    suffix
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        children: pos ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "h-[56px] border-2 border-ink bg-yellow",
+                                            style: {
+                                                width: `${w}%`
+                                            }
+                                        }) : null
+                                    })
+                                ]
+                            }, it.label);
+                        })
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/ParetoChart.tsx
+
+
+
+
+
+
+
+const ParetoChart_DEFAULT = [
+    {
+        label: "A",
+        value: 42
+    },
+    {
+        label: "B",
+        value: 26
+    },
+    {
+        label: "C",
+        value: 14
+    },
+    {
+        label: "D",
+        value: 9
+    },
+    {
+        label: "E",
+        value: 5
+    },
+    {
+        label: "OTHER",
+        value: 4
+    }
+];
+const ParetoChart = ({ eyebrow = "PARETO", title = "How much of the outcome comes from the top few drivers?", items = ParetoChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680, height = 600, left = 80, right = 70, top = 35, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const max = niceMax(Math.max(...items.map((i)=>i.value)) * 1.05), total = items.reduce((a, b)=>a + b.value, 0), groupW = chartW / items.length;
+    let run = 0;
+    const cum = items.map((it, i)=>{
+        run += it.value;
+        return {
+            x: left + groupW * (i + .5),
+            y: top + chartH - run / total * chartH
+        };
+    });
+    const lineP = tween(frame, 35, 45);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-7",
+                children: [
+                    [
+                        .25,
+                        .5,
+                        .75,
+                        1
+                    ].map((r)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: left,
+                            x2: width - right,
+                            y1: top + chartH * (1 - r),
+                            y2: top + chartH * (1 - r),
+                            stroke: VIZ.ink,
+                            strokeOpacity: .1,
+                            strokeWidth: 2
+                        }, r)),
+                    items.map((it, i)=>{
+                        const p = chartMotion_stagger(frame, i, 8, 4, 18), h = it.value / max * chartH * p, x = left + groupW * i + groupW * .2, w = groupW * .6;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                    x: x,
+                                    y: top + chartH - h,
+                                    width: w,
+                                    height: h,
+                                    fill: i < 2 ? VIZ.yellow : VIZ.white,
+                                    stroke: VIZ.ink,
+                                    strokeWidth: 2
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: x + w / 2,
+                                    y: height - 28,
+                                    textAnchor: "middle",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 17,
+                                    fill: VIZ.muted,
+                                    children: it.label
+                                })
+                            ]
+                        }, it.label);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                        d: smoothPath(cum),
+                        fill: "none",
+                        stroke: VIZ.ink,
+                        strokeWidth: 7,
+                        pathLength: 1,
+                        strokeDasharray: 1,
+                        strokeDashoffset: 1 - lineP
+                    }),
+                    cum.map((p, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                            cx: p.x,
+                            cy: p.y,
+                            r: 8,
+                            fill: VIZ.ink,
+                            opacity: tween(frame, 55 + i * 2, 8)
+                        }, i))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/ScenarioBarChart.tsx
+
+
+
+
+
+
+
+const ScenarioBarChart_DEFAULT = [
+    {
+        label: "BEAR",
+        value: 78,
+        probability: 20,
+        icon: "🐻"
+    },
+    {
+        label: "BASE",
+        value: 112,
+        probability: 55,
+        icon: "●",
+        highlight: true
+    },
+    {
+        label: "BULL",
+        value: 154,
+        probability: 25,
+        icon: "🐂"
+    }
+];
+const ScenarioBarChart = ({ eyebrow = "SCENARIOS", title = "Put bear, base and bull cases on the same scale.", scenarios = ScenarioBarChart_DEFAULT, prefix = "$" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), max = niceMax(Math.max(...scenarios.map((s)=>s.value)) * 1.1);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-20 flex h-[570px] items-end justify-center gap-24 border-b-2 border-ink",
+                children: scenarios.map((s, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 8, 20), h = s.value / max * 480 * p;
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "flex w-[300px] flex-col items-center justify-end",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mb-4 text-[54px]",
+                                children: s.icon
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "mb-3 text-[32px] font-semibold",
+                                children: [
+                                    prefix,
+                                    s.value
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: `w-full border-2 border-b-0 border-ink ${s.highlight ? "bg-yellow" : "bg-white"}`,
+                                style: {
+                                    height: h
+                                }
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mt-4 text-[22px] font-semibold",
+                                children: s.label
+                            }),
+                            s.probability !== undefined ? /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "mt-1 text-[18px] text-muted",
+                                children: [
+                                    s.probability,
+                                    "% probability"
+                                ]
+                            }) : null
+                        ]
+                    }, s.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/TornadoChart.tsx
+
+
+
+
+
+
+const TornadoChart_DEFAULT = [
+    {
+        label: "PRICE",
+        down: -18,
+        up: 22
+    },
+    {
+        label: "VOLUME",
+        down: -14,
+        up: 16
+    },
+    {
+        label: "FX",
+        down: -11,
+        up: 9
+    },
+    {
+        label: "WAGES",
+        down: -8,
+        up: 7
+    },
+    {
+        label: "TAX",
+        down: -6,
+        up: 5
+    }
+];
+const TornadoChart = ({ eyebrow = "SENSITIVITY", title = "Which assumptions move the answer the most?", rows = TornadoChart_DEFAULT, suffix = "%" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const max = Math.max(...rows.flatMap((r)=>[
+            Math.abs(r.down),
+            Math.abs(r.up)
+        ]), 1);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-14",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-0 h-full w-[3px] bg-ink"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "space-y-6",
+                        children: rows.map((r, i)=>{
+                            const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "grid grid-cols-[1fr_210px_1fr] items-center gap-4",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "flex justify-end",
+                                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "h-[58px] border-2 border-ink bg-white",
+                                            style: {
+                                                width: `${Math.abs(r.down) / max * 100 * p}%`
+                                            },
+                                            children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                                className: "float-right px-3 py-3 text-[18px]",
+                                                children: [
+                                                    r.down,
+                                                    suffix
+                                                ]
+                                            })
+                                        })
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-center text-[21px] font-semibold",
+                                        children: r.label
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "h-[58px] border-2 border-ink bg-yellow",
+                                            style: {
+                                                width: `${Math.abs(r.up) / max * 100 * p}%`
+                                            },
+                                            children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                                className: "px-3 py-3 text-[18px]",
+                                                children: [
+                                                    "+",
+                                                    r.up,
+                                                    suffix
+                                                ]
+                                            })
+                                        })
+                                    })
+                                ]
+                            }, r.label);
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "mt-7 flex justify-center gap-[520px] text-[18px] text-muted",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "DOWNSIDE ←"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "→ UPSIDE"
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/categorical/VarianceComparisonChart.tsx
+
+
+
+
+
+
+
+const VarianceComparisonChart_DEFAULT = [
+    {
+        label: "Revenue",
+        actual: 118,
+        benchmark: 100
+    },
+    {
+        label: "Gross Profit",
+        actual: 91,
+        benchmark: 100
+    },
+    {
+        label: "EBIT",
+        actual: 126,
+        benchmark: 100
+    },
+    {
+        label: "Free Cash Flow",
+        actual: 142,
+        benchmark: 100
+    }
+];
+const VarianceComparisonChart = ({ eyebrow = "ACTUAL VS BENCHMARK", title = "Make the variance impossible to miss.", data = VarianceComparisonChart_DEFAULT, actualLabel = "ACTUAL", benchmarkLabel = "PLAN" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const max = niceMax(Math.max(...data.flatMap((d)=>[
+            d.actual,
+            d.benchmark
+        ])) * 1.1);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 space-y-9",
+                children: data.map((d, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 7, 18);
+                    const delta = d.actual - d.benchmark;
+                    const actualW = d.actual / max * 100 * p;
+                    const targetX = d.benchmark / max * 100;
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[260px_1fr_150px] items-center gap-6",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[23px] font-semibold",
+                                children: d.label
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "relative h-[54px] border-2 border-ink bg-white",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "h-full bg-yellow",
+                                        style: {
+                                            width: `${actualW}%`
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-[-10px] h-[70px] w-[4px] bg-ink",
+                                        style: {
+                                            left: `${targetX}%`
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                        className: "absolute -top-[34px] text-[16px] text-muted",
+                                        style: {
+                                            left: `${targetX}%`,
+                                            transform: "translateX(-50%)"
+                                        },
+                                        children: [
+                                            benchmarkLabel,
+                                            " ",
+                                            d.benchmark
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: `border-2 border-ink px-4 py-3 text-center text-[23px] font-semibold ${delta >= 0 ? "bg-yellow" : "bg-white"}`,
+                                style: {
+                                    opacity: p
+                                },
+                                children: [
+                                    delta >= 0 ? "+" : "",
+                                    delta
+                                ]
+                            })
+                        ]
+                    }, d.label);
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-10 text-[18px] text-muted",
+                children: [
+                    "BAR = ",
+                    actualLabel,
+                    " \xb7 MARKER = ",
+                    benchmarkLabel
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/MultiLineChart.tsx
+
+
+
+
+
+
+
+
+const MultiLineChart_DEFAULT = [
+    {
+        label: "2021",
+        A: 100,
+        B: 100,
+        C: 100
+    },
+    {
+        label: "2022",
+        A: 113,
+        B: 106,
+        C: 102
+    },
+    {
+        label: "2023",
+        A: 129,
+        B: 111,
+        C: 107
+    },
+    {
+        label: "2024",
+        A: 148,
+        B: 118,
+        C: 105
+    },
+    {
+        label: "2025",
+        A: 171,
+        B: 126,
+        C: 112
+    }
+];
+const MultiLineChart = ({ eyebrow = "MULTI-SERIES TREND", title = "Compare trajectories on one common scale.", data = MultiLineChart_DEFAULT, series = [
+    "A",
+    "B",
+    "C"
+], source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680, height = 600, left = 80, right = 80, top = 35, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const vals = data.flatMap((r)=>series.map((s)=>Number(r[s])));
+    const [mn0, mx0] = extent(vals);
+    const pad = (mx0 - mn0) * 0.12;
+    const mn = mn0 - pad, mx = mx0 + pad;
+    const x = (i)=>left + i / Math.max(1, data.length - 1) * chartW;
+    const y = (v)=>geometry_scale(v, mn, mx, top + chartH, top);
+    const styles = [
+        {
+            stroke: VIZ.ink,
+            w: 8,
+            dash: ""
+        },
+        {
+            stroke: VIZ.yellow,
+            w: 10,
+            dash: ""
+        },
+        {
+            stroke: VIZ.muted,
+            w: 5,
+            dash: "16 10"
+        }
+    ];
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "flex items-start justify-between",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                        eyebrow: eyebrow,
+                        title: title
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "mt-4",
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)(MiniLegend, {
+                            items: series.map((s, i)=>({
+                                    label: s,
+                                    kind: "line",
+                                    yellow: i === 1
+                                }))
+                        })
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-5",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(GridLines, {
+                        width: width,
+                        height: height,
+                        left: left,
+                        right: right,
+                        top: top,
+                        bottom: bottom
+                    }),
+                    series.map((s, si)=>{
+                        const p = tween(frame, 10 + si * 9, 48);
+                        const pts = data.map((r, i)=>({
+                                x: x(i),
+                                y: y(Number(r[s]))
+                            }));
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                    d: smoothPath(pts),
+                                    fill: "none",
+                                    stroke: styles[si % styles.length].stroke,
+                                    strokeWidth: styles[si % styles.length].w,
+                                    pathLength: 1,
+                                    strokeDasharray: styles[si % styles.length].dash || 1,
+                                    strokeDashoffset: styles[si % styles.length].dash ? 0 : 1 - p,
+                                    opacity: styles[si % styles.length].dash ? p : 1
+                                }),
+                                pts.map((pt, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                        x: pt.x - 6,
+                                        y: pt.y - 6,
+                                        width: 12,
+                                        height: 12,
+                                        fill: si === 1 ? VIZ.yellow : VIZ.white,
+                                        stroke: VIZ.ink,
+                                        strokeWidth: 2,
+                                        opacity: tween(frame, 35 + si * 9 + i * 2, 10)
+                                    }, i))
+                            ]
+                        }, s);
+                    }),
+                    data.map((r, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: x(i),
+                            y: height - 28,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fill: VIZ.muted,
+                            children: r.label
+                        }, r.label))
+                ]
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/AreaChart.tsx
+
+
+
+
+
+
+
+const AreaChart_DEFAULT = [
+    {
+        label: "Q1",
+        value: 12
+    },
+    {
+        label: "Q2",
+        value: 18
+    },
+    {
+        label: "Q3",
+        value: 15
+    },
+    {
+        label: "Q4",
+        value: 27
+    },
+    {
+        label: "Q5",
+        value: 32
+    },
+    {
+        label: "Q6",
+        value: 41
+    },
+    {
+        label: "Q7",
+        value: 38
+    },
+    {
+        label: "Q8",
+        value: 52
+    }
+];
+const AreaChart = ({ eyebrow = "AREA", title = "Use area when accumulated magnitude matters.", data = AreaChart_DEFAULT, suffix = "" })=>{
+    var _pts_at;
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), p = tween(frame, 10, 55);
+    const width = 1680, height = 600, left = 80, right = 50, top = 40, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const max = Math.max(...data.map((d)=>d.value)) * 1.12;
+    const pts = data.map((d, i)=>({
+            x: left + i / Math.max(1, data.length - 1) * chartW,
+            y: top + chartH - d.value / max * chartH
+        }));
+    const line = smoothPath(pts);
+    const area = `${line} L ${(_pts_at = pts.at(-1)) === null || _pts_at === void 0 ? void 0 : _pts_at.x} ${top + chartH} L ${pts[0].x} ${top + chartH} Z`;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-8",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("defs", {
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("clipPath", {
+                            id: "area-reveal",
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                x: left,
+                                y: 0,
+                                width: chartW * p,
+                                height: height
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(GridLines, {
+                        width: width,
+                        height: height,
+                        left: left,
+                        right: right,
+                        top: top,
+                        bottom: bottom
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                        clipPath: "url(#area-reveal)",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: area,
+                                fill: VIZ.yellow,
+                                fillOpacity: 0.72
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: line,
+                                fill: "none",
+                                stroke: VIZ.ink,
+                                strokeWidth: 8
+                            })
+                        ]
+                    }),
+                    pts.map((pt, i)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            opacity: tween(frame, 35 + i * 3, 10),
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                    x: pt.x - 7,
+                                    y: pt.y - 7,
+                                    width: 14,
+                                    height: 14,
+                                    fill: i === pts.length - 1 ? VIZ.ink : VIZ.white,
+                                    stroke: VIZ.ink,
+                                    strokeWidth: 2
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: pt.x,
+                                    y: height - 28,
+                                    textAnchor: "middle",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 17,
+                                    fill: VIZ.muted,
+                                    children: data[i].label
+                                })
+                            ]
+                        }, i)),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                        x: pts.at(-1).x - 10,
+                        y: pts.at(-1).y - 22,
+                        textAnchor: "end",
+                        fontFamily: "IBM Plex Mono",
+                        fontSize: 20,
+                        fontWeight: 600,
+                        children: [
+                            data.at(-1).value,
+                            suffix
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/StackedAreaChart.tsx
+
+
+
+
+
+
+
+const StackedAreaChart_DEFAULT = [
+    {
+        label: "2021",
+        a: 30,
+        b: 20,
+        c: 10
+    },
+    {
+        label: "2022",
+        a: 35,
+        b: 24,
+        c: 12
+    },
+    {
+        label: "2023",
+        a: 41,
+        b: 28,
+        c: 15
+    },
+    {
+        label: "2024",
+        a: 45,
+        b: 34,
+        c: 20
+    },
+    {
+        label: "2025",
+        a: 51,
+        b: 40,
+        c: 26
+    }
+];
+const polygon = (tops, bottoms)=>[
+        ...tops,
+        ...bottoms.slice().reverse()
+    ].map((p)=>`${p.x},${p.y}`).join(" ");
+const StackedAreaChart = ({ eyebrow = "STACKED AREA", title = "Show growth and mix at the same time.", data = StackedAreaChart_DEFAULT, labels = [
+    "CORE",
+    "NEW",
+    "OTHER"
+] })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), p = tween(frame, 10, 55);
+    const width = 1680, height = 600, left = 80, right = 50, top = 40, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const totals = data.map((d)=>d.a + d.b + d.c), max = Math.max(...totals) * 1.08;
+    const x = (i)=>left + i / Math.max(1, data.length - 1) * chartW, y = (v)=>top + chartH - v / max * chartH;
+    const base = data.map((_, i)=>({
+            x: x(i),
+            y: y(0)
+        }));
+    const aTop = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.a)
+        }));
+    const bTop = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.a + d.b)
+        }));
+    const cTop = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.a + d.b + d.c)
+        }));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-3 flex gap-5 text-[18px]",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: "bg-yellow px-3 py-2 border-2 border-ink",
+                        children: labels[0]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: "bg-ink text-white px-3 py-2 border-2 border-ink",
+                        children: labels[1]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: "bg-soft px-3 py-2 border-2 border-ink",
+                        children: labels[2]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-3",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("defs", {
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("clipPath", {
+                            id: "stacked-reveal",
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                x: left,
+                                y: 0,
+                                width: chartW * p,
+                                height: height
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                        clipPath: "url(#stacked-reveal)",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                                points: polygon(aTop, base),
+                                fill: VIZ.yellow,
+                                stroke: VIZ.ink,
+                                strokeWidth: 2
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                                points: polygon(bTop, aTop),
+                                fill: VIZ.ink
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                                points: polygon(cTop, bTop),
+                                fill: VIZ.soft,
+                                stroke: VIZ.ink,
+                                strokeWidth: 2
+                            })
+                        ]
+                    }),
+                    data.map((d, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: x(i),
+                            y: height - 28,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fill: VIZ.muted,
+                            children: d.label
+                        }, d.label))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/IndexedLineChart.tsx
+
+
+
+
+
+
+
+const IndexedLineChart_DEFAULT = [
+    {
+        label: "2020",
+        a: 100,
+        b: 100,
+        c: 100
+    },
+    {
+        label: "2021",
+        a: 118,
+        b: 107,
+        c: 102
+    },
+    {
+        label: "2022",
+        a: 137,
+        b: 112,
+        c: 98
+    },
+    {
+        label: "2023",
+        a: 159,
+        b: 121,
+        c: 105
+    },
+    {
+        label: "2024",
+        a: 181,
+        b: 133,
+        c: 108
+    },
+    {
+        label: "2025",
+        a: 214,
+        b: 147,
+        c: 116
+    }
+];
+const IndexedLineChart = ({ eyebrow = "INDEXED COMPARISON", title = "Rebase everything to 100 to compare growth rates.", data = IndexedLineChart_DEFAULT, labels = [
+    "A",
+    "B",
+    "C"
+] })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680, height = 600, left = 80, right = 80, top = 35, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const vals = data.flatMap((d)=>[
+            d.a,
+            d.b,
+            d.c
+        ]);
+    const [mn0, mx0] = extent(vals);
+    const pad = (mx0 - mn0) * .08, mn = Math.min(90, mn0 - pad), mx = mx0 + pad;
+    const x = (i)=>left + i / Math.max(1, data.length - 1) * chartW, y = (v)=>geometry_scale(v, mn, mx, top + chartH, top);
+    const series = [
+        {
+            k: "a",
+            label: labels[0],
+            stroke: VIZ.yellow,
+            w: 10
+        },
+        {
+            k: "b",
+            label: labels[1],
+            stroke: VIZ.ink,
+            w: 6
+        },
+        {
+            k: "c",
+            label: labels[2],
+            stroke: VIZ.muted,
+            w: 4
+        }
+    ];
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-2 text-[18px] text-muted",
+                children: "BASE YEAR = 100"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-2",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(GridLines, {
+                        width: width,
+                        height: height,
+                        left: left,
+                        right: right,
+                        top: top,
+                        bottom: bottom
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                        x1: left,
+                        x2: width - right,
+                        y1: y(100),
+                        y2: y(100),
+                        stroke: VIZ.ink,
+                        strokeWidth: 3,
+                        strokeDasharray: "12 8",
+                        strokeOpacity: .45
+                    }),
+                    series.map((s, si)=>{
+                        const p = tween(frame, 8 + si * 8, 50);
+                        const pts = data.map((d, i)=>({
+                                x: x(i),
+                                y: y(Number(d[s.k]))
+                            }));
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                    d: smoothPath(pts),
+                                    fill: "none",
+                                    stroke: s.stroke,
+                                    strokeWidth: s.w,
+                                    pathLength: 1,
+                                    strokeDasharray: 1,
+                                    strokeDashoffset: 1 - p
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: pts.at(-1).x + 22,
+                                    y: pts.at(-1).y + 6,
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 19,
+                                    fill: VIZ.ink,
+                                    children: s.label
+                                })
+                            ]
+                        }, s.label);
+                    }),
+                    data.map((d, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: x(i),
+                            y: height - 28,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 17,
+                            fill: VIZ.muted,
+                            children: d.label
+                        }, d.label))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/AnnotatedLineChart.tsx
+
+
+
+
+
+
+const AnnotatedLineChart_data = [
+    42,
+    48,
+    51,
+    58,
+    54,
+    63,
+    72,
+    69,
+    81,
+    88,
+    83,
+    96
+];
+const AnnotatedLineChart_events = [
+    {
+        index: 3,
+        label: "PRICE CUT"
+    },
+    {
+        index: 6,
+        label: "NEW PRODUCT"
+    },
+    {
+        index: 9,
+        label: "RATE SHOCK"
+    }
+];
+const AnnotatedLineChart = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), W = 1480, H = 500, min = Math.min(...AnnotatedLineChart_data), max = Math.max(...AnnotatedLineChart_data);
+    const pts = AnnotatedLineChart_data.map((v, i)=>({
+            x: i / (AnnotatedLineChart_data.length - 1) * W,
+            y: H - 40 - (v - min) / (max - min) * (H - 90)
+        }));
+    const d = pts.map((pt, i)=>`${i === 0 ? "M" : "L"} ${pt.x} ${pt.y}`).join(" "), lineP = motion_reveal(frame, 10, 45);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "ANNOTATED SERIES",
+                title: "Tell the story on the chart."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-12",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                    width: W,
+                    height: H + 110,
+                    viewBox: `0 0 ${W} ${H + 110}`,
+                    children: [
+                        [
+                            0.25,
+                            0.5,
+                            0.75
+                        ].map((r)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                x1: 0,
+                                x2: W,
+                                y1: H * r,
+                                y2: H * r,
+                                stroke: palette.ink,
+                                strokeOpacity: 0.1,
+                                strokeWidth: 2
+                            }, r)),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                            d: d,
+                            fill: "none",
+                            stroke: palette.ink,
+                            strokeWidth: 7,
+                            pathLength: 1,
+                            strokeDasharray: 1,
+                            strokeDashoffset: 1 - lineP
+                        }),
+                        AnnotatedLineChart_events.map((e, i)=>{
+                            const p = motion_reveal(frame, 32 + i * 12, 14), pt = pts[e.index], above = i % 2 === 0;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                opacity: p,
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                        cx: pt.x,
+                                        cy: pt.y,
+                                        r: 9,
+                                        fill: palette.yellow,
+                                        stroke: palette.ink,
+                                        strokeWidth: 3
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                        x1: pt.x,
+                                        y1: pt.y,
+                                        x2: pt.x,
+                                        y2: above ? pt.y - 92 : pt.y + 92,
+                                        stroke: palette.ink,
+                                        strokeWidth: 2
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                        x: pt.x - 95,
+                                        y: above ? pt.y - 145 : pt.y + 92,
+                                        width: 190,
+                                        height: 54,
+                                        fill: palette.yellow,
+                                        stroke: palette.ink,
+                                        strokeWidth: 2
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                        x: pt.x,
+                                        y: above ? pt.y - 111 : pt.y + 127,
+                                        textAnchor: "middle",
+                                        fontFamily: "IBM Plex Mono",
+                                        fontWeight: 600,
+                                        fontSize: 18,
+                                        children: e.label
+                                    })
+                                ]
+                            }, e.label);
+                        })
+                    ]
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/EventStudyChart.tsx
+
+
+
+
+
+
+const EventStudyChart_data = [
+    {
+        x: -5,
+        a: 0,
+        b: 0
+    },
+    {
+        x: -4,
+        a: 1,
+        b: 0.5
+    },
+    {
+        x: -3,
+        a: 0.5,
+        b: 0.2
+    },
+    {
+        x: -2,
+        a: 1.2,
+        b: 0.8
+    },
+    {
+        x: -1,
+        a: 1,
+        b: 0.7
+    },
+    {
+        x: 0,
+        a: 1,
+        b: 0.8
+    },
+    {
+        x: 1,
+        a: 5,
+        b: 1.2
+    },
+    {
+        x: 2,
+        a: 7,
+        b: 1.5
+    },
+    {
+        x: 3,
+        a: 8,
+        b: 1.8
+    },
+    {
+        x: 4,
+        a: 7.5,
+        b: 2
+    },
+    {
+        x: 5,
+        a: 8.2,
+        b: 2.2
+    }
+];
+const EventStudyChart = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), W = 1480, H = 500, toX = (x)=>(x + 5) / 10 * W, toY = (y)=>H - 30 - y / 9 * (H - 70), p = motion_reveal(frame, 12, 45);
+    const dA = EventStudyChart_data.map((r, i)=>`${i === 0 ? "M" : "L"} ${toX(r.x)} ${toY(r.a)}`).join(" "), dB = EventStudyChart_data.map((r, i)=>`${i === 0 ? "M" : "L"} ${toX(r.x)} ${toY(r.b)}`).join(" ");
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "EVENT STUDY",
+                title: "What changed after the event?"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-12",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                    width: W,
+                    height: H + 80,
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: toX(0),
+                            x2: toX(0),
+                            y1: 0,
+                            y2: H,
+                            stroke: palette.yellow,
+                            strokeWidth: 8
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: toX(0) + 12,
+                            y: 28,
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fontWeight: 600,
+                            children: "EVENT"
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                            d: dA,
+                            fill: "none",
+                            stroke: palette.ink,
+                            strokeWidth: 7,
+                            pathLength: 1,
+                            strokeDasharray: 1,
+                            strokeDashoffset: 1 - p
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                            d: dB,
+                            fill: "none",
+                            stroke: palette.muted,
+                            strokeWidth: 4,
+                            strokeDasharray: "10 10"
+                        }),
+                        [
+                            -5,
+                            0,
+                            5
+                        ].map((x)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                x: toX(x),
+                                y: H + 42,
+                                textAnchor: "middle",
+                                fontFamily: "IBM Plex Mono",
+                                fontSize: 18,
+                                fill: palette.muted,
+                                children: x
+                            }, x)),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: W - 10,
+                            y: toY(8.2) - 16,
+                            textAnchor: "end",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 20,
+                            fontWeight: 600,
+                            children: "TREATED"
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: W - 10,
+                            y: toY(2.2) + 30,
+                            textAnchor: "end",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 20,
+                            fill: palette.muted,
+                            children: "CONTROL"
+                        })
+                    ]
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/components/viz/overlayShared.tsx
+
+/**
+ * Overlay shared shell — transparent video overlays (CompareCards, PresenterOrbitOverlay).
+ */ 
+
+
+const OVERLAY_COLORS = {
+    paper: colors.paper,
+    ink: colors.ink,
+    yellow: colors.yellow,
+    muted: colors.muted,
+    soft: colors.soft
+};
+/** @deprecated Use OVERLAY_COLORS */ const EXPRESSIVE_COLORS = (/* unused pure expression or super */ null && (OVERLAY_COLORS));
+const OverlayShell = ({ children, transparent = true })=>/*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .AbsoluteFill */.H1, {
+        style: {
+            background: transparent ? "transparent" : OVERLAY_COLORS.paper,
+            color: OVERLAY_COLORS.ink,
+            fontFamily: `"${typography.fontFamily}", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`,
+            overflow: "hidden"
+        },
+        children: children
+    });
+const InlineLegend = ({ items })=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: "flex items-center gap-7 text-[19px] text-muted",
+        children: items.map((item)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "flex items-center gap-3",
+                children: [
+                    item.kind === "bar" ? /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: "inline-block h-[18px] w-[18px] border-2 border-ink bg-yellow"
+                    }) : /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: "inline-block h-[3px] w-[34px] bg-ink"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: item.label
+                    })
+                ]
+            }, item.label))
+    });
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/DualAxisChart.tsx
+
+
+
+
+
+
+
+
+
+const DualAxisChart_DEFAULT_DATA = [
+    {
+        label: "2018",
+        bar: 48,
+        line: 105
+    },
+    {
+        label: "2019",
+        bar: 60,
+        line: 110
+    },
+    {
+        label: "2020",
+        bar: 42,
+        line: 95
+    },
+    {
+        label: "2021",
+        bar: 72,
+        line: 118
+    },
+    {
+        label: "2022",
+        bar: 86,
+        line: 121
+    },
+    {
+        label: "2023",
+        bar: 112,
+        line: 135
+    },
+    {
+        label: "2024",
+        bar: 130,
+        line: 158
+    },
+    {
+        label: "2025",
+        bar: 146,
+        line: 205
+    }
+];
+const DualAxisChart_niceMax = (value)=>{
+    if (value <= 0) return 1;
+    const magnitude = 10 ** Math.floor(Math.log10(value));
+    return Math.ceil(value / magnitude) * magnitude;
+};
+const DualAxisChart_smoothPath = (points)=>{
+    if (points.length < 2) return "";
+    let d = `M ${points[0].x} ${points[0].y}`;
+    for(let i = 1; i < points.length; i++){
+        const prev = points[i - 1];
+        const curr = points[i];
+        const midX = (prev.x + curr.x) / 2;
+        d += ` C ${midX} ${prev.y}, ${midX} ${curr.y}, ${curr.x} ${curr.y}`;
+    }
+    return d;
+};
+const DualAxisChart = ({ eyebrow = "TWO METRICS", title = "Volume and price can tell different stories.", data = DualAxisChart_DEFAULT_DATA, barLabel = "VOLUME", lineLabel = "PRICE INDEX", leftUnit = "", rightUnit = "", highlightFromIndex = 5, source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680;
+    const height = 600;
+    const left = 95;
+    const right = 110;
+    const top = 42;
+    const bottom = 85;
+    const chartW = width - left - right;
+    const chartH = height - top - bottom;
+    const maxBar = DualAxisChart_niceMax(Math.max(...data.map((d)=>d.bar)) * 1.05);
+    const minLine = Math.min(...data.map((d)=>d.line));
+    const maxLineRaw = Math.max(...data.map((d)=>d.line));
+    const linePad = Math.max(1, (maxLineRaw - minLine) * 0.15);
+    const lineMin = minLine - linePad;
+    const lineMax = maxLineRaw + linePad;
+    const xFor = (i)=>left + i / Math.max(1, data.length - 1) * chartW;
+    const yLine = (v)=>top + (1 - (v - lineMin) / Math.max(0.0001, lineMax - lineMin)) * chartH;
+    const linePoints = data.map((d, i)=>({
+            x: xFor(i),
+            y: yLine(d.line)
+        }));
+    const path = DualAxisChart_smoothPath(linePoints);
+    const lineP = tween(frame, 24, 58);
+    const highlightX = highlightFromIndex >= 0 && highlightFromIndex < data.length ? xFor(highlightFromIndex) - chartW / Math.max(1, data.length - 1) / 2 : width;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "flex items-start justify-between gap-12",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                        eyebrow: eyebrow,
+                        title: title
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "mt-4",
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)(InlineLegend, {
+                            items: [
+                                {
+                                    label: barLabel,
+                                    kind: "bar"
+                                },
+                                {
+                                    label: lineLabel,
+                                    kind: "line"
+                                }
+                            ]
+                        })
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-8",
+                children: [
+                    highlightX < width ? /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                        x: highlightX,
+                        y: top,
+                        width: width - right - highlightX,
+                        height: chartH,
+                        fill: colors.yellow,
+                        opacity: 0.16
+                    }) : null,
+                    [
+                        0,
+                        0.25,
+                        0.5,
+                        0.75,
+                        1
+                    ].map((ratio)=>{
+                        const y = top + ratio * chartH;
+                        const leftValue = maxBar * (1 - ratio);
+                        const rightValue = lineMax - (lineMax - lineMin) * ratio;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                    x1: left,
+                                    x2: width - right,
+                                    y1: y,
+                                    y2: y,
+                                    stroke: colors.ink,
+                                    strokeOpacity: 0.12,
+                                    strokeWidth: 2
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                                    x: left - 14,
+                                    y: y + 6,
+                                    textAnchor: "end",
+                                    fontSize: 17,
+                                    fill: "#737373",
+                                    fontFamily: "IBM Plex Mono",
+                                    children: [
+                                        leftValue.toFixed(0),
+                                        leftUnit
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                                    x: width - right + 14,
+                                    y: y + 6,
+                                    textAnchor: "start",
+                                    fontSize: 17,
+                                    fill: "#737373",
+                                    fontFamily: "IBM Plex Mono",
+                                    children: [
+                                        rightValue.toFixed(0),
+                                        rightUnit
+                                    ]
+                                })
+                            ]
+                        }, ratio);
+                    }),
+                    data.map((d, index)=>{
+                        const p = tween(frame, 8 + index * 2.2, 18);
+                        const x = xFor(index);
+                        const barHeight = d.bar / maxBar * chartH * p;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                    x: x - 18,
+                                    y: top + chartH - barHeight,
+                                    width: 36,
+                                    height: barHeight,
+                                    fill: colors.yellow,
+                                    stroke: colors.ink,
+                                    strokeWidth: 2
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: x,
+                                    y: top + chartH + 37,
+                                    textAnchor: "middle",
+                                    fontSize: 17,
+                                    fill: "#737373",
+                                    fontFamily: "IBM Plex Mono",
+                                    children: d.label
+                                })
+                            ]
+                        }, d.label);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                        d: path,
+                        fill: "none",
+                        stroke: colors.ink,
+                        strokeWidth: 7,
+                        strokeLinecap: "square",
+                        pathLength: 1,
+                        strokeDasharray: 1,
+                        strokeDashoffset: 1 - lineP
+                    }),
+                    linePoints.map((point, index)=>{
+                        const p = tween(frame, 48 + index * 3, 10);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                            x: point.x - 7,
+                            y: point.y - 7,
+                            width: 14,
+                            height: 14,
+                            fill: index === linePoints.length - 1 ? colors.yellow : colors.ink,
+                            stroke: colors.ink,
+                            strokeWidth: 2,
+                            opacity: p
+                        }, index);
+                    })
+                ]
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/ConnectedScatterPlot.tsx
+
+
+
+
+
+
+const ConnectedScatterPlot_pts = [
+    {
+        year: "2019",
+        x: 25,
+        y: 22
+    },
+    {
+        year: "2020",
+        x: 32,
+        y: 28
+    },
+    {
+        year: "2021",
+        x: 46,
+        y: 41
+    },
+    {
+        year: "2022",
+        x: 58,
+        y: 55
+    },
+    {
+        year: "2023",
+        x: 67,
+        y: 63
+    },
+    {
+        year: "2024",
+        x: 78,
+        y: 72
+    }
+];
+const ConnectedScatterPlot = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), p = motion_reveal(frame, 12, 50), W = 1400, H = 520;
+    const d = ConnectedScatterPlot_pts.map((pt, i)=>`${i === 0 ? "M" : "L"} ${pt.x / 100 * W} ${H - pt.y / 100 * H}`).join(" ");
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "CONNECTED SCATTER",
+                title: "How the relationship evolved over time."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                    width: W,
+                    height: H + 60,
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: 0,
+                            y1: H,
+                            x2: W,
+                            y2: H,
+                            stroke: palette.ink,
+                            strokeWidth: 2
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: H,
+                            stroke: palette.ink,
+                            strokeWidth: 2
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                            d: d,
+                            fill: "none",
+                            stroke: palette.ink,
+                            strokeWidth: 5,
+                            pathLength: 1,
+                            strokeDasharray: 1,
+                            strokeDashoffset: 1 - p
+                        }),
+                        ConnectedScatterPlot_pts.map((pt, i)=>{
+                            const r = motion_reveal(frame, 18 + i * 6, 12), x = pt.x / 100 * W, y = H - pt.y / 100 * H;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                opacity: r,
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                        cx: x,
+                                        cy: y,
+                                        r: 12,
+                                        fill: i === ConnectedScatterPlot_pts.length - 1 ? palette.yellow : palette.white,
+                                        stroke: palette.ink,
+                                        strokeWidth: 3
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                        x: x + 18,
+                                        y: y - 14,
+                                        fontFamily: "IBM Plex Mono",
+                                        fontSize: 17,
+                                        children: pt.year
+                                    })
+                                ]
+                            }, pt.year);
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: W / 2,
+                            y: H + 50,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fill: palette.muted,
+                            children: "PRICE →"
+                        })
+                    ]
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/BumpChart.tsx
+
+
+
+
+
+
+
+const BumpChart_DEFAULT = [
+    {
+        label: "A",
+        ranks: [
+            3,
+            2,
+            2,
+            1,
+            1
+        ],
+        highlight: true
+    },
+    {
+        label: "B",
+        ranks: [
+            1,
+            1,
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        label: "C",
+        ranks: [
+            2,
+            3,
+            4,
+            4,
+            2
+        ]
+    },
+    {
+        label: "D",
+        ranks: [
+            4,
+            4,
+            3,
+            3,
+            4
+        ]
+    }
+];
+const BumpChart = ({ eyebrow = "RANK OVER TIME", title = "Show who overtook whom.", series = BumpChart_DEFAULT, periods = [
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+] })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680, height = 600, left = 130, right = 130, top = 55, bottom = 70, chartW = width - left - right, chartH = height - top - bottom;
+    const maxRank = Math.max(...series.flatMap((s)=>s.ranks));
+    const x = (i)=>left + i / Math.max(1, periods.length - 1) * chartW;
+    const y = (rank)=>top + (rank - 1) / Math.max(1, maxRank - 1) * chartH;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-6",
+                children: [
+                    Array.from({
+                        length: maxRank
+                    }).map((_, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: left,
+                            x2: width - right,
+                            y1: y(i + 1),
+                            y2: y(i + 1),
+                            stroke: VIZ.ink,
+                            strokeOpacity: .1,
+                            strokeWidth: 2
+                        }, i)),
+                    series.map((s, si)=>{
+                        const p = tween(frame, 8 + si * 6, 50);
+                        const pts = s.ranks.map((r, i)=>({
+                                x: x(i),
+                                y: y(r)
+                            }));
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                    d: smoothPath(pts),
+                                    fill: "none",
+                                    stroke: s.highlight ? VIZ.yellow : VIZ.ink,
+                                    strokeWidth: s.highlight ? 10 : 4,
+                                    strokeOpacity: s.highlight ? 1 : .55,
+                                    pathLength: 1,
+                                    strokeDasharray: 1,
+                                    strokeDashoffset: 1 - p
+                                }),
+                                pts.map((pt, i)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                        opacity: tween(frame, 34 + si * 5 + i * 2, 8),
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                                cx: pt.x,
+                                                cy: pt.y,
+                                                r: s.highlight ? 16 : 10,
+                                                fill: s.highlight ? VIZ.yellow : VIZ.white,
+                                                stroke: VIZ.ink,
+                                                strokeWidth: 2
+                                            }),
+                                            i === periods.length - 1 ? /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                                x: pt.x + 28,
+                                                y: pt.y + 7,
+                                                fontFamily: "IBM Plex Mono",
+                                                fontSize: 20,
+                                                fill: VIZ.ink,
+                                                children: s.label
+                                            }) : null
+                                        ]
+                                    }, i))
+                            ]
+                        }, s.label);
+                    }),
+                    periods.map((p, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: x(i),
+                            y: height - 25,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fill: VIZ.muted,
+                            children: p
+                        }, p))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/time-series/IndexedComparisonChart.tsx
+
+
+
+
+
+
+const IndexedComparisonChart_series = [
+    {
+        name: "COMPANY A",
+        values: [
+            100,
+            110,
+            118,
+            132,
+            145,
+            160
+        ],
+        accent: true
+    },
+    {
+        name: "PEER",
+        values: [
+            100,
+            104,
+            109,
+            111,
+            118,
+            123
+        ],
+        accent: false
+    },
+    {
+        name: "MARKET",
+        values: [
+            100,
+            102,
+            108,
+            114,
+            119,
+            125
+        ],
+        accent: false
+    }
+];
+const IndexedComparisonChart = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), W = 1450, H = 500, min = 90, max = 170, toY = (v)=>H - 30 - (v - min) / (max - min) * (H - 70), p = motion_reveal(frame, 10, 48);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "INDEXED COMPARISON",
+                title: "Start everyone at 100."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-12",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                    width: W,
+                    height: H + 70,
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: 0,
+                            x2: W,
+                            y1: toY(100),
+                            y2: toY(100),
+                            stroke: palette.ink,
+                            strokeOpacity: 0.16,
+                            strokeWidth: 2
+                        }),
+                        IndexedComparisonChart_series.map((s)=>{
+                            const points = s.values.map((v, i)=>({
+                                    x: i / (s.values.length - 1) * W,
+                                    y: toY(v)
+                                })), d = points.map((pt, i)=>`${i === 0 ? "M" : "L"} ${pt.x} ${pt.y}`).join(" "), last = points[points.length - 1];
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: d,
+                                        fill: "none",
+                                        stroke: s.accent ? palette.ink : palette.muted,
+                                        strokeWidth: s.accent ? 7 : 3,
+                                        strokeDasharray: s.accent ? undefined : "10 9",
+                                        pathLength: 1,
+                                        strokeDashoffset: 1 - p
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                        x: last.x - 150,
+                                        y: last.y - 26,
+                                        width: 145,
+                                        height: 42,
+                                        fill: s.accent ? palette.yellow : palette.white,
+                                        stroke: palette.ink,
+                                        strokeWidth: 2
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                        x: last.x - 78,
+                                        y: last.y + 2,
+                                        textAnchor: "middle",
+                                        fontFamily: "IBM Plex Mono",
+                                        fontSize: 16,
+                                        fontWeight: 600,
+                                        children: s.name
+                                    })
+                                ]
+                            }, s.name);
+                        })
+                    ]
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/comparison/DumbbellChart.tsx
+
+
+
+
+
+
+
+
+const DumbbellChart_DEFAULT = [
+    {
+        label: "Software",
+        from: 22,
+        to: 41
+    },
+    {
+        label: "Finance",
+        from: 31,
+        to: 36
+    },
+    {
+        label: "Retail",
+        from: 14,
+        to: 27
+    },
+    {
+        label: "Industry",
+        from: 28,
+        to: 24
+    },
+    {
+        label: "Media",
+        from: 18,
+        to: 33
+    }
+];
+const DumbbellChart = ({ eyebrow = "CHANGE", title = "Show both the level and the direction of change.", data = DumbbellChart_DEFAULT, fromLabel = "BEFORE", toLabel = "AFTER", suffix = "%", source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const [rawMin, rawMax] = extent(data.flatMap((d)=>[
+            d.from,
+            d.to
+        ]));
+    const pad = Math.max(1, (rawMax - rawMin) * 0.15);
+    const min = rawMin - pad;
+    const max = rawMax + pad;
+    const width = 1300;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-12 ml-[240px] flex w-[1300px] justify-between text-[18px] text-muted",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                        children: [
+                            min.toFixed(0),
+                            suffix
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                        children: [
+                            max.toFixed(0),
+                            suffix
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-4 space-y-7",
+                children: data.map((row, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                    const x1 = geometry_scale(row.from, min, max, 0, width);
+                    const x2 = geometry_scale(row.to, min, max, 0, width);
+                    const left = Math.min(x1, x2);
+                    const lineW = Math.abs(x2 - x1) * p;
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[210px_1300px_140px] items-center gap-8",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[23px] font-semibold",
+                                children: row.label
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "relative h-[46px]",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-1/2 h-[4px] -translate-y-1/2 bg-soft",
+                                        style: {
+                                            left: 0,
+                                            width
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-1/2 h-[5px] -translate-y-1/2 bg-ink",
+                                        style: {
+                                            left,
+                                            width: lineW
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-1/2 h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 border-2 border-ink bg-white",
+                                        style: {
+                                            left: x1,
+                                            opacity: p
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-1/2 h-[26px] w-[26px] -translate-x-1/2 -translate-y-1/2 border-2 border-ink bg-yellow",
+                                        style: {
+                                            left: x2,
+                                            opacity: p
+                                        }
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-[21px]",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "text-muted",
+                                        children: fromLabel
+                                    }),
+                                    " ",
+                                    row.from,
+                                    suffix,
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("br", {}),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                        className: "font-semibold",
+                                        children: [
+                                            toLabel,
+                                            " ",
+                                            row.to,
+                                            suffix
+                                        ]
+                                    })
+                                ]
+                            })
+                        ]
+                    }, row.label);
+                })
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/comparison/SlopeChart.tsx
+
+
+
+
+
+
+
+
+const SlopeChart_DEFAULT = [
+    {
+        label: "Company A",
+        start: 18,
+        end: 39,
+        highlight: true
+    },
+    {
+        label: "Company B",
+        start: 31,
+        end: 35
+    },
+    {
+        label: "Company C",
+        start: 27,
+        end: 22
+    },
+    {
+        label: "Company D",
+        start: 12,
+        end: 25
+    }
+];
+const SlopeChart = ({ eyebrow = "RANK & DIRECTION", title = "Who moved, and by how much?", data = SlopeChart_DEFAULT, startLabel = "2020", endLabel = "2025", suffix = "%", source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const [min0, max0] = extent(data.flatMap((d)=>[
+            d.start,
+            d.end
+        ]));
+    const pad = Math.max(1, (max0 - min0) * 0.12);
+    const min = min0 - pad, max = max0 + pad;
+    const top = 45, bottom = 510;
+    const y = (v)=>geometry_scale(v, min, max, bottom, top);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-14 flex justify-center gap-[420px] text-[22px] font-semibold",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: startLabel
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: endLabel
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: 1650,
+                height: 580,
+                className: "mt-2",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                        x1: 410,
+                        x2: 410,
+                        y1: 20,
+                        y2: 540,
+                        stroke: VIZ.ink,
+                        strokeOpacity: 0.18,
+                        strokeWidth: 2
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                        x1: 1240,
+                        x2: 1240,
+                        y1: 20,
+                        y2: 540,
+                        stroke: VIZ.ink,
+                        strokeOpacity: 0.18,
+                        strokeWidth: 2
+                    }),
+                    data.map((d, i)=>{
+                        const p = chartMotion_stagger(frame, i, 8, 6, 20);
+                        const y1 = y(d.start), y2 = y(d.end);
+                        const stroke = d.highlight ? VIZ.yellow : VIZ.ink;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            opacity: p,
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                    x1: 410,
+                                    x2: 410 + (1240 - 410) * p,
+                                    y1: y1,
+                                    y2: y1 + (y2 - y1) * p,
+                                    stroke: stroke,
+                                    strokeWidth: d.highlight ? 9 : 4
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                    x: 399,
+                                    y: y1 - 11,
+                                    width: 22,
+                                    height: 22,
+                                    fill: d.highlight ? VIZ.yellow : VIZ.white,
+                                    stroke: VIZ.ink,
+                                    strokeWidth: 2
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                    x: 1229,
+                                    y: y2 - 11,
+                                    width: 22,
+                                    height: 22,
+                                    fill: d.highlight ? VIZ.yellow : VIZ.white,
+                                    stroke: VIZ.ink,
+                                    strokeWidth: 2
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                                    x: 382,
+                                    y: y1 + 7,
+                                    textAnchor: "end",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 20,
+                                    fill: VIZ.ink,
+                                    children: [
+                                        d.label,
+                                        " ",
+                                        d.start,
+                                        suffix
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                                    x: 1268,
+                                    y: y2 + 7,
+                                    textAnchor: "start",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 20,
+                                    fill: VIZ.ink,
+                                    children: [
+                                        d.end,
+                                        suffix,
+                                        " ",
+                                        d.label
+                                    ]
+                                })
+                            ]
+                        }, d.label);
+                    })
+                ]
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/comparison/SmallMultiples.tsx
+
+
+
+
+
+
+
+const SmallMultiples_DEFAULT = [
+    {
+        title: "US",
+        icon: "🇺🇸",
+        values: [
+            22,
+            24,
+            29,
+            35,
+            41
+        ],
+        highlight: true
+    },
+    {
+        title: "EU",
+        icon: "🇪🇺",
+        values: [
+            19,
+            20,
+            22,
+            23,
+            24
+        ]
+    },
+    {
+        title: "JAPAN",
+        icon: "🇯🇵",
+        values: [
+            18,
+            17,
+            18,
+            20,
+            23
+        ]
+    },
+    {
+        title: "KOREA",
+        icon: "🇰🇷",
+        values: [
+            16,
+            18,
+            21,
+            23,
+            28
+        ]
+    }
+];
+const SmallMultiples = ({ eyebrow = "SMALL MULTIPLES", title = "Same scale. Different trajectories.", panels = SmallMultiples_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const all = panels.flatMap((p)=>p.values);
+    const min = Math.min(...all), max = Math.max(...all);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14 grid grid-cols-2 gap-8",
+                children: panels.map((panel, i)=>{
+                    const p = chartMotion_stagger(frame, i, 6, 5, 16);
+                    const w = 760, h = 250, pad = 28;
+                    const pts = panel.values.map((v, j)=>({
+                            x: pad + j / Math.max(1, panel.values.length - 1) * (w - pad * 2),
+                            y: h - pad - (v - min) / Math.max(1e-9, max - min) * (h - pad * 2)
+                        }));
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: `border-2 border-ink p-6 ${panel.highlight ? "bg-yellow" : "bg-white"}`,
+                        style: {
+                            opacity: p,
+                            boxShadow: "5px 5px 0 #111"
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "flex items-center justify-between",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                        className: "text-[26px] font-semibold",
+                                        children: [
+                                            panel.icon,
+                                            " ",
+                                            panel.title
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "text-[22px]",
+                                        children: panel.values.at(-1)
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                                width: w,
+                                height: h,
+                                className: "mt-2",
+                                children: [
+                                    [
+                                        0.33,
+                                        0.66
+                                    ].map((r)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                            x1: pad,
+                                            x2: w - pad,
+                                            y1: h * r,
+                                            y2: h * r,
+                                            stroke: VIZ.ink,
+                                            strokeOpacity: 0.12,
+                                            strokeWidth: 2
+                                        }, r)),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: smoothPath(pts),
+                                        fill: "none",
+                                        stroke: VIZ.ink,
+                                        strokeWidth: 7,
+                                        pathLength: 1,
+                                        strokeDasharray: 1,
+                                        strokeDashoffset: 1 - p
+                                    }),
+                                    pts.map((pt, j)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                            x: pt.x - 6,
+                                            y: pt.y - 6,
+                                            width: 12,
+                                            height: 12,
+                                            fill: j === pts.length - 1 ? VIZ.ink : VIZ.white,
+                                            stroke: VIZ.ink,
+                                            strokeWidth: 2,
+                                            opacity: p
+                                        }, j))
+                                ]
+                            })
+                        ]
+                    }, panel.title);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/comparison/BenchmarkBandChart.tsx
+
+
+
+
+
+
+
+const BenchmarkBandChart_DEFAULT = [
+    {
+        label: "Q1",
+        value: 42,
+        benchmarkLow: 35,
+        benchmarkHigh: 45
+    },
+    {
+        label: "Q2",
+        value: 47,
+        benchmarkLow: 38,
+        benchmarkHigh: 48
+    },
+    {
+        label: "Q3",
+        value: 51,
+        benchmarkLow: 41,
+        benchmarkHigh: 51
+    },
+    {
+        label: "Q4",
+        value: 58,
+        benchmarkLow: 44,
+        benchmarkHigh: 54
+    },
+    {
+        label: "Q5",
+        value: 62,
+        benchmarkLow: 47,
+        benchmarkHigh: 57
+    }
+];
+const BenchmarkBandChart = ({ eyebrow = "VS BENCHMARK RANGE", title = "Show when performance breaks out of the normal band.", data = BenchmarkBandChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), p = tween(frame, 10, 52);
+    const width = 1680, height = 600, left = 80, right = 60, top = 35, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const [mn0, mx0] = extent(data.flatMap((d)=>[
+            d.value,
+            d.benchmarkLow,
+            d.benchmarkHigh
+        ]));
+    const pad = (mx0 - mn0) * .12, mn = mn0 - pad, mx = mx0 + pad;
+    const x = (i)=>left + i / Math.max(1, data.length - 1) * chartW, y = (v)=>geometry_scale(v, mn, mx, top + chartH, top);
+    const lo = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.benchmarkLow)
+        })), hi = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.benchmarkHigh)
+        })), val = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.value)
+        }));
+    const band = [
+        ...hi,
+        ...lo.slice().reverse()
+    ].map((q)=>`${q.x},${q.y}`).join(" ");
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-8",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("defs", {
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("clipPath", {
+                            id: "bench-reveal",
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                x: left,
+                                y: 0,
+                                width: chartW * p,
+                                height: height
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(GridLines, {
+                        width: width,
+                        height: height,
+                        left: left,
+                        right: right,
+                        top: top,
+                        bottom: bottom
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                        clipPath: "url(#bench-reveal)",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                                points: band,
+                                fill: VIZ.soft,
+                                stroke: VIZ.ink,
+                                strokeOpacity: .25
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: smoothPath(val),
+                                fill: "none",
+                                stroke: VIZ.yellow,
+                                strokeWidth: 10
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: smoothPath(val),
+                                fill: "none",
+                                stroke: VIZ.ink,
+                                strokeWidth: 3
+                            })
+                        ]
+                    }),
+                    data.map((d, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: x(i),
+                            y: height - 28,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 17,
+                            fill: VIZ.muted,
+                            children: d.label
+                        }, d.label))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/TreemapChart.tsx
+
+
+
+
+
+
+const TreemapChart_DEFAULT = [
+    {
+        label: "Cloud",
+        value: 36,
+        icon: "☁️",
+        highlight: true
+    },
+    {
+        label: "Ads",
+        value: 25,
+        icon: "📣"
+    },
+    {
+        label: "Commerce",
+        value: 18,
+        icon: "🛒"
+    },
+    {
+        label: "Devices",
+        value: 12,
+        icon: "💻"
+    },
+    {
+        label: "Other",
+        value: 9,
+        icon: "•••"
+    }
+];
+// Deliberately simple slice-and-dice treemap: predictable, editable, animation-friendly.
+const TreemapChart = ({ eyebrow = "PARTS OF A WHOLE", title = "Show size as area.", items = TreemapChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const total = items.reduce((a, b)=>a + b.value, 0);
+    let x = 0;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "relative mt-16 h-[610px] w-full border-2 border-ink bg-white",
+                children: items.map((item, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 5, 16);
+                    const w = item.value / total * 100;
+                    const left = x;
+                    x += w;
+                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: `absolute top-0 h-full border-r-2 border-ink last:border-r-0 ${item.highlight ? "bg-yellow" : i % 2 ? "bg-soft" : "bg-white"}`,
+                        style: {
+                            left: `${left}%`,
+                            width: `${w * p}%`,
+                            overflow: "hidden"
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "flex h-full flex-col justify-between p-7",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[54px]",
+                                    children: item.icon
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "text-[28px] font-semibold",
+                                            children: item.label
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                            className: "mt-2 text-[48px] font-semibold",
+                                            children: [
+                                                item.value,
+                                                "%"
+                                            ]
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    }, item.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/MarimekkoChart.tsx
+
+
+
+
+
+
+const MarimekkoChart_DEFAULT = [
+    {
+        label: "US",
+        size: 48,
+        segments: [
+            {
+                label: "A",
+                share: 55
+            },
+            {
+                label: "B",
+                share: 30
+            },
+            {
+                label: "OTHER",
+                share: 15
+            }
+        ]
+    },
+    {
+        label: "EU",
+        size: 28,
+        segments: [
+            {
+                label: "A",
+                share: 34
+            },
+            {
+                label: "B",
+                share: 41
+            },
+            {
+                label: "OTHER",
+                share: 25
+            }
+        ]
+    },
+    {
+        label: "ASIA",
+        size: 24,
+        segments: [
+            {
+                label: "A",
+                share: 22
+            },
+            {
+                label: "B",
+                share: 48
+            },
+            {
+                label: "OTHER",
+                share: 30
+            }
+        ]
+    }
+];
+const MarimekkoChart = ({ eyebrow = "MARKET × SHARE", title = "Market size is width. Composition is height.", markets = MarimekkoChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const total = markets.reduce((a, b)=>a + b.size, 0);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14 flex h-[600px] w-full border-2 border-ink bg-white",
+                children: markets.map((m, mi)=>{
+                    const p = chartMotion_stagger(frame, mi, 8, 7, 20);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "flex h-full flex-col border-r-2 border-ink last:border-r-0",
+                        style: {
+                            width: `${m.size / total * 100 * p}%`
+                        },
+                        children: [
+                            [
+                                ...m.segments
+                            ].reverse().map((s)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: `flex items-center justify-center border-b-2 border-ink last:border-b-0 ${s.label === "A" ? "bg-yellow" : s.label === "B" ? "bg-ink text-white" : "bg-soft"}`,
+                                    style: {
+                                        height: `${s.share}%`
+                                    },
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                        className: "text-[20px] font-semibold",
+                                        children: [
+                                            s.label,
+                                            " ",
+                                            s.share,
+                                            "%"
+                                        ]
+                                    })
+                                }, s.label)),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "absolute"
+                            })
+                        ]
+                    }, m.label);
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-4 flex",
+                children: markets.map((m)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "text-center text-[21px] font-semibold",
+                        style: {
+                            width: `${m.size / total * 100}%`
+                        },
+                        children: [
+                            m.label,
+                            " \xb7 ",
+                            m.size,
+                            "% OF MARKET"
+                        ]
+                    }, m.label))
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/NestedCompositionChart.tsx
+
+
+
+
+
+
+const NestedCompositionChart_DEFAULT = [
+    {
+        label: "CONSUMER",
+        value: 55,
+        icon: "👤",
+        highlight: true,
+        children: [
+            {
+                label: "SUB",
+                value: 32
+            },
+            {
+                label: "ADS",
+                value: 23
+            }
+        ]
+    },
+    {
+        label: "ENTERPRISE",
+        value: 30,
+        icon: "🏢",
+        children: [
+            {
+                label: "SEATS",
+                value: 20
+            },
+            {
+                label: "API",
+                value: 10
+            }
+        ]
+    },
+    {
+        label: "OTHER",
+        value: 15,
+        icon: "•••",
+        children: [
+            {
+                label: "SERVICES",
+                value: 9
+            },
+            {
+                label: "OTHER",
+                value: 6
+            }
+        ]
+    }
+];
+const NestedCompositionChart = ({ eyebrow = "NESTED MIX", title = "Show both the major buckets and what sits inside them.", groups = NestedCompositionChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-20 space-y-7",
+                children: groups.map((g, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 7, 18);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[250px_1fr] items-center gap-7",
+                        style: {
+                            opacity: p
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[31px]",
+                                        children: g.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[22px] font-semibold",
+                                        children: g.label
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "text-[20px] text-muted",
+                                        children: [
+                                            g.value,
+                                            "% total"
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: `flex h-[100px] border-2 border-ink ${g.highlight ? "bg-yellow" : "bg-white"}`,
+                                style: {
+                                    width: `${g.value / Math.max(...groups.map((x)=>x.value)) * 100}%`
+                                },
+                                children: g.children.map((c, ci)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: `flex items-center justify-center border-r-2 border-ink last:border-r-0 ${ci % 2 ? "bg-soft" : ""}`,
+                                        style: {
+                                            width: `${c.value / g.value * 100}%`
+                                        },
+                                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                            className: "text-[20px] font-semibold",
+                                            children: [
+                                                c.label,
+                                                /*#__PURE__*/ (0,jsx_runtime.jsx)("br", {}),
+                                                c.value,
+                                                "%"
+                                            ]
+                                        })
+                                    }, c.label))
+                            })
+                        ]
+                    }, g.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/WaffleChart.tsx
+
+
+
+
+
+
+const WaffleChart = ({ value = 37, label = "OF REVENUE COMES FROM REPEAT CUSTOMERS" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), visible = Math.round(value * motion_reveal(frame, 12, 35));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "SHARE OF 100",
+                title: "Make the proportion tangible."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-14 flex items-center gap-24",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "grid grid-cols-10 gap-3",
+                        children: Array.from({
+                            length: 100
+                        }).map((_, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "h-[46px] w-[46px] border-2 border-ink",
+                                style: {
+                                    background: i < visible ? palette.yellow : palette.soft
+                                }
+                            }, i))
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "max-w-[550px]",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-[150px] font-semibold leading-none tracking-[-0.08em]",
+                                children: [
+                                    visible,
+                                    "%"
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mt-8 text-[28px] font-semibold leading-[1.35]",
+                                children: label
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/DistributionBlocksChart.tsx
+
+
+
+
+
+
+
+const DEFAULT_GROUPS = [
+    {
+        label: "BOTTOM 50%",
+        value: 8,
+        people: 5,
+        blocks: 4
+    },
+    {
+        label: "MIDDLE 40%",
+        value: 30,
+        people: 4,
+        blocks: 13
+    },
+    {
+        label: "TOP 10%",
+        value: 62,
+        people: 1,
+        blocks: 28,
+        accent: true
+    }
+];
+const MoneyBlock = ({ index, total, p, accent })=>{
+    const cols = Math.max(2, Math.ceil(Math.sqrt(total * 1.4)));
+    const row = Math.floor(index / cols);
+    const col = index % cols;
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: `absolute h-[24px] w-[44px] border-2 border-ink ${accent ? "bg-yellow" : "bg-white"}`,
+        style: {
+            left: col * 47,
+            bottom: row * 27,
+            opacity: p,
+            transform: `translateY(${(1 - p) * 18}px) scale(${0.88 + p * 0.12})`
+        },
+        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+            className: "flex h-full items-center justify-center text-[12px] font-semibold",
+            children: "$"
+        })
+    });
+};
+const DistributionBlocksChart = ({ eyebrow = "DISTRIBUTION", title = "The same population can own very different shares.", groups = DEFAULT_GROUPS, unit = "%", source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const spectrumP = tween(frame, 4, 30);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-10 grid grid-cols-3 gap-8",
+                children: groups.map((group, index)=>{
+                    const p = springIn({
+                        frame,
+                        fps,
+                        delay: 10 + index * 7,
+                        damping: 18,
+                        stiffness: 145
+                    });
+                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "text-center",
+                        style: {
+                            opacity: p
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "h-[54px] whitespace-nowrap text-[39px] tracking-[8px]",
+                            children: Array.from({
+                                length: group.people
+                            }).map((_, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                    children: "\uD83D\uDC64"
+                                }, i))
+                        })
+                    }, group.label);
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-5 flex h-[72px] overflow-hidden border-2 border-ink bg-white",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute inset-y-0 left-0 bg-ink",
+                        style: {
+                            width: `${33.33 * spectrumP}%`
+                        }
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute inset-y-0 left-1/3 bg-soft",
+                        style: {
+                            width: `${33.33 * spectrumP}%`
+                        }
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute inset-y-0 left-2/3 bg-yellow",
+                        style: {
+                            width: `${33.34 * spectrumP}%`
+                        }
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute inset-0 grid grid-cols-3 items-center text-center text-[22px] font-semibold mix-blend-difference text-white",
+                        children: groups.map((group)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: group.label
+                            }, group.label))
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-10 grid grid-cols-3 gap-8",
+                children: groups.map((group, index)=>{
+                    const p = springIn({
+                        frame,
+                        fps,
+                        delay: 22 + index * 8,
+                        damping: 18,
+                        stiffness: 145
+                    });
+                    const value = (0,esm/* .interpolate */.GW)(p, [
+                        0,
+                        1
+                    ], [
+                        0,
+                        group.value
+                    ]);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: `relative h-[500px] border-r-2 border-dashed border-ink/20 ${index === groups.length - 1 ? "border-r-0" : ""}`,
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-center text-[82px] font-semibold tracking-[-0.07em]",
+                                children: [
+                                    value.toFixed(group.value % 1 === 0 ? 0 : 1),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "text-[42px]",
+                                        children: unit
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "relative mx-auto mt-9 h-[320px] w-[300px]",
+                                children: Array.from({
+                                    length: group.blocks
+                                }).map((_, i)=>{
+                                    const bp = tween(frame, 34 + index * 8 + i * 0.8, 8);
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsx)(MoneyBlock, {
+                                        index: i,
+                                        total: group.blocks,
+                                        p: bp,
+                                        accent: group.accent
+                                    }, i);
+                                })
+                            })
+                        ]
+                    }, group.label);
+                })
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/CompositionCompareChart.tsx
+
+
+
+
+
+
+const CompositionCompareChart_DEFAULT = [
+    {
+        label: "2020",
+        icon: "◷",
+        segments: [
+            {
+                label: "CORE",
+                value: 55
+            },
+            {
+                label: "ADS",
+                value: 25
+            },
+            {
+                label: "OTHER",
+                value: 20
+            }
+        ]
+    },
+    {
+        label: "2025",
+        icon: "◆",
+        segments: [
+            {
+                label: "CORE",
+                value: 42
+            },
+            {
+                label: "ADS",
+                value: 38
+            },
+            {
+                label: "OTHER",
+                value: 20
+            }
+        ]
+    }
+];
+const CompositionCompareChart = ({ eyebrow = "COMPOSITION", title = "Compare two mixes, not just two totals.", rows = CompositionCompareChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-20 space-y-14",
+                children: rows.map((row, ri)=>{
+                    const p = chartMotion_stagger(frame, ri, 8, 10, 20);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "mb-4 flex items-center gap-4 text-[25px] font-semibold",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        children: row.icon
+                                    }),
+                                    row.label
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "flex h-[120px] overflow-hidden border-2 border-ink bg-white",
+                                style: {
+                                    width: `${p * 100}%`
+                                },
+                                children: row.segments.map((s, si)=>{
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: `flex items-center justify-center border-r-2 border-ink last:border-r-0 ${si === 0 ? "bg-yellow" : si === 1 ? "bg-ink text-white" : "bg-soft"}`,
+                                        style: {
+                                            width: `${s.value}%`
+                                        },
+                                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                            className: "text-[22px] font-semibold",
+                                            children: [
+                                                s.label,
+                                                " / ",
+                                                s.value,
+                                                "%"
+                                            ]
+                                        })
+                                    }, s.label);
+                                })
+                            })
+                        ]
+                    }, row.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/ContributionBarChart.tsx
+
+
+
+
+
+
+const ContributionBarChart_DEFAULT = [
+    {
+        label: "PRICE",
+        value: 3.8,
+        icon: "🏷️"
+    },
+    {
+        label: "VOLUME",
+        value: 2.4,
+        icon: "📦"
+    },
+    {
+        label: "FX",
+        value: -1.1,
+        icon: "💱"
+    },
+    {
+        label: "MIX",
+        value: 1.6,
+        icon: "🧩"
+    },
+    {
+        label: "CHURN",
+        value: -0.8,
+        icon: "↘"
+    }
+];
+const ContributionBarChart = ({ eyebrow = "CONTRIBUTION", title = "What actually drove the change?", items = ContributionBarChart_DEFAULT, suffix = "pt" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const maxAbs = Math.max(...items.map((i)=>Math.abs(i.value)), 1);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-16 h-[610px]",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-0 h-full w-[3px] bg-ink"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "space-y-7",
+                        children: items.map((item, i)=>{
+                            const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                            const w = Math.abs(item.value) / maxAbs * 46 * p;
+                            const positive = item.value >= 0;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "grid grid-cols-[1fr_210px_1fr] items-center gap-5",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "flex justify-end",
+                                        children: !positive && /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "h-[58px] border-2 border-ink bg-white",
+                                            style: {
+                                                width: `${w}%`
+                                            }
+                                        })
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "text-center text-[22px] font-semibold",
+                                        children: [
+                                            item.icon,
+                                            " ",
+                                            item.label,
+                                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                className: "text-[18px] text-muted",
+                                                children: [
+                                                    item.value > 0 ? "+" : "",
+                                                    item.value,
+                                                    suffix
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        children: positive && /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "h-[58px] border-2 border-ink bg-yellow",
+                                            style: {
+                                                width: `${w}%`
+                                            }
+                                        })
+                                    })
+                                ]
+                            }, item.label);
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "mt-6 flex justify-center gap-[480px] text-[18px] text-muted",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "NEGATIVE ←"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "→ POSITIVE"
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/composition/PictogramChart.tsx
+
+
+
+
+
+
+const PictogramChart = ({ total = 50, highlighted = 12, icon = "👤" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), lit = Math.round(highlighted * motion_reveal(frame, 12, 35));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "PEOPLE BEHIND THE NUMBER",
+                title: `${highlighted} out of ${total}.`
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-20 grid grid-cols-10 gap-x-8 gap-y-8",
+                children: Array.from({
+                    length: total
+                }).map((_, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "text-center text-[54px]",
+                        style: {
+                            opacity: i < lit ? 1 : 0.18,
+                            transform: `scale(${i < lit ? 1 : 0.9})`
+                        },
+                        children: icon
+                    }, i))
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/Histogram.tsx
+
+
+
+
+
+
+
+const Histogram_DEFAULT = [
+    {
+        label: "0–10",
+        count: 4
+    },
+    {
+        label: "10–20",
+        count: 9
+    },
+    {
+        label: "20–30",
+        count: 18
+    },
+    {
+        label: "30–40",
+        count: 31
+    },
+    {
+        label: "40–50",
+        count: 39
+    },
+    {
+        label: "50–60",
+        count: 28
+    },
+    {
+        label: "60–70",
+        count: 17
+    },
+    {
+        label: "70–80",
+        count: 8
+    },
+    {
+        label: "80+",
+        count: 3
+    }
+];
+const Histogram = ({ eyebrow = "DISTRIBUTION", title = "Show the shape of the data, not just the average.", bins = Histogram_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const max = niceMax(Math.max(...bins.map((b)=>b.count)) * 1.05);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 flex h-[590px] items-end border-b-2 border-ink px-5",
+                children: bins.map((b, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 3, 18);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "flex flex-1 flex-col items-center justify-end",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mb-2 text-[17px] font-semibold",
+                                children: b.count
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: `w-full border-2 border-b-0 border-ink ${i === 4 ? "bg-yellow" : "bg-white"}`,
+                                style: {
+                                    height: `${b.count / max * 500 * p}px`
+                                }
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mt-3 text-[16px] text-muted",
+                                children: b.label
+                            })
+                        ]
+                    }, b.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/BoxPlot.tsx
+
+
+
+
+
+
+
+const BoxPlot_DEFAULT = [
+    {
+        label: "US",
+        min: 22,
+        q1: 41,
+        median: 57,
+        q3: 72,
+        max: 94,
+        highlight: true
+    },
+    {
+        label: "EU",
+        min: 18,
+        q1: 35,
+        median: 49,
+        q3: 61,
+        max: 81
+    },
+    {
+        label: "JP",
+        min: 15,
+        q1: 31,
+        median: 44,
+        q3: 55,
+        max: 73
+    },
+    {
+        label: "KR",
+        min: 17,
+        q1: 37,
+        median: 51,
+        q3: 65,
+        max: 88
+    }
+];
+const BoxPlot = ({ eyebrow = "DISTRIBUTION COMPARISON", title = "Compare medians, spreads and tails.", boxes = BoxPlot_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const [mn0, mx0] = extent(boxes.flatMap((b)=>[
+            b.min,
+            b.max
+        ])), pad = (mx0 - mn0) * .08, mn = mn0 - pad, mx = mx0 + pad, width = 1320;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 space-y-12",
+                children: boxes.map((b, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                    const X = (v)=>geometry_scale(v, mn, mx, 0, width);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[200px_1320px] items-center gap-8",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[23px] font-semibold",
+                                children: b.label
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "relative h-[72px]",
+                                style: {
+                                    opacity: p
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-1/2 h-[4px] bg-ink",
+                                        style: {
+                                            left: X(b.min),
+                                            width: (X(b.max) - X(b.min)) * p
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-[15px] h-[42px] border-2 border-ink",
+                                        style: {
+                                            left: X(b.q1),
+                                            width: (X(b.q3) - X(b.q1)) * p,
+                                            background: b.highlight ? VIZ.yellow : VIZ.white
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-[10px] h-[52px] w-[4px] bg-ink",
+                                        style: {
+                                            left: X(b.median)
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-[22px] h-[28px] w-[4px] bg-ink",
+                                        style: {
+                                            left: X(b.min)
+                                        }
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute top-[22px] h-[28px] w-[4px] bg-ink",
+                                        style: {
+                                            left: X(b.max)
+                                        }
+                                    })
+                                ]
+                            })
+                        ]
+                    }, b.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/BeeswarmPlot.tsx
+
+
+
+
+
+
+const BeeswarmPlot_values = [
+    12,
+    14,
+    17,
+    19,
+    22,
+    23,
+    24,
+    26,
+    27,
+    29,
+    31,
+    31,
+    33,
+    34,
+    35,
+    36,
+    38,
+    39,
+    41,
+    42,
+    44,
+    46,
+    48,
+    52,
+    58,
+    65,
+    71,
+    84
+];
+const BeeswarmPlot = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "DISTRIBUTION",
+                title: "The average hides the shape."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-24 h-[430px] border-b-2 border-ink",
+                children: [
+                    BeeswarmPlot_values.map((v, i)=>{
+                        const p = motion_reveal(frame, 8 + i * 1.5, 12), row = i % 5, y = 250 - row * 42 + i % 2 * 18;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute h-[24px] w-[24px] rounded-full border-2 border-ink",
+                            style: {
+                                left: `${v}%`,
+                                top: y,
+                                background: v > 60 ? palette.yellow : palette.white,
+                                transform: `translate(-50%,-50%) scale(${p})`,
+                                opacity: p
+                            }
+                        }, i);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[-42px] left-0 text-[18px] text-muted",
+                        children: "LOW"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[-42px] right-0 text-[18px] text-muted",
+                        children: "HIGH"
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/RidgelinePlot.tsx
+
+
+
+
+
+
+const RidgelinePlot_series = [
+    {
+        label: "2020",
+        pts: [
+            8,
+            18,
+            42,
+            72,
+            88,
+            62,
+            31,
+            12
+        ]
+    },
+    {
+        label: "2022",
+        pts: [
+            5,
+            13,
+            28,
+            54,
+            82,
+            80,
+            48,
+            20
+        ]
+    },
+    {
+        label: "2024",
+        pts: [
+            3,
+            9,
+            20,
+            43,
+            68,
+            92,
+            71,
+            36
+        ]
+    }
+];
+const RidgelinePlot = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), W = 1350, H = 150;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "DISTRIBUTION SHIFT",
+                title: "The whole distribution moved — not just the average."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-12 space-y-7",
+                children: RidgelinePlot_series.map((s, i)=>{
+                    const p = motion_reveal(frame, 10 + i * 10, 24), d = s.pts.map((v, j)=>`${j === 0 ? "M" : "L"} ${j / (s.pts.length - 1) * W} ${H - v}`).join(" ");
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[140px_1fr] items-center",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[24px] font-semibold",
+                                children: s.label
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                                width: W,
+                                height: H,
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: `${d} L ${W} ${H} L 0 ${H} Z`,
+                                        fill: i === 2 ? palette.yellow : palette.soft
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: d,
+                                        fill: "none",
+                                        stroke: palette.ink,
+                                        strokeWidth: 4,
+                                        pathLength: 1,
+                                        strokeDasharray: 1,
+                                        strokeDashoffset: 1 - p
+                                    })
+                                ]
+                            })
+                        ]
+                    }, s.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/DotStripPlot.tsx
+
+
+
+
+
+
+const DotStripPlot_groups = [
+    {
+        name: "SMALL",
+        values: [
+            12,
+            18,
+            22,
+            26,
+            29,
+            32,
+            36,
+            40
+        ]
+    },
+    {
+        name: "MID",
+        values: [
+            28,
+            34,
+            39,
+            44,
+            48,
+            55,
+            59,
+            63
+        ]
+    },
+    {
+        name: "LARGE",
+        values: [
+            45,
+            52,
+            58,
+            64,
+            72,
+            78,
+            83,
+            88
+        ]
+    }
+];
+const DotStripPlot = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "DISTRIBUTION BY GROUP",
+                title: "Compare the spread, not just the mean."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14 space-y-12",
+                children: DotStripPlot_groups.map((g, gi)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[180px_1fr] items-center gap-10",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[24px] font-semibold",
+                                children: g.name
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "relative h-[90px] border-b-2 border-ink",
+                                children: g.values.map((v, i)=>{
+                                    const p = motion_reveal(frame, 10 + gi * 9 + i * 2, 10);
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute bottom-[22px] h-[22px] w-[22px] rounded-full border-2 border-ink",
+                                        style: {
+                                            left: `${v}%`,
+                                            background: gi === 2 ? palette.yellow : palette.white,
+                                            transform: `translateX(-50%) scale(${p})`,
+                                            opacity: p
+                                        }
+                                    }, i);
+                                })
+                            })
+                        ]
+                    }, g.name))
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-6 ml-[220px] flex justify-between text-[18px] text-muted",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: "LOW"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        children: "HIGH"
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/PopulationPyramid.tsx
+
+
+
+
+
+
+const PopulationPyramid_rows = [
+    [
+        "80+",
+        3,
+        5
+    ],
+    [
+        "70–79",
+        6,
+        8
+    ],
+    [
+        "60–69",
+        10,
+        11
+    ],
+    [
+        "50–59",
+        12,
+        12
+    ],
+    [
+        "40–49",
+        11,
+        11
+    ],
+    [
+        "30–39",
+        9,
+        9
+    ],
+    [
+        "20–29",
+        7,
+        7
+    ],
+    [
+        "10–19",
+        6,
+        6
+    ],
+    [
+        "0–9",
+        5,
+        5
+    ]
+];
+const PopulationPyramid = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), max = 12;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "DEMOGRAPHY",
+                title: "An aging society has a different shape."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-12",
+                children: [
+                    PopulationPyramid_rows.map((r, i)=>{
+                        const p = motion_reveal(frame, 8 + i * 3, 18);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "grid grid-cols-[1fr_120px_1fr] items-center gap-4 py-[5px]",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "flex justify-end",
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "h-[42px] border-2 border-ink bg-white",
+                                        style: {
+                                            width: `${Number(r[1]) / max * 100 * p}%`
+                                        }
+                                    })
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-center text-[20px] font-semibold",
+                                    children: r[0]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "h-[42px] border-2 border-ink bg-yellow",
+                                    style: {
+                                        width: `${Number(r[2]) / max * 100 * p}%`
+                                    }
+                                })
+                            ]
+                        }, String(r[0]));
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "mt-5 grid grid-cols-[1fr_120px_1fr] text-[18px] text-muted",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-right",
+                                children: "MALE"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {}),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "FEMALE"
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/BubbleChart.tsx
+
+
+
+
+
+
+
+const BubbleChart_DEFAULT = [
+    {
+        label: "A",
+        x: 82,
+        y: 38,
+        size: 92,
+        icon: "⚡",
+        highlight: true
+    },
+    {
+        label: "B",
+        x: 61,
+        y: 59,
+        size: 55,
+        icon: "☁️"
+    },
+    {
+        label: "C",
+        x: 42,
+        y: 72,
+        size: 44,
+        icon: "🧠"
+    },
+    {
+        label: "D",
+        x: 36,
+        y: 31,
+        size: 70,
+        icon: "📦"
+    },
+    {
+        label: "E",
+        x: 73,
+        y: 78,
+        size: 31,
+        icon: "💻"
+    }
+];
+const BubbleChart = ({ eyebrow = "3 VARIABLES", title = "Position is X/Y. Bubble size is the third variable.", items = BubbleChart_DEFAULT, xLabel = "GROWTH →", yLabel = "MARGIN →" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680, height = 600, left = 80, right = 50, top = 35, bottom = 70;
+    const [xmin, xmax] = extent(items.map((i)=>i.x)), [ymin, ymax] = extent(items.map((i)=>i.y)), [smin, smax] = extent(items.map((i)=>i.size));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "relative mt-8",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                    width: width,
+                    height: height,
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: left,
+                            x2: left,
+                            y1: top,
+                            y2: height - bottom,
+                            stroke: VIZ.ink,
+                            strokeWidth: 2
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                            x1: left,
+                            x2: width - right,
+                            y1: height - bottom,
+                            y2: height - bottom,
+                            stroke: VIZ.ink,
+                            strokeWidth: 2
+                        }),
+                        items.map((it, i)=>{
+                            const p = chartMotion_stagger(frame, i, 8, 5, 16);
+                            const cx = geometry_scale(it.x, xmin, xmax, left + 60, width - right - 60), cy = geometry_scale(it.y, ymin, ymax, height - bottom - 50, top + 50), r = geometry_scale(it.size, smin, smax, 32, 82) * p;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                opacity: p,
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                        cx: cx,
+                                        cy: cy,
+                                        r: r,
+                                        fill: it.highlight ? VIZ.yellow : VIZ.white,
+                                        stroke: VIZ.ink,
+                                        strokeWidth: 3
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                                        x: cx,
+                                        y: cy + 7,
+                                        textAnchor: "middle",
+                                        fontFamily: "IBM Plex Mono",
+                                        fontSize: 20,
+                                        fontWeight: 600,
+                                        children: [
+                                            it.icon,
+                                            " ",
+                                            it.label
+                                        ]
+                                    })
+                                ]
+                            }, it.label);
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: width / 2,
+                            y: height - 20,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fill: VIZ.muted,
+                            children: xLabel
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: 24,
+                            y: height / 2,
+                            transform: `rotate(-90 24 ${height / 2})`,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fill: VIZ.muted,
+                            children: yLabel
+                        })
+                    ]
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/Heatmap.tsx
+
+
+
+
+
+
+const ROWS = [
+    "US",
+    "EU",
+    "JP",
+    "KR",
+    "CN"
+];
+const COLS = [
+    "AI",
+    "CLOUD",
+    "ADS",
+    "ECOM",
+    "FINTECH",
+    "MEDIA"
+];
+const VALUES = [
+    [
+        92,
+        88,
+        79,
+        61,
+        45,
+        70
+    ],
+    [
+        67,
+        72,
+        55,
+        58,
+        62,
+        64
+    ],
+    [
+        54,
+        49,
+        42,
+        51,
+        38,
+        73
+    ],
+    [
+        61,
+        44,
+        48,
+        69,
+        41,
+        80
+    ],
+    [
+        86,
+        73,
+        66,
+        94,
+        71,
+        57
+    ]
+];
+const Heatmap = ({ eyebrow = "HEATMAP", title = "Find clusters and weak spots at a glance.", rows = ROWS, cols = COLS, values = VALUES })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const max = Math.max(...values.flat()), min = Math.min(...values.flat());
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-14 grid",
+                style: {
+                    gridTemplateColumns: `220px repeat(${cols.length},1fr)`
+                },
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {}),
+                    cols.map((c)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "pb-4 text-center text-[19px] font-semibold",
+                            children: c
+                        }, c)),
+                    rows.map((r, ri)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "flex items-center text-[22px] font-semibold",
+                                    children: r
+                                }),
+                                cols.map((c, ci)=>{
+                                    var _values_ri;
+                                    const p = chartMotion_stagger(frame, ri * cols.length + ci, 8, 1.3, 12);
+                                    const v = ((_values_ri = values[ri]) === null || _values_ri === void 0 ? void 0 : _values_ri[ci]) ?? 0;
+                                    const t = (v - min) / Math.max(1e-9, max - min);
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "m-[4px] flex h-[90px] items-center justify-center border-2 border-ink text-[22px] font-semibold",
+                                        style: {
+                                            opacity: p,
+                                            background: `rgba(255,212,59,${.12 + .88 * t})`
+                                        },
+                                        children: v
+                                    }, `${r}-${c}`);
+                                })
+                            ]
+                        }, r))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/CalendarHeatmap.tsx
+
+
+
+
+
+
+const CalendarHeatmap_values = Array.from({
+    length: 91
+}, (_, i)=>(i * 17 + 11) % 100);
+const CalendarHeatmap = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), p = motion_reveal(frame, 8, 45);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "ACTIVITY MAP",
+                title: "When does the behavior happen?"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-20 grid grid-cols-[120px_repeat(13,1fr)] gap-3",
+                children: [
+                    "MON",
+                    "TUE",
+                    "WED",
+                    "THU",
+                    "FRI",
+                    "SAT",
+                    "SUN"
+                ].flatMap((day, row)=>[
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "flex h-[54px] items-center text-[18px] text-muted",
+                            children: day
+                        }, `${day}-label`),
+                        ...Array.from({
+                            length: 13
+                        }).map((_, col)=>{
+                            const v = CalendarHeatmap_values[row * 13 + col] * p, hot = v > 70;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "h-[54px] border-2 border-ink",
+                                style: {
+                                    background: hot ? palette.yellow : v > 35 ? palette.soft2 : palette.soft,
+                                    opacity: 0.25 + p * 0.75
+                                }
+                            }, `${row}-${col}`);
+                        })
+                    ])
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-8 flex items-center justify-end gap-3 text-[18px] text-muted",
+                children: [
+                    "LESS ",
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: "h-[22px] w-[22px] border-2 border-ink bg-soft"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                        className: "h-[22px] w-[22px] border-2 border-ink bg-yellow"
+                    }),
+                    " MORE"
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/distribution/CohortMatrix.tsx
+
+
+
+
+
+
+const COHORTS = [
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+];
+const AGE = [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+];
+const CohortMatrix_VALUES = [
+    [
+        100,
+        72,
+        59,
+        51,
+        46,
+        43
+    ],
+    [
+        100,
+        76,
+        64,
+        57,
+        53,
+        49
+    ],
+    [
+        100,
+        79,
+        69,
+        62,
+        58,
+        55
+    ],
+    [
+        100,
+        82,
+        73,
+        67,
+        63,
+        60
+    ],
+    [
+        100,
+        85,
+        77,
+        72,
+        68,
+        65
+    ]
+];
+const CohortMatrix = ({ eyebrow = "COHORT", title = "Compare retention or behavior by cohort age.", cohorts = COHORTS, ages = AGE, values = CohortMatrix_VALUES })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-14 grid",
+                style: {
+                    gridTemplateColumns: `190px repeat(${ages.length},1fr)`
+                },
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {}),
+                    ages.map((a)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "pb-4 text-center text-[18px] font-semibold",
+                            children: a
+                        }, a)),
+                    cohorts.map((c, ri)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "flex items-center text-[21px] font-semibold",
+                                    children: [
+                                        c,
+                                        " COHORT"
+                                    ]
+                                }),
+                                ages.map((a, ci)=>{
+                                    var _values_ri;
+                                    const v = (_values_ri = values[ri]) === null || _values_ri === void 0 ? void 0 : _values_ri[ci];
+                                    const p = chartMotion_stagger(frame, ri * ages.length + ci, 8, 1.2, 10);
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "m-[4px] flex h-[82px] items-center justify-center border-2 border-ink text-[20px] font-semibold",
+                                        style: {
+                                            opacity: v === undefined ? 0.15 : p,
+                                            background: v === undefined ? "#ECECE7" : `rgba(255,212,59,${.1 + .9 * (v / 100)})`
+                                        },
+                                        children: v === undefined ? "—" : `${v}%`
+                                    }, `${c}-${a}`);
+                                })
+                            ]
+                        }, c))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/uncertainty/ForecastFanChart.tsx
+
+
+
+
+
+
+
+const ForecastFanChart_DEFAULT = [
+    {
+        label: "2023",
+        actual: 100,
+        base: 100,
+        low: 100,
+        high: 100
+    },
+    {
+        label: "2024",
+        actual: 112,
+        base: 112,
+        low: 112,
+        high: 112
+    },
+    {
+        label: "2025",
+        actual: 126,
+        base: 126,
+        low: 126,
+        high: 126
+    },
+    {
+        label: "2026",
+        base: 139,
+        low: 126,
+        high: 153
+    },
+    {
+        label: "2027",
+        base: 151,
+        low: 124,
+        high: 181
+    },
+    {
+        label: "2028",
+        base: 164,
+        low: 120,
+        high: 214
+    },
+    {
+        label: "2029",
+        base: 178,
+        low: 115,
+        high: 252
+    }
+];
+const ForecastFanChart = ({ eyebrow = "SCENARIO FAN", title = "Separate what happened from what could happen.", data = ForecastFanChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), p = tween(frame, 10, 55);
+    const width = 1680, height = 600, left = 80, right = 60, top = 35, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const [mn0, mx0] = extent(data.flatMap((d)=>[
+            d.low,
+            d.base,
+            d.high,
+            d.actual ?? d.base
+        ]));
+    const pad = (mx0 - mn0) * .08, mn = mn0 - pad, mx = mx0 + pad;
+    const x = (i)=>left + i / Math.max(1, data.length - 1) * chartW, y = (v)=>geometry_scale(v, mn, mx, top + chartH, top);
+    const lo = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.low)
+        })), hi = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.high)
+        })), base = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.base)
+        }));
+    const band = [
+        ...hi,
+        ...lo.slice().reverse()
+    ].map((q)=>`${q.x},${q.y}`).join(" ");
+    const actualPts = data.map((d, i)=>d.actual !== undefined ? {
+            x: x(i),
+            y: y(d.actual)
+        } : null).filter((x)=>x !== null);
+    const split = Math.max(0, data.findIndex((d)=>d.actual === undefined));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-7",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("defs", {
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("clipPath", {
+                            id: "fan-reveal",
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                x: left,
+                                y: 0,
+                                width: chartW * p,
+                                height: height
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(GridLines, {
+                        width: width,
+                        height: height,
+                        left: left,
+                        right: right,
+                        top: top,
+                        bottom: bottom
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                        clipPath: "url(#fan-reveal)",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                                points: band,
+                                fill: VIZ.yellow,
+                                fillOpacity: .28
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: smoothPath(base),
+                                fill: "none",
+                                stroke: VIZ.ink,
+                                strokeWidth: 7,
+                                strokeDasharray: split > 0 ? "16 10" : undefined
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: smoothPath(actualPts),
+                                fill: "none",
+                                stroke: VIZ.ink,
+                                strokeWidth: 9
+                            })
+                        ]
+                    }),
+                    split > 0 ? /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                        x1: x(split) - chartW / (data.length - 1) / 2,
+                        x2: x(split) - chartW / (data.length - 1) / 2,
+                        y1: top,
+                        y2: height - bottom,
+                        stroke: VIZ.ink,
+                        strokeWidth: 3,
+                        strokeDasharray: "10 8",
+                        opacity: .35
+                    }) : null,
+                    data.map((d, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: x(i),
+                            y: height - 28,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 17,
+                            fill: VIZ.muted,
+                            children: d.label
+                        }, d.label))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/uncertainty/RangeBandChart.tsx
+
+
+
+
+
+
+
+const RangeBandChart_DEFAULT = [
+    {
+        label: "2025",
+        low: 92,
+        mid: 100,
+        high: 108
+    },
+    {
+        label: "2026",
+        low: 88,
+        mid: 104,
+        high: 118
+    },
+    {
+        label: "2027",
+        low: 84,
+        mid: 110,
+        high: 132
+    },
+    {
+        label: "2028",
+        low: 80,
+        mid: 118,
+        high: 148
+    },
+    {
+        label: "2029",
+        low: 76,
+        mid: 126,
+        high: 166
+    }
+];
+const RangeBandChart = ({ eyebrow = "RANGE / UNCERTAINTY", title = "A forecast is a range, not a single line.", data = RangeBandChart_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)(), p = tween(frame, 10, 55);
+    const width = 1680, height = 600, left = 80, right = 50, top = 40, bottom = 75, chartW = width - left - right, chartH = height - top - bottom;
+    const [mn0, mx0] = extent(data.flatMap((d)=>[
+            d.low,
+            d.mid,
+            d.high
+        ]));
+    const pad = (mx0 - mn0) * .08, mn = mn0 - pad, mx = mx0 + pad;
+    const x = (i)=>left + i / Math.max(1, data.length - 1) * chartW, y = (v)=>geometry_scale(v, mn, mx, top + chartH, top);
+    const low = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.low)
+        })), mid = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.mid)
+        })), high = data.map((d, i)=>({
+            x: x(i),
+            y: y(d.high)
+        }));
+    const band = [
+        ...high,
+        ...low.slice().reverse()
+    ].map((q)=>`${q.x},${q.y}`).join(" ");
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-8",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("defs", {
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("clipPath", {
+                            id: "range-reveal",
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)("rect", {
+                                x: left,
+                                y: 0,
+                                width: chartW * p,
+                                height: height
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(GridLines, {
+                        width: width,
+                        height: height,
+                        left: left,
+                        right: right,
+                        top: top,
+                        bottom: bottom
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                        clipPath: "url(#range-reveal)",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                                points: band,
+                                fill: VIZ.yellow,
+                                fillOpacity: .35
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: smoothPath(low),
+                                fill: "none",
+                                stroke: VIZ.muted,
+                                strokeWidth: 3,
+                                strokeDasharray: "10 8"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: smoothPath(high),
+                                fill: "none",
+                                stroke: VIZ.muted,
+                                strokeWidth: 3,
+                                strokeDasharray: "10 8"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: smoothPath(mid),
+                                fill: "none",
+                                stroke: VIZ.ink,
+                                strokeWidth: 8
+                            })
+                        ]
+                    }),
+                    data.map((d, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                            x: x(i),
+                            y: height - 28,
+                            textAnchor: "middle",
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 18,
+                            fill: VIZ.muted,
+                            children: d.label
+                        }, d.label))
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/multivariate/ParallelCoordinates.tsx
+
+
+
+
+
+
+
+const AXES = [
+    "GROWTH",
+    "MARGIN",
+    "ROIC",
+    "MOAT",
+    "SCALE"
+];
+const ParallelCoordinates_DEFAULT = [
+    {
+        label: "A",
+        values: [
+            88,
+            74,
+            81,
+            91,
+            85
+        ],
+        highlight: true
+    },
+    {
+        label: "B",
+        values: [
+            62,
+            89,
+            77,
+            66,
+            74
+        ]
+    },
+    {
+        label: "C",
+        values: [
+            71,
+            61,
+            58,
+            73,
+            92
+        ]
+    },
+    {
+        label: "D",
+        values: [
+            43,
+            72,
+            69,
+            55,
+            48
+        ]
+    }
+];
+const ParallelCoordinates = ({ eyebrow = "MULTI-METRIC COMPARISON", title = "Compare profiles without collapsing everything into one score.", axes = AXES, items = ParallelCoordinates_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const width = 1680, height = 600, left = 120, right = 120, top = 50, bottom = 80, chartW = width - left - right, chartH = height - top - bottom, x = (i)=>left + i / Math.max(1, axes.length - 1) * chartW, y = (v)=>top + chartH - v / 100 * chartH;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: width,
+                height: height,
+                className: "mt-5",
+                children: [
+                    axes.map((a, i)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                    x1: x(i),
+                                    x2: x(i),
+                                    y1: top,
+                                    y2: top + chartH,
+                                    stroke: VIZ.ink,
+                                    strokeWidth: 2,
+                                    strokeOpacity: .28
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: x(i),
+                                    y: height - 30,
+                                    textAnchor: "middle",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 18,
+                                    fill: VIZ.ink,
+                                    children: a
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: x(i),
+                                    y: top - 15,
+                                    textAnchor: "middle",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 15,
+                                    fill: VIZ.muted,
+                                    children: "100"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: x(i),
+                                    y: top + chartH + 22,
+                                    textAnchor: "middle",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 15,
+                                    fill: VIZ.muted,
+                                    children: "0"
+                                })
+                            ]
+                        }, a)),
+                    items.map((it, ii)=>{
+                        const p = tween(frame, 8 + ii * 8, 35);
+                        const pts = it.values.map((v, i)=>({
+                                x: x(i),
+                                y: y(v)
+                            }));
+                        const path = pts.map((q, i)=>`${i ? "L" : "M"} ${q.x} ${q.y}`).join(" ");
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            opacity: p,
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                    d: path,
+                                    fill: "none",
+                                    stroke: it.highlight ? VIZ.yellow : VIZ.ink,
+                                    strokeWidth: it.highlight ? 10 : 4,
+                                    strokeOpacity: it.highlight ? 1 : .45
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: pts.at(-1).x + 25,
+                                    y: pts.at(-1).y + 6,
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 19,
+                                    fill: VIZ.ink,
+                                    children: it.label
+                                })
+                            ]
+                        }, it.label);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/multivariate/RadarChart.tsx
+
+
+
+
+
+
+
+const RadarChart_AXES = [
+    "GROWTH",
+    "MARGIN",
+    "SCALE",
+    "MOAT",
+    "CAPITAL",
+    "GLOBAL"
+];
+const A = [
+    88,
+    72,
+    91,
+    78,
+    65,
+    86
+];
+const B = [
+    61,
+    84,
+    74,
+    66,
+    88,
+    57
+];
+const RadarChart_pts = (vals, cx, cy, r)=>vals.map((v, i)=>{
+        const a = -Math.PI / 2 + i / vals.length * Math.PI * 2;
+        const rr = r * v / 100;
+        return {
+            x: cx + Math.cos(a) * rr,
+            y: cy + Math.sin(a) * rr
+        };
+    });
+const RadarChart = ({ eyebrow = "MULTI-DIMENSION", title = "Use sparingly: a quick strategic profile, not precision analysis.", axes = RadarChart_AXES, a = A, b = B, aLabel = "A", bLabel = "B" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const pa = tween(frame, 10, 35), pb = tween(frame, 22, 35), cx = 840, cy = 320, r = 250;
+    const ap = RadarChart_pts(a.map((v)=>v * pa), cx, cy, r), bp = RadarChart_pts(b.map((v)=>v * pb), cx, cy, r);
+    const poly = (p)=>p.map((q)=>`${q.x},${q.y}`).join(" ");
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                width: 1680,
+                height: 650,
+                className: "mt-1",
+                children: [
+                    [
+                        .25,
+                        .5,
+                        .75,
+                        1
+                    ].map((level)=>{
+                        const p = axes.map((_, i)=>{
+                            const a = -Math.PI / 2 + i / axes.length * Math.PI * 2;
+                            return `${cx + Math.cos(a) * r * level},${cy + Math.sin(a) * r * level}`;
+                        }).join(" ");
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                            points: p,
+                            fill: "none",
+                            stroke: VIZ.ink,
+                            strokeOpacity: .16,
+                            strokeWidth: 2
+                        }, level);
+                    }),
+                    axes.map((ax, i)=>{
+                        const a = -Math.PI / 2 + i / axes.length * Math.PI * 2;
+                        const x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r, lx = cx + Math.cos(a) * (r + 58), ly = cy + Math.sin(a) * (r + 58);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                    x1: cx,
+                                    y1: cy,
+                                    x2: x,
+                                    y2: y,
+                                    stroke: VIZ.ink,
+                                    strokeOpacity: .12,
+                                    strokeWidth: 2
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                    x: lx,
+                                    y: ly,
+                                    textAnchor: "middle",
+                                    fontFamily: "IBM Plex Mono",
+                                    fontSize: 18,
+                                    fill: VIZ.ink,
+                                    children: ax
+                                })
+                            ]
+                        }, ax);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                        points: poly(ap),
+                        fill: VIZ.yellow,
+                        fillOpacity: .45,
+                        stroke: VIZ.ink,
+                        strokeWidth: 5
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("polygon", {
+                        points: poly(bp),
+                        fill: VIZ.white,
+                        fillOpacity: .2,
+                        stroke: VIZ.muted,
+                        strokeWidth: 4,
+                        strokeDasharray: "12 8"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                        x: 1280,
+                        y: 100,
+                        fontFamily: "IBM Plex Mono",
+                        fontSize: 20,
+                        fill: VIZ.ink,
+                        children: [
+                            "■ ",
+                            aLabel
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("text", {
+                        x: 1280,
+                        y: 140,
+                        fontFamily: "IBM Plex Mono",
+                        fontSize: 20,
+                        fill: VIZ.muted,
+                        children: [
+                            "□ ",
+                            bLabel
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/charts/multivariate/QuadrantScatterChart.tsx
+
+
+
+
+
+
+const QuadrantScatterChart_DEFAULT = [
+    {
+        label: "A",
+        x: 82,
+        y: 78,
+        highlight: true
+    },
+    {
+        label: "B",
+        x: 64,
+        y: 58
+    },
+    {
+        label: "C",
+        x: 32,
+        y: 71
+    },
+    {
+        label: "D",
+        x: 27,
+        y: 29
+    },
+    {
+        label: "E",
+        x: 73,
+        y: 34
+    },
+    {
+        label: "F",
+        x: 47,
+        y: 46
+    }
+];
+const QuadrantScatterChart = ({ eyebrow = "2 × 2", title = "Turn two metrics into a strategic map.", items = QuadrantScatterChart_DEFAULT, xLabel = "MARKET ATTRACTIVENESS →", yLabel = "COMPETITIVE STRENGTH →", quadrants = [
+    "DEFEND",
+    "INVEST",
+    "EXIT",
+    "HARVEST"
+] })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-10 h-[620px] border-2 border-ink bg-white",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-0 h-full border-l-2 border-dashed border-ink opacity-25"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute top-1/2 left-0 w-full border-t-2 border-dashed border-ink opacity-25"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-5 top-5 text-[18px] text-muted",
+                        children: quadrants[0]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-5 top-5 text-[18px] text-muted",
+                        children: quadrants[1]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-5 bottom-5 text-[18px] text-muted",
+                        children: quadrants[2]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-5 bottom-5 text-[18px] text-muted",
+                        children: quadrants[3]
+                    }),
+                    items.map((it, i)=>{
+                        const p = chartMotion_stagger(frame, i, 8, 5, 16);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: `absolute flex h-[70px] min-w-[90px] items-center justify-center border-2 border-ink px-4 text-[20px] font-semibold ${it.highlight ? "bg-yellow" : "bg-white"}`,
+                            style: {
+                                left: `${it.x}%`,
+                                bottom: `${it.y}%`,
+                                transform: `translate(-50%,50%) scale(${.85 + .15 * p})`,
+                                opacity: p,
+                                boxShadow: "4px 4px 0 #111"
+                            },
+                            children: it.label
+                        }, it.label);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute -bottom-[42px] left-1/2 -translate-x-1/2 text-[18px] text-muted",
+                        children: xLabel
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute -left-[145px] top-1/2 -rotate-90 text-[18px] text-muted",
+                        children: yLabel
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/flow/TwoSidedMarketplaceDiagram.tsx
+
+
+
+
+
+
+
+
+const LEFT = [
+    {
+        label: "BUYERS",
+        icon: "🛒",
+        detail: "Demand"
+    },
+    {
+        label: "ADVERTISERS",
+        icon: "📣",
+        detail: "Budget"
+    },
+    {
+        label: "USERS",
+        icon: "👤",
+        detail: "Attention"
+    }
+];
+const RIGHT = [
+    {
+        label: "SELLERS",
+        icon: "🏪",
+        detail: "Supply"
+    },
+    {
+        label: "CREATORS",
+        icon: "🎬",
+        detail: "Content"
+    },
+    {
+        label: "DEVELOPERS",
+        icon: "💻",
+        detail: "Apps"
+    }
+];
+const TwoSidedMarketplaceDiagram_W = layout.width - spacing.framePadding * 2;
+const TwoSidedMarketplaceDiagram_H = 650;
+const CENTER_W = 360;
+const GAP = 56; // gap-14
+const CARD_H = 120;
+const CARD_GAP = 32; // space-y-8
+function cardCentersY(count) {
+    const stack = count * CARD_H + Math.max(0, count - 1) * CARD_GAP;
+    const top = (TwoSidedMarketplaceDiagram_H - stack) / 2;
+    return Array.from({
+        length: count
+    }, (_, i)=>top + i * (CARD_H + CARD_GAP) + CARD_H / 2);
+}
+const TwoSidedMarketplaceDiagram = ({ eyebrow = "MULTI-SIDED MARKET", title = "The product is often the coordination layer.", left = LEFT, right = RIGHT, platform = "PLATFORM" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const cp = springIn({
+        frame,
+        fps,
+        delay: 12
+    });
+    const sideW = (TwoSidedMarketplaceDiagram_W - CENTER_W - GAP * 2) / 2;
+    const platL = sideW + GAP;
+    const platR = platL + CENTER_W;
+    const rightL = platR + GAP;
+    const platCY = TwoSidedMarketplaceDiagram_H / 2;
+    const leftYs = cardCentersY(left.length);
+    const rightYs = cardCentersY(right.length);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-10 grid grid-cols-[1fr_360px_1fr] gap-14 items-center",
+                style: {
+                    height: TwoSidedMarketplaceDiagram_H
+                },
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "space-y-8",
+                        children: left.map((p, i)=>{
+                            const q = chartMotion_stagger(frame, i, 8, 7, 16);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "flex h-[120px] items-center gap-6 border-2 border-ink bg-white px-7",
+                                style: {
+                                    opacity: q,
+                                    transform: `translateX(${(1 - q) * -35}px)`,
+                                    boxShadow: "5px 5px 0 #111"
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "text-[46px]",
+                                        children: p.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "text-[23px] font-semibold",
+                                                children: p.label
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "text-[17px] text-muted",
+                                                children: p.detail
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }, p.label);
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "relative flex h-[290px] items-center justify-center border-2 border-ink bg-yellow",
+                        style: {
+                            transform: `scale(${0.88 + 0.12 * cp})`,
+                            boxShadow: "8px 8px 0 #111"
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[76px]",
+                                    children: "⚙️"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[30px] font-semibold",
+                                    children: platform
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-2 text-[18px]",
+                                    children: "MATCH \xb7 PRICE \xb7 TRUST"
+                                })
+                            ]
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "space-y-8",
+                        children: right.map((p, i)=>{
+                            const q = chartMotion_stagger(frame, i, 12, 7, 16);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "flex h-[120px] items-center gap-6 border-2 border-ink bg-white px-7",
+                                style: {
+                                    opacity: q,
+                                    transform: `translateX(${(1 - q) * 35}px)`,
+                                    boxShadow: "5px 5px 0 #111"
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "text-[46px]",
+                                        children: p.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "text-[23px] font-semibold",
+                                                children: p.label
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "text-[17px] text-muted",
+                                                children: p.detail
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }, p.label);
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                        className: "pointer-events-none absolute inset-0 overflow-visible",
+                        width: TwoSidedMarketplaceDiagram_W,
+                        height: TwoSidedMarketplaceDiagram_H,
+                        viewBox: `0 0 ${TwoSidedMarketplaceDiagram_W} ${TwoSidedMarketplaceDiagram_H}`,
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("defs", {
+                                children: /*#__PURE__*/ (0,jsx_runtime.jsx)("marker", {
+                                    id: "tsm-arrow",
+                                    markerWidth: "10",
+                                    markerHeight: "10",
+                                    refX: "9",
+                                    refY: "5",
+                                    orient: "auto",
+                                    markerUnits: "userSpaceOnUse",
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: "M 0 0 L 10 5 L 0 10 z",
+                                        fill: VIZ.ink
+                                    })
+                                })
+                            }),
+                            leftYs.map((y, i)=>{
+                                const p = chartMotion_stagger(frame, i, 26, 5, 18);
+                                return /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                    x1: sideW - 8,
+                                    y1: y,
+                                    x2: platL + 6,
+                                    y2: platCY,
+                                    stroke: VIZ.ink,
+                                    strokeWidth: 4,
+                                    opacity: p,
+                                    markerEnd: "url(#tsm-arrow)"
+                                }, `L${i}`);
+                            }),
+                            rightYs.map((y, i)=>{
+                                const p = chartMotion_stagger(frame, i, 26, 5, 18);
+                                return /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                    x1: platR - 6,
+                                    y1: platCY,
+                                    x2: rightL + 8,
+                                    y2: y,
+                                    stroke: VIZ.ink,
+                                    strokeWidth: 4,
+                                    opacity: p,
+                                    markerEnd: "url(#tsm-arrow)"
+                                }, `R${i}`);
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/components/viz/structuralShared.tsx
+
+/**
+ * Hierarchy / tree diagram primitives.
+ * Shared by OrganizationTree, OwnershipTree, MetricDriverTree, SankeyDiagram.
+ */ 
+
+/** 结构图默认画布 — 预留 SceneHeader + Source，避免底栏/标题挤占 */ const STRUCTURAL_CANVAS = {
+    width: 1660,
+    height: 560,
+    paddingTop: 48,
+    paddingBottom: 48,
+    /** 近似半高，贝塞尔从卡片上下边出发，避免穿心 */ nodeHalfHeight: 50
+};
+const leafCount = (node)=>{
+    if (!node.children || node.children.length === 0) return 1;
+    return node.children.reduce((sum, child)=>sum + leafCount(child), 0);
+};
+/**
+ * 按叶子宽度分配 x，按深度分配 y。
+ * 返回扁平列表；用 parentId 还原边。
+ */ const layoutTree = (root, width, height, top = 60, bottom = 50)=>{
+    let maxDepth = 0;
+    const measure = (node, depth)=>{
+        var _node_children;
+        maxDepth = Math.max(maxDepth, depth);
+        (_node_children = node.children) === null || _node_children === void 0 ? void 0 : _node_children.forEach((child)=>measure(child, depth + 1));
+    };
+    measure(root, 0);
+    const totalLeaves = leafCount(root);
+    const yStep = maxDepth === 0 ? 0 : (height - top - bottom) / maxDepth;
+    let order = 0;
+    const out = [];
+    const walk = (node, depth, leafStart, parentId)=>{
+        var _node_children;
+        const count = leafCount(node);
+        const leafEnd = leafStart + count;
+        const centerLeaf = (leafStart + leafEnd) / 2;
+        const x = centerLeaf / totalLeaves * width;
+        const y = top + depth * yStep;
+        out.push({
+            ...node,
+            x,
+            y,
+            depth,
+            order: order++,
+            parentId
+        });
+        let cursor = leafStart;
+        (_node_children = node.children) === null || _node_children === void 0 ? void 0 : _node_children.forEach((child)=>{
+            const childCount = leafCount(child);
+            walk(child, depth + 1, cursor, node.id);
+            cursor += childCount;
+        });
+    };
+    walk(root, 0, 0);
+    return out;
+};
+/** 结构场景默认画布上的 layoutTree 快捷方式 */ const layoutStructuralTree = (root)=>layoutTree(root, STRUCTURAL_CANVAS.width, STRUCTURAL_CANVAS.height, STRUCTURAL_CANVAS.paddingTop, STRUCTURAL_CANVAS.paddingBottom);
+/** 父子节点之间的垂直三次贝塞尔路径 */ const cubicTreeEdgePath = (parent, child, halfHeight = STRUCTURAL_CANVAS.nodeHalfHeight)=>{
+    const startY = parent.y + halfHeight;
+    const endY = child.y - halfHeight;
+    const midY = (startY + endY) / 2;
+    return `M ${parent.x} ${startY} C ${parent.x} ${midY}, ${child.x} ${midY}, ${child.x} ${endY}`;
+};
+/**
+ * 边标签落在父子卡片之间的空隙中，而不是两圆心中点（中点常压在卡片上）。
+ * 几乎垂直的边略微横移，避免贴在粗描边上。
+ */ const edgeCorridorPoint = (parent, child, halfHeight = STRUCTURAL_CANVAS.nodeHalfHeight)=>{
+    const gapTop = parent.y + halfHeight;
+    const gapBottom = child.y - halfHeight;
+    const y = (gapTop + gapBottom) / 2;
+    const dx = child.x - parent.x;
+    const x = (parent.x + child.x) / 2 + (Math.abs(dx) < 48 ? dx >= 0 ? 40 : -40 : 0);
+    return {
+        x,
+        y
+    };
+};
+const edgeLabelStyle = (x, y, opacity = 1)=>({
+        left: x,
+        top: y,
+        transform: "translate(-50%, -50%)",
+        opacity,
+        zIndex: 6,
+        pointerEvents: "none"
+    });
+/** 结构图容器 — 统一尺寸，避免各场景硬编码宽高不一致 */ const StructuralDiagram = ({ children, className = "mt-5" })=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: `relative ${className}`,
+        style: {
+            width: STRUCTURAL_CANVAS.width,
+            height: STRUCTURAL_CANVAS.height
+        },
+        children: children
+    });
+/** 树边 stroke 入场（pathLength=1 + dashoffset） */ const TreeEdge = ({ d, progress, accent = false, thick = false, opacity })=>/*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+        d: d,
+        pathLength: 1,
+        fill: "none",
+        stroke: accent ? colors.yellow : colors.ink,
+        strokeWidth: thick ? 10 : 3,
+        strokeOpacity: opacity ?? (accent ? 0.95 : thick ? 0.7 : 1),
+        strokeDasharray: 1,
+        strokeDashoffset: 1 - progress
+    });
+/** 节点绝对定位 + spring 入场样式 */ const treeNodeStyle = (x, y, progress, lift = 24)=>({
+        left: x,
+        top: y,
+        transform: `translate(-50%, -50%) translateY(${(1 - progress) * lift}px) scale(${0.94 + progress * 0.06})`,
+        opacity: progress
+    });
+const NodeCard = ({ label, subtitle, icon, accent = false, muted = false, width = 270, compact = false })=>{
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: `border-2 border-ink ${accent ? "bg-yellow" : muted ? "bg-soft" : "bg-white"}`,
+        style: {
+            width,
+            minHeight: compact ? 84 : 104,
+            boxShadow: accent ? shadows.brutal : shadows.brutalMd,
+            padding: compact ? "12px 14px" : "16px 18px",
+            position: "relative",
+            zIndex: 2
+        },
+        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+            className: "flex items-center gap-3",
+            children: [
+                icon ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                    className: compact ? "text-[30px]" : "text-[36px]",
+                    children: icon
+                }) : null,
+                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                    className: "min-w-0",
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: `${compact ? "text-[18px]" : "text-[22px]"} font-semibold leading-[1.1]`,
+                            children: label
+                        }),
+                        subtitle ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: `${compact ? "mt-1 text-[14px]" : "mt-1.5 text-[16px]"} text-muted leading-[1.25]`,
+                            children: subtitle
+                        }) : null
+                    ]
+                })
+            ]
+        })
+    });
+};
+const EdgeLabel = ({ text, accent = false, compact = false })=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: `border-2 border-ink font-semibold ${accent ? "bg-yellow" : "bg-white"} ${compact ? "px-2 py-0.5 text-[14px]" : "px-3 py-1 text-[15px]"}`,
+        style: {
+            boxShadow: shadows.brutalSm,
+            whiteSpace: "nowrap"
+        },
+        children: text
+    });
+const structuralShared_clamp01 = (v)=>Math.max(0, Math.min(1, v));
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/flow/SankeyDiagram.tsx
+
+
+
+
+
+
+
+
+
+const DEFAULT_NODES = [
+    {
+        id: "tax",
+        label: "TAXES",
+        subtitle: "Households & firms",
+        icon: "🧾",
+        column: 0,
+        order: 0
+    },
+    {
+        id: "fees",
+        label: "FEES",
+        subtitle: "Non-tax revenue",
+        icon: "💳",
+        column: 0,
+        order: 1
+    },
+    {
+        id: "gov",
+        label: "GOVERNMENT",
+        subtitle: "Budget pool",
+        icon: "🏛️",
+        column: 1,
+        order: 0,
+        accent: true
+    },
+    {
+        id: "pension",
+        label: "PENSIONS",
+        subtitle: "Transfers",
+        icon: "👴",
+        column: 2,
+        order: 0
+    },
+    {
+        id: "health",
+        label: "HEALTHCARE",
+        subtitle: "Public services",
+        icon: "🏥",
+        column: 2,
+        order: 1
+    },
+    {
+        id: "infra",
+        label: "INFRA",
+        subtitle: "Investment",
+        icon: "🏗️",
+        column: 2,
+        order: 2
+    }
+];
+const DEFAULT_LINKS = [
+    {
+        from: "tax",
+        to: "gov",
+        value: 82,
+        label: "82",
+        accent: true
+    },
+    {
+        from: "fees",
+        to: "gov",
+        value: 18,
+        label: "18"
+    },
+    {
+        from: "gov",
+        to: "pension",
+        value: 38,
+        label: "38"
+    },
+    {
+        from: "gov",
+        to: "health",
+        value: 34,
+        label: "34",
+        accent: true
+    },
+    {
+        from: "gov",
+        to: "infra",
+        value: 28,
+        label: "28"
+    }
+];
+const NODE_HALF_W = 118;
+const SankeyDiagram = ({ eyebrow = "FUND FLOW", title = "Where does the money come from — and where does it go?", subtitle = "Ribbon width encodes flow magnitude.", nodes = DEFAULT_NODES, links = DEFAULT_LINKS, unit = "%", source = "ILLUSTRATIVE FLOW / DEMO" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const { width, height } = STRUCTURAL_CANVAS;
+    const columns = [
+        ...new Set(nodes.map((n)=>n.column))
+    ].sort((a, b)=>a - b);
+    const maxColumn = Math.max(...columns);
+    const positions = new Map();
+    columns.forEach((column)=>{
+        const group = nodes.filter((n)=>n.column === column).sort((a, b)=>(a.order ?? 0) - (b.order ?? 0));
+        group.forEach((node, index)=>{
+            const x = 155 + column / Math.max(1, maxColumn) * (width - 310);
+            const y = (index + 1) / (group.length + 1) * height;
+            positions.set(node.id, {
+                x,
+                y
+            });
+        });
+    });
+    const maxValue = Math.max(...links.map((l)=>l.value), 1);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: subtitle
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)(StructuralDiagram, {
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                        className: "absolute inset-0 overflow-visible",
+                        width: width,
+                        height: height,
+                        children: links.map((link, index)=>{
+                            const from = positions.get(link.from);
+                            const to = positions.get(link.to);
+                            if (!from || !to) return null;
+                            const p = tween(frame, 15 + index * 7, 28);
+                            const c1x = from.x + (to.x - from.x) * 0.42;
+                            const c2x = from.x + (to.x - from.x) * 0.58;
+                            const d = `M ${from.x + NODE_HALF_W} ${from.y} C ${c1x} ${from.y}, ${c2x} ${to.y}, ${to.x - NODE_HALF_W} ${to.y}`;
+                            const ribbon = 10 + link.value / maxValue * 56;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: d,
+                                        pathLength: 1,
+                                        fill: "none",
+                                        stroke: link.accent ? colors.yellow : colors.ink,
+                                        strokeOpacity: link.accent ? 0.75 : 0.16,
+                                        strokeWidth: ribbon,
+                                        strokeLinecap: "butt",
+                                        strokeDasharray: 1,
+                                        strokeDashoffset: 1 - p
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: d,
+                                        pathLength: 1,
+                                        fill: "none",
+                                        stroke: colors.ink,
+                                        strokeOpacity: 0.8,
+                                        strokeWidth: 2,
+                                        strokeDasharray: 1,
+                                        strokeDashoffset: 1 - p
+                                    })
+                                ]
+                            }, `${link.from}-${link.to}-${index}`);
+                        })
+                    }),
+                    nodes.map((node, index)=>{
+                        const pos = positions.get(node.id);
+                        const p = springIn({
+                            frame,
+                            fps,
+                            delay: index * 5,
+                            damping: 16,
+                            stiffness: 130
+                        });
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: {
+                                left: pos.x,
+                                top: pos.y,
+                                transform: `translate(-50%, -50%) scale(${0.92 + p * 0.08})`,
+                                opacity: p,
+                                zIndex: 2
+                            },
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(NodeCard, {
+                                label: node.label,
+                                subtitle: node.subtitle,
+                                icon: node.icon,
+                                accent: node.accent,
+                                width: 236,
+                                compact: true
+                            })
+                        }, node.id);
+                    }),
+                    links.map((link, index)=>{
+                        const from = positions.get(link.from);
+                        const to = positions.get(link.to);
+                        if (!from || !to) return null;
+                        const p = tween(frame, 32 + index * 7, 12);
+                        const value = countTo(frame, link.value, 20 + index * 7, 25);
+                        // 同起点多条边：按目标 y 错开标签，避免叠在同一点
+                        const siblings = links.filter((l)=>l.from === link.from);
+                        const sibIndex = siblings.findIndex((l)=>l.from === link.from && l.to === link.to && l.value === link.value);
+                        const stagger = siblings.length > 1 ? (sibIndex - (siblings.length - 1) / 2) * 26 : 0;
+                        const t = 0.52;
+                        const left = from.x + (to.x - from.x) * t;
+                        const top = from.y + (to.y - from.y) * t + stagger;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: edgeLabelStyle(left, top, p),
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(EdgeLabel, {
+                                text: `${link.label ?? Math.round(value)}${unit}`,
+                                accent: link.accent,
+                                compact: true
+                            })
+                        }, `link-label-${index}`);
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/flow/ValueChainDiagram.tsx
+
+
+
+
+
+
+
+
+const DEFAULT_STAGES = [
+    {
+        label: "IP / DESIGN",
+        subtitle: "Scarce know-how",
+        icon: "🧠",
+        metric: 78,
+        metricLabel: "GROSS MARGIN",
+        unit: "%",
+        capture: 32,
+        accent: true
+    },
+    {
+        label: "EQUIPMENT",
+        subtitle: "Critical machines",
+        icon: "⚙️",
+        metric: 48,
+        metricLabel: "GROSS MARGIN",
+        unit: "%",
+        capture: 24
+    },
+    {
+        label: "MANUFACTURING",
+        subtitle: "Scale + capex",
+        icon: "🏭",
+        metric: 41,
+        metricLabel: "GROSS MARGIN",
+        unit: "%",
+        capture: 21
+    },
+    {
+        label: "ASSEMBLY",
+        subtitle: "More competition",
+        icon: "📦",
+        metric: 16,
+        metricLabel: "GROSS MARGIN",
+        unit: "%",
+        capture: 9
+    },
+    {
+        label: "DISTRIBUTION",
+        subtitle: "Access to demand",
+        icon: "🛒",
+        metric: 24,
+        metricLabel: "GROSS MARGIN",
+        unit: "%",
+        capture: 14
+    }
+];
+const ValueChainDiagram = ({ eyebrow = "VALUE CHAIN", title = "Where is value created — and where is it captured?", stages = DEFAULT_STAGES, source = "ILLUSTRATIVE INDUSTRY ECONOMICS" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const totalCapture = stages.reduce((sum, s)=>sum + (s.capture ?? 0), 0) || 1;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: "Margin and capture per stage along the chain."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-10 flex items-stretch gap-3",
+                children: stages.map((stage, index)=>{
+                    const p = springIn({
+                        frame,
+                        fps,
+                        delay: index * 7,
+                        damping: 17,
+                        stiffness: 125
+                    });
+                    const metric = stage.metric == null ? null : countTo(frame, stage.metric, 16 + index * 7, 25);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: `flex min-h-[320px] flex-1 flex-col justify-between border-2 border-ink p-5 ${stage.accent ? "bg-yellow" : "bg-white"}`,
+                                style: {
+                                    boxShadow: stage.accent ? shadows.brutal : shadows.brutalMd,
+                                    opacity: p,
+                                    transform: `translateY(${(1 - p) * 24}px)`
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "text-[54px]",
+                                                children: stage.icon ?? "◻️"
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "mt-5 text-[26px] font-semibold leading-[1.05]",
+                                                children: stage.label
+                                            }),
+                                            stage.subtitle ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "mt-3 text-[18px] leading-[1.35] text-muted",
+                                                children: stage.subtitle
+                                            }) : null
+                                        ]
+                                    }),
+                                    metric != null ? /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                className: "text-[48px] font-semibold tracking-[-0.05em]",
+                                                children: [
+                                                    Math.round(metric),
+                                                    stage.unit ?? ""
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "mt-1 text-[16px] tracking-[0.08em] text-muted",
+                                                children: stage.metricLabel ?? "METRIC"
+                                            })
+                                        ]
+                                    }) : null
+                                ]
+                            }),
+                            index < stages.length - 1 ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "flex w-[54px] items-center justify-center text-[44px] font-semibold",
+                                style: {
+                                    opacity: tween(frame, 10 + index * 7, 12)
+                                },
+                                children: "→"
+                            }) : null
+                        ]
+                    }, stage.label);
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-10",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "mb-3 flex justify-between text-[18px] text-muted",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "VALUE CAPTURE"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "100%"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "flex h-[64px] border-2 border-ink bg-white",
+                        children: stages.map((stage, index)=>{
+                            const share = (stage.capture ?? 0) / totalCapture * 100;
+                            const p = tween(frame, 48 + index * 5, 20);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: `flex items-center justify-center overflow-hidden border-r-2 border-ink last:border-r-0 ${stage.accent ? "bg-yellow" : index % 2 ? "bg-soft" : "bg-white"}`,
+                                style: {
+                                    width: `${share * p}%`
+                                },
+                                children: p > 0.68 && share > 8 ? /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                    className: "text-[17px] font-semibold",
+                                    children: [
+                                        Math.round(share),
+                                        "%"
+                                    ]
+                                }) : null
+                            }, `capture-${stage.label}`);
+                        })
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/flow/ValueChainMap.tsx
+
+
+
+
+
+
+const ValueChainMap_DEFAULT = [
+    {
+        label: "INPUTS",
+        icon: "⛏️",
+        players: [
+            "A",
+            "B",
+            "C"
+        ],
+        margin: "8%"
+    },
+    {
+        label: "EQUIPMENT",
+        icon: "⚙️",
+        players: [
+            "D",
+            "E"
+        ],
+        margin: "31%",
+        highlight: true
+    },
+    {
+        label: "MANUFACTURING",
+        icon: "🏭",
+        players: [
+            "F",
+            "G"
+        ],
+        margin: "22%"
+    },
+    {
+        label: "DISTRIBUTION",
+        icon: "🚚",
+        players: [
+            "H",
+            "I",
+            "J"
+        ],
+        margin: "12%"
+    },
+    {
+        label: "CUSTOMER",
+        icon: "🛒",
+        players: [
+            "END MARKET"
+        ],
+        margin: "—"
+    }
+];
+const ValueChainMap = ({ eyebrow = "VALUE CHAIN", title = "Map where competition happens and where the profit pool sits.", stages = ValueChainMap_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-24 flex items-stretch gap-5",
+                children: stages.map((s, i)=>{
+                    const p = chartMotion_stagger(frame, i, 8, 6, 18);
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: `flex min-h-[390px] flex-1 flex-col border-2 border-ink p-6 ${s.highlight ? "bg-yellow" : "bg-white"}`,
+                                style: {
+                                    opacity: p,
+                                    transform: `translateY(${(1 - p) * 20}px)`,
+                                    boxShadow: "5px 5px 0 #111"
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[50px]",
+                                        children: s.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-4 text-[22px] font-semibold",
+                                        children: s.label
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-8 space-y-3",
+                                        children: s.players.map((x)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "border-2 border-ink bg-paper px-4 py-3 text-[18px] font-semibold",
+                                                children: x
+                                            }, x))
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-auto pt-7 text-[18px] text-muted",
+                                        children: "MARGIN"
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[38px] font-semibold",
+                                        children: s.margin
+                                    })
+                                ]
+                            }),
+                            i < stages.length - 1 ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "flex items-center text-[44px] font-semibold",
+                                style: {
+                                    opacity: p
+                                },
+                                children: "→"
+                            }) : null
+                        ]
+                    }, s.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/relationships/RelationshipGraph.tsx
+
+
+
+
+
+
+
+
+const RelationshipGraph_DEFAULT_NODES = [
+    {
+        id: "platform",
+        label: "PLATFORM",
+        sublabel: "Matching + trust",
+        icon: "💻",
+        x: 0.5,
+        y: 0.34,
+        accent: true
+    },
+    {
+        id: "users",
+        label: "USERS",
+        sublabel: "Demand",
+        icon: "👤",
+        x: 0.18,
+        y: 0.72
+    },
+    {
+        id: "suppliers",
+        label: "SUPPLIERS",
+        sublabel: "Supply",
+        icon: "🏭",
+        x: 0.5,
+        y: 0.75
+    },
+    {
+        id: "capital",
+        label: "CAPITAL",
+        sublabel: "Funding",
+        icon: "💰",
+        x: 0.82,
+        y: 0.72
+    }
+];
+const RelationshipGraph_DEFAULT_LINKS = [
+    {
+        from: "platform",
+        to: "users",
+        label: "distribution",
+        accent: true,
+        bend: -60
+    },
+    {
+        from: "platform",
+        to: "suppliers",
+        label: "orders",
+        bend: 20
+    },
+    {
+        from: "platform",
+        to: "capital",
+        label: "returns",
+        bend: -60
+    }
+];
+const RelationshipGraph = ({ eyebrow = "RELATIONSHIP", title = "Show the system as relationships, not bullet points.", nodes = RelationshipGraph_DEFAULT_NODES, links = RelationshipGraph_DEFAULT_LINKS })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const connectorP = tween(frame, 14, 44);
+    const graph = {
+        left: 90,
+        top: 220,
+        width: 1740,
+        height: 760
+    };
+    const byId = (id)=>nodes.find((n)=>n.id === id);
+    const pointFor = (node)=>({
+            x: graph.left + node.x * graph.width,
+            y: graph.top + node.y * graph.height
+        });
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                width: "1920",
+                height: "1080",
+                className: "absolute inset-0",
+                children: links.map((link, index)=>{
+                    const from = byId(link.from);
+                    const to = byId(link.to);
+                    if (!from || !to) return null;
+                    const a = pointFor(from);
+                    const b = pointFor(to);
+                    const mx = (a.x + b.x) / 2;
+                    const bend = link.bend ?? -70;
+                    const d = `M ${a.x} ${a.y} Q ${mx} ${(a.y + b.y) / 2 + bend} ${b.x} ${b.y}`;
+                    const linkP = Math.max(0, Math.min(1, connectorP - index * 0.07));
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                        children: [
+                            link.accent ? /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: d,
+                                fill: "none",
+                                stroke: colors.yellow,
+                                strokeOpacity: 0.38,
+                                strokeWidth: 62,
+                                strokeLinecap: "round",
+                                pathLength: 1,
+                                strokeDasharray: 1,
+                                strokeDashoffset: 1 - linkP
+                            }) : null,
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                d: d,
+                                fill: "none",
+                                stroke: colors.ink,
+                                strokeOpacity: 0.72,
+                                strokeWidth: 3,
+                                pathLength: 1,
+                                strokeDasharray: 1,
+                                strokeDashoffset: 1 - linkP
+                            }),
+                            link.label ? /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                x: mx,
+                                y: (a.y + b.y) / 2 + bend - 12,
+                                textAnchor: "middle",
+                                fontSize: 17,
+                                fill: "#737373",
+                                fontFamily: "IBM Plex Mono",
+                                opacity: linkP,
+                                children: link.label
+                            }) : null
+                        ]
+                    }, `${link.from}-${link.to}`);
+                })
+            }),
+            nodes.map((node, index)=>{
+                const p = springIn({
+                    frame,
+                    fps,
+                    delay: 5 + index * 7,
+                    damping: 17,
+                    stiffness: 145
+                });
+                const pt = pointFor(node);
+                const w = node.width ?? 390;
+                const y = floatY(frame, node.accent ? 2.5 : 4, 115, index * 22);
+                return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                    className: "absolute",
+                    style: {
+                        left: pt.x - w / 2,
+                        top: pt.y - 90,
+                        width: w,
+                        opacity: p,
+                        transform: `translateY(${(1 - p) * 30 + y}px) scale(${0.92 + p * 0.08})`
+                    },
+                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)(BrutalCard, {
+                        yellow: node.accent,
+                        className: "h-[180px] p-7",
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "flex h-full items-center gap-7",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[58px]",
+                                    children: node.icon
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "text-[31px] font-semibold tracking-[-0.04em]",
+                                            children: node.label
+                                        }),
+                                        node.sublabel ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "mt-2 text-[19px] text-muted",
+                                            children: node.sublabel
+                                        }) : null
+                                    ]
+                                })
+                            ]
+                        })
+                    })
+                }, node.id);
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/relationships/CausalGraph.tsx
+
+
+
+
+
+
+
+
+
+const CausalGraph_DEFAULT_NODES = [
+    {
+        id: "rates",
+        label: "INTEREST RATES",
+        subtitle: "Policy rate",
+        icon: "🏦",
+        x: 0.12,
+        y: 0.42,
+        accent: true,
+        direction: "up"
+    },
+    {
+        id: "credit",
+        label: "BORROWING",
+        subtitle: "Credit demand",
+        icon: "💳",
+        x: 0.38,
+        y: 0.42,
+        direction: "down"
+    },
+    {
+        id: "spend",
+        label: "SPENDING",
+        subtitle: "Households & firms",
+        icon: "🛒",
+        x: 0.64,
+        y: 0.42,
+        direction: "down"
+    },
+    {
+        id: "inflation",
+        label: "INFLATION",
+        subtitle: "Price pressure",
+        icon: "📈",
+        x: 0.9,
+        y: 0.42,
+        accent: true,
+        direction: "down"
+    },
+    {
+        id: "housing",
+        label: "HOUSING",
+        subtitle: "Asset prices",
+        icon: "🏠",
+        x: 0.5,
+        y: 0.84,
+        direction: "down"
+    }
+];
+const CausalGraph_DEFAULT_LINKS = [
+    {
+        from: "rates",
+        to: "credit",
+        sign: "−",
+        label: "financing cost",
+        accent: true
+    },
+    {
+        from: "credit",
+        to: "spend",
+        sign: "+",
+        label: "credit → demand"
+    },
+    {
+        from: "spend",
+        to: "inflation",
+        sign: "+",
+        label: "demand pressure",
+        accent: true
+    },
+    {
+        from: "rates",
+        to: "housing",
+        sign: "−",
+        label: "mortgage cost",
+        bend: 90,
+        delay: true
+    },
+    {
+        from: "housing",
+        to: "spend",
+        sign: "+",
+        label: "wealth effect",
+        bend: -70
+    }
+];
+const arrow = (direction)=>{
+    if (direction === "up") return " ↑";
+    if (direction === "down") return " ↓";
+    if (direction === "flat") return " →";
+    return "";
+};
+const NODE_W = 236;
+const CausalGraph = ({ eyebrow = "CAUSALITY", title = "A rate hike moves through the economy in stages.", subtitle = "Signed arrows show direction; dashed = lagged effect.", nodes = CausalGraph_DEFAULT_NODES, links = CausalGraph_DEFAULT_LINKS, source = "ILLUSTRATIVE CAUSAL MODEL" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const { width, height } = STRUCTURAL_CANVAS;
+    const positions = new Map(nodes.map((n)=>[
+            n.id,
+            {
+                x: n.x * width,
+                y: n.y * height
+            }
+        ]));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: subtitle
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)(StructuralDiagram, {
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                        className: "absolute inset-0 overflow-visible",
+                        width: width,
+                        height: height,
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("defs", {
+                                children: /*#__PURE__*/ (0,jsx_runtime.jsx)("marker", {
+                                    id: "causal-arrow",
+                                    markerWidth: "12",
+                                    markerHeight: "12",
+                                    refX: "10",
+                                    refY: "6",
+                                    orient: "auto",
+                                    markerUnits: "strokeWidth",
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: "M 0 0 L 12 6 L 0 12 z",
+                                        fill: colors.ink
+                                    })
+                                })
+                            }),
+                            links.map((link, index)=>{
+                                const a = positions.get(link.from);
+                                const b = positions.get(link.to);
+                                if (!a || !b) return null;
+                                const p = tween(frame, 14 + index * 7, 24);
+                                const bend = link.bend ?? 0;
+                                const dx = b.x - a.x;
+                                const dy = b.y - a.y;
+                                const len = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+                                const nx = -dy / len;
+                                const ny = dx / len;
+                                const c1x = a.x + dx * 0.36 + nx * bend;
+                                const c1y = a.y + dy * 0.36 + ny * bend;
+                                const c2x = a.x + dx * 0.64 + nx * bend;
+                                const c2y = a.y + dy * 0.64 + ny * bend;
+                                const startX = a.x + Math.sign(dx || 1) * (NODE_W / 2 - 8);
+                                const endX = b.x - Math.sign(dx || 1) * (NODE_W / 2 - 8);
+                                const startY = Math.abs(dx) < Math.abs(dy) ? a.y + Math.sign(dy || 1) * 42 : a.y;
+                                const endY = Math.abs(dx) < Math.abs(dy) ? b.y - Math.sign(dy || 1) * 42 : b.y;
+                                const d = `M ${startX} ${startY} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${endX} ${endY}`;
+                                return /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                    d: d,
+                                    pathLength: 1,
+                                    fill: "none",
+                                    stroke: link.accent ? colors.yellow : colors.ink,
+                                    strokeWidth: link.accent ? 6 : 3,
+                                    strokeDasharray: link.delay ? "10 10" : 1,
+                                    strokeDashoffset: link.delay ? 0 : 1 - p,
+                                    strokeOpacity: 0.95,
+                                    markerEnd: "url(#causal-arrow)"
+                                }, `${link.from}-${link.to}-${index}`);
+                            })
+                        ]
+                    }),
+                    nodes.map((node, index)=>{
+                        const pos = positions.get(node.id);
+                        const p = springIn({
+                            frame,
+                            fps,
+                            delay: index * 6,
+                            damping: 16,
+                            stiffness: 130
+                        });
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: {
+                                left: pos.x,
+                                top: pos.y,
+                                transform: `translate(-50%, -50%) scale(${0.93 + p * 0.07})`,
+                                opacity: p,
+                                zIndex: 2
+                            },
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(NodeCard, {
+                                label: `${node.label}${arrow(node.direction)}`,
+                                subtitle: node.subtitle,
+                                icon: node.icon,
+                                accent: node.accent,
+                                width: NODE_W,
+                                compact: true
+                            })
+                        }, node.id);
+                    }),
+                    links.map((link, index)=>{
+                        const a = positions.get(link.from);
+                        const b = positions.get(link.to);
+                        if (!a || !b) return null;
+                        const p = tween(frame, 30 + index * 7, 10);
+                        const bend = link.bend ?? 0;
+                        const dx = b.x - a.x;
+                        const dy = b.y - a.y;
+                        const len = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+                        const nx = -dy / len;
+                        const ny = dx / len;
+                        // 标签贴在曲线外侧，避开节点卡片
+                        const bendSign = bend === 0 ? dy >= 0 ? -1 : 1 : Math.sign(bend) || -1;
+                        const left = (a.x + b.x) / 2 + nx * (Math.abs(bend) * 0.35 + 18) * bendSign;
+                        const top = (a.y + b.y) / 2 + ny * (Math.abs(bend) * 0.35 + 18) * bendSign + bend * 0.2;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "absolute flex max-w-[220px] flex-col items-center gap-1",
+                            style: edgeLabelStyle(left, top, p),
+                            children: [
+                                link.sign ? /*#__PURE__*/ (0,jsx_runtime.jsx)(EdgeLabel, {
+                                    text: link.sign,
+                                    accent: link.accent,
+                                    compact: true
+                                }) : null,
+                                link.label ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "border border-ink bg-paper px-2 py-0.5 text-center text-[13px] leading-[1.2] text-muted",
+                                    style: {
+                                        boxShadow: shadows.brutalSm
+                                    },
+                                    children: link.label
+                                }) : null
+                            ]
+                        }, `label-${index}`);
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/relationships/RivalryNetworkDiagram.tsx
+
+
+
+
+
+
+
+const NODES = [
+    {
+        id: "a",
+        label: "PLATFORM A",
+        icon: "⚡",
+        x: 50,
+        y: 18,
+        highlight: true
+    },
+    {
+        id: "b",
+        label: "PLATFORM B",
+        icon: "☁️",
+        x: 20,
+        y: 55
+    },
+    {
+        id: "c",
+        label: "PLATFORM C",
+        icon: "🧠",
+        x: 80,
+        y: 55
+    },
+    {
+        id: "d",
+        label: "SUPPLIER",
+        icon: "🏭",
+        x: 35,
+        y: 84
+    },
+    {
+        id: "e",
+        label: "PARTNER",
+        icon: "🤝",
+        x: 65,
+        y: 84
+    }
+];
+const EDGES = [
+    {
+        from: "a",
+        to: "b",
+        type: "compete",
+        label: "COMPETE"
+    },
+    {
+        from: "a",
+        to: "c",
+        type: "compete"
+    },
+    {
+        from: "b",
+        to: "c",
+        type: "cooperate",
+        label: "STANDARD"
+    },
+    {
+        from: "d",
+        to: "a",
+        type: "supply",
+        label: "SUPPLY"
+    },
+    {
+        from: "e",
+        to: "a",
+        type: "cooperate",
+        label: "PARTNER"
+    }
+];
+const RivalryNetworkDiagram = ({ eyebrow = "COMPETE + COOPERATE", title = "Markets are rarely pure rivalry.", nodes = NODES, edges = EDGES })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const get = (id)=>nodes.find((n)=>n.id === id);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-5 h-[680px]",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                        width: 1680,
+                        height: 680,
+                        className: "absolute inset-0",
+                        children: edges.map((e, i)=>{
+                            const a = get(e.from), b = get(e.to), p = chartMotion_stagger(frame, i, 10, 5, 22);
+                            const x1 = a.x / 100 * 1680, y1 = a.y / 100 * 680, x2 = b.x / 100 * 1680, y2 = b.y / 100 * 680;
+                            const color = e.type === "compete" ? VIZ.ink : e.type === "cooperate" ? VIZ.yellow : VIZ.muted;
+                            const dash = e.type === "compete" ? "14 10" : undefined;
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("g", {
+                                opacity: p,
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                        x1: x1,
+                                        y1: y1,
+                                        x2: x1 + (x2 - x1) * p,
+                                        y2: y1 + (y2 - y1) * p,
+                                        stroke: color,
+                                        strokeWidth: e.type === "cooperate" ? 12 : 5,
+                                        strokeDasharray: dash
+                                    }),
+                                    e.label ? /*#__PURE__*/ (0,jsx_runtime.jsx)("text", {
+                                        x: (x1 + x2) / 2,
+                                        y: (y1 + y2) / 2 - 10,
+                                        textAnchor: "middle",
+                                        fontFamily: "IBM Plex Mono",
+                                        fontSize: 16,
+                                        fill: VIZ.ink,
+                                        children: e.label
+                                    }) : null
+                                ]
+                            }, `${e.from}-${e.to}`);
+                        })
+                    }),
+                    nodes.map((n, i)=>{
+                        const p = chartMotion_stagger(frame, i, 8, 5, 16);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: `absolute flex h-[120px] w-[230px] items-center justify-center border-2 border-ink ${n.highlight ? "bg-yellow" : "bg-white"}`,
+                            style: {
+                                left: `${n.x}%`,
+                                top: `${n.y}%`,
+                                transform: `translate(-50%,-50%) scale(${0.9 + 0.1 * p})`,
+                                opacity: p,
+                                boxShadow: "5px 5px 0 #111"
+                            },
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-center",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[40px]",
+                                        children: n.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[20px] font-semibold",
+                                        children: n.label
+                                    })
+                                ]
+                            })
+                        }, n.id);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "absolute bottom-1 left-0 flex gap-8 text-[17px] text-muted",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "┄ COMPETE"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                className: "bg-yellow px-2",
+                                children: "━ COOPERATE"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                children: "— SUPPLY"
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/relationships/CompetitiveLandscapeDiagram.tsx
+
+
+
+
+
+
+const CompetitiveLandscapeDiagram_DEFAULT = [
+    {
+        label: "A",
+        x: 78,
+        y: 78,
+        icon: "⚡",
+        highlight: true
+    },
+    {
+        label: "B",
+        x: 62,
+        y: 56,
+        icon: "☁️"
+    },
+    {
+        label: "C",
+        x: 40,
+        y: 72,
+        icon: "🧠"
+    },
+    {
+        label: "D",
+        x: 28,
+        y: 34,
+        icon: "📦"
+    },
+    {
+        label: "E",
+        x: 70,
+        y: 27,
+        icon: "💻"
+    }
+];
+const CompetitiveLandscapeDiagram = ({ eyebrow = "COMPETITIVE LANDSCAPE", title = "Position competitors on two strategic dimensions.", items = CompetitiveLandscapeDiagram_DEFAULT, xLabel = "SCALE →", yLabel = "DIFFERENTIATION →" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-12 h-[620px] border-b-2 border-l-2 border-ink bg-white",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute -left-[55px] top-[250px] -rotate-90 text-[19px] text-muted",
+                        children: yLabel
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[-42px] left-[720px] text-[19px] text-muted",
+                        children: xLabel
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-0 h-full border-l-2 border-dashed border-ink opacity-20"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute top-1/2 left-0 w-full border-t-2 border-dashed border-ink opacity-20"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-5 top-4 text-[16px] text-muted",
+                        children: "NICHE / PREMIUM"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-5 top-4 text-[16px] text-muted",
+                        children: "SCALE + PREMIUM"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-5 bottom-4 text-[16px] text-muted",
+                        children: "NICHE / COMMODITY"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-5 bottom-4 text-[16px] text-muted",
+                        children: "SCALE / COMMODITY"
+                    }),
+                    items.map((it, i)=>{
+                        const p = chartMotion_stagger(frame, i, 8, 6, 16);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: `absolute flex h-[94px] w-[150px] items-center justify-center gap-3 border-2 border-ink text-[23px] font-semibold ${it.highlight ? "bg-yellow" : "bg-white"}`,
+                            style: {
+                                left: `${it.x}%`,
+                                bottom: `${it.y}%`,
+                                transform: `translate(-50%,50%) scale(${0.85 + 0.15 * p})`,
+                                opacity: p,
+                                boxShadow: "5px 5px 0 #111"
+                            },
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                    className: "text-[31px]",
+                                    children: it.icon
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                    children: it.label
+                                })
+                            ]
+                        }, it.label);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/relationships/EcosystemMap.tsx
+
+
+
+
+
+
+
+const EcosystemMap_DEFAULT = [
+    {
+        label: "CUSTOMERS",
+        icon: "👤",
+        role: "Demand"
+    },
+    {
+        label: "SUPPLIERS",
+        icon: "🏭",
+        role: "Inputs"
+    },
+    {
+        label: "PARTNERS",
+        icon: "🤝",
+        role: "Distribution"
+    },
+    {
+        label: "DEVELOPERS",
+        icon: "💻",
+        role: "Complementors"
+    },
+    {
+        label: "CAPITAL",
+        icon: "💰",
+        role: "Funding"
+    }
+];
+const EcosystemMap = ({ eyebrow = "ECOSYSTEM", title = "One platform coordinates many sides of the market.", hub = {
+    label: "PLATFORM",
+    icon: "⚙️",
+    role: "Coordinator"
+}, nodes = EcosystemMap_DEFAULT })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const cx = 840, cy = 330, r = 290;
+    const hubP = springIn({
+        frame,
+        fps,
+        delay: 4
+    });
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-8 h-[650px]",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                        className: "absolute inset-0",
+                        width: 1680,
+                        height: 650,
+                        children: nodes.map((n, i)=>{
+                            const a = -Math.PI / 2 + i / nodes.length * Math.PI * 2;
+                            const x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r;
+                            const p = chartMotion_stagger(frame, i, 18, 5, 18);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsx)("g", {
+                                opacity: p,
+                                children: /*#__PURE__*/ (0,jsx_runtime.jsx)("line", {
+                                    x1: cx,
+                                    y1: cy,
+                                    x2: cx + (x - cx) * p,
+                                    y2: cy + (y - cy) * p,
+                                    stroke: i === 2 ? VIZ.yellow : VIZ.ink,
+                                    strokeWidth: i === 2 ? 18 : 4,
+                                    strokeOpacity: i === 2 ? 0.9 : 0.55
+                                })
+                            }, n.label);
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute flex h-[180px] w-[260px] items-center justify-center border-2 border-ink bg-yellow",
+                        style: {
+                            left: cx,
+                            top: cy,
+                            transform: `translate(-50%,-50%) scale(${0.85 + 0.15 * hubP})`,
+                            boxShadow: "7px 7px 0 #111"
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[58px]",
+                                    children: hub.icon
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[27px] font-semibold",
+                                    children: hub.label
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[18px]",
+                                    children: hub.role
+                                })
+                            ]
+                        })
+                    }),
+                    nodes.map((n, i)=>{
+                        const a = -Math.PI / 2 + i / nodes.length * Math.PI * 2;
+                        const x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r;
+                        const p = chartMotion_stagger(frame, i, 14, 5, 18);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute flex h-[130px] w-[220px] items-center justify-center border-2 border-ink bg-white",
+                            style: {
+                                left: x,
+                                top: y,
+                                transform: `translate(-50%,-50%) scale(${0.88 + 0.12 * p})`,
+                                opacity: p,
+                                boxShadow: "5px 5px 0 #111"
+                            },
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-center",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[40px]",
+                                        children: n.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[21px] font-semibold",
+                                        children: n.label
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[16px] text-muted",
+                                        children: n.role
+                                    })
+                                ]
+                            })
+                        }, n.label);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/relationships/CapabilityVennDiagram.tsx
+
+
+
+
+
+
+const CapabilityVennDiagram = ({ eyebrow = "COOPERATION", title = "Partnerships make sense when capabilities overlap imperfectly.", left = "DISTRIBUTION", right = "TECHNOLOGY", overlap = "JOINT PRODUCT", leftIcon = "🌍", rightIcon = "💻" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const p1 = tween(frame, 8, 20), p2 = tween(frame, 18, 20), p3 = tween(frame, 36, 16);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-16 h-[600px]",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[300px] top-[70px] flex h-[430px] w-[540px] items-center justify-start rounded-full border-[4px] border-ink bg-yellow/70 px-16",
+                        style: {
+                            opacity: p1,
+                            transform: `translateX(${(1 - p1) * -60}px)`
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[80px]",
+                                    children: leftIcon
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-4 text-[28px] font-semibold",
+                                    children: left
+                                })
+                            ]
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-[300px] top-[70px] flex h-[430px] w-[540px] items-center justify-end rounded-full border-[4px] border-ink bg-white/80 px-16",
+                        style: {
+                            opacity: p2,
+                            transform: `translateX(${(1 - p2) * 60}px)`
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[80px]",
+                                    children: rightIcon
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-4 text-[28px] font-semibold",
+                                    children: right
+                                })
+                            ]
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-[260px] -translate-x-1/2 -translate-y-1/2 border-2 border-ink bg-ink px-7 py-5 text-[23px] font-semibold text-white",
+                        style: {
+                            opacity: p3,
+                            boxShadow: "5px 5px 0 #FFD43B"
+                        },
+                        children: overlap
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/hierarchy/HierarchyPyramid.tsx
+
+
+
+
+
+
+
+
+const DEFAULT_TIERS = [
+    {
+        label: "OWNERS",
+        sublabel: "Capital",
+        description: "Control scarce assets",
+        icon: "💰",
+        accent: true
+    },
+    {
+        label: "OPERATORS",
+        sublabel: "Management",
+        description: "Allocate people and capital",
+        icon: "🧠"
+    },
+    {
+        label: "SPECIALISTS",
+        sublabel: "Knowledge work",
+        description: "Create differentiated output",
+        icon: "💻"
+    },
+    {
+        label: "LABOR",
+        sublabel: "Execution",
+        description: "Deliver standardized output",
+        icon: "👷"
+    }
+];
+const HierarchyPyramid = ({ eyebrow = "STRUCTURE", title = "A hierarchy makes the distribution visible.", tiers = DEFAULT_TIERS, footer, source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-12 flex flex-col items-center",
+                children: [
+                    tiers.map((tier, index)=>{
+                        const reverseIndex = tiers.length - 1 - index;
+                        const p = springIn({
+                            frame,
+                            fps,
+                            delay: 8 + reverseIndex * 7,
+                            damping: 18,
+                            stiffness: 150
+                        });
+                        const widthPct = tiers.length === 1 ? 72 : 48 + index / (tiers.length - 1) * 52;
+                        const y = (0,esm/* .interpolate */.GW)(p, [
+                            0,
+                            1
+                        ], [
+                            34,
+                            0
+                        ]);
+                        const scale = (0,esm/* .interpolate */.GW)(p, [
+                            0,
+                            1
+                        ], [
+                            0.96,
+                            1
+                        ]);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: `relative flex h-[142px] items-center border-2 border-ink px-14 ${tier.accent ? "bg-yellow" : index % 2 === 0 ? "bg-white" : "bg-soft"}`,
+                            style: {
+                                width: `${widthPct}%`,
+                                clipPath: "polygon(7% 0, 93% 0, 100% 100%, 0 100%)",
+                                opacity: p,
+                                transform: `translateY(${y}px) scale(${scale})`,
+                                boxShadow: index === tiers.length - 1 ? shadows.brutal : undefined,
+                                marginTop: index === 0 ? 0 : -2
+                            },
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "grid w-full grid-cols-[1fr_1.2fr_100px] items-center gap-8",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "text-[31px] font-semibold tracking-[-0.03em]",
+                                                children: tier.label
+                                            }),
+                                            tier.sublabel ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "mt-1 text-[18px] text-muted",
+                                                children: tier.sublabel
+                                            }) : null
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[23px] leading-[1.35]",
+                                        children: tier.description
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-right text-[54px]",
+                                        children: tier.icon
+                                    })
+                                ]
+                            })
+                        }, `${tier.label}-${index}`);
+                    }),
+                    footer ? /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "mt-5 flex w-full items-center justify-between border-2 border-ink bg-ink px-12 py-6 text-white",
+                        style: {
+                            boxShadow: `6px 6px 0 ${colors.yellow}`
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[28px] font-semibold",
+                                        children: footer.label
+                                    }),
+                                    footer.description ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-1 text-[19px] opacity-70",
+                                        children: footer.description
+                                    }) : null
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[46px]",
+                                children: footer.icon
+                            })
+                        ]
+                    }) : null
+                ]
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/hierarchy/OrganizationTree.tsx
+
+
+
+
+
+
+
+
+const DEFAULT_ROOT = {
+    id: "ceo",
+    label: "CEO",
+    subtitle: "Strategy & capital allocation",
+    icon: "👤",
+    accent: true,
+    children: [
+        {
+            id: "finance",
+            label: "FINANCE",
+            subtitle: "CFO · Treasury · FP&A",
+            icon: "💰",
+            children: [
+                {
+                    id: "treasury",
+                    label: "TREASURY",
+                    subtitle: "Liquidity",
+                    icon: "🏦"
+                },
+                {
+                    id: "fpna",
+                    label: "FP&A",
+                    subtitle: "Planning",
+                    icon: "📊"
+                }
+            ]
+        },
+        {
+            id: "product",
+            label: "PRODUCT & TECH",
+            subtitle: "CTO · Product",
+            icon: "💻",
+            children: [
+                {
+                    id: "ai",
+                    label: "AI",
+                    subtitle: "Models & agents",
+                    icon: "🤖",
+                    accent: true
+                },
+                {
+                    id: "infra",
+                    label: "INFRA",
+                    subtitle: "Cloud & platform",
+                    icon: "⚙️"
+                }
+            ]
+        },
+        {
+            id: "ops",
+            label: "OPERATIONS",
+            subtitle: "COO · Sales · Support",
+            icon: "🏭",
+            children: [
+                {
+                    id: "sales",
+                    label: "SALES",
+                    subtitle: "Distribution",
+                    icon: "🤝"
+                },
+                {
+                    id: "support",
+                    label: "SUPPORT",
+                    subtitle: "Service",
+                    icon: "🎧"
+                }
+            ]
+        }
+    ]
+};
+const OrganizationTree = ({ eyebrow = "ORGANIZATION", title = "Who reports to whom?", subtitle = "Reporting lines across divisions and business units.", root = DEFAULT_ROOT, source = "COMPANY ORGANIZATION / DEMO" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const nodes = layoutStructuralTree(root);
+    const byId = new Map(nodes.map((n)=>[
+            n.id,
+            n
+        ]));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: subtitle
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)(StructuralDiagram, {
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                        className: "absolute inset-0 overflow-visible",
+                        width: "100%",
+                        height: "100%",
+                        children: nodes.filter((node)=>node.parentId).map((node)=>{
+                            const parent = byId.get(node.parentId);
+                            if (!parent) return null;
+                            const p = tween(frame, 10 + node.depth * 10 + node.order * 2, 18);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsx)(TreeEdge, {
+                                d: cubicTreeEdgePath(parent, node),
+                                progress: p
+                            }, `${parent.id}-${node.id}`);
+                        })
+                    }),
+                    nodes.map((node)=>{
+                        const p = springIn({
+                            frame,
+                            fps,
+                            delay: node.depth * 10 + node.order * 2,
+                            damping: 16,
+                            stiffness: 130
+                        });
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: treeNodeStyle(node.x, node.y, p, 24),
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(NodeCard, {
+                                label: node.label,
+                                subtitle: node.headcount ? `${node.subtitle ?? ""} · ${node.headcount}` : node.subtitle,
+                                icon: node.icon,
+                                accent: node.accent,
+                                muted: node.muted,
+                                compact: node.depth >= 2,
+                                width: node.depth >= 2 ? 210 : 250
+                            })
+                        }, node.id);
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/hierarchy/OwnershipTree.tsx
+
+
+
+
+
+
+
+
+const OwnershipTree_DEFAULT_ROOT = {
+    id: "holdco",
+    label: "HOLDING CO.",
+    subtitle: "Control layer",
+    icon: "🏢",
+    accent: true,
+    children: [
+        {
+            id: "software",
+            label: "SOFTWARE CO.",
+            subtitle: "Core operating asset",
+            icon: "💻",
+            ownershipPct: 72,
+            children: [
+                {
+                    id: "cloud",
+                    label: "CLOUD",
+                    subtitle: "Infrastructure",
+                    icon: "☁️",
+                    ownershipPct: 100
+                },
+                {
+                    id: "ai",
+                    label: "AI LAB",
+                    subtitle: "Strategic subsidiary",
+                    icon: "🤖",
+                    ownershipPct: 80,
+                    accent: true
+                }
+            ]
+        },
+        {
+            id: "finance",
+            label: "FINANCE CO.",
+            subtitle: "Payments & credit",
+            icon: "🏦",
+            ownershipPct: 51
+        },
+        {
+            id: "associate",
+            label: "ASSOCIATE",
+            subtitle: "Minority investment",
+            icon: "🤝",
+            ownershipPct: 28,
+            muted: true
+        }
+    ]
+};
+const OwnershipTree = ({ eyebrow = "OWNERSHIP", title = "Who owns whom — and who actually controls the group?", subtitle = "Edge % = ownership stake, not company name.", root = OwnershipTree_DEFAULT_ROOT, source = "CORPORATE FILINGS / DEMO" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const nodes = layoutStructuralTree(root);
+    const byId = new Map(nodes.map((n)=>[
+            n.id,
+            n
+        ]));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: subtitle
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)(StructuralDiagram, {
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                        className: "absolute inset-0 overflow-visible",
+                        width: "100%",
+                        height: "100%",
+                        children: nodes.filter((node)=>node.parentId).map((node)=>{
+                            const parent = byId.get(node.parentId);
+                            if (!parent) return null;
+                            const controlled = (node.ownershipPct ?? 0) >= 50;
+                            const p = tween(frame, 12 + node.order * 4, 20);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsx)(TreeEdge, {
+                                d: cubicTreeEdgePath(parent, node),
+                                progress: p,
+                                accent: controlled,
+                                thick: controlled,
+                                opacity: controlled ? 0.95 : 0.7
+                            }, `${parent.id}-${node.id}`);
+                        })
+                    }),
+                    nodes.map((node)=>{
+                        const p = springIn({
+                            frame,
+                            fps,
+                            delay: node.order * 4,
+                            damping: 16,
+                            stiffness: 130
+                        });
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: treeNodeStyle(node.x, node.y, p, 22),
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(NodeCard, {
+                                label: node.label,
+                                subtitle: node.subtitle,
+                                icon: node.icon,
+                                accent: node.accent,
+                                muted: node.muted,
+                                compact: node.depth >= 2,
+                                width: node.depth >= 2 ? 210 : 250
+                            })
+                        }, node.id);
+                    }),
+                    nodes.filter((node)=>node.parentId).map((node)=>{
+                        const parent = byId.get(node.parentId);
+                        if (!parent) return null;
+                        const p = tween(frame, 24 + node.order * 4, 12);
+                        const point = edgeCorridorPoint(parent, node);
+                        const text = node.relationLabel ?? (node.ownershipPct == null ? "OWNERSHIP" : `${node.ownershipPct}%`);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: edgeLabelStyle(point.x, point.y, p),
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(EdgeLabel, {
+                                text: text,
+                                accent: (node.ownershipPct ?? 0) >= 50,
+                                compact: true
+                            })
+                        }, `label-${node.id}`);
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/finance/BalanceSheetDiagram.tsx
+
+
+
+
+
+
+
+
+const DEFAULT_ASSETS = [
+    {
+        label: "CASH",
+        value: 18,
+        icon: "💵"
+    },
+    {
+        label: "LOANS",
+        value: 52,
+        icon: "🧾",
+        accent: true
+    },
+    {
+        label: "SECURITIES",
+        value: 30,
+        icon: "📊"
+    }
+];
+const DEFAULT_LIABILITIES = [
+    {
+        label: "DEPOSITS",
+        value: 64,
+        icon: "🏦"
+    },
+    {
+        label: "DEBT",
+        value: 21,
+        icon: "📄"
+    }
+];
+const DEFAULT_EQUITY = [
+    {
+        label: "EQUITY",
+        value: 15,
+        icon: "📈",
+        accent: true
+    }
+];
+const StackColumn = ({ title, items, totalScale, frame, delay, unit })=>{
+    const total = items.reduce((sum, item)=>sum + item.value, 0);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+        className: "flex-1",
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mb-4 flex items-end justify-between",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "text-[24px] font-semibold tracking-[0.08em]",
+                        children: title
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "text-[42px] font-semibold tracking-[-0.05em]",
+                        children: [
+                            unit,
+                            Math.round(countTo(frame, total, delay, 30))
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "flex h-[480px] flex-col justify-end border-2 border-ink bg-white",
+                style: {
+                    boxShadow: shadows.brutal
+                },
+                children: items.map((item, index)=>{
+                    const p = tween(frame, delay + index * 7, 24);
+                    const h = item.value / totalScale * 100 * p;
+                    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: `flex items-center justify-between overflow-hidden border-t-2 border-ink px-7 first:border-t-0 ${item.accent ? "bg-yellow" : index % 2 ? "bg-soft" : "bg-white"}`,
+                        style: {
+                            height: `${h}%`
+                        },
+                        children: p > 0.45 ? /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "flex items-center gap-4",
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                            className: "text-[38px]",
+                                            children: item.icon ?? "◻️"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                            className: "text-[24px] font-semibold",
+                                            children: item.label
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
+                                    className: "text-[30px] font-semibold",
+                                    children: [
+                                        unit,
+                                        Math.round(item.value * p)
+                                    ]
+                                })
+                            ]
+                        }) : null
+                    }, item.label);
+                })
+            })
+        ]
+    });
+};
+const BalanceSheetDiagram = ({ eyebrow = "BALANCE SHEET", title = "Assets must be financed by liabilities and equity.", assets = DEFAULT_ASSETS, liabilities = DEFAULT_LIABILITIES, equity = DEFAULT_EQUITY, unit = "$", source = "ILLUSTRATIVE BALANCE SHEET" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const assetTotal = assets.reduce((sum, x)=>sum + x.value, 0);
+    const rhs = [
+        ...liabilities,
+        ...equity
+    ];
+    const rhsTotal = rhs.reduce((sum, x)=>sum + x.value, 0);
+    const scale = Math.max(assetTotal, rhsTotal, 1);
+    const equationP = tween(frame, 5, 18);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: "Assets = liabilities + equity."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-5 flex items-center justify-center gap-5",
+                style: {
+                    opacity: equationP
+                },
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "border-2 border-ink bg-yellow px-6 py-3 text-[25px] font-semibold",
+                        children: "ASSETS"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "text-[34px] font-semibold",
+                        children: "="
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "border-2 border-ink bg-white px-6 py-3 text-[25px] font-semibold",
+                        children: "LIABILITIES + EQUITY"
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-6 flex gap-16",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(StackColumn, {
+                        title: "ASSETS",
+                        items: assets,
+                        totalScale: scale,
+                        frame: frame,
+                        delay: 14,
+                        unit: unit
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(StackColumn, {
+                        title: "LIABILITIES + EQUITY",
+                        items: rhs,
+                        totalScale: scale,
+                        frame: frame,
+                        delay: 22,
+                        unit: unit
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-5 flex justify-center",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                    className: `border-2 border-ink px-5 py-2 text-[18px] font-semibold ${Math.abs(assetTotal - rhsTotal) < 0.001 ? "bg-yellow" : "bg-white"}`,
+                    children: Math.abs(assetTotal - rhsTotal) < 0.001 ? "BALANCED" : `CHECK: ${unit}${assetTotal} ≠ ${unit}${rhsTotal}`
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/diagrams/finance/CapitalStackDiagram.tsx
+
+
+
+
+
+
+
+
+const DEFAULT_LAYERS = [
+    {
+        label: "EQUITY",
+        percent: 25,
+        subtitle: "First loss · highest upside",
+        icon: "📈",
+        accent: true
+    },
+    {
+        label: "MEZZANINE",
+        percent: 15,
+        subtitle: "Subordinated debt",
+        icon: "🧾"
+    },
+    {
+        label: "SENIOR DEBT",
+        percent: 60,
+        subtitle: "Highest repayment priority",
+        icon: "🏦"
+    }
+];
+const CapitalStackDiagram = ({ eyebrow = "CAPITAL STRUCTURE", title = "Who gets paid first — and who absorbs losses first?", layers = DEFAULT_LAYERS, lossPercent = 18, source = "ILLUSTRATIVE CAPITAL STACK" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const stackHeight = 520;
+    const stackWidth = 680;
+    const reveal = tween(frame, 12, 34);
+    const shock = tween(frame, 62, 32);
+    const animatedLoss = countTo(frame, lossPercent, 62, 32);
+    const total = layers.reduce((sum, l)=>sum + l.percent, 0) || 100;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: "Ordered by loss absorption and repayment priority."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-6 flex items-center gap-16",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "relative border-2 border-ink bg-white",
+                        style: {
+                            width: stackWidth,
+                            height: stackHeight,
+                            boxShadow: shadows.brutal
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "absolute inset-0 flex flex-col",
+                                children: layers.map((layer, index)=>{
+                                    const h = layer.percent / total * 100;
+                                    const local = tween(frame, 12 + index * 8, 22);
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: `relative flex items-center justify-between overflow-hidden border-b-2 border-ink px-8 last:border-b-0 ${layer.accent ? "bg-yellow" : index % 2 ? "bg-soft" : "bg-white"}`,
+                                        style: {
+                                            height: `${h * local}%`
+                                        },
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                className: "flex items-center gap-5",
+                                                children: [
+                                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                        className: "text-[46px]",
+                                                        children: layer.icon ?? "◻️"
+                                                    }),
+                                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                                className: "text-[28px] font-semibold",
+                                                                children: layer.label
+                                                            }),
+                                                            layer.subtitle ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                                className: "mt-1 text-[18px] text-muted",
+                                                                children: layer.subtitle
+                                                            }) : null
+                                                        ]
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                className: "text-[42px] font-semibold",
+                                                children: [
+                                                    Math.round(layer.percent * reveal),
+                                                    "%"
+                                                ]
+                                            })
+                                        ]
+                                    }, layer.label);
+                                })
+                            }),
+                            lossPercent > 0 ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "absolute left-0 top-0 flex w-full items-end justify-center overflow-hidden bg-ink text-white",
+                                style: {
+                                    height: `${Math.min(100, lossPercent) * shock}%`
+                                },
+                                children: shock > 0.65 ? /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "pb-4 text-[21px] font-semibold",
+                                    children: [
+                                        "LOSS ABSORBED \xb7 ",
+                                        Math.round(animatedLoss),
+                                        "%"
+                                    ]
+                                }) : null
+                            }) : null
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "flex-1",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "border-l-[6px] border-yellow pl-7",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[22px] tracking-[0.1em] text-muted",
+                                        children: "RISK"
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-2 text-[44px] font-semibold",
+                                        children: "Higher ↑"
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-3 text-[22px] leading-[1.5] text-muted",
+                                        children: "Equity sits at the top because it absorbs losses first."
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "mt-16 border-l-[6px] border-ink pl-7",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[22px] tracking-[0.1em] text-muted",
+                                        children: "REPAYMENT PRIORITY"
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-2 text-[44px] font-semibold",
+                                        children: "Higher ↓"
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-3 text-[22px] leading-[1.5] text-muted",
+                                        children: "Senior claims sit lower in the stack and are paid before junior capital."
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "mt-16 inline-block border-2 border-ink bg-yellow px-6 py-4 text-[26px] font-semibold",
+                                style: {
+                                    boxShadow: shadows.brutalMd
+                                },
+                                children: [
+                                    "SHOCK / −",
+                                    Math.round(animatedLoss),
+                                    "%"
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/strategy/StrategyMatrix.tsx
+
+
+
+
+
+
+const StrategyMatrix_items = [
+    {
+        name: "CORE",
+        x: 72,
+        y: 78,
+        highlight: true
+    },
+    {
+        name: "ADJACENCY",
+        x: 58,
+        y: 63
+    },
+    {
+        name: "LEGACY",
+        x: 24,
+        y: 30
+    },
+    {
+        name: "OPTION",
+        x: 82,
+        y: 35
+    }
+];
+const StrategyMatrix = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "STRATEGY MATRIX",
+                title: "Where should we play?"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-12 h-[650px] border-b-2 border-l-2 border-ink",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-0 h-full w-[2px] bg-soft"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-0 top-1/2 h-[2px] w-full bg-soft"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[16%] top-[20px] text-[22px] text-muted",
+                        children: "DEFEND"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-[10%] top-[20px] text-[22px] font-semibold",
+                        children: "INVEST"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[20px] left-[16%] text-[22px] text-muted",
+                        children: "EXIT"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[20px] right-[10%] text-[22px] text-muted",
+                        children: "OPTION"
+                    }),
+                    StrategyMatrix_items.map((it, i)=>{
+                        const p = motion_reveal(frame, 12 + i * 7);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: `absolute border-2 border-ink px-5 py-3 text-[20px] font-semibold ${it.highlight ? "bg-yellow" : "bg-white"}`,
+                            style: {
+                                left: `${it.x}%`,
+                                bottom: `${it.y}%`,
+                                transform: `translate(-50%,50%) scale(${0.85 + 0.15 * p})`,
+                                opacity: p,
+                                boxShadow: it.highlight ? "5px 5px 0 #111" : undefined
+                            },
+                            children: it.name
+                        }, it.name);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[-48px] left-1/2 -translate-x-1/2 text-[20px] text-muted",
+                        children: "MARKET ATTRACTIVENESS →"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[-95px] top-1/2 -rotate-90 text-[20px] text-muted",
+                        children: "OUR ADVANTAGE →"
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/strategy/RiskMatrix.tsx
+
+
+
+
+
+
+const risks = [
+    {
+        name: "REGULATION",
+        x: 72,
+        y: 80,
+        icon: "⚖️",
+        high: true
+    },
+    {
+        name: "FX",
+        x: 36,
+        y: 55,
+        icon: "💱"
+    },
+    {
+        name: "SUPPLY",
+        x: 63,
+        y: 43,
+        icon: "📦"
+    },
+    {
+        name: "TALENT",
+        x: 28,
+        y: 28,
+        icon: "👤"
+    },
+    {
+        name: "CYBER",
+        x: 82,
+        y: 68,
+        icon: "🔒",
+        high: true
+    }
+];
+const RiskMatrix = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "RISK MATRIX",
+                title: "Which risks deserve attention first?"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-12 h-[650px] border-2 border-ink",
+                style: {
+                    background: "linear-gradient(135deg,#FAFAF7 0%,#FAFAF7 45%,#FFF7B8 72%,#FFD43B 100%)"
+                },
+                children: [
+                    [
+                        25,
+                        50,
+                        75
+                    ].map((v)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "absolute top-0 h-full w-[1px] bg-ink/10",
+                                    style: {
+                                        left: `${v}%`
+                                    }
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "absolute left-0 h-[1px] w-full bg-ink/10",
+                                    style: {
+                                        bottom: `${v}%`
+                                    }
+                                })
+                            ]
+                        }, v)),
+                    risks.map((r, i)=>{
+                        const p = motion_reveal(frame, 10 + i * 7);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: `absolute border-2 border-ink px-4 py-3 text-[19px] font-semibold ${r.high ? "bg-yellow" : "bg-white"}`,
+                            style: {
+                                left: `${r.x}%`,
+                                bottom: `${r.y}%`,
+                                transform: "translate(-50%,50%)",
+                                opacity: p,
+                                boxShadow: r.high ? "4px 4px 0 #111" : undefined
+                            },
+                            children: [
+                                r.icon,
+                                " ",
+                                r.name
+                            ]
+                        }, r.name);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[-44px] left-1/2 -translate-x-1/2 text-[20px] text-muted",
+                        children: "PROBABILITY →"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[-65px] top-1/2 -rotate-90 text-[20px] text-muted",
+                        children: "IMPACT →"
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/strategy/PrioritizationMatrix.tsx
+
+
+
+
+
+
+const initiatives = [
+    {
+        name: "AI PRICING",
+        x: 84,
+        y: 78,
+        size: 92,
+        icon: "🤖"
+    },
+    {
+        name: "NEW MARKET",
+        x: 70,
+        y: 55,
+        size: 72,
+        icon: "🌍"
+    },
+    {
+        name: "COST CUT",
+        x: 58,
+        y: 78,
+        size: 58,
+        icon: "✂️"
+    },
+    {
+        name: "REBRAND",
+        x: 24,
+        y: 32,
+        size: 50,
+        icon: "🎨"
+    }
+];
+const PrioritizationMatrix = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "PRIORITIZATION",
+                title: "Value versus effort."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-12 h-[650px] border-b-2 border-l-2 border-ink",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-1/2 left-0 h-[2px] w-full bg-soft"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-1/2 top-0 h-full w-[2px] bg-soft"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-[8%] top-[20px] text-[22px] font-semibold",
+                        children: "DO FIRST"
+                    }),
+                    initiatives.map((it, i)=>{
+                        const p = motion_reveal(frame, 12 + i * 7);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute flex items-center justify-center rounded-full border-2 border-ink bg-yellow text-center font-semibold",
+                            style: {
+                                left: `${it.x}%`,
+                                bottom: `${it.y}%`,
+                                width: it.size,
+                                height: it.size,
+                                transform: `translate(-50%,50%) scale(${p})`,
+                                opacity: p
+                            },
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-[14px] leading-tight",
+                                children: [
+                                    it.icon,
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("br", {}),
+                                    it.name
+                                ]
+                            })
+                        }, it.name);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[-44px] left-1/2 -translate-x-1/2 text-[20px] text-muted",
+                        children: "EFFORT →"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[-55px] top-1/2 -rotate-90 text-[20px] text-muted",
+                        children: "VALUE →"
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/strategy/OpportunityMatrix.tsx
+
+
+
+
+
+
+const OpportunityMatrix_items = [
+    {
+        name: "A",
+        x: 82,
+        y: 76,
+        score: "$8B"
+    },
+    {
+        name: "B",
+        x: 68,
+        y: 58,
+        score: "$5B"
+    },
+    {
+        name: "C",
+        x: 48,
+        y: 72,
+        score: "$3B"
+    },
+    {
+        name: "D",
+        x: 28,
+        y: 38,
+        score: "$1B"
+    }
+];
+const OpportunityMatrix = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "OPPORTUNITY MATRIX",
+                title: "Size \xd7 right to win."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-12 h-[650px] border-b-2 border-l-2 border-ink",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute right-[5%] top-[24px] border-2 border-ink bg-yellow px-5 py-3 text-[20px] font-semibold",
+                        children: "PRIORITY ZONE"
+                    }),
+                    OpportunityMatrix_items.map((it, i)=>{
+                        const p = motion_reveal(frame, 10 + i * 7);
+                        const hi = it.x > 60 && it.y > 55;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "absolute flex h-[90px] w-[90px] items-center justify-center rounded-full border-2 border-ink text-center text-[18px] font-semibold",
+                            style: {
+                                left: `${it.x}%`,
+                                bottom: `${it.y}%`,
+                                transform: `translate(-50%,50%) scale(${p})`,
+                                opacity: p,
+                                boxShadow: hi ? "5px 5px 0 #111" : undefined,
+                                background: hi ? palette.yellow : palette.white
+                            },
+                            children: [
+                                it.name,
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("br", {}),
+                                it.score
+                            ]
+                        }, it.name);
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute bottom-[-44px] left-1/2 -translate-x-1/2 text-[20px] text-muted",
+                        children: "MARKET SIZE →"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[-70px] top-1/2 -rotate-90 text-[20px] text-muted",
+                        children: "RIGHT TO WIN →"
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/planning/StrategicRoadmap.tsx
+
+
+
+
+
+
+const phases = [
+    {
+        period: "0–6M",
+        title: "FIX",
+        items: [
+            "Pricing",
+            "Cost base",
+            "Retention"
+        ],
+        icon: "🔧"
+    },
+    {
+        period: "6–18M",
+        title: "SCALE",
+        items: [
+            "New channels",
+            "Automation",
+            "International"
+        ],
+        icon: "📈"
+    },
+    {
+        period: "18–36M",
+        title: "EXPAND",
+        items: [
+            "New products",
+            "M&A",
+            "Platform"
+        ],
+        icon: "🚀"
+    }
+];
+const StrategicRoadmap = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "ROADMAP",
+                title: "Sequence the strategy."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-20",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[130px] right-[130px] top-[74px] h-[5px] bg-soft",
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "h-full bg-ink",
+                            style: {
+                                width: `${motion_reveal(frame, 8, 50) * 100}%`
+                            }
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "grid grid-cols-3 gap-12",
+                        children: phases.map((p, i)=>{
+                            const r = motion_reveal(frame, 12 + i * 12);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                style: {
+                                    opacity: r,
+                                    transform: `translateY(${(1 - r) * 18}px)`
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mx-auto flex h-[72px] w-[72px] items-center justify-center border-2 border-ink bg-yellow text-[36px]",
+                                        children: p.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "mt-8 border-2 border-ink bg-white p-7",
+                                        style: {
+                                            boxShadow: i === 1 ? "6px 6px 0 #111" : undefined
+                                        },
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "text-[20px] text-muted",
+                                                children: p.period
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "mt-2 text-[36px] font-semibold",
+                                                children: p.title
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "mt-6 space-y-3 text-[22px]",
+                                                children: p.items.map((x)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                        children: [
+                                                            "→ ",
+                                                            x
+                                                        ]
+                                                    }, x))
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }, p.title);
+                        })
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/planning/ScenarioTree.tsx
+
+
+
+
+
+
+const ROOT = {
+    x: 80,
+    y: 250,
+    w: 280,
+    h: 120
+};
+const CARD_X = 980;
+const CARD_W = 430;
+const ScenarioTree_CARD_H = 140;
+const ScenarioTree_scenarios = [
+    {
+        name: "BULL",
+        probability: "20%",
+        value: "$140",
+        y: 90,
+        accent: true
+    },
+    {
+        name: "BASE",
+        probability: "55%",
+        value: "$105",
+        y: 280,
+        accent: false
+    },
+    {
+        name: "BEAR",
+        probability: "25%",
+        value: "$72",
+        y: 470,
+        accent: false
+    }
+];
+const ScenarioTree = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const rootCx = ROOT.x + ROOT.w;
+    const rootCy = ROOT.y + ROOT.h / 2;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "SCENARIO TREE",
+                title: "One decision, three possible worlds."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-10 h-[650px]",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "absolute border-2 border-ink bg-yellow px-8 py-7 text-[30px] font-semibold",
+                        style: {
+                            left: ROOT.x,
+                            top: ROOT.y,
+                            width: ROOT.w,
+                            height: ROOT.h,
+                            boxShadow: "6px 6px 0 #111"
+                        },
+                        children: [
+                            "TODAY",
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("br", {}),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                className: "text-[20px] font-normal",
+                                children: "Current value: $100"
+                            })
+                        ]
+                    }),
+                    ScenarioTree_scenarios.map((x, i)=>{
+                        const p = motion_reveal(frame, 12 + i * 10);
+                        const cardCy = x.y + ScenarioTree_CARD_H / 2;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                                    className: "pointer-events-none absolute inset-0 h-full w-full overflow-visible",
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: `M ${rootCx} ${rootCy} C ${rootCx + 220} ${rootCy}, ${CARD_X - 120} ${cardCy}, ${CARD_X} ${cardCy}`,
+                                        fill: "none",
+                                        stroke: x.accent ? palette.yellow : palette.ink,
+                                        strokeWidth: x.accent ? 8 : 3,
+                                        pathLength: 1,
+                                        strokeDasharray: 1,
+                                        strokeDashoffset: 1 - p
+                                    })
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: `absolute border-2 border-ink p-6 ${x.accent ? "bg-yellow" : "bg-white"}`,
+                                    style: {
+                                        left: CARD_X,
+                                        top: x.y,
+                                        width: CARD_W,
+                                        height: ScenarioTree_CARD_H,
+                                        opacity: p
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                            className: "flex justify-between",
+                                            children: [
+                                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                    className: "text-[30px] font-semibold",
+                                                    children: x.name
+                                                }),
+                                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                    className: "text-[24px]",
+                                                    children: x.probability
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "mt-5 text-[52px] font-semibold",
+                                            children: x.value
+                                        })
+                                    ]
+                                })
+                            ]
+                        }, x.name);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/planning/BridgeToTarget.tsx
+
+
+
+
+
+
+const steps = [
+    {
+        label: "TODAY",
+        delta: 100,
+        total: true
+    },
+    {
+        label: "PRICE",
+        delta: 18,
+        total: false
+    },
+    {
+        label: "VOLUME",
+        delta: 12,
+        total: false
+    },
+    {
+        label: "MIX",
+        delta: 7,
+        total: false
+    },
+    {
+        label: "COST",
+        delta: -9,
+        total: false
+    },
+    {
+        label: "TARGET",
+        delta: 128,
+        total: true
+    }
+];
+const BridgeToTarget = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    let running = 0;
+    const calc = steps.map((s)=>{
+        if (s.total) {
+            running = s.delta;
+            return {
+                ...s,
+                start: 0,
+                end: s.delta
+            };
+        }
+        const start = running;
+        running += s.delta;
+        return {
+            ...s,
+            start,
+            end: running
+        };
+    });
+    const max = 140;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "BRIDGE TO TARGET",
+                title: "What must happen to get from here to there?"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-16 flex h-[600px] items-end gap-9 border-b-2 border-ink px-5",
+                children: calc.map((s, i)=>{
+                    const p = motion_reveal(frame, 8 + i * 7, 18), top = Math.max(s.start, s.end), bottom = Math.min(s.start, s.end), h = (top - bottom) / max * 520 * p, y = bottom / max * 520, positive = s.end >= s.start;
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "relative h-[560px] flex-1",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "absolute left-0 right-0 text-center text-[22px] font-semibold",
+                                style: {
+                                    bottom: y + h + 10,
+                                    opacity: p
+                                },
+                                children: s.total ? s.end : (s.delta > 0 ? "+" : "") + s.delta
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "absolute left-0 right-0 border-2 border-ink",
+                                style: {
+                                    bottom: y,
+                                    height: Math.max(8, h),
+                                    background: s.total || positive ? palette.yellow : palette.white,
+                                    opacity: p
+                                }
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "absolute bottom-[-50px] left-0 right-0 text-center text-[18px] text-muted",
+                                children: s.label
+                            })
+                        ]
+                    }, s.label);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/planning/IssueTree.tsx
+
+
+
+
+
+
+const branches = [
+    {
+        title: "REVENUE",
+        icon: "💰",
+        leaves: [
+            "Volume",
+            "Price",
+            "Mix"
+        ]
+    },
+    {
+        title: "COST",
+        icon: "⚙️",
+        leaves: [
+            "COGS",
+            "Labor",
+            "Marketing"
+        ]
+    },
+    {
+        title: "CAPITAL",
+        icon: "🏦",
+        leaves: [
+            "Debt",
+            "Capex",
+            "Working capital"
+        ]
+    }
+];
+const IssueTree_ROOT = {
+    x: 40,
+    y: 250,
+    w: 340,
+    h: 110
+};
+const BRANCH_X = 620;
+const BRANCH_W = 300;
+const BRANCH_H = 78;
+const LEAF_W = 170;
+const LEAF_H = 52;
+const LEAF_GAP = 20;
+const IssueTree = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const rootCx = IssueTree_ROOT.x + IssueTree_ROOT.w;
+    const rootCy = IssueTree_ROOT.y + IssueTree_ROOT.h / 2;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "ISSUE TREE",
+                title: "Break the question into drivers."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "relative mt-12 h-[650px]",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute border-2 border-ink bg-yellow p-7 text-[30px] font-semibold",
+                        style: {
+                            left: IssueTree_ROOT.x,
+                            top: IssueTree_ROOT.y,
+                            width: IssueTree_ROOT.w,
+                            boxShadow: "6px 6px 0 #111"
+                        },
+                        children: "WHAT DRIVES PROFIT?"
+                    }),
+                    branches.map((b, i)=>{
+                        const y = 65 + i * 190;
+                        const p = motion_reveal(frame, 18 + i * 10);
+                        const branchCy = y + BRANCH_H / 2;
+                        const leafStartX = BRANCH_X + BRANCH_W + 40;
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                                    className: "pointer-events-none absolute inset-0 h-full w-full overflow-visible",
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: `M ${rootCx} ${rootCy} C ${rootCx + 80} ${rootCy}, ${BRANCH_X - 40} ${branchCy}, ${BRANCH_X} ${branchCy}`,
+                                        fill: "none",
+                                        stroke: palette.ink,
+                                        strokeWidth: 3,
+                                        pathLength: 1,
+                                        strokeDasharray: 1,
+                                        strokeDashoffset: 1 - p
+                                    })
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "absolute border-2 border-ink bg-white p-5",
+                                    style: {
+                                        left: BRANCH_X,
+                                        top: y,
+                                        width: BRANCH_W,
+                                        height: BRANCH_H,
+                                        opacity: p
+                                    },
+                                    children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "text-[24px] font-semibold",
+                                        children: [
+                                            b.icon,
+                                            " ",
+                                            b.title
+                                        ]
+                                    })
+                                }),
+                                b.leaves.map((leaf, j)=>{
+                                    const lp = motion_reveal(frame, 32 + i * 10 + j * 4);
+                                    const lx = leafStartX + j * (LEAF_W + LEAF_GAP);
+                                    const leafCy = y + BRANCH_H / 2;
+                                    const leafTop = leafCy - LEAF_H / 2;
+                                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(react.Fragment, {
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                                                className: "pointer-events-none absolute inset-0 h-full w-full overflow-visible",
+                                                children: /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                                    d: `M ${BRANCH_X + BRANCH_W} ${leafCy} L ${lx} ${leafCy}`,
+                                                    fill: "none",
+                                                    stroke: palette.muted,
+                                                    strokeWidth: 2,
+                                                    pathLength: 1,
+                                                    strokeDasharray: 1,
+                                                    strokeDashoffset: 1 - lp
+                                                })
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                                className: "absolute flex items-center justify-center border-2 border-ink bg-soft px-4 text-[18px] font-semibold",
+                                                style: {
+                                                    left: lx,
+                                                    top: leafTop,
+                                                    width: LEAF_W,
+                                                    height: LEAF_H,
+                                                    opacity: lp
+                                                },
+                                                children: leaf
+                                            })
+                                        ]
+                                    }, leaf);
+                                })
+                            ]
+                        }, b.title);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/planning/MetricDriverTree.tsx
+
+
+
+
+
+
+
+
+const MetricDriverTree_DEFAULT_ROOT = {
+    id: "revenue",
+    label: "REVENUE",
+    subtitle: "$11.1B",
+    icon: "💰",
+    accent: true,
+    children: [
+        {
+            id: "users",
+            label: "ACTIVE USERS",
+            subtitle: "220M",
+            icon: "👥",
+            relation: "×",
+            children: [
+                {
+                    id: "traffic",
+                    label: "TRAFFIC",
+                    subtitle: "Visitors",
+                    icon: "🌐",
+                    relation: "×"
+                },
+                {
+                    id: "conversion",
+                    label: "CONVERSION",
+                    subtitle: "Visit → paid",
+                    icon: "🎯",
+                    relation: "×"
+                }
+            ]
+        },
+        {
+            id: "arpu",
+            label: "ARPU",
+            subtitle: "$50.5",
+            icon: "🧾",
+            relation: "×",
+            children: [
+                {
+                    id: "price",
+                    label: "PRICE",
+                    subtitle: "Per transaction",
+                    icon: "🏷️",
+                    relation: "×",
+                    accent: true
+                },
+                {
+                    id: "frequency",
+                    label: "FREQUENCY",
+                    subtitle: "Transactions / user",
+                    icon: "🔁",
+                    relation: "×"
+                }
+            ]
+        }
+    ]
+};
+const MetricDriverTree = ({ eyebrow = "DRIVER TREE", title = "What actually drives the headline number?", subtitle = "Decompose a KPI into multiplicative drivers.", root = MetricDriverTree_DEFAULT_ROOT, source = "ILLUSTRATIVE KPI DECOMPOSITION" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const nodes = layoutStructuralTree(root);
+    const byId = new Map(nodes.map((n)=>[
+            n.id,
+            n
+        ]));
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title,
+                subtitle: subtitle
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)(StructuralDiagram, {
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
+                        className: "absolute inset-0 overflow-visible",
+                        width: "100%",
+                        height: "100%",
+                        children: nodes.filter((node)=>node.parentId).map((node)=>{
+                            const parent = byId.get(node.parentId);
+                            if (!parent) return null;
+                            const p = tween(frame, 12 + node.depth * 9 + node.order * 2, 18);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsx)(TreeEdge, {
+                                d: cubicTreeEdgePath(parent, node),
+                                progress: p
+                            }, `${parent.id}-${node.id}`);
+                        })
+                    }),
+                    nodes.map((node)=>{
+                        const p = springIn({
+                            frame,
+                            fps,
+                            delay: node.depth * 8 + node.order * 2,
+                            damping: 16,
+                            stiffness: 130
+                        });
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: treeNodeStyle(node.x, node.y, p, 20),
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(NodeCard, {
+                                label: node.label,
+                                subtitle: node.value ? `${node.subtitle ?? ""} · ${node.value}` : node.subtitle,
+                                icon: node.icon,
+                                accent: node.accent,
+                                muted: node.depth >= 2 && !node.accent,
+                                compact: node.depth >= 2,
+                                width: node.depth >= 2 ? 220 : 250
+                            })
+                        }, node.id);
+                    }),
+                    nodes.filter((node)=>node.parentId && node.relation).map((node)=>{
+                        const parent = byId.get(node.parentId);
+                        if (!parent) return null;
+                        const p = tween(frame, 26 + node.order * 3, 10);
+                        const point = edgeCorridorPoint(parent, node);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "absolute",
+                            style: edgeLabelStyle(point.x, point.y, p),
+                            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(EdgeLabel, {
+                                text: node.relation,
+                                accent: node.accent,
+                                compact: true
+                            })
+                        }, `relation-${node.id}`);
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/frameworks/process/SwimlaneDiagram.tsx
+
+
+
+
+
+
+const lanes = [
+    {
+        name: "CUSTOMER",
+        icon: "👤",
+        steps: [
+            {
+                x: 10,
+                w: 18,
+                text: "REQUEST"
+            },
+            {
+                x: 58,
+                w: 18,
+                text: "APPROVE"
+            }
+        ]
+    },
+    {
+        name: "PLATFORM",
+        icon: "💻",
+        steps: [
+            {
+                x: 30,
+                w: 22,
+                text: "MATCH"
+            },
+            {
+                x: 78,
+                w: 15,
+                text: "SETTLE"
+            }
+        ]
+    },
+    {
+        name: "SUPPLIER",
+        icon: "🏭",
+        steps: [
+            {
+                x: 48,
+                w: 18,
+                text: "FULFILL"
+            }
+        ]
+    }
+];
+const SwimlaneDiagram = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "PROCESS MAP",
+                title: "Who does what — and when?"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14 border-2 border-ink bg-white",
+                children: lanes.map((lane, i)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[240px_1fr] border-t-2 first:border-t-0 border-ink",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "flex items-center gap-4 bg-soft p-6 text-[22px] font-semibold",
+                                children: [
+                                    lane.icon,
+                                    " ",
+                                    lane.name
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "relative h-[150px] border-l-2 border-ink",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "absolute left-0 right-0 top-1/2 h-[2px] bg-soft"
+                                    }),
+                                    lane.steps.map((st, j)=>{
+                                        const p = motion_reveal(frame, 10 + (i * 2 + j) * 7);
+                                        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "absolute top-1/2 -translate-y-1/2 border-2 border-ink bg-yellow px-5 py-4 text-[20px] font-semibold",
+                                            style: {
+                                                left: `${st.x}%`,
+                                                width: `${st.w}%`,
+                                                opacity: p
+                                            },
+                                            children: st.text
+                                        }, st.text);
+                                    })
+                                ]
+                            })
+                        ]
+                    }, lane.name))
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/tables/SparklineTable.tsx
+
+
+
+
+
+
+const SparklineTable_rows = [
+    {
+        name: "US",
+        latest: "3.2%",
+        data: [
+            2,
+            3,
+            5,
+            6,
+            4,
+            3,
+            3.2
+        ]
+    },
+    {
+        name: "EU",
+        latest: "1.5%",
+        data: [
+            1,
+            2,
+            3,
+            3,
+            2,
+            1.7,
+            1.5
+        ]
+    },
+    {
+        name: "JP",
+        latest: "1.0%",
+        data: [
+            0.5,
+            0.7,
+            1.2,
+            1.3,
+            1.1,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        name: "CN",
+        latest: "4.8%",
+        data: [
+            6.1,
+            5.8,
+            5.3,
+            5.0,
+            4.7,
+            4.6,
+            4.8
+        ]
+    }
+];
+const SparklineTable = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "AT A GLANCE",
+                title: "Small charts, precise comparisons."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-12 border-2 border-ink bg-white",
+                children: SparklineTable_rows.map((r, i)=>{
+                    const p = motion_reveal(frame, 8 + i * 7, 18), min = Math.min(...r.data), max = Math.max(...r.data);
+                    const pts = r.data.map((v, j)=>({
+                            x: j / (r.data.length - 1) * 500,
+                            y: 90 - (v - min) / Math.max(0.001, max - min) * 70
+                        }));
+                    const d = pts.map((pt, j)=>`${j === 0 ? "M" : "L"} ${pt.x} ${pt.y}`).join(" "), last = pts[pts.length - 1];
+                    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[220px_1fr_220px] items-center border-t-2 first:border-t-0 border-ink px-7 py-5",
+                        style: {
+                            opacity: p
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-[26px] font-semibold",
+                                children: r.name
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                                width: 500,
+                                height: 100,
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("path", {
+                                        d: d,
+                                        fill: "none",
+                                        stroke: palette.ink,
+                                        strokeWidth: 4,
+                                        pathLength: 1,
+                                        strokeDasharray: 1,
+                                        strokeDashoffset: 1 - p
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("circle", {
+                                        cx: last.x,
+                                        cy: last.y,
+                                        r: 7,
+                                        fill: palette.yellow,
+                                        stroke: palette.ink,
+                                        strokeWidth: 2
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "text-right text-[32px] font-semibold",
+                                children: r.latest
+                            })
+                        ]
+                    }, r.name);
+                })
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/tables/BenchmarkScorecard.tsx
+
+
+
+
+
+
+const BenchmarkScorecard_rows = [
+    {
+        metric: "GROWTH",
+        ours: 18,
+        peer: 12,
+        best: 24,
+        unit: "%"
+    },
+    {
+        metric: "MARGIN",
+        ours: 21,
+        peer: 26,
+        best: 34,
+        unit: "%"
+    },
+    {
+        metric: "NPS",
+        ours: 61,
+        peer: 55,
+        best: 72,
+        unit: ""
+    },
+    {
+        metric: "R&D / SALES",
+        ours: 9,
+        peer: 7,
+        best: 12,
+        unit: "%"
+    }
+];
+const BenchmarkScorecard = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "BENCHMARK",
+                title: "Where we outperform — and where we do not."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-14 border-2 border-ink bg-white",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[280px_1fr_180px_180px_180px] bg-yellow px-6 py-5 text-[20px] font-semibold",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "METRIC"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "POSITION"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "OURS"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "PEER"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "BEST"
+                            })
+                        ]
+                    }),
+                    BenchmarkScorecard_rows.map((r, i)=>{
+                        const max = Math.max(r.ours, r.peer, r.best) * 1.08, p = motion_reveal(frame, 10 + i * 8);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "grid grid-cols-[280px_1fr_180px_180px_180px] items-center border-t-2 border-ink px-6 py-6",
+                            style: {
+                                opacity: p
+                            },
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[22px] font-semibold",
+                                    children: r.metric
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "relative h-[42px]",
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "absolute left-0 right-0 top-1/2 h-[2px] bg-soft"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "absolute top-1/2 h-[24px] w-[8px] -translate-y-1/2 bg-ink",
+                                            style: {
+                                                left: `${r.peer / max * 100}%`
+                                            }
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "absolute top-1/2 h-[24px] w-[8px] -translate-y-1/2 bg-muted",
+                                            style: {
+                                                left: `${r.best / max * 100}%`
+                                            }
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "absolute top-1/2 h-[30px] w-[30px] -translate-x-1/2 -translate-y-1/2 border-2 border-ink bg-yellow",
+                                            style: {
+                                                left: `${r.ours / max * 100}%`
+                                            }
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "text-[24px] font-semibold",
+                                    children: [
+                                        r.ours,
+                                        r.unit
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "text-[22px] text-muted",
+                                    children: [
+                                        r.peer,
+                                        r.unit
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "text-[22px] text-muted",
+                                    children: [
+                                        r.best,
+                                        r.unit
+                                    ]
+                                })
+                            ]
+                        }, r.metric);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/tables/DistributionComparisonTable.tsx
+
+
+
+
+
+
+
+const DEFAULT_ROWS = [
+    {
+        name: "MARKET A",
+        left: 6.2,
+        right: 61.8,
+        icon: "🏠"
+    },
+    {
+        name: "MARKET B",
+        left: 2.1,
+        right: 69.4,
+        icon: "🏦"
+    },
+    {
+        name: "MARKET C",
+        left: 0.8,
+        right: 77.2,
+        icon: "🏭"
+    },
+    {
+        name: "MARKET D",
+        left: -0.4,
+        right: 81.5,
+        icon: "💻"
+    },
+    {
+        name: "MARKET E",
+        left: -1.8,
+        right: 86.1,
+        icon: "🌍"
+    }
+];
+const DistributionComparisonTable = ({ eyebrow = "COMPARISON", title = "Put both ends of the distribution in the same table.", rows = DEFAULT_ROWS, leftLabel = "LOW END", middleLabel = "ENTITY", rightLabel = "HIGH END", leftUnit = "%", rightUnit = "%", source })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const headerP = tween(frame, 3, 24);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: eyebrow,
+                title: title
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-10",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-3 text-center text-[35px] tracking-[7px]",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "\uD83D\uDC64\uD83D\uDC64\uD83D\uDC64\uD83D\uDC64\uD83D\uDC64"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "\uD83D\uDC64\uD83D\uDC64\uD83D\uDC64\uD83D\uDC64"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                children: "\uD83D\uDC64"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "mt-5 grid h-[76px] grid-cols-3 items-center border-2 border-ink text-center text-[22px] font-semibold",
+                        style: {
+                            opacity: headerP
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "flex h-full items-center justify-center bg-ink text-white",
+                                children: leftLabel
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "flex h-full items-center justify-center bg-soft",
+                                children: middleLabel
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "flex h-full items-center justify-center bg-yellow",
+                                children: rightLabel
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "border-x-2 border-b-2 border-ink bg-white",
+                        children: rows.map((row, index)=>{
+                            const p = springIn({
+                                frame,
+                                fps,
+                                delay: 14 + index * 7,
+                                damping: 19,
+                                stiffness: 150
+                            });
+                            const leftValue = (0,esm/* .interpolate */.GW)(p, [
+                                0,
+                                1
+                            ], [
+                                0,
+                                row.left
+                            ]);
+                            const rightValue = (0,esm/* .interpolate */.GW)(p, [
+                                0,
+                                1
+                            ], [
+                                0,
+                                row.right
+                            ]);
+                            return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: `grid h-[103px] grid-cols-3 items-center text-[30px] ${index < rows.length - 1 ? "border-b-2 border-dashed border-ink/20" : ""}`,
+                                style: {
+                                    opacity: p,
+                                    transform: `translateX(${(1 - p) * 24}px)`
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "pl-14 font-semibold",
+                                        children: [
+                                            leftValue.toFixed(1),
+                                            leftUnit
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "flex items-center justify-center gap-5 font-semibold",
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                                className: "text-[34px]",
+                                                children: row.icon
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                                children: row.name
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                        className: "pr-14 text-right font-semibold",
+                                        children: [
+                                            rightValue.toFixed(1),
+                                            rightUnit
+                                        ]
+                                    })
+                                ]
+                            }, row.name);
+                        })
+                    })
+                ]
+            }),
+            source ? /*#__PURE__*/ (0,jsx_runtime.jsx)(Source, {
+                children: source
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/tables/CapabilityHeatmap.tsx
+
+
+
+
+
+
+const CapabilityHeatmap_cols = [
+    "US",
+    "EU",
+    "JP",
+    "CN"
+];
+const CapabilityHeatmap_rows = [
+    {
+        name: "SOFTWARE",
+        values: [
+            5,
+            3,
+            2,
+            4
+        ]
+    },
+    {
+        name: "CAPITAL",
+        values: [
+            5,
+            4,
+            3,
+            4
+        ]
+    },
+    {
+        name: "MANUFACTURING",
+        values: [
+            3,
+            4,
+            5,
+            5
+        ]
+    },
+    {
+        name: "BRAND",
+        values: [
+            5,
+            4,
+            4,
+            3
+        ]
+    },
+    {
+        name: "DISTRIBUTION",
+        values: [
+            4,
+            4,
+            4,
+            5
+        ]
+    }
+];
+const CapabilityHeatmap = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "CAPABILITY HEATMAP",
+                title: "Strength is uneven across the system."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-14 border-2 border-ink",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "grid grid-cols-[360px_repeat(4,1fr)] bg-yellow text-[22px] font-semibold",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "p-5",
+                                children: "CAPABILITY"
+                            }),
+                            CapabilityHeatmap_cols.map((c)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "border-l-2 border-ink p-5 text-center",
+                                    children: c
+                                }, c))
+                        ]
+                    }),
+                    CapabilityHeatmap_rows.map((r, i)=>{
+                        const p = motion_reveal(frame, 8 + i * 6);
+                        return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "grid grid-cols-[360px_repeat(4,1fr)] border-t-2 border-ink bg-white",
+                            style: {
+                                opacity: p
+                            },
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "p-5 text-[22px] font-semibold",
+                                    children: r.name
+                                }),
+                                r.values.map((v, j)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "flex items-center justify-center border-l-2 border-ink p-4",
+                                        children: /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "flex gap-2",
+                                            children: Array.from({
+                                                length: 5
+                                            }).map((_, k)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                                    className: "h-[24px] w-[24px] border-2 border-ink",
+                                                    style: {
+                                                        background: k < v ? palette.yellow : palette.soft
+                                                    }
+                                                }, k))
+                                        })
+                                    }, j))
+                            ]
+                        }, r.name);
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/narrative/CompareCards.tsx
+
+
+
+
+
+
+const CompareCards = ({ left = {
+    label: "MARKET A",
+    sublabel: "Domestic",
+    icon: "🏠",
+    note: "Large installed base",
+    accent: true
+}, right = {
+    label: "MARKET B",
+    sublabel: "Overseas",
+    icon: "🌍",
+    note: "Faster growth"
+}, transparent = true, showVs = false })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const leftP = springIn({
+        frame,
+        fps,
+        delay: 4,
+        damping: 14,
+        stiffness: 125
+    });
+    const rightP = springIn({
+        frame,
+        fps,
+        delay: 10,
+        damping: 14,
+        stiffness: 125
+    });
+    const renderCard = (side, isLeft, p)=>{
+        const x = (1 - p) * (isLeft ? -340 : 340);
+        const y = floatY(frame, 6, 105, isLeft ? 0 : 27);
+        const rotate = (1 - p) * (isLeft ? -4 : 4) + Math.sin((frame + (isLeft ? 0 : 25)) / 55) * 0.4;
+        return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+            style: {
+                position: "absolute",
+                top: 190,
+                [isLeft ? "left" : "right"]: 86,
+                width: 500,
+                opacity: p,
+                transform: `translate(${x}px, ${y}px) rotate(${rotate}deg) scale(${0.92 + p * 0.08})`
+            },
+            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(BrutalCard, {
+                yellow: side.accent,
+                className: "h-[600px] p-10",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                    className: "flex h-full flex-col justify-between",
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "flex items-start justify-between",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "text-[36px] font-semibold tracking-[-0.04em]",
+                                            children: side.label
+                                        }),
+                                        side.sublabel ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                            className: "mt-2 text-[21px] text-muted",
+                                            children: side.sublabel
+                                        }) : null
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "border-2 border-ink bg-white px-4 py-2 text-[18px]",
+                                    children: "CARD"
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "text-center text-[160px] leading-none",
+                            children: side.icon
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "border-t-2 border-ink pt-6 text-[24px] leading-[1.35]",
+                            children: side.note
+                        })
+                    ]
+                })
+            })
+        });
+    };
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(OverlayShell, {
+        transparent: transparent,
+        children: [
+            renderCard(left, true, leftP),
+            renderCard(right, false, rightP),
+            showVs ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-ink bg-yellow px-5 py-3 text-[26px] font-semibold",
+                style: {
+                    boxShadow: "5px 5px 0 #111"
+                },
+                children: "VS"
+            }) : null
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/narrative/ExecutiveSummary.tsx
+
+
+
+
+
+
+
+const ExecutiveSummary_d = [
+    {
+        kicker: "01 / GROWTH",
+        title: "Demand is holding.",
+        detail: "Volume remains resilient despite higher prices.",
+        icon: "📈"
+    },
+    {
+        kicker: "02 / MARGIN",
+        title: "Economics improved.",
+        detail: "Mix and operating leverage lifted profitability.",
+        icon: "💰"
+    },
+    {
+        kicker: "03 / RISK",
+        title: "Rates are the swing factor.",
+        detail: "The downside case is concentrated in financing costs.",
+        icon: "⚠️"
+    }
+];
+const ExecutiveSummary = ({ items = ExecutiveSummary_d })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "EXECUTIVE SUMMARY",
+                title: "Three things matter."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14 grid grid-cols-3 gap-8",
+                children: items.map((x, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        style: slideUpStyle(frame, 10 + i * 8),
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(BrutalCard, {
+                            yellow: i === 0,
+                            className: "h-[500px] p-8",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[54px]",
+                                    children: x.icon ?? "●"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-8 text-[20px] tracking-[0.08em] text-muted",
+                                    children: x.kicker
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-4 text-[38px] font-semibold leading-[1.1]",
+                                    children: x.title
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-8 text-[24px] leading-[1.45] text-muted",
+                                    children: x.detail
+                                })
+                            ]
+                        })
+                    }, x.kicker))
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/narrative/PageFlipChoice.tsx
+
+
+
+
+
+
+const PageFlipChoice = ({ eyebrow = "TWO HORIZONS", question = "WHAT DRIVES THE MOVE?", left = {
+    label: "SHORT TERM",
+    sublabel: "Liquidity + positioning",
+    icon: "⚡",
+    accent: true
+}, right = {
+    label: "LONG TERM",
+    sublabel: "Earnings + structure",
+    icon: "🏗️"
+} })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const flipP = tween(frame, 5, 34);
+    const angle = (0,esm/* .interpolate */.GW)(flipP, [
+        0,
+        1
+    ], [
+        -93,
+        0
+    ]);
+    const leftP = springIn({
+        frame,
+        fps,
+        delay: 28,
+        damping: 15,
+        stiffness: 132
+    });
+    const rightP = springIn({
+        frame,
+        fps,
+        delay: 38,
+        damping: 15,
+        stiffness: 132
+    });
+    const card = (choice, p, rotate)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+            style: {
+                opacity: p,
+                transform: `translateY(${(1 - p) * 50}px) rotate(${(1 - p) * rotate}deg)`
+            },
+            children: /*#__PURE__*/ (0,jsx_runtime.jsx)(BrutalCard, {
+                yellow: choice.accent,
+                className: "h-[285px] p-10",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                    className: "flex h-full flex-col justify-between",
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                            className: "text-[68px]",
+                            children: choice.icon
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[42px] font-semibold tracking-[-0.04em]",
+                                    children: choice.label
+                                }),
+                                choice.sublabel ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-3 text-[22px] leading-[1.35] text-muted",
+                                    children: choice.sublabel
+                                }) : null
+                            ]
+                        })
+                    ]
+                })
+            })
+        });
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "absolute left-[180px] right-[180px] top-[70px] h-[390px]",
+                style: {
+                    perspective: 1200
+                },
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[70px] right-[70px] top-0 flex h-[300px] items-center justify-center border-2 border-ink bg-ink text-white",
+                        style: {
+                            transformOrigin: "top center",
+                            transform: `rotateX(${angle}deg)`,
+                            transformStyle: "preserve-3d",
+                            backfaceVisibility: "hidden",
+                            boxShadow: "8px 12px 0 #FFD43B"
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[20px] tracking-[0.18em] text-yellow",
+                                    children: eyebrow
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-5 text-[72px] font-semibold tracking-[-0.05em]",
+                                    children: question
+                                })
+                            ]
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        className: "absolute left-[120px] right-[120px] top-[300px] h-[34px] bg-soft",
+                        style: {
+                            clipPath: "polygon(0 0,100% 0,97% 100%,3% 100%)"
+                        }
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "absolute bottom-[115px] left-[250px] right-[250px] grid grid-cols-2 gap-20",
+                children: [
+                    card(left, leftP, -4),
+                    card(right, rightP, 4)
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/overlays/PresenterOrbitOverlay.tsx
+
+
+
+
+
+
+const DEFAULT_ITEMS = [
+    {
+        label: "RATES",
+        sublabel: "Central banks",
+        icon: "🏦",
+        state: "default"
+    },
+    {
+        label: "DEMAND",
+        sublabel: "Consumers",
+        icon: "🛒",
+        state: "accent"
+    },
+    {
+        label: "TECH",
+        sublabel: "Productivity",
+        icon: "💻",
+        state: "accent"
+    },
+    {
+        label: "CAPITAL",
+        sublabel: "Investment",
+        icon: "📈",
+        state: "default"
+    }
+];
+const POSITIONS = [
+    {
+        left: 86,
+        top: 140
+    },
+    {
+        right: 86,
+        top: 140
+    },
+    {
+        left: 86,
+        bottom: 140
+    },
+    {
+        right: 86,
+        bottom: 140
+    },
+    {
+        left: 86,
+        top: 425
+    },
+    {
+        right: 86,
+        top: 425
+    }
+];
+const PresenterOrbitOverlay = ({ items = DEFAULT_ITEMS, transparent = true })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)(OverlayShell, {
+        transparent: transparent,
+        children: items.slice(0, 6).map((item, index)=>{
+            const p = springIn({
+                frame,
+                fps,
+                delay: 5 + index * 6,
+                damping: 15,
+                stiffness: 135
+            });
+            const y = floatY(frame, 4, 105, index * 18);
+            const isAccent = item.state === "accent";
+            const isMuted = item.state === "muted";
+            return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                style: {
+                    position: "absolute",
+                    width: 340,
+                    opacity: isMuted ? p * 0.42 : p,
+                    transform: `translateY(${(1 - p) * 30 + y}px) scale(${0.9 + p * 0.1}) rotate(${(1 - p) * (index % 2 ? -3 : 3)}deg)`,
+                    ...POSITIONS[index]
+                },
+                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(BrutalCard, {
+                    yellow: isAccent,
+                    className: "h-[220px] p-8",
+                    children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        className: "flex h-full flex-col justify-between",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "flex items-start justify-between",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[44px]",
+                                        children: item.icon
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "border-2 border-ink bg-white px-3 py-1 text-[15px]",
+                                        children: index + 1 < 10 ? `0${index + 1}` : String(index + 1)
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "text-[34px] font-semibold tracking-[-0.04em]",
+                                        children: item.label
+                                    }),
+                                    item.sublabel ? /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                        className: "mt-2 text-[19px] text-muted",
+                                        children: item.sublabel
+                                    }) : null
+                                ]
+                            })
+                        ]
+                    })
+                })
+            }, `${item.label}-${index}`);
+        })
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/metrics/SplitMetric.tsx
+
+
+
+
+
+
+
+const SplitMetric = ({ eyebrow = "THE GAP", leftValue = 89, rightValue = 39, leftSuffix = "%", rightSuffix = "%", leftLabel = "Share under the old model", rightLabel = "Share under the new model", rightTag = "HIGHLIGHT" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const { fps } = (0,esm/* .useVideoConfig */.Bk)();
+    const leftP = springIn({
+        frame,
+        fps,
+        delay: 4,
+        damping: 18,
+        stiffness: 145
+    });
+    const rightP = springIn({
+        frame,
+        fps,
+        delay: 13,
+        damping: 17,
+        stiffness: 145
+    });
+    const leftNumber = (0,esm/* .interpolate */.GW)(leftP, [
+        0,
+        1
+    ], [
+        0,
+        leftValue
+    ]);
+    const rightNumber = (0,esm/* .interpolate */.GW)(rightP, [
+        0,
+        1
+    ], [
+        0,
+        rightValue
+    ]);
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-5",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Tag, {
+                    children: eyebrow
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "mt-32 grid grid-cols-[1.25fr_0.75fr] items-center gap-20",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                        style: {
+                            opacity: leftP,
+                            transform: `translateX(${(1 - leftP) * -35}px)`
+                        },
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                className: "text-[205px] font-semibold leading-none tracking-[-0.09em]",
+                                children: [
+                                    Math.round(leftNumber),
+                                    /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                        className: "text-[84px]",
+                                        children: leftSuffix
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                className: "mt-7 max-w-[770px] text-[29px] leading-[1.45] text-muted",
+                                children: leftLabel
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        style: {
+                            opacity: rightP,
+                            transform: `translateY(${(1 - rightP) * 42}px) scale(${0.92 + rightP * 0.08})`
+                        },
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(BrutalCard, {
+                            yellow: true,
+                            className: "p-12",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[21px] font-semibold tracking-[0.12em]",
+                                    children: rightTag
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "mt-10 text-[118px] font-semibold leading-none tracking-[-0.08em]",
+                                    children: [
+                                        Math.round(rightNumber),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsx)("span", {
+                                            className: "text-[54px]",
+                                            children: rightSuffix
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-8 text-[24px] leading-[1.45]",
+                                    children: rightLabel
+                                })
+                            ]
+                        })
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/scenes/metrics/FactGrid.tsx
+
+
+
+
+
+
+
+const facts = [
+    [
+        "MARKET SIZE",
+        "$480B",
+        "2025 estimate"
+    ],
+    [
+        "5Y CAGR",
+        "8.4%",
+        "2020–2025"
+    ],
+    [
+        "TOP 3 SHARE",
+        "63%",
+        "Highly concentrated"
+    ],
+    [
+        "LEADER",
+        "Company A",
+        "Largest by revenue"
+    ]
+];
+const FactGrid = ()=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                style: slideUpStyle(frame, 0),
+                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Tag, {
+                    yellow: true,
+                    children: "FACT BOX"
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-8 text-[72px] font-semibold tracking-[-0.05em]",
+                children: "THE MARKET IN 30 SECONDS"
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "mt-14 grid grid-cols-2 gap-8",
+                children: facts.map((f, i)=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                        style: slideUpStyle(frame, 10 + i * 6),
+                        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(BrutalCard, {
+                            className: "p-8",
+                            children: [
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "text-[20px] tracking-[0.08em] text-muted",
+                                    children: f[0]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-5 text-[64px] font-semibold tracking-[-0.05em]",
+                                    children: f[1]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                                    className: "mt-3 text-[20px] text-muted",
+                                    children: f[2]
+                                })
+                            ]
+                        })
+                    }, f[0]))
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/showcase/examples/airbnb.ts
+/**
+ * Airbnb 商业数据 — 全组件 Studio 展示用 defaultProps
+ * 数字为演示/近似值，便于财经视频叙事。
+ */ const AIRBNB_REVENUE = [
+    {
+        year: "2020",
+        value: 3.4
+    },
+    {
+        year: "2021",
+        value: 6.0
+    },
+    {
+        year: "2022",
+        value: 8.4
+    },
+    {
+        year: "2023",
+        value: 9.9
+    },
+    {
+        year: "2024",
+        value: 11.1
+    }
+];
+const airbnbShowcase = {
+    HeroMetric: {
+        company: "AIRBNB",
+        label: "FY2025 REVENUE",
+        value: 11.1,
+        suffix: "B",
+        growth: 12
+    },
+    QuoteCard: {
+        quote: "We believe travel is fundamentally changing.",
+        author: "BRIAN CHESKY",
+        role: "CEO / AIRBNB"
+    },
+    LineChart: {
+        eyebrow: "AIRBNB / REVENUE",
+        title: "Growth resumed after the pandemic.",
+        data: AIRBNB_REVENUE
+    },
+    DonutChart: {
+        value: 82
+    },
+    ShareMetric: {
+        value: 23,
+        label: "AIRBNB OPERATING MARGIN"
+    },
+    ImageCard: {
+        emoji: "👤",
+        title: "BRIAN CHESKY",
+        subtitle: "Co-founder & CEO / Airbnb"
+    },
+    MapCallout: {
+        emoji: "🌍",
+        label: "PARIS",
+        x: 48,
+        y: 38
+    },
+    ScreenshotZoom: {
+        emoji: "📊",
+        focusX: 55,
+        focusY: 45
+    },
+    TickerOverlay: {
+        company: "AIRBNB",
+        ticker: "ABNB",
+        change: "+4.6%",
+        value: "$92B"
+    },
+    HierarchyPyramid: {
+        eyebrow: "VALUE CHAIN",
+        title: "Most economic rent sits at the top of travel.",
+        tiers: [
+            {
+                label: "PLATFORM",
+                sublabel: "Airbnb",
+                description: "Network + brand + trust layer",
+                icon: "💻",
+                accent: true
+            },
+            {
+                label: "SUPPLY",
+                sublabel: "Hosts",
+                description: "Unique inventory at scale",
+                icon: "🏠"
+            },
+            {
+                label: "SERVICES",
+                sublabel: "Local ops",
+                description: "Cleaning, support, insurance",
+                icon: "🧹"
+            },
+            {
+                label: "COMMODITY",
+                sublabel: "Utilities",
+                description: "Power, water, maintenance",
+                icon: "⚙️"
+            }
+        ],
+        footer: {
+            label: "NO HOTEL OWNERSHIP",
+            description: "Asset-light vs traditional hospitality",
+            icon: "🏨"
+        },
+        source: "COMPANY FILINGS / INDUSTRY ESTIMATES"
+    },
+    CompareCards: {
+        transparent: false,
+        showVs: true,
+        left: {
+            label: "AIRBNB",
+            sublabel: "Platform model",
+            icon: "🏠",
+            note: "7.7M listings · asset-light",
+            accent: true
+        },
+        right: {
+            label: "MARRIOTT",
+            sublabel: "Hotel chain",
+            icon: "🏨",
+            note: "9,000+ owned & managed hotels"
+        }
+    },
+    DistributionBlocksChart: {
+        eyebrow: "BOOKING ECONOMICS",
+        title: "A small share of nights drives most platform revenue.",
+        groups: [
+            {
+                label: "CASUAL HOSTS",
+                value: 12,
+                people: 5,
+                blocks: 5
+            },
+            {
+                label: "PRO HOSTS",
+                value: 28,
+                people: 4,
+                blocks: 14
+            },
+            {
+                label: "SUPER HOSTS",
+                value: 60,
+                people: 1,
+                blocks: 26,
+                accent: true
+            }
+        ],
+        unit: "%",
+        source: "COMPANY FILINGS"
+    },
+    PresenterOrbitOverlay: {
+        transparent: false,
+        items: [
+            {
+                label: "RATES",
+                sublabel: "Mortgage & credit",
+                icon: "🏦",
+                state: "default"
+            },
+            {
+                label: "DEMAND",
+                sublabel: "Travel recovery",
+                icon: "🛒",
+                state: "accent"
+            },
+            {
+                label: "SUPPLY",
+                sublabel: "Host listings",
+                icon: "🏠",
+                state: "accent"
+            },
+            {
+                label: "REGULATION",
+                sublabel: "City rules",
+                icon: "⚖️",
+                state: "default"
+            }
+        ]
+    },
+    DualAxisChart: {
+        eyebrow: "AIRBNB / NIGHTS & ADR",
+        title: "Nights rebounded while average rates kept rising.",
+        barLabel: "NIGHTS BOOKED",
+        lineLabel: "AVERAGE DAILY RATE",
+        leftUnit: "M",
+        rightUnit: "$",
+        data: [
+            {
+                label: "2019",
+                bar: 327,
+                line: 143
+            },
+            {
+                label: "2020",
+                bar: 193,
+                line: 120
+            },
+            {
+                label: "2021",
+                bar: 300,
+                line: 152
+            },
+            {
+                label: "2022",
+                bar: 393,
+                line: 161
+            },
+            {
+                label: "2023",
+                bar: 448,
+                line: 168
+            },
+            {
+                label: "2024",
+                bar: 491,
+                line: 175
+            }
+        ],
+        source: "COMPANY FILINGS"
+    },
+    RelationshipGraph: {
+        eyebrow: "AIRBNB ECOSYSTEM",
+        title: "The platform sits between guests, hosts, and capital.",
+        nodes: [
+            {
+                id: "platform",
+                label: "AIRBNB",
+                sublabel: "Matching + trust",
+                icon: "💻",
+                x: 0.5,
+                y: 0.34,
+                accent: true
+            },
+            {
+                id: "guests",
+                label: "GUESTS",
+                sublabel: "Demand",
+                icon: "🧳",
+                x: 0.18,
+                y: 0.72
+            },
+            {
+                id: "hosts",
+                label: "HOSTS",
+                sublabel: "Supply",
+                icon: "🏠",
+                x: 0.5,
+                y: 0.75
+            },
+            {
+                id: "capital",
+                label: "INVESTORS",
+                sublabel: "Public markets",
+                icon: "💰",
+                x: 0.82,
+                y: 0.72
+            }
+        ],
+        links: [
+            {
+                from: "platform",
+                to: "guests",
+                label: "bookings",
+                accent: true,
+                bend: -60
+            },
+            {
+                from: "platform",
+                to: "hosts",
+                label: "payouts",
+                bend: 20
+            },
+            {
+                from: "platform",
+                to: "capital",
+                label: "returns",
+                bend: -60
+            }
+        ]
+    },
+    DistributionComparisonTable: {
+        eyebrow: "CITY ECONOMICS",
+        title: "Host income is uneven across markets.",
+        rows: [
+            {
+                name: "PARIS",
+                left: 4.2,
+                right: 58.1,
+                icon: "🗼"
+            },
+            {
+                name: "NEW YORK",
+                left: 3.8,
+                right: 62.4,
+                icon: "🌆"
+            },
+            {
+                name: "TOKYO",
+                left: 2.1,
+                right: 48.7,
+                icon: "🗾"
+            },
+            {
+                name: "BARCELONA",
+                left: 5.6,
+                right: 71.2,
+                icon: "🏖️"
+            },
+            {
+                name: "MIAMI",
+                left: 1.9,
+                right: 55.8,
+                icon: "🌴"
+            }
+        ],
+        leftLabel: "BOTTOM HOSTS",
+        middleLabel: "CITY",
+        rightLabel: "TOP HOSTS",
+        leftUnit: "%",
+        rightUnit: "%",
+        source: "INTERNAL ESTIMATES"
+    },
+    PageFlipChoice: {
+        eyebrow: "AIRBNB GROWTH",
+        question: "WHAT DRIVES THE NEXT LEG?",
+        left: {
+            label: "SUPPLY",
+            sublabel: "More hosts & listings",
+            icon: "🏠",
+            accent: true
+        },
+        right: {
+            label: "DEMAND",
+            sublabel: "More nights & experiences",
+            icon: "🧳"
+        }
+    },
+    SplitMetric: {
+        eyebrow: "THE SHIFT",
+        leftValue: 82,
+        rightValue: 18,
+        leftSuffix: "%",
+        rightSuffix: "%",
+        leftLabel: "Of booking value goes to hosts",
+        rightLabel: "Airbnb take rate on a typical stay",
+        rightTag: "TAKE RATE"
+    },
+    OrganizationTree: {
+        eyebrow: "AIRBNB / ORG",
+        title: "Product, trust, and host ops sit under one platform CEO.",
+        root: {
+            id: "ceo",
+            label: "CEO",
+            subtitle: "Brian Chesky",
+            icon: "👤",
+            accent: true,
+            children: [
+                {
+                    id: "product",
+                    label: "PRODUCT",
+                    subtitle: "App · Search · Trust",
+                    icon: "💻",
+                    children: [
+                        {
+                            id: "search",
+                            label: "SEARCH",
+                            subtitle: "Matching",
+                            icon: "🔎",
+                            accent: true
+                        },
+                        {
+                            id: "trust",
+                            label: "TRUST",
+                            subtitle: "Reviews & safety",
+                            icon: "🛡️"
+                        }
+                    ]
+                },
+                {
+                    id: "ops",
+                    label: "OPS",
+                    subtitle: "Hosts · Support",
+                    icon: "🏠",
+                    children: [
+                        {
+                            id: "hosts",
+                            label: "HOSTS",
+                            subtitle: "Supply growth",
+                            icon: "🗝️"
+                        },
+                        {
+                            id: "support",
+                            label: "SUPPORT",
+                            subtitle: "Guest care",
+                            icon: "🎧"
+                        }
+                    ]
+                },
+                {
+                    id: "finance",
+                    label: "FINANCE",
+                    subtitle: "CFO · FP&A",
+                    icon: "💰",
+                    children: [
+                        {
+                            id: "fpna",
+                            label: "FP&A",
+                            subtitle: "Planning",
+                            icon: "📊"
+                        },
+                        {
+                            id: "treasury",
+                            label: "TREASURY",
+                            subtitle: "Liquidity",
+                            icon: "🏦"
+                        }
+                    ]
+                }
+            ]
+        },
+        source: "COMPANY ORG / ILLUSTRATIVE"
+    },
+    OwnershipTree: {
+        eyebrow: "CORPORATE STRUCTURE",
+        title: "Public float sits above the operating platform.",
+        root: {
+            id: "public",
+            label: "PUBLIC MARKETS",
+            subtitle: "ABNB shareholders",
+            icon: "📈",
+            accent: true,
+            children: [
+                {
+                    id: "airbnb",
+                    label: "AIRBNB INC.",
+                    subtitle: "Operating company",
+                    icon: "🏠",
+                    ownershipPct: 100,
+                    children: [
+                        {
+                            id: "platform",
+                            label: "PLATFORM",
+                            subtitle: "Marketplace ops",
+                            icon: "💻",
+                            ownershipPct: 100,
+                            accent: true
+                        },
+                        {
+                            id: "payments",
+                            label: "PAYMENTS",
+                            subtitle: "Settlement layer",
+                            icon: "💳",
+                            ownershipPct: 100
+                        }
+                    ]
+                },
+                {
+                    id: "china",
+                    label: "CHINA JV",
+                    subtitle: "Historical structure",
+                    icon: "🌏",
+                    ownershipPct: 0,
+                    muted: true
+                }
+            ]
+        },
+        source: "CORPORATE FILINGS / ILLUSTRATIVE"
+    },
+    SankeyDiagram: {
+        eyebrow: "BOOKING VALUE FLOW",
+        title: "Most of the stay value goes to hosts — Airbnb takes the fee.",
+        nodes: [
+            {
+                id: "guest",
+                label: "GUEST",
+                subtitle: "Booking value",
+                icon: "🧳",
+                column: 0,
+                order: 0
+            },
+            {
+                id: "airbnb",
+                label: "AIRBNB",
+                subtitle: "Platform pool",
+                icon: "🏠",
+                column: 1,
+                order: 0,
+                accent: true
+            },
+            {
+                id: "host",
+                label: "HOST",
+                subtitle: "Payout",
+                icon: "🗝️",
+                column: 2,
+                order: 0
+            },
+            {
+                id: "fee",
+                label: "TAKE RATE",
+                subtitle: "Service fee",
+                icon: "💰",
+                column: 2,
+                order: 1,
+                accent: true
+            },
+            {
+                id: "tax",
+                label: "TAX / OTHER",
+                subtitle: "Local rules",
+                icon: "🧾",
+                column: 2,
+                order: 2
+            }
+        ],
+        links: [
+            {
+                from: "guest",
+                to: "airbnb",
+                value: 100,
+                label: "100",
+                accent: true
+            },
+            {
+                from: "airbnb",
+                to: "host",
+                value: 82,
+                label: "82"
+            },
+            {
+                from: "airbnb",
+                to: "fee",
+                value: 14,
+                label: "14",
+                accent: true
+            },
+            {
+                from: "airbnb",
+                to: "tax",
+                value: 4,
+                label: "4"
+            }
+        ],
+        unit: "%",
+        source: "ILLUSTRATIVE BOOKING ECONOMICS"
+    },
+    ValueChainDiagram: {
+        eyebrow: "TRAVEL VALUE CHAIN",
+        title: "The platform captures rent without owning hotel rooms.",
+        stages: [
+            {
+                label: "DEMAND",
+                subtitle: "Guest discovery",
+                icon: "🧳",
+                metric: 18,
+                metricLabel: "TAKE RATE",
+                unit: "%",
+                capture: 18
+            },
+            {
+                label: "PLATFORM",
+                subtitle: "Matching + trust",
+                icon: "💻",
+                metric: 72,
+                metricLabel: "GROSS MARGIN",
+                unit: "%",
+                capture: 42,
+                accent: true
+            },
+            {
+                label: "SUPPLY",
+                subtitle: "Host inventory",
+                icon: "🏠",
+                metric: 82,
+                metricLabel: "HOST SHARE",
+                unit: "%",
+                capture: 28
+            },
+            {
+                label: "SERVICES",
+                subtitle: "Cleaning · support",
+                icon: "🧹",
+                metric: 22,
+                metricLabel: "GROSS MARGIN",
+                unit: "%",
+                capture: 8
+            },
+            {
+                label: "ASSET",
+                subtitle: "Real estate",
+                icon: "🏨",
+                metric: 8,
+                metricLabel: "AIRBNB EXPOSURE",
+                unit: "%",
+                capture: 4
+            }
+        ],
+        source: "COMPANY FILINGS / INDUSTRY ESTIMATES"
+    },
+    MetricDriverTree: {
+        eyebrow: "REVENUE DRIVERS",
+        title: "Nights booked × ADR still explain most of Airbnb revenue.",
+        root: {
+            id: "revenue",
+            label: "REVENUE",
+            subtitle: "$11.1B",
+            icon: "💰",
+            accent: true,
+            children: [
+                {
+                    id: "nights",
+                    label: "NIGHTS",
+                    subtitle: "491M",
+                    icon: "🛏️",
+                    relation: "×",
+                    children: [
+                        {
+                            id: "listings",
+                            label: "LISTINGS",
+                            subtitle: "7.7M",
+                            icon: "🏠",
+                            relation: "×"
+                        },
+                        {
+                            id: "occupancy",
+                            label: "OCCUPANCY",
+                            subtitle: "Utilization",
+                            icon: "📅",
+                            relation: "×"
+                        }
+                    ]
+                },
+                {
+                    id: "adr",
+                    label: "ADR",
+                    subtitle: "$175",
+                    icon: "🏷️",
+                    relation: "×",
+                    children: [
+                        {
+                            id: "mix",
+                            label: "MIX",
+                            subtitle: "City & length",
+                            icon: "🌍",
+                            relation: "×",
+                            accent: true
+                        },
+                        {
+                            id: "take",
+                            label: "TAKE RATE",
+                            subtitle: "~14–18%",
+                            icon: "📈",
+                            relation: "×"
+                        }
+                    ]
+                }
+            ]
+        },
+        source: "COMPANY FILINGS / ILLUSTRATIVE"
+    },
+    CausalGraph: {
+        eyebrow: "TRAVEL DEMAND",
+        title: "Rates and wages feed into nights booked with a lag.",
+        subtitle: "Signed arrows show direction of effect.",
+        nodes: [
+            {
+                id: "rates",
+                label: "RATES",
+                subtitle: "Mortgage & credit",
+                icon: "🏦",
+                x: 0.1,
+                y: 0.28,
+                direction: "up"
+            },
+            {
+                id: "wages",
+                label: "WAGES",
+                subtitle: "Household income",
+                icon: "💵",
+                x: 0.1,
+                y: 0.78,
+                direction: "up"
+            },
+            {
+                id: "demand",
+                label: "DEMAND",
+                subtitle: "Trips planned",
+                icon: "🧳",
+                x: 0.4,
+                y: 0.52,
+                accent: true,
+                direction: "up"
+            },
+            {
+                id: "nights",
+                label: "NIGHTS",
+                subtitle: "Booked stays",
+                icon: "🛏️",
+                x: 0.68,
+                y: 0.28,
+                accent: true,
+                direction: "up"
+            },
+            {
+                id: "adr",
+                label: "ADR",
+                subtitle: "Average rate",
+                icon: "🏷️",
+                x: 0.68,
+                y: 0.78,
+                direction: "up"
+            },
+            {
+                id: "revenue",
+                label: "REVENUE",
+                subtitle: "GMV × take",
+                icon: "💰",
+                x: 0.92,
+                y: 0.52,
+                accent: true,
+                direction: "up"
+            }
+        ],
+        links: [
+            {
+                from: "rates",
+                to: "demand",
+                sign: "−",
+                label: "financing",
+                bend: -55
+            },
+            {
+                from: "wages",
+                to: "demand",
+                sign: "+",
+                label: "spending",
+                bend: 55,
+                accent: true
+            },
+            {
+                from: "demand",
+                to: "nights",
+                sign: "+",
+                label: "trips",
+                accent: true,
+                bend: -30
+            },
+            {
+                from: "demand",
+                to: "adr",
+                sign: "+",
+                label: "pricing",
+                bend: 35
+            },
+            {
+                from: "nights",
+                to: "revenue",
+                sign: "+",
+                label: "volume",
+                bend: -25
+            },
+            {
+                from: "adr",
+                to: "revenue",
+                sign: "+",
+                label: "rate × take",
+                bend: 25,
+                accent: true
+            }
+        ],
+        source: "ILLUSTRATIVE DEMAND MODEL"
+    },
+    CapitalStackDiagram: {
+        eyebrow: "AIRBNB CAPITAL",
+        title: "An asset-light platform is mostly equity-funded.",
+        layers: [
+            {
+                label: "EQUITY",
+                percent: 78,
+                subtitle: "Public float · retained earnings",
+                icon: "📈",
+                accent: true
+            },
+            {
+                label: "CONVERTIBLE / OTHER",
+                percent: 8,
+                subtitle: "Hybrid claims",
+                icon: "🧾"
+            },
+            {
+                label: "SENIOR DEBT",
+                percent: 14,
+                subtitle: "Long-term notes",
+                icon: "🏦"
+            }
+        ],
+        lossPercent: 12,
+        source: "ILLUSTRATIVE CAPITAL STRUCTURE"
+    },
+    BalanceSheetDiagram: {
+        eyebrow: "BALANCE SHEET",
+        title: "Cash and marketable securities dominate the asset side.",
+        assets: [
+            {
+                label: "CASH & SECURITIES",
+                value: 58,
+                icon: "💵",
+                accent: true
+            },
+            {
+                label: "RECEIVABLES",
+                value: 22,
+                icon: "🧾"
+            },
+            {
+                label: "OTHER ASSETS",
+                value: 20,
+                icon: "📦"
+            }
+        ],
+        liabilities: [
+            {
+                label: "DEFERRED REVENUE",
+                value: 34,
+                icon: "📅"
+            },
+            {
+                label: "DEBT",
+                value: 18,
+                icon: "🏦"
+            },
+            {
+                label: "OTHER LIAB.",
+                value: 12,
+                icon: "📄"
+            }
+        ],
+        equity: [
+            {
+                label: "EQUITY",
+                value: 36,
+                icon: "📈",
+                accent: true
+            }
+        ],
+        unit: "$",
+        source: "COMPANY FILINGS / ILLUSTRATIVE $B"
+    }
+};
+
+;// CONCATENATED MODULE: ./src/scenes/overlays/TickerOverlay.tsx
+
+
+
+
+const TickerOverlay = ({ company = "AIRBNB", ticker = "ABNB", change = "+4.6%", value = "$92B" })=>{
+    const frame = (0,esm/* .useCurrentFrame */.UC)();
+    const p = (0,esm/* .interpolate */.GW)(frame, [
+        0,
+        15
+    ], [
+        0,
+        1
+    ], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp"
+    });
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+        className: " absolute flex border-2 border-ink text-[24px] font-semibold ",
+        style: {
+            opacity: p,
+            transform: `translateY(${(1 - p) * 25}px)`,
+            boxShadow: shadows.brutal,
+            fontFamily: typography.fontFamily,
+            bottom: spacing.tickerBottom,
+            left: spacing.tickerLeft
+        },
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "bg-yellow px-7 py-5",
+                children: company
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "bg-white px-7 py-5",
+                children: ticker
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                className: "bg-white px-7 py-5",
+                children: [
+                    "▲ ",
+                    change
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+                className: "bg-white px-7 py-5",
+                children: value
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/showcase/TickerPreview.tsx
+
+
+
+
+
+/**
+ * TickerOverlay has no Frame background.
+ * Studio preview wraps it on the paper canvas.
+ */ const TickerPreview = (props)=>{
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(Frame, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(SceneHeader, {
+                eyebrow: "MARKET DATA",
+                title: "Live ticker overlay for B-roll."
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(TickerOverlay, {
+                ...props
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./src/showcase/compositions.ts
+/**
+ * Studio Composition registry — semantic IDs (Metric-*, Chart-*, Diagram-*, …).
+ */ 
+
+
+
+const withProps = (id, component, defaultProps, durationInFrames = SCENE_DURATION)=>({
+        id,
+        component: component,
+        defaultProps: defaultProps,
+        durationInFrames
+    });
+const propsOf = (key)=>airbnbShowcase[key];
+/** Core / frequently used scenes */ const CORE_SHOWCASE = [
+    withProps("Metric-HeroMetric", HeroMetric, propsOf("HeroMetric")),
+    withProps("Narrative-SideBySideCompare", SideBySideCompare),
+    withProps("Chart-Bar", BarChart),
+    withProps("Diagram-Flow", FlowDiagram),
+    withProps("Chart-Ranking", RankingChart),
+    withProps("Narrative-KeyTakeaway", KeyTakeaway),
+    withProps("Media-Quote", QuoteCard, propsOf("QuoteCard")),
+    withProps("Chart-Line", LineChart, propsOf("LineChart")),
+    withProps("Chart-Candlestick", CandlestickChart),
+    withProps("Chart-Donut", DonutChart, propsOf("DonutChart")),
+    withProps("Chart-Waterfall", WaterfallChart),
+    withProps("Table-Metric", MetricTable),
+    withProps("Metric-Grid", MetricGrid),
+    withProps("Narrative-BulletReveal", BulletReveal),
+    withProps("Narrative-BeforeAfter", BeforeAfterCompare),
+    withProps("Narrative-Equation", EquationCards),
+    withProps("Diagram-Funnel", FunnelDiagram),
+    withProps("Media-ImageCard", ImageCard, propsOf("ImageCard")),
+    withProps("Media-LogoCloud", LogoCloud),
+    withProps("Media-MapCallout", MapCallout, propsOf("MapCallout")),
+    withProps("Metric-Share", ShareMetric, propsOf("ShareMetric")),
+    withProps("Chart-Scatter", ScatterPlot),
+    withProps("Media-ScreenshotZoom", ScreenshotZoom, propsOf("ScreenshotZoom")),
+    withProps("Chart-StackedBar", StackedBarChart),
+    withProps("Narrative-Timeline", Timeline),
+    withProps("Diagram-UnitEconomics", UnitEconomicsDiagram),
+    withProps("Overlay-Ticker", TickerPreview, propsOf("TickerOverlay"))
+];
+const CHARTS_SHOWCASE = [
+    withProps("Chart-GroupedBar", GroupedBarChart),
+    withProps("Chart-PairedBar", PairedBarChart),
+    withProps("Chart-Lollipop", LollipopChart),
+    withProps("Chart-DotPlot", DotPlot),
+    withProps("Chart-Bullet", BulletChart),
+    withProps("Chart-DivergingBar", DivergingBarChart),
+    withProps("Chart-Pareto", ParetoChart),
+    withProps("Chart-ScenarioBar", ScenarioBarChart),
+    withProps("Chart-Tornado", TornadoChart),
+    withProps("Chart-VarianceComparison", VarianceComparisonChart),
+    withProps("Chart-MultiLine", MultiLineChart),
+    withProps("Chart-Area", AreaChart),
+    withProps("Chart-StackedArea", StackedAreaChart),
+    withProps("Chart-IndexedLine", IndexedLineChart),
+    withProps("Chart-AnnotatedLine", AnnotatedLineChart, undefined, 180),
+    withProps("Chart-EventStudy", EventStudyChart, undefined, 180),
+    withProps("Chart-DualAxis", DualAxisChart, propsOf("DualAxisChart"), 210),
+    withProps("Chart-ConnectedScatter", ConnectedScatterPlot, undefined, 180),
+    withProps("Chart-Bump", BumpChart),
+    withProps("Chart-IndexedComparison", IndexedComparisonChart, undefined, 180),
+    withProps("Chart-Dumbbell", DumbbellChart),
+    withProps("Chart-Slope", SlopeChart),
+    withProps("Chart-SmallMultiples", SmallMultiples),
+    withProps("Chart-BenchmarkBand", BenchmarkBandChart),
+    withProps("Chart-Treemap", TreemapChart),
+    withProps("Chart-Marimekko", MarimekkoChart),
+    withProps("Chart-NestedComposition", NestedCompositionChart),
+    withProps("Chart-Waffle", WaffleChart, undefined, 180),
+    withProps("Chart-DistributionBlocks", DistributionBlocksChart, propsOf("DistributionBlocksChart"), 180),
+    withProps("Chart-CompositionCompare", CompositionCompareChart),
+    withProps("Chart-ContributionBar", ContributionBarChart),
+    withProps("Chart-Pictogram", PictogramChart, undefined, 180),
+    withProps("Chart-Histogram", Histogram),
+    withProps("Chart-BoxPlot", BoxPlot),
+    withProps("Chart-Beeswarm", BeeswarmPlot, undefined, 180),
+    withProps("Chart-Ridgeline", RidgelinePlot, undefined, 180),
+    withProps("Chart-DotStrip", DotStripPlot, undefined, 180),
+    withProps("Chart-PopulationPyramid", PopulationPyramid, undefined, 180),
+    withProps("Chart-Bubble", BubbleChart),
+    withProps("Chart-Heatmap", Heatmap),
+    withProps("Chart-CalendarHeatmap", CalendarHeatmap, undefined, 180),
+    withProps("Chart-CohortMatrix", CohortMatrix),
+    withProps("Chart-ForecastFan", ForecastFanChart),
+    withProps("Chart-RangeBand", RangeBandChart),
+    withProps("Chart-ParallelCoordinates", ParallelCoordinates),
+    withProps("Chart-Radar", RadarChart),
+    withProps("Chart-QuadrantScatter", QuadrantScatterChart)
+];
+const DIAGRAMS_SHOWCASE = [
+    withProps("Diagram-TwoSidedMarketplace", TwoSidedMarketplaceDiagram),
+    withProps("Diagram-Sankey", SankeyDiagram, propsOf("SankeyDiagram"), 180),
+    withProps("Diagram-ValueChain", ValueChainDiagram, propsOf("ValueChainDiagram"), 180),
+    withProps("Diagram-ValueChainMap", ValueChainMap),
+    withProps("Diagram-RelationshipGraph", RelationshipGraph, propsOf("RelationshipGraph"), 180),
+    withProps("Diagram-CausalGraph", CausalGraph, propsOf("CausalGraph"), 180),
+    withProps("Diagram-RivalryNetwork", RivalryNetworkDiagram),
+    withProps("Diagram-CompetitiveLandscape", CompetitiveLandscapeDiagram),
+    withProps("Diagram-EcosystemMap", EcosystemMap),
+    withProps("Diagram-CapabilityVenn", CapabilityVennDiagram),
+    withProps("Diagram-HierarchyPyramid", HierarchyPyramid, propsOf("HierarchyPyramid")),
+    withProps("Diagram-OrganizationTree", OrganizationTree, propsOf("OrganizationTree"), 180),
+    withProps("Diagram-OwnershipTree", OwnershipTree, propsOf("OwnershipTree"), 180),
+    withProps("Diagram-BalanceSheet", BalanceSheetDiagram, propsOf("BalanceSheetDiagram"), 180),
+    withProps("Diagram-CapitalStack", CapitalStackDiagram, propsOf("CapitalStackDiagram"), 180)
+];
+const FRAMEWORKS_SHOWCASE = [
+    withProps("Framework-StrategyMatrix", StrategyMatrix, undefined, 180),
+    withProps("Framework-RiskMatrix", RiskMatrix, undefined, 180),
+    withProps("Framework-PrioritizationMatrix", PrioritizationMatrix, undefined, 180),
+    withProps("Framework-OpportunityMatrix", OpportunityMatrix, undefined, 180),
+    withProps("Framework-StrategicRoadmap", StrategicRoadmap, undefined, 180),
+    withProps("Framework-ScenarioTree", ScenarioTree, undefined, 180),
+    withProps("Framework-BridgeToTarget", BridgeToTarget, undefined, 180),
+    withProps("Framework-IssueTree", IssueTree, undefined, 180),
+    withProps("Framework-MetricDriverTree", MetricDriverTree, propsOf("MetricDriverTree"), 180),
+    withProps("Framework-Swimlane", SwimlaneDiagram, undefined, 180)
+];
+const TABLES_SHOWCASE = [
+    withProps("Table-Sparkline", SparklineTable, undefined, 180),
+    withProps("Table-BenchmarkScorecard", BenchmarkScorecard, undefined, 180),
+    withProps("Table-DistributionComparison", DistributionComparisonTable, propsOf("DistributionComparisonTable"), 180),
+    withProps("Table-CapabilityHeatmap", CapabilityHeatmap, undefined, 180)
+];
+const NARRATIVE_SHOWCASE = [
+    withProps("Narrative-CompareCards", CompareCards, propsOf("CompareCards")),
+    withProps("Narrative-ExecutiveSummary", ExecutiveSummary, undefined, 180),
+    withProps("Narrative-PageFlipChoice", PageFlipChoice, propsOf("PageFlipChoice"))
+];
+const MEDIA_SHOWCASE = (/* unused pure expression or super */ null && ([]));
+const OVERLAY_SHOWCASE = [
+    withProps("Overlay-PresenterOrbit", PresenterOrbitOverlay, propsOf("PresenterOrbitOverlay"))
+];
+const METRICS_SHOWCASE = [
+    withProps("Metric-Split", SplitMetric, propsOf("SplitMetric"), 120),
+    withProps("Metric-FactGrid", FactGrid, undefined, 180)
+];
+/** Curated chart reel (~12) */ const CHARTS_DEMO_IDS = [
+    "Chart-PairedBar",
+    "Chart-Treemap",
+    "Chart-GroupedBar",
+    "Chart-MultiLine",
+    "Chart-RangeBand",
+    "Chart-Tornado",
+    "Chart-ForecastFan",
+    "Chart-Marimekko",
+    "Chart-Heatmap",
+    "Chart-ScenarioBar",
+    "Chart-Ridgeline",
+    "Chart-AnnotatedLine"
+];
+/** Curated diagrams reel */ const DIAGRAMS_DEMO_IDS = [
+    "Diagram-Sankey",
+    "Diagram-ValueChain",
+    "Diagram-OrganizationTree",
+    "Diagram-OwnershipTree",
+    "Diagram-CausalGraph",
+    "Diagram-CompetitiveLandscape",
+    "Diagram-RivalryNetwork",
+    "Diagram-EcosystemMap",
+    "Diagram-HierarchyPyramid",
+    "Diagram-BalanceSheet",
+    "Diagram-CapitalStack",
+    "Diagram-TwoSidedMarketplace"
+];
+/** Curated frameworks reel */ const FRAMEWORKS_DEMO_IDS = [
+    "Framework-IssueTree",
+    "Framework-MetricDriverTree",
+    "Framework-RiskMatrix",
+    "Framework-StrategyMatrix",
+    "Framework-StrategicRoadmap",
+    "Framework-BridgeToTarget",
+    "Framework-ScenarioTree",
+    "Framework-OpportunityMatrix",
+    "Framework-PrioritizationMatrix",
+    "Framework-Swimlane",
+    "Narrative-ExecutiveSummary",
+    "Table-BenchmarkScorecard"
+];
+const pick = (ids, pool)=>ids.map((id)=>{
+        const entry = pool.find((item)=>item.id === id);
+        if (!entry) throw new Error(`Missing showcase composition: ${id}`);
+        return entry;
+    });
+const ALL_SHOWCASE_COMPOSITIONS = [
+    ...CORE_SHOWCASE,
+    ...METRICS_SHOWCASE,
+    ...CHARTS_SHOWCASE,
+    ...TABLES_SHOWCASE,
+    ...DIAGRAMS_SHOWCASE,
+    ...FRAMEWORKS_SHOWCASE,
+    ...NARRATIVE_SHOWCASE,
+    ...OVERLAY_SHOWCASE
+];
+const CHARTS_DEMO_SHOWCASE = pick(CHARTS_DEMO_IDS, ALL_SHOWCASE_COMPOSITIONS);
+const DIAGRAMS_DEMO_SHOWCASE = pick(DIAGRAMS_DEMO_IDS, ALL_SHOWCASE_COMPOSITIONS);
+const FRAMEWORKS_DEMO_SHOWCASE = pick(FRAMEWORKS_DEMO_IDS, ALL_SHOWCASE_COMPOSITIONS);
+/** @deprecated Use CORE_SHOWCASE */ const STANDARD_SHOWCASE = (/* unused pure expression or super */ null && (CORE_SHOWCASE));
+
+;// CONCATENATED MODULE: ./src/showcase/ShowcaseReel.tsx
+
+/**
+ * 从 ShowcaseEntry 列表拼 DemoReel。
+ * from 累加写在 Sequence 上；AbsoluteFill 不要带 from（那是 Sequence 的职责）。
+ */ 
+
+const reelDuration = (entries)=>entries.reduce((sum, entry)=>sum + entry.durationInFrames, 0);
+const ShowcaseReel = ({ entries })=>{
+    let from = 0;
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .AbsoluteFill */.H1, {
+        children: entries.map((entry)=>{
+            const start = from;
+            from += entry.durationInFrames;
+            const Comp = entry.component;
+            return /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Sequence */.gd, {
+                from: start,
+                durationInFrames: entry.durationInFrames,
+                children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Comp, {
+                    ...entry.defaultProps ?? {}
+                })
+            }, entry.id);
+        })
+    });
+};
+
+;// CONCATENATED MODULE: ./src/showcase/reels/CoreComponentsReel.tsx
+
+
+
+
+const CORE_COMPONENTS_REEL_DURATION = reelDuration(CORE_SHOWCASE);
+const CoreComponentsReel = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)(ShowcaseReel, {
+        entries: CORE_SHOWCASE
+    });
+
+;// CONCATENATED MODULE: ./src/showcase/reels/ChartsReel.tsx
+
+
+
+
+const CHARTS_REEL_DURATION = reelDuration(CHARTS_DEMO_SHOWCASE);
+const ChartsReel = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)(ShowcaseReel, {
+        entries: CHARTS_DEMO_SHOWCASE
+    });
+
+;// CONCATENATED MODULE: ./src/showcase/reels/DiagramsReel.tsx
+
+
+
+
+const DIAGRAMS_REEL_DURATION = reelDuration(DIAGRAMS_DEMO_SHOWCASE);
+const DiagramsReel = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)(ShowcaseReel, {
+        entries: DIAGRAMS_DEMO_SHOWCASE
+    });
+
+;// CONCATENATED MODULE: ./src/showcase/reels/FrameworksReel.tsx
+
+
+
+
+const FRAMEWORKS_REEL_DURATION = reelDuration(FRAMEWORKS_DEMO_SHOWCASE);
+const FrameworksReel = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)(ShowcaseReel, {
+        entries: FRAMEWORKS_DEMO_SHOWCASE
+    });
+
+;// CONCATENATED MODULE: ./src/showcase/reels/FullShowcaseReel.tsx
+
+
+
+
+const FULL_SHOWCASE_REEL_DURATION = reelDuration(ALL_SHOWCASE_COMPOSITIONS);
+const FullShowcaseReel = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)(ShowcaseReel, {
+        entries: ALL_SHOWCASE_COMPOSITIONS
+    });
 
 ;// CONCATENATED MODULE: ./src/Root.tsx
 
+/**
+ * Remotion Composition entry — semantic reels + per-scene compositions.
+ */ 
 
 
 
 
 
 
-const DEMO_REEL_SCENES = 5;
+
+
+
 const RemotionRoot = ()=>{
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Composition */.BO, {
-                id: "DemoReel",
-                component: DemoReel,
-                width: (/* inlined export .VIDEO_WIDTH */1920),
-                height: (/* inlined export .VIDEO_HEIGHT */1080),
-                fps: (/* inlined export .VIDEO_FPS */30),
-                durationInFrames: (/* inlined export .SCENE_DURATION */150) * DEMO_REEL_SCENES
+                id: "CoreComponentsReel",
+                component: CoreComponentsReel,
+                width: VIDEO_WIDTH,
+                height: VIDEO_HEIGHT,
+                fps: VIDEO_FPS,
+                durationInFrames: CORE_COMPONENTS_REEL_DURATION
             }),
-            SCENES.map(({ id, component })=>/*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Composition */.BO, {
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Composition */.BO, {
+                id: "ChartsReel",
+                component: ChartsReel,
+                width: VIDEO_WIDTH,
+                height: VIDEO_HEIGHT,
+                fps: VIDEO_FPS,
+                durationInFrames: CHARTS_REEL_DURATION
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Composition */.BO, {
+                id: "DiagramsReel",
+                component: DiagramsReel,
+                width: VIDEO_WIDTH,
+                height: VIDEO_HEIGHT,
+                fps: VIDEO_FPS,
+                durationInFrames: DIAGRAMS_REEL_DURATION
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Composition */.BO, {
+                id: "FrameworksReel",
+                component: FrameworksReel,
+                width: VIDEO_WIDTH,
+                height: VIDEO_HEIGHT,
+                fps: VIDEO_FPS,
+                durationInFrames: FRAMEWORKS_REEL_DURATION
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Composition */.BO, {
+                id: "FullShowcaseReel",
+                component: FullShowcaseReel,
+                width: VIDEO_WIDTH,
+                height: VIDEO_HEIGHT,
+                fps: VIDEO_FPS,
+                durationInFrames: FULL_SHOWCASE_REEL_DURATION
+            }),
+            ALL_SHOWCASE_COMPOSITIONS.map(({ id, component, defaultProps, durationInFrames })=>/*#__PURE__*/ (0,jsx_runtime.jsx)(esm/* .Composition */.BO, {
                     id: id,
                     component: component,
-                    width: (/* inlined export .VIDEO_WIDTH */1920),
-                    height: (/* inlined export .VIDEO_HEIGHT */1080),
-                    fps: (/* inlined export .VIDEO_FPS */30),
-                    durationInFrames: (/* inlined export .SCENE_DURATION */150)
+                    defaultProps: defaultProps,
+                    width: VIDEO_WIDTH,
+                    height: VIDEO_HEIGHT,
+                    fps: VIDEO_FPS,
+                    durationInFrames: durationInFrames
                 }, id))
         ]
     });
 };
 
 ;// CONCATENATED MODULE: ./src/index.ts
+
 
 
 (0,esm/* .registerRoot */.eU)(RemotionRoot);
@@ -21997,6 +34903,7 @@ __webpack_require__.d(__webpack_exports__, {
   dQ: () => (staticFile),
   eU: () => (registerRoot),
   gd: () => (Sequence),
+  oz: () => (spring),
   ti: () => (getInputProps),
   uk: () => (MediaPlaybackError),
   xv: () => (VERSION),
@@ -37766,7 +50673,7 @@ __webpack_require__.ruid = "bundler=rspack@1.7.11";
 // Load entry module and return exports
 // This entry module is referenced by other modules so it can't be inlined
 __webpack_require__(8325);
-__webpack_require__(2851);
+__webpack_require__(8931);
 __webpack_require__(4252);
 var __webpack_exports__ = __webpack_require__(4787);
 })()

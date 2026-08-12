@@ -1,34 +1,26 @@
 import React from "react";
 import {AbsoluteFill} from "remotion";
-import {MONO_FONT} from "../fonts";
+
+import {MONO_FONT} from "../style/fonts";
+import {
+  gridBackgroundImage,
+  layout,
+  spacing,
+} from "../style/theme";
 
 type Props = {
   children: React.ReactNode;
 };
 
-export const Frame: React.FC<Props> = ({
-  children,
-}) => {
+export const Frame: React.FC<Props> = ({children}) => {
   return (
     <AbsoluteFill
       className="bg-paper text-ink"
       style={{
         fontFamily: MONO_FONT,
-        padding: 64,
-
-        backgroundImage: `
-          linear-gradient(
-            rgba(0,0,0,0.025) 1px,
-            transparent 1px
-          ),
-          linear-gradient(
-            90deg,
-            rgba(0,0,0,0.025) 1px,
-            transparent 1px
-          )
-        `,
-
-        backgroundSize: "48px 48px",
+        padding: spacing.framePadding,
+        backgroundImage: gridBackgroundImage(),
+        backgroundSize: `${layout.gridSize}px ${layout.gridSize}px`,
       }}
     >
       {children}

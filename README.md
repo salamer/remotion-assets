@@ -1,54 +1,71 @@
-# Remotion video
+# Finance Motion
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Remotion component library for finance / business / data YouTube videos.
 
-Welcome to your Remotion project!
+Style: **Soft Brutalism + Financial Editorial** — large type, ink/yellow, hard borders, no gradients.
 
-## Commands
-
-**Install Dependencies**
-
-```console
-pnpm i
+```text
+Data / assets
+    ↓
+Scene props / SceneSpec
+    ↓
+React scenes (semantic families)
+    ↓
+Design system (style/theme.ts)
+    ↓
+Remotion → MP4 / ProRes → NLE
 ```
 
-**Start Preview**
+## Quick start
 
-```console
-pnpm run dev
+```bash
+pnpm install
+pnpm dev
 ```
 
-**Render video**
+Studio reels:
 
-```console
-pnpm exec remotion render
+| Composition | Contents |
+|---|---|
+| `CoreComponentsReel` | Core metrics / charts / narrative / media |
+| `ChartsReel` | Curated advanced charts |
+| `DiagramsReel` | Flow / relationships / hierarchy / finance |
+| `FrameworksReel` | Strategy / planning / process |
+| `FullShowcaseReel` | Everything |
+
+Render examples:
+
+```bash
+pnpm exec remotion render Metric-HeroMetric out/hero-metric.mp4
+pnpm exec remotion render Chart-Line out/line-chart.mp4
+pnpm exec remotion render CoreComponentsReel out/core-reel.mp4
 ```
 
-**Upgrade Remotion**
+## Semantic layout
 
-```console
-pnpm exec remotion upgrade
+```text
+src/scenes/
+├── metrics/
+├── charts/        categorical · time-series · comparison · composition
+│                  distribution · uncertainty · multivariate
+├── tables/
+├── diagrams/      flow · relationships · hierarchy · finance
+├── frameworks/    strategy · planning · process
+├── narrative/
+├── media/
+└── overlays/
 ```
 
-## Docs
+```ts
+import {HeroMetric, LineChart, SankeyDiagram, RiskMatrix} from "./scenes";
+```
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+See **[CATALOG.md](./CATALOG.md)** for the full component list, **[component.md](./component.md)** for selection guidance, and **[MIGRATION.md](./MIGRATION.md)** for rename/move history.
 
-## Help
+## Scripts
 
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+```bash
+pnpm lint          # eslint + tsc
+pnpm build         # remotion bundle
+pnpm exec tsc --noEmit
+```

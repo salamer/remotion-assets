@@ -1,6 +1,8 @@
 import React from "react";
 import {useCurrentFrame} from "remotion";
+
 import {fadeUp} from "../lib/motion";
+import {spacing, textClasses} from "../style/theme";
 
 export const Source: React.FC<{
   children: React.ReactNode;
@@ -9,8 +11,12 @@ export const Source: React.FC<{
 
   return (
     <div
-      className="absolute bottom-[50px] left-[64px] text-[19px] tracking-[0.08em] text-muted"
-      style={fadeUp(frame, 45)}
+      className={`absolute text-muted ${textClasses.source}`}
+      style={{
+        ...fadeUp(frame, 45),
+        bottom: spacing.sourceBottom,
+        left: spacing.framePadding,
+      }}
     >
       SOURCE / {children}
     </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import {useCurrentFrame} from "remotion";
+
 import {fadeUp} from "../lib/motion";
+import {textClasses} from "../style/theme";
 
 type Props = {
   eyebrow?: string;
@@ -19,7 +21,7 @@ export const SceneHeader: React.FC<Props> = ({
     <div>
       {eyebrow && (
         <div
-          className="text-[26px] tracking-[0.12em] text-muted"
+          className={textClasses.eyebrow}
           style={fadeUp(frame, 0)}
         >
           {eyebrow}
@@ -27,7 +29,7 @@ export const SceneHeader: React.FC<Props> = ({
       )}
 
       <div
-        className="mt-3 max-w-[1500px] text-[62px] font-semibold leading-[1.05] tracking-[-0.05em]"
+        className={`mt-3 max-w-[1500px] ${textClasses.title}`}
         style={fadeUp(frame, 4)}
       >
         {title}
@@ -35,7 +37,7 @@ export const SceneHeader: React.FC<Props> = ({
 
       {subtitle && (
         <div
-          className="mt-4 max-w-[1300px] text-[26px] leading-[1.4] text-muted"
+          className={`mt-4 max-w-[1300px] ${textClasses.subtitle}`}
           style={fadeUp(frame, 10)}
         >
           {subtitle}

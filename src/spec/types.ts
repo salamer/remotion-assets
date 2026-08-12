@@ -1,5 +1,10 @@
-export type BigNumberScene = {
-  type: "big-number";
+/**
+ * SceneSpec — semantic scene types for programmatic composition.
+ * Prefer kebab-case `type` values matching CATALOG.md.
+ */
+
+export type HeroMetricScene = {
+  type: "hero-metric";
   company: string;
   label: string;
   value: number;
@@ -7,15 +12,15 @@ export type BigNumberScene = {
   growth?: number;
 };
 
-export type QuoteScene = {
-  type: "quote";
+export type QuoteCardScene = {
+  type: "quote-card";
   quote: string;
   author: string;
   role?: string;
 };
 
-export type FlowScene = {
-  type: "flow";
+export type FlowDiagramScene = {
+  type: "flow-diagram";
   nodes: {
     icon: string;
     title: string;
@@ -23,13 +28,25 @@ export type FlowScene = {
   }[];
 };
 
-export type CalloutScene = {
-  type: "callout";
+export type KeyTakeawayScene = {
+  type: "key-takeaway";
   text: string;
 };
 
-export type Scene =
-  | BigNumberScene
-  | QuoteScene
-  | FlowScene
-  | CalloutScene;
+/** Partial / early SceneSpec union — expand as props are formalized */
+export type SceneSpec =
+  | HeroMetricScene
+  | QuoteCardScene
+  | FlowDiagramScene
+  | KeyTakeawayScene;
+
+/** @deprecated Use SceneSpec */
+export type Scene = SceneSpec;
+/** @deprecated Use HeroMetricScene */
+export type BigNumberScene = HeroMetricScene;
+/** @deprecated Use QuoteCardScene */
+export type QuoteScene = QuoteCardScene;
+/** @deprecated Use FlowDiagramScene */
+export type FlowScene = FlowDiagramScene;
+/** @deprecated Use KeyTakeawayScene */
+export type CalloutScene = KeyTakeawayScene;

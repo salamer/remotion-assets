@@ -1,5 +1,7 @@
 import React from "react";
 
+import {shadows} from "../style/theme";
+
 type Props = {
   children: React.ReactNode;
   yellow?: boolean;
@@ -19,7 +21,7 @@ export const BrutalCard: React.FC<Props> = ({
         ${className}
       `}
       style={{
-        boxShadow: "6px 6px 0 #111111",
+        boxShadow: shadows.brutal,
       }}
     >
       {children}
