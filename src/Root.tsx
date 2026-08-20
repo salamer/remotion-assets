@@ -2,22 +2,21 @@
  * Remotion Composition entry — semantic reels + per-scene compositions.
  */
 import React from "react";
-import {Composition} from "remotion";
+import { Composition } from "remotion";
 
 import "./index.css";
 
-import {
-  VIDEO_FPS,
-  VIDEO_HEIGHT,
-  VIDEO_WIDTH,
-} from "./config";
-import {ALL_SHOWCASE_COMPOSITIONS} from "./showcase/compositions";
+import { VIDEO_FPS, VIDEO_HEIGHT, VIDEO_WIDTH } from "./config";
+import { ALL_SHOWCASE_COMPOSITIONS } from "./showcase/compositions";
 import {
   CoreComponentsReel,
   CORE_COMPONENTS_REEL_DURATION,
 } from "./showcase/reels/CoreComponentsReel";
-import {ChartsReel, CHARTS_REEL_DURATION} from "./showcase/reels/ChartsReel";
-import {DiagramsReel, DIAGRAMS_REEL_DURATION} from "./showcase/reels/DiagramsReel";
+import { ChartsReel, CHARTS_REEL_DURATION } from "./showcase/reels/ChartsReel";
+import {
+  DiagramsReel,
+  DIAGRAMS_REEL_DURATION,
+} from "./showcase/reels/DiagramsReel";
 import {
   FrameworksReel,
   FRAMEWORKS_REEL_DURATION,
@@ -72,7 +71,7 @@ export const RemotionRoot: React.FC = () => {
       />
 
       {ALL_SHOWCASE_COMPOSITIONS.map(
-        ({id, component, defaultProps, durationInFrames}) => (
+        ({ id, component, defaultProps, durationInFrames }) => (
           <Composition
             key={id}
             id={id}

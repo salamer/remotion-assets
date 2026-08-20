@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {BrutalCard} from "../../components/BrutalCard";
-import {SceneHeader} from "../../components/SceneHeader";
+import { Frame } from "../../components/Frame";
+import { BrutalCard } from "../../components/BrutalCard";
+import { SceneHeader } from "../../components/SceneHeader";
 
 const items = [
   ["🌐", "BOOKING"],
@@ -28,14 +25,10 @@ export const LogoCloud: React.FC = () => {
       />
 
       <div className="mt-20 grid grid-cols-3 gap-8">
-
         {items.map(([icon, name], index) => {
           const p = interpolate(
             frame,
-            [
-              8 + index * 5,
-              20 + index * 5,
-            ],
+            [8 + index * 5, 20 + index * 5],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -58,18 +51,13 @@ export const LogoCloud: React.FC = () => {
                   px-8
                 "
               >
-                <span className="text-[58px]">
-                  {icon}
-                </span>
+                <span className="text-[58px]">{icon}</span>
 
-                <span className="text-[28px] font-semibold">
-                  {name}
-                </span>
+                <span className="text-[28px] font-semibold">{name}</span>
               </BrutalCard>
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

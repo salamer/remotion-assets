@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {SceneHeader} from "../../components/SceneHeader";
-import {BrutalCard} from "../../components/BrutalCard";
+import { Frame } from "../../components/Frame";
+import { SceneHeader } from "../../components/SceneHeader";
+import { BrutalCard } from "../../components/BrutalCard";
 
 type Props = {
   value?: number;
@@ -19,15 +16,10 @@ export const ShareMetric: React.FC<Props> = ({
 }) => {
   const frame = useCurrentFrame();
 
-  const p = interpolate(
-    frame,
-    [15, 55],
-    [0, value],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    },
-  );
+  const p = interpolate(frame, [15, 55], [0, value], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   return (
     <Frame>
@@ -37,9 +29,7 @@ export const ShareMetric: React.FC<Props> = ({
       />
 
       <div className="mt-24">
-
         <div className="flex items-end gap-10">
-
           <div className="text-[180px] font-semibold leading-none tracking-[-0.08em]">
             {Math.round(p)}%
           </div>
@@ -50,7 +40,6 @@ export const ShareMetric: React.FC<Props> = ({
           >
             {label}
           </BrutalCard>
-
         </div>
 
         <div className="mt-14 h-[100px] border-2 border-ink bg-white">
@@ -66,7 +55,6 @@ export const ShareMetric: React.FC<Props> = ({
           <span>0%</span>
           <span>100%</span>
         </div>
-
       </div>
     </Frame>
   );

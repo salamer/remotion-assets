@@ -1,8 +1,8 @@
 import React from "react";
-import {useCurrentFrame} from "remotion";
+import { useCurrentFrame } from "remotion";
 
-import {fadeUp} from "../lib/motion";
-import {textClasses} from "../style/theme";
+import { fadeUp } from "../lib/motion";
+import { textClasses } from "../style/theme";
 
 type Props = {
   eyebrow?: string;
@@ -10,20 +10,13 @@ type Props = {
   subtitle?: string;
 };
 
-export const SceneHeader: React.FC<Props> = ({
-  eyebrow,
-  title,
-  subtitle,
-}) => {
+export const SceneHeader: React.FC<Props> = ({ eyebrow, title, subtitle }) => {
   const frame = useCurrentFrame();
 
   return (
     <div>
       {eyebrow && (
-        <div
-          className={textClasses.eyebrow}
-          style={fadeUp(frame, 0)}
-        >
+        <div className={textClasses.eyebrow} style={fadeUp(frame, 0)}>
           {eyebrow}
         </div>
       )}

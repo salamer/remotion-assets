@@ -2,12 +2,12 @@
 
 Structure / relationship / flow scenes under `src/scenes/diagrams/`.
 
-| Subfolder | Use for |
-|---|---|
-| `flow/` | Sequences, funnels, sankey, value chain, marketplace |
-| `relationships/` | Networks, causal graphs, ecosystems, rivalry |
-| `hierarchy/` | Org / ownership trees, pyramids |
-| `finance/` | Balance sheet, capital stack |
+| Subfolder        | Use for                                              |
+| ---------------- | ---------------------------------------------------- |
+| `flow/`          | Sequences, funnels, sankey, value chain, marketplace |
+| `relationships/` | Networks, causal graphs, ecosystems, rivalry         |
+| `hierarchy/`     | Org / ownership trees, pyramids                      |
+| `finance/`       | Balance sheet, capital stack                         |
 
 **Distinctions**
 

@@ -22,11 +22,11 @@ process/              泳道（谁 / 何时）
 
 ## 子目录
 
-| 目录 | 何时进 | README |
-|---|---|---|
-| `strategy/` | 战略 / 风险 / 优先级 / 机会矩阵 | [strategy/README.md](./strategy/README.md) |
+| 目录        | 何时进                           | README                                     |
+| ----------- | -------------------------------- | ------------------------------------------ |
+| `strategy/` | 战略 / 风险 / 优先级 / 机会矩阵  | [strategy/README.md](./strategy/README.md) |
 | `planning/` | 问题树、驱动树、情景、路线图、桥 | [planning/README.md](./planning/README.md) |
-| `process/` | 谁做什么、何时做 | [process/README.md](./process/README.md) |
+| `process/`  | 谁做什么、何时做                 | [process/README.md](./process/README.md)   |
 
 定量散点象限 → `charts/multivariate/QuadrantScatterChart`。  
 资金流动 → `diagrams/flow/`。

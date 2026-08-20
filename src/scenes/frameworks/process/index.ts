@@ -1,1 +1,1 @@
-export {SwimlaneDiagram} from "./SwimlaneDiagram";
+export { SwimlaneDiagram } from "./SwimlaneDiagram";

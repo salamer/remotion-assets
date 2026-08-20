@@ -1,14 +1,11 @@
 import React from "react";
-import {Img, useCurrentFrame} from "remotion";
+import { Img, useCurrentFrame } from "remotion";
 
-import {
-  getImageSrc,
-  type ImageCategory,
-} from "../../assets";
-import {Frame} from "../../components/Frame";
-import {BrutalCard} from "../../components/BrutalCard";
-import {SceneHeader} from "../../components/SceneHeader";
-import {fadeUp} from "../../lib/motion";
+import { getImageSrc, type ImageCategory } from "../../assets";
+import { Frame } from "../../components/Frame";
+import { BrutalCard } from "../../components/BrutalCard";
+import { SceneHeader } from "../../components/SceneHeader";
+import { fadeUp } from "../../lib/motion";
 
 type Props = {
   /** 注册表 key 或 public 相对路径 */

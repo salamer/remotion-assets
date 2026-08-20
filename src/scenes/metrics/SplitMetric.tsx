@@ -1,9 +1,9 @@
 import React from "react";
-import {interpolate, useCurrentFrame, useVideoConfig} from "remotion";
-import {Frame} from "../../components/Frame";
-import {BrutalCard} from "../../components/BrutalCard";
-import {Tag} from "../../components/Tag";
-import {springIn} from "../../lib/motion";
+import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { Frame } from "../../components/Frame";
+import { BrutalCard } from "../../components/BrutalCard";
+import { Tag } from "../../components/Tag";
+import { springIn } from "../../lib/motion";
 
 export const SplitMetric: React.FC<{
   eyebrow?: string;
@@ -25,9 +25,15 @@ export const SplitMetric: React.FC<{
   rightTag = "HIGHLIGHT",
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const leftP = springIn({frame, fps, delay: 4, damping: 18, stiffness: 145});
-  const rightP = springIn({frame, fps, delay: 13, damping: 17, stiffness: 145});
+  const { fps } = useVideoConfig();
+  const leftP = springIn({ frame, fps, delay: 4, damping: 18, stiffness: 145 });
+  const rightP = springIn({
+    frame,
+    fps,
+    delay: 13,
+    damping: 17,
+    stiffness: 145,
+  });
   const leftNumber = interpolate(leftP, [0, 1], [0, leftValue]);
   const rightNumber = interpolate(rightP, [0, 1], [0, rightValue]);
 
@@ -39,7 +45,10 @@ export const SplitMetric: React.FC<{
 
       <div className="mt-32 grid grid-cols-[1.25fr_0.75fr] items-center gap-20">
         <div
-          style={{opacity: leftP, transform: `translateX(${(1 - leftP) * -35}px)`}}
+          style={{
+            opacity: leftP,
+            transform: `translateX(${(1 - leftP) * -35}px)`,
+          }}
         >
           <div className="text-[205px] font-semibold leading-none tracking-[-0.09em]">
             {Math.round(leftNumber)}
@@ -51,10 +60,15 @@ export const SplitMetric: React.FC<{
         </div>
 
         <div
-          style={{opacity: rightP, transform: `translateY(${(1 - rightP) * 42}px) scale(${0.92 + rightP * 0.08})`}}
+          style={{
+            opacity: rightP,
+            transform: `translateY(${(1 - rightP) * 42}px) scale(${0.92 + rightP * 0.08})`,
+          }}
         >
           <BrutalCard yellow className="p-12">
-            <div className="text-[21px] font-semibold tracking-[0.12em]">{rightTag}</div>
+            <div className="text-[21px] font-semibold tracking-[0.12em]">
+              {rightTag}
+            </div>
             <div className="mt-10 text-[118px] font-semibold leading-none tracking-[-0.08em]">
               {Math.round(rightNumber)}
               <span className="text-[54px]">{rightSuffix}</span>

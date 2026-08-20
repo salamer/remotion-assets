@@ -32,14 +32,14 @@ multivariate/         平行坐标 / 雷达 / 象限
 
 ## 子目录
 
-| 目录 | 何时进 | README |
-|---|---|---|
-| `categorical/` | 类别大小、排名、情景条 | [categorical/README.md](./categorical/README.md) |
-| `time-series/` | 随时间变化 | [time-series/README.md](./time-series/README.md) |
-| `comparison/` | 两点 / 两期对照 | [comparison/README.md](./comparison/README.md) |
-| `composition/` | 部分占整体 | [composition/README.md](./composition/README.md) |
-| `distribution/` | 分布形状 / 密度 | [distribution/README.md](./distribution/README.md) |
-| `uncertainty/` | 预测区间 | [uncertainty/README.md](./uncertainty/README.md) |
-| `multivariate/` | 多维定量画像 | [multivariate/README.md](./multivariate/README.md) |
+| 目录            | 何时进                 | README                                             |
+| --------------- | ---------------------- | -------------------------------------------------- |
+| `categorical/`  | 类别大小、排名、情景条 | [categorical/README.md](./categorical/README.md)   |
+| `time-series/`  | 随时间变化             | [time-series/README.md](./time-series/README.md)   |
+| `comparison/`   | 两点 / 两期对照        | [comparison/README.md](./comparison/README.md)     |
+| `composition/`  | 部分占整体             | [composition/README.md](./composition/README.md)   |
+| `distribution/` | 分布形状 / 密度        | [distribution/README.md](./distribution/README.md) |
+| `uncertainty/`  | 预测区间               | [uncertainty/README.md](./uncertainty/README.md)   |
+| `multivariate/` | 多维定量画像           | [multivariate/README.md](./multivariate/README.md) |
 
 定性 2×2 战略矩阵不在这里 → `frameworks/strategy/`。

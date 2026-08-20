@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {BrutalCard} from "../../components/BrutalCard";
-import {SceneHeader} from "../../components/SceneHeader";
+import { Frame } from "../../components/Frame";
+import { BrutalCard } from "../../components/BrutalCard";
+import { SceneHeader } from "../../components/SceneHeader";
 
 type KPI = {
   icon: string;
@@ -47,20 +44,13 @@ export const MetricGrid: React.FC = () => {
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="FY2025"
-        title="The company in four numbers."
-      />
+      <SceneHeader eyebrow="FY2025" title="The company in four numbers." />
 
       <div className="mt-16 grid grid-cols-2 gap-8">
-
         {data.map((item, index) => {
           const p = interpolate(
             frame,
-            [
-              10 + index * 6,
-              24 + index * 6,
-            ],
+            [10 + index * 6, 24 + index * 6],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -73,27 +63,17 @@ export const MetricGrid: React.FC = () => {
               key={item.label}
               style={{
                 opacity: p,
-                transform:
-                  `translateY(${(1 - p) * 18}px)`,
+                transform: `translateY(${(1 - p) * 18}px)`,
               }}
             >
-              <BrutalCard
-                yellow={index === 0}
-                className="p-8"
-              >
+              <BrutalCard yellow={index === 0} className="p-8">
                 <div className="flex justify-between">
-                  <div className="text-[44px]">
-                    {item.icon}
-                  </div>
+                  <div className="text-[44px]">{item.icon}</div>
 
-                  <div className="text-[24px] font-semibold">
-                    {item.change}
-                  </div>
+                  <div className="text-[24px] font-semibold">{item.change}</div>
                 </div>
 
-                <div className="mt-8 text-[22px] text-muted">
-                  {item.label}
-                </div>
+                <div className="mt-8 text-[22px] text-muted">{item.label}</div>
 
                 <div className="mt-2 text-[72px] font-semibold tracking-[-0.06em]">
                   {item.value}
@@ -102,7 +82,6 @@ export const MetricGrid: React.FC = () => {
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

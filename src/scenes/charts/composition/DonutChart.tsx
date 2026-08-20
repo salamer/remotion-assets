@@ -1,16 +1,13 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {chart, typography} from "../../../style/theme";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { chart, typography } from "../../../style/theme";
 
 export const DonutChart: React.FC<{
   value?: number;
-}> = ({value = 72}) => {
+}> = ({ value = 72 }) => {
   const frame = useCurrentFrame();
 
   const p = interpolate(frame, [15, 55], [0, value / 100], {

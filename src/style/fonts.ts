@@ -1,7 +1,7 @@
-import {loadFont} from "@remotion/fonts";
+import { loadFont } from "@remotion/fonts";
 
-import {fontPaths} from "../assets";
-import {typography} from "./theme";
+import { fontPaths } from "../assets";
+import { typography } from "./theme";
 
 /**
  * 加载 IBM Plex Mono（Regular + SemiBold）

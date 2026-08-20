@@ -1,9 +1,9 @@
 /**
  * Chart motion helpers — stagger / clamp / path draw progress.
  */
-import {tween} from "./motion";
+import { tween } from "./motion";
 
-export {tween, springIn, countTo} from "./motion";
+export { tween, springIn, countTo } from "./motion";
 
 export const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 

@@ -3,7 +3,12 @@
 部分占整体。
 
 ```ts
-import { DonutChart, TreemapChart, WaterfallChart, WaffleChart } from "./scenes";
+import {
+  DonutChart,
+  TreemapChart,
+  WaterfallChart,
+  WaffleChart,
+} from "./scenes";
 ```
 
 ---

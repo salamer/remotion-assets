@@ -5,10 +5,7 @@ type Props = {
   yellow?: boolean;
 };
 
-export const Tag: React.FC<Props> = ({
-  children,
-  yellow = false,
-}) => {
+export const Tag: React.FC<Props> = ({ children, yellow = false }) => {
   return (
     <span
       className={`

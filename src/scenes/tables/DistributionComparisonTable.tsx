@@ -1,9 +1,9 @@
 import React from "react";
-import {interpolate, useCurrentFrame, useVideoConfig} from "remotion";
-import {Frame} from "../../components/Frame";
-import {SceneHeader} from "../../components/SceneHeader";
-import {Source} from "../../components/Source";
-import {springIn, tween} from "../../lib/motion";
+import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { Frame } from "../../components/Frame";
+import { SceneHeader } from "../../components/SceneHeader";
+import { Source } from "../../components/Source";
+import { springIn, tween } from "../../lib/motion";
 
 type ComparisonRow = {
   name: string;
@@ -13,11 +13,11 @@ type ComparisonRow = {
 };
 
 const DEFAULT_ROWS: ComparisonRow[] = [
-  {name: "MARKET A", left: 6.2, right: 61.8, icon: "🏠"},
-  {name: "MARKET B", left: 2.1, right: 69.4, icon: "🏦"},
-  {name: "MARKET C", left: 0.8, right: 77.2, icon: "🏭"},
-  {name: "MARKET D", left: -0.4, right: 81.5, icon: "💻"},
-  {name: "MARKET E", left: -1.8, right: 86.1, icon: "🌍"},
+  { name: "MARKET A", left: 6.2, right: 61.8, icon: "🏠" },
+  { name: "MARKET B", left: 2.1, right: 69.4, icon: "🏦" },
+  { name: "MARKET C", left: 0.8, right: 77.2, icon: "🏭" },
+  { name: "MARKET D", left: -0.4, right: 81.5, icon: "💻" },
+  { name: "MARKET E", left: -1.8, right: 86.1, icon: "🌍" },
 ];
 
 export const DistributionComparisonTable: React.FC<{
@@ -42,7 +42,7 @@ export const DistributionComparisonTable: React.FC<{
   source,
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const { fps } = useVideoConfig();
   const headerP = tween(frame, 3, 24);
 
   return (
@@ -58,16 +58,28 @@ export const DistributionComparisonTable: React.FC<{
 
         <div
           className="mt-5 grid h-[76px] grid-cols-3 items-center border-2 border-ink text-center text-[22px] font-semibold"
-          style={{opacity: headerP}}
+          style={{ opacity: headerP }}
         >
-          <div className="flex h-full items-center justify-center bg-ink text-white">{leftLabel}</div>
-          <div className="flex h-full items-center justify-center bg-soft">{middleLabel}</div>
-          <div className="flex h-full items-center justify-center bg-yellow">{rightLabel}</div>
+          <div className="flex h-full items-center justify-center bg-ink text-white">
+            {leftLabel}
+          </div>
+          <div className="flex h-full items-center justify-center bg-soft">
+            {middleLabel}
+          </div>
+          <div className="flex h-full items-center justify-center bg-yellow">
+            {rightLabel}
+          </div>
         </div>
 
         <div className="border-x-2 border-b-2 border-ink bg-white">
           {rows.map((row, index) => {
-            const p = springIn({frame, fps, delay: 14 + index * 7, damping: 19, stiffness: 150});
+            const p = springIn({
+              frame,
+              fps,
+              delay: 14 + index * 7,
+              damping: 19,
+              stiffness: 150,
+            });
             const leftValue = interpolate(p, [0, 1], [0, row.left]);
             const rightValue = interpolate(p, [0, 1], [0, row.right]);
 
@@ -75,19 +87,26 @@ export const DistributionComparisonTable: React.FC<{
               <div
                 key={row.name}
                 className={`grid h-[103px] grid-cols-3 items-center text-[30px] ${
-                  index < rows.length - 1 ? "border-b-2 border-dashed border-ink/20" : ""
+                  index < rows.length - 1
+                    ? "border-b-2 border-dashed border-ink/20"
+                    : ""
                 }`}
-                style={{opacity: p, transform: `translateX(${(1 - p) * 24}px)`}}
+                style={{
+                  opacity: p,
+                  transform: `translateX(${(1 - p) * 24}px)`,
+                }}
               >
                 <div className="pl-14 font-semibold">
-                  {leftValue.toFixed(1)}{leftUnit}
+                  {leftValue.toFixed(1)}
+                  {leftUnit}
                 </div>
                 <div className="flex items-center justify-center gap-5 font-semibold">
                   <span className="text-[34px]">{row.icon}</span>
                   <span>{row.name}</span>
                 </div>
                 <div className="pr-14 text-right font-semibold">
-                  {rightValue.toFixed(1)}{rightUnit}
+                  {rightValue.toFixed(1)}
+                  {rightUnit}
                 </div>
               </div>
             );

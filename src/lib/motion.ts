@@ -2,8 +2,8 @@
  * Core motion helpers — fade / slide / spring / reveal / count.
  * Deterministic frame-driven animation only (no CSS transitions).
  */
-import {Easing, interpolate, spring} from "remotion";
-import {animation} from "../style/theme";
+import { Easing, interpolate, spring } from "remotion";
+import { animation } from "../style/theme";
 
 export const tween = (
   frame: number,
@@ -58,7 +58,7 @@ export const scaleIn = (frame: number, delay = 0) => {
 
 export const highlight = (frame: number, delay = 0, duration = 20) => {
   const p = progress(frame, delay, duration);
-  return {backgroundSize: `${p * 100}% 100%`};
+  return { backgroundSize: `${p * 100}% 100%` };
 };
 
 export const springIn = ({
@@ -79,22 +79,14 @@ export const springIn = ({
   spring({
     fps,
     frame: Math.max(0, frame - delay),
-    config: {damping, stiffness, mass},
+    config: { damping, stiffness, mass },
   });
 
-export const floatY = (
-  frame: number,
-  amplitude = 5,
-  period = 110,
-  phase = 0,
-) => Math.sin(((frame + phase) / period) * Math.PI * 2) * amplitude;
+export const floatY = (frame: number, amplitude = 5, period = 110, phase = 0) =>
+  Math.sin(((frame + phase) / period) * Math.PI * 2) * amplitude;
 
-export const floatX = (
-  frame: number,
-  amplitude = 4,
-  period = 130,
-  phase = 0,
-) => Math.cos(((frame + phase) / period) * Math.PI * 2) * amplitude;
+export const floatX = (frame: number, amplitude = 4, period = 130, phase = 0) =>
+  Math.cos(((frame + phase) / period) * Math.PI * 2) * amplitude;
 
 export const countTo = (
   frame: number,

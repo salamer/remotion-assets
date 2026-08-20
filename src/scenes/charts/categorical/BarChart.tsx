@@ -1,18 +1,15 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {fadeUp} from "../../../lib/motion";
+import { Frame } from "../../../components/Frame";
+import { fadeUp } from "../../../lib/motion";
 
 const data = [
-  {year: "2020", value: 3.4},
-  {year: "2021", value: 6.0},
-  {year: "2022", value: 8.4},
-  {year: "2023", value: 9.9},
-  {year: "2024", value: 11.1},
+  { year: "2020", value: 3.4 },
+  { year: "2021", value: 6.0 },
+  { year: "2022", value: 8.4 },
+  { year: "2023", value: 9.9 },
+  { year: "2024", value: 11.1 },
 ];
 
 const MAX = 12;
@@ -22,25 +19,26 @@ export const BarChart: React.FC = () => {
 
   return (
     <Frame>
-
       <div style={fadeUp(frame, 0)}>
-
-        <div className="
+        <div
+          className="
           text-[28px]
           tracking-[0.12em]
           text-muted
-        ">
+        "
+        >
           AIRBNB REVENUE
         </div>
 
-        <div className="
+        <div
+          className="
           mt-3
           text-[60px]
           font-semibold
-        ">
+        "
+        >
           Revenue almost tripled.
         </div>
-
       </div>
 
       <div
@@ -55,15 +53,10 @@ export const BarChart: React.FC = () => {
           px-6
         "
       >
-
         {data.map((item, index) => {
-
           const p = interpolate(
             frame,
-            [
-              12 + index * 5,
-              34 + index * 5,
-            ],
+            [12 + index * 5, 34 + index * 5],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -71,11 +64,9 @@ export const BarChart: React.FC = () => {
             },
           );
 
-          const height =
-            (item.value / MAX) * 480 * p;
+          const height = (item.value / MAX) * 480 * p;
 
-          const latest =
-            index === data.length - 1;
+          const latest = index === data.length - 1;
 
           return (
             <div
@@ -88,7 +79,6 @@ export const BarChart: React.FC = () => {
                 justify-end
               "
             >
-
               <div
                 className="
                   mb-4
@@ -109,11 +99,7 @@ export const BarChart: React.FC = () => {
                   border-b-0
                   border-ink
 
-                  ${
-                    latest
-                      ? "bg-yellow"
-                      : "bg-white"
-                  }
+                  ${latest ? "bg-yellow" : "bg-white"}
                 `}
                 style={{
                   height,
@@ -128,13 +114,10 @@ export const BarChart: React.FC = () => {
               >
                 {item.year}
               </div>
-
             </div>
           );
         })}
-
       </div>
-
     </Frame>
   );
 };

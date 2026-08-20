@@ -1,7 +1,7 @@
 import React from "react";
 
-import {CHARTS_DEMO_SHOWCASE} from "../compositions";
-import {ShowcaseReel, reelDuration} from "../ShowcaseReel";
+import { CHARTS_DEMO_SHOWCASE } from "../compositions";
+import { ShowcaseReel, reelDuration } from "../ShowcaseReel";
 
 export const CHARTS_REEL_DURATION = reelDuration(CHARTS_DEMO_SHOWCASE);
 

@@ -1,13 +1,10 @@
 import React from "react";
-import {Img, interpolate, useCurrentFrame} from "remotion";
+import { Img, interpolate, useCurrentFrame } from "remotion";
 
-import {
-  getImageSrc,
-  type ImageCategory,
-} from "../../assets";
-import {Frame} from "../../components/Frame";
-import {SceneHeader} from "../../components/SceneHeader";
-import {shadows} from "../../style/theme";
+import { getImageSrc, type ImageCategory } from "../../assets";
+import { Frame } from "../../components/Frame";
+import { SceneHeader } from "../../components/SceneHeader";
+import { shadows } from "../../style/theme";
 
 type Props = {
   src?: string;
@@ -45,7 +42,7 @@ export const ScreenshotZoom: React.FC<Props> = ({
 
       <div
         className="mt-10 h-[650px] overflow-hidden border-2 border-ink bg-white"
-        style={{boxShadow: shadows.brutal}}
+        style={{ boxShadow: shadows.brutal }}
       >
         {imageRef ? (
           <Img

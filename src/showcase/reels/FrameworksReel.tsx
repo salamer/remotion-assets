@@ -1,7 +1,7 @@
 import React from "react";
 
-import {FRAMEWORKS_DEMO_SHOWCASE} from "../compositions";
-import {ShowcaseReel, reelDuration} from "../ShowcaseReel";
+import { FRAMEWORKS_DEMO_SHOWCASE } from "../compositions";
+import { ShowcaseReel, reelDuration } from "../ShowcaseReel";
 
 export const FRAMEWORKS_REEL_DURATION = reelDuration(FRAMEWORKS_DEMO_SHOWCASE);
 

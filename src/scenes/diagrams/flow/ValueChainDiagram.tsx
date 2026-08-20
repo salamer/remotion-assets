@@ -1,10 +1,10 @@
 import React from "react";
-import {useCurrentFrame, useVideoConfig} from "remotion";
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {Source} from "../../../components/Source";
-import {countTo, springIn, tween} from "../../../lib/motion";
-import {shadows} from "../../../style/theme";
+import { useCurrentFrame, useVideoConfig } from "remotion";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { Source } from "../../../components/Source";
+import { countTo, springIn, tween } from "../../../lib/motion";
+import { shadows } from "../../../style/theme";
 
 export type ValueChainStage = {
   label: string;
@@ -25,11 +25,52 @@ export type ValueChainDiagramProps = {
 };
 
 const DEFAULT_STAGES: ValueChainStage[] = [
-  {label: "IP / DESIGN", subtitle: "Scarce know-how", icon: "🧠", metric: 78, metricLabel: "GROSS MARGIN", unit: "%", capture: 32, accent: true},
-  {label: "EQUIPMENT", subtitle: "Critical machines", icon: "⚙️", metric: 48, metricLabel: "GROSS MARGIN", unit: "%", capture: 24},
-  {label: "MANUFACTURING", subtitle: "Scale + capex", icon: "🏭", metric: 41, metricLabel: "GROSS MARGIN", unit: "%", capture: 21},
-  {label: "ASSEMBLY", subtitle: "More competition", icon: "📦", metric: 16, metricLabel: "GROSS MARGIN", unit: "%", capture: 9},
-  {label: "DISTRIBUTION", subtitle: "Access to demand", icon: "🛒", metric: 24, metricLabel: "GROSS MARGIN", unit: "%", capture: 14},
+  {
+    label: "IP / DESIGN",
+    subtitle: "Scarce know-how",
+    icon: "🧠",
+    metric: 78,
+    metricLabel: "GROSS MARGIN",
+    unit: "%",
+    capture: 32,
+    accent: true,
+  },
+  {
+    label: "EQUIPMENT",
+    subtitle: "Critical machines",
+    icon: "⚙️",
+    metric: 48,
+    metricLabel: "GROSS MARGIN",
+    unit: "%",
+    capture: 24,
+  },
+  {
+    label: "MANUFACTURING",
+    subtitle: "Scale + capex",
+    icon: "🏭",
+    metric: 41,
+    metricLabel: "GROSS MARGIN",
+    unit: "%",
+    capture: 21,
+  },
+  {
+    label: "ASSEMBLY",
+    subtitle: "More competition",
+    icon: "📦",
+    metric: 16,
+    metricLabel: "GROSS MARGIN",
+    unit: "%",
+    capture: 9,
+  },
+  {
+    label: "DISTRIBUTION",
+    subtitle: "Access to demand",
+    icon: "🛒",
+    metric: 24,
+    metricLabel: "GROSS MARGIN",
+    unit: "%",
+    capture: 14,
+  },
 ];
 
 export const ValueChainDiagram: React.FC<ValueChainDiagramProps> = ({
@@ -39,17 +80,31 @@ export const ValueChainDiagram: React.FC<ValueChainDiagramProps> = ({
   source = "ILLUSTRATIVE INDUSTRY ECONOMICS",
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const totalCapture = stages.reduce((sum, s) => sum + (s.capture ?? 0), 0) || 1;
+  const { fps } = useVideoConfig();
+  const totalCapture =
+    stages.reduce((sum, s) => sum + (s.capture ?? 0), 0) || 1;
 
   return (
     <Frame>
-      <SceneHeader eyebrow={eyebrow} title={title} subtitle="Margin and capture per stage along the chain." />
+      <SceneHeader
+        eyebrow={eyebrow}
+        title={title}
+        subtitle="Margin and capture per stage along the chain."
+      />
 
       <div className="mt-10 flex items-stretch gap-3">
         {stages.map((stage, index) => {
-          const p = springIn({frame, fps, delay: index * 7, damping: 17, stiffness: 125});
-          const metric = stage.metric == null ? null : countTo(frame, stage.metric, 16 + index * 7, 25);
+          const p = springIn({
+            frame,
+            fps,
+            delay: index * 7,
+            damping: 17,
+            stiffness: 125,
+          });
+          const metric =
+            stage.metric == null
+              ? null
+              : countTo(frame, stage.metric, 16 + index * 7, 25);
           return (
             <React.Fragment key={stage.label}>
               <div
@@ -62,16 +117,25 @@ export const ValueChainDiagram: React.FC<ValueChainDiagramProps> = ({
               >
                 <div>
                   <div className="text-[54px]">{stage.icon ?? "◻️"}</div>
-                  <div className="mt-5 text-[26px] font-semibold leading-[1.05]">{stage.label}</div>
-                  {stage.subtitle ? <div className="mt-3 text-[18px] leading-[1.35] text-muted">{stage.subtitle}</div> : null}
+                  <div className="mt-5 text-[26px] font-semibold leading-[1.05]">
+                    {stage.label}
+                  </div>
+                  {stage.subtitle ? (
+                    <div className="mt-3 text-[18px] leading-[1.35] text-muted">
+                      {stage.subtitle}
+                    </div>
+                  ) : null}
                 </div>
 
                 {metric != null ? (
                   <div>
                     <div className="text-[48px] font-semibold tracking-[-0.05em]">
-                      {Math.round(metric)}{stage.unit ?? ""}
+                      {Math.round(metric)}
+                      {stage.unit ?? ""}
                     </div>
-                    <div className="mt-1 text-[16px] tracking-[0.08em] text-muted">{stage.metricLabel ?? "METRIC"}</div>
+                    <div className="mt-1 text-[16px] tracking-[0.08em] text-muted">
+                      {stage.metricLabel ?? "METRIC"}
+                    </div>
                   </div>
                 ) : null}
               </div>
@@ -79,7 +143,7 @@ export const ValueChainDiagram: React.FC<ValueChainDiagramProps> = ({
               {index < stages.length - 1 ? (
                 <div
                   className="flex w-[54px] items-center justify-center text-[44px] font-semibold"
-                  style={{opacity: tween(frame, 10 + index * 7, 12)}}
+                  style={{ opacity: tween(frame, 10 + index * 7, 12) }}
                 >
                   →
                 </div>
@@ -102,9 +166,13 @@ export const ValueChainDiagram: React.FC<ValueChainDiagramProps> = ({
               <div
                 key={`capture-${stage.label}`}
                 className={`flex items-center justify-center overflow-hidden border-r-2 border-ink last:border-r-0 ${stage.accent ? "bg-yellow" : index % 2 ? "bg-soft" : "bg-white"}`}
-                style={{width: `${share * p}%`}}
+                style={{ width: `${share * p}%` }}
               >
-                {p > 0.68 && share > 8 ? <span className="text-[17px] font-semibold">{Math.round(share)}%</span> : null}
+                {p > 0.68 && share > 8 ? (
+                  <span className="text-[17px] font-semibold">
+                    {Math.round(share)}%
+                  </span>
+                ) : null}
               </div>
             );
           })}

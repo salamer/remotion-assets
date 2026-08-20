@@ -1,12 +1,9 @@
 import React from "react";
-import {Img, interpolate, useCurrentFrame} from "remotion";
+import { Img, interpolate, useCurrentFrame } from "remotion";
 
-import {
-  getImageSrc,
-  type ImageCategory,
-} from "../../assets";
-import {Frame} from "../../components/Frame";
-import {SceneHeader} from "../../components/SceneHeader";
+import { getImageSrc, type ImageCategory } from "../../assets";
+import { Frame } from "../../components/Frame";
+import { SceneHeader } from "../../components/SceneHeader";
 
 type Props = {
   /**

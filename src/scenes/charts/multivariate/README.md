@@ -3,7 +3,11 @@
 多维定量画像。
 
 ```ts
-import { RadarChart, ParallelCoordinates, QuadrantScatterChart } from "./scenes";
+import {
+  RadarChart,
+  ParallelCoordinates,
+  QuadrantScatterChart,
+} from "./scenes";
 ```
 
 ---

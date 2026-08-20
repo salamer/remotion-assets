@@ -1,12 +1,12 @@
 import React from "react";
-import {useCurrentFrame} from "remotion";
+import { useCurrentFrame } from "remotion";
 
-import {fadeUp} from "../lib/motion";
-import {spacing, textClasses} from "../style/theme";
+import { fadeUp } from "../lib/motion";
+import { spacing, textClasses } from "../style/theme";
 
 export const Source: React.FC<{
   children: React.ReactNode;
-}> = ({children}) => {
+}> = ({ children }) => {
   const frame = useCurrentFrame();
 
   return (

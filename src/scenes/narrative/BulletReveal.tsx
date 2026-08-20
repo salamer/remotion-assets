@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {SceneHeader} from "../../components/SceneHeader";
+import { Frame } from "../../components/Frame";
+import { SceneHeader } from "../../components/SceneHeader";
 
 const bullets = [
   {
@@ -37,14 +34,10 @@ export const BulletReveal: React.FC = () => {
       />
 
       <div className="mt-16 space-y-5">
-
         {bullets.map((bullet, index) => {
           const p = interpolate(
             frame,
-            [
-              10 + index * 12,
-              22 + index * 12,
-            ],
+            [10 + index * 12, 22 + index * 12],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -62,21 +55,15 @@ export const BulletReveal: React.FC = () => {
               "
               style={{
                 opacity: p,
-                transform:
-                  `translateX(${(1 - p) * 25}px)`,
+                transform: `translateX(${(1 - p) * 25}px)`,
               }}
             >
-              <div className="text-[52px]">
-                {bullet.icon}
-              </div>
+              <div className="text-[52px]">{bullet.icon}</div>
 
-              <div className="text-[35px] font-semibold">
-                {bullet.text}
-              </div>
+              <div className="text-[35px] font-semibold">{bullet.text}</div>
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

@@ -2,9 +2,9 @@
  * Overlay shared shell — transparent video overlays (CompareCards, PresenterOrbitOverlay).
  */
 import React from "react";
-import {AbsoluteFill} from "remotion";
+import { AbsoluteFill } from "remotion";
 
-import {colors, typography} from "../../style/theme";
+import { colors, typography } from "../../style/theme";
 
 export const OVERLAY_COLORS = {
   paper: colors.paper,
@@ -20,7 +20,7 @@ export const EXPRESSIVE_COLORS = OVERLAY_COLORS;
 export const OverlayShell: React.FC<{
   children: React.ReactNode;
   transparent?: boolean;
-}> = ({children, transparent = true}) => (
+}> = ({ children, transparent = true }) => (
   <AbsoluteFill
     style={{
       background: transparent ? "transparent" : OVERLAY_COLORS.paper,
@@ -34,8 +34,8 @@ export const OverlayShell: React.FC<{
 );
 
 export const InlineLegend: React.FC<{
-  items: Array<{label: string; kind: "bar" | "line"}>;
-}> = ({items}) => (
+  items: Array<{ label: string; kind: "bar" | "line" }>;
+}> = ({ items }) => (
   <div className="flex items-center gap-7 text-[19px] text-muted">
     {items.map((item) => (
       <div key={item.label} className="flex items-center gap-3">

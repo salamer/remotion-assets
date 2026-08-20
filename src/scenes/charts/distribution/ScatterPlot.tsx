@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
 
 const data = [
   {
@@ -41,7 +38,6 @@ export const ScatterPlot: React.FC = () => {
       />
 
       <div className="relative mt-16 h-[600px] border-b-2 border-l-2 border-ink">
-
         <div className="absolute -left-[50px] top-[240px] -rotate-90 text-[20px] text-muted">
           VALUATION
         </div>
@@ -53,10 +49,7 @@ export const ScatterPlot: React.FC = () => {
         {data.map((item, index) => {
           const p = interpolate(
             frame,
-            [
-              10 + index * 8,
-              25 + index * 8,
-            ],
+            [10 + index * 8, 25 + index * 8],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -80,15 +73,13 @@ export const ScatterPlot: React.FC = () => {
                 left: `${item.x}%`,
                 bottom: `${item.y}%`,
                 opacity: p,
-                transform:
-                  `translate(-50%, 50%) scale(${p})`,
+                transform: `translate(-50%, 50%) scale(${p})`,
               }}
             >
               {item.name}
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

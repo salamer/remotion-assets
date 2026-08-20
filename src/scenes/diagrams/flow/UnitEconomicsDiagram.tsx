@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
 
 const split = [
   {
@@ -23,15 +20,10 @@ const split = [
 export const UnitEconomicsDiagram: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const p = interpolate(
-    frame,
-    [15, 50],
-    [0, 1],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    },
-  );
+  const p = interpolate(frame, [15, 50], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   return (
     <Frame>
@@ -41,13 +33,11 @@ export const UnitEconomicsDiagram: React.FC = () => {
       />
 
       <div className="mt-20">
-
         <div className="text-[120px] font-semibold tracking-[-0.07em]">
           $100
         </div>
 
         <div className="mt-12 flex h-[160px] border-2 border-ink">
-
           {split.map((item) => (
             <div
               key={item.label}
@@ -62,26 +52,22 @@ export const UnitEconomicsDiagram: React.FC = () => {
                 ${item.className}
               `}
               style={{
-                width:
-                  `${item.value * p}%`,
+                width: `${item.value * p}%`,
               }}
             >
               {p > 0.6 && (
                 <>
                   {item.label}
-                  &nbsp;/&nbsp;
-                  ${item.value}
+                  &nbsp;/&nbsp; ${item.value}
                 </>
               )}
             </div>
           ))}
-
         </div>
 
         <div className="mt-10 text-[27px] text-muted">
           Booking value ≠ Airbnb revenue.
         </div>
-
       </div>
     </Frame>
   );

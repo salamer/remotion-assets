@@ -1,10 +1,10 @@
 import React from "react";
-import {useCurrentFrame, useVideoConfig} from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {Source} from "../../../components/Source";
-import {springIn, tween} from "../../../lib/motion";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { Source } from "../../../components/Source";
+import { springIn, tween } from "../../../lib/motion";
 import {
   StructuralDiagram,
   TreeEdge,
@@ -16,7 +16,7 @@ import {
   NodeCard,
   treeNodeStyle,
 } from "../../../components/viz/structuralShared";
-import type {TreeNodeBase} from "../../../components/viz/structuralShared";
+import type { TreeNodeBase } from "../../../components/viz/structuralShared";
 
 /** KPI 拆解树：边上的 relation（× ÷ + −）表示数学关系，不是汇报线 */
 export type DriverNode = TreeNodeBase & {
@@ -47,8 +47,20 @@ const DEFAULT_ROOT: DriverNode = {
       icon: "👥",
       relation: "×",
       children: [
-        {id: "traffic", label: "TRAFFIC", subtitle: "Visitors", icon: "🌐", relation: "×"},
-        {id: "conversion", label: "CONVERSION", subtitle: "Visit → paid", icon: "🎯", relation: "×"},
+        {
+          id: "traffic",
+          label: "TRAFFIC",
+          subtitle: "Visitors",
+          icon: "🌐",
+          relation: "×",
+        },
+        {
+          id: "conversion",
+          label: "CONVERSION",
+          subtitle: "Visit → paid",
+          icon: "🎯",
+          relation: "×",
+        },
       ],
     },
     {
@@ -58,8 +70,21 @@ const DEFAULT_ROOT: DriverNode = {
       icon: "🧾",
       relation: "×",
       children: [
-        {id: "price", label: "PRICE", subtitle: "Per transaction", icon: "🏷️", relation: "×", accent: true},
-        {id: "frequency", label: "FREQUENCY", subtitle: "Transactions / user", icon: "🔁", relation: "×"},
+        {
+          id: "price",
+          label: "PRICE",
+          subtitle: "Per transaction",
+          icon: "🏷️",
+          relation: "×",
+          accent: true,
+        },
+        {
+          id: "frequency",
+          label: "FREQUENCY",
+          subtitle: "Transactions / user",
+          icon: "🔁",
+          relation: "×",
+        },
       ],
     },
   ],
@@ -73,7 +98,7 @@ export const MetricDriverTree: React.FC<MetricDriverTreeProps> = ({
   source = "ILLUSTRATIVE KPI DECOMPOSITION",
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const { fps } = useVideoConfig();
   const nodes = layoutStructuralTree(root);
   const byId = new Map(nodes.map((n) => [n.id, n]));
 
@@ -82,7 +107,11 @@ export const MetricDriverTree: React.FC<MetricDriverTreeProps> = ({
       <SceneHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
 
       <StructuralDiagram>
-        <svg className="absolute inset-0 overflow-visible" width="100%" height="100%">
+        <svg
+          className="absolute inset-0 overflow-visible"
+          width="100%"
+          height="100%"
+        >
           {nodes
             .filter((node) => node.parentId)
             .map((node) => {
@@ -108,11 +137,17 @@ export const MetricDriverTree: React.FC<MetricDriverTreeProps> = ({
             stiffness: 130,
           });
           return (
-            <div key={node.id} className="absolute" style={treeNodeStyle(node.x, node.y, p, 20)}>
+            <div
+              key={node.id}
+              className="absolute"
+              style={treeNodeStyle(node.x, node.y, p, 20)}
+            >
               <NodeCard
                 label={node.label}
                 subtitle={
-                  node.value ? `${node.subtitle ?? ""} · ${node.value}` : node.subtitle
+                  node.value
+                    ? `${node.subtitle ?? ""} · ${node.value}`
+                    : node.subtitle
                 }
                 icon={node.icon}
                 accent={node.accent}

@@ -1,8 +1,8 @@
 import React from "react";
 
-import {TickerOverlay} from "../scenes/overlays/TickerOverlay";
-import {Frame} from "../components/Frame";
-import {SceneHeader} from "../components/SceneHeader";
+import { TickerOverlay } from "../scenes/overlays/TickerOverlay";
+import { Frame } from "../components/Frame";
+import { SceneHeader } from "../components/SceneHeader";
 
 type TickerProps = React.ComponentProps<typeof TickerOverlay>;
 
@@ -13,7 +13,10 @@ type TickerProps = React.ComponentProps<typeof TickerOverlay>;
 export const TickerPreview: React.FC<TickerProps> = (props) => {
   return (
     <Frame>
-      <SceneHeader eyebrow="MARKET DATA" title="Live ticker overlay for B-roll." />
+      <SceneHeader
+        eyebrow="MARKET DATA"
+        title="Live ticker overlay for B-roll."
+      />
       <TickerOverlay {...props} />
     </Frame>
   );

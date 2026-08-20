@@ -4,12 +4,12 @@
 
 ## 目录说明
 
-| 目录 | 用途 | 对应场景 |
-|------|------|----------|
-| `maps/` | 地图 PNG/SVG | `MapCallout` |
-| `screenshots/` | 年报、界面截图 | `ScreenshotZoom` |
-| `photos/` | 人物、产品照片 | `ImageCard` |
-| `logos/` | 品牌 Logo | `LogoCloud`（未来可接图片） |
+| 目录           | 用途           | 对应场景                    |
+| -------------- | -------------- | --------------------------- |
+| `maps/`        | 地图 PNG/SVG   | `MapCallout`                |
+| `screenshots/` | 年报、界面截图 | `ScreenshotZoom`            |
+| `photos/`      | 人物、产品照片 | `ImageCard`                 |
+| `logos/`       | 品牌 Logo      | `LogoCloud`（未来可接图片） |
 
 ## 使用步骤
 

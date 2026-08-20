@@ -1,21 +1,21 @@
 import React from "react";
-import {useCurrentFrame, useVideoConfig} from "remotion";
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {springIn, stagger} from "../../../lib/chartMotion";
-import {layout, spacing} from "../../../style/theme";
-import {VIZ} from "../../../components/viz/chartPrimitives";
+import { useCurrentFrame, useVideoConfig } from "remotion";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { springIn, stagger } from "../../../lib/chartMotion";
+import { layout, spacing } from "../../../style/theme";
+import { VIZ } from "../../../components/viz/chartPrimitives";
 
-type Party = {label: string; icon?: string; detail?: string};
+type Party = { label: string; icon?: string; detail?: string };
 const LEFT: Party[] = [
-  {label: "BUYERS", icon: "🛒", detail: "Demand"},
-  {label: "ADVERTISERS", icon: "📣", detail: "Budget"},
-  {label: "USERS", icon: "👤", detail: "Attention"},
+  { label: "BUYERS", icon: "🛒", detail: "Demand" },
+  { label: "ADVERTISERS", icon: "📣", detail: "Budget" },
+  { label: "USERS", icon: "👤", detail: "Attention" },
 ];
 const RIGHT: Party[] = [
-  {label: "SELLERS", icon: "🏪", detail: "Supply"},
-  {label: "CREATORS", icon: "🎬", detail: "Content"},
-  {label: "DEVELOPERS", icon: "💻", detail: "Apps"},
+  { label: "SELLERS", icon: "🏪", detail: "Supply" },
+  { label: "CREATORS", icon: "🎬", detail: "Content" },
+  { label: "DEVELOPERS", icon: "💻", detail: "Apps" },
 ];
 
 const W = layout.width - spacing.framePadding * 2;
@@ -29,7 +29,7 @@ function cardCentersY(count: number) {
   const stack = count * CARD_H + Math.max(0, count - 1) * CARD_GAP;
   const top = (H - stack) / 2;
   return Array.from(
-    {length: count},
+    { length: count },
     (_, i) => top + i * (CARD_H + CARD_GAP) + CARD_H / 2,
   );
 }
@@ -48,8 +48,8 @@ export const TwoSidedMarketplaceDiagram: React.FC<{
   platform = "PLATFORM",
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const cp = springIn({frame, fps, delay: 12});
+  const { fps } = useVideoConfig();
+  const cp = springIn({ frame, fps, delay: 12 });
 
   const sideW = (W - CENTER_W - GAP * 2) / 2;
   const platL = sideW + GAP;
@@ -64,7 +64,7 @@ export const TwoSidedMarketplaceDiagram: React.FC<{
       <SceneHeader eyebrow={eyebrow} title={title} />
       <div
         className="relative mt-10 grid grid-cols-[1fr_360px_1fr] gap-14 items-center"
-        style={{height: H}}
+        style={{ height: H }}
       >
         <div className="space-y-8">
           {left.map((p, i) => {

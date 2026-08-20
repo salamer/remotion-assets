@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {SceneHeader} from "../../components/SceneHeader";
+import { Frame } from "../../components/Frame";
+import { SceneHeader } from "../../components/SceneHeader";
 
 type Event = {
   year: string;
@@ -44,15 +41,10 @@ const events: Event[] = [
 export const Timeline: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const line = interpolate(
-    frame,
-    [15, 55],
-    [0, 1],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    },
-  );
+  const line = interpolate(frame, [15, 55], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   return (
     <Frame>
@@ -62,7 +54,6 @@ export const Timeline: React.FC = () => {
       />
 
       <div className="relative mt-44">
-
         <div className="absolute left-0 right-0 top-[77px] h-[4px] bg-soft">
           <div
             className="h-full bg-ink"
@@ -73,14 +64,10 @@ export const Timeline: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-5 gap-8">
-
           {events.map((event, index) => {
             const p = interpolate(
               frame,
-              [
-                18 + index * 8,
-                30 + index * 8,
-              ],
+              [18 + index * 8, 30 + index * 8],
               [0, 1],
               {
                 extrapolateLeft: "clamp",
@@ -94,13 +81,10 @@ export const Timeline: React.FC = () => {
                 className="text-center"
                 style={{
                   opacity: p,
-                  transform:
-                    `translateY(${(1 - p) * 18}px)`,
+                  transform: `translateY(${(1 - p) * 18}px)`,
                 }}
               >
-                <div className="text-[52px]">
-                  {event.icon}
-                </div>
+                <div className="text-[52px]">{event.icon}</div>
 
                 <div
                   className="
@@ -115,13 +99,10 @@ export const Timeline: React.FC = () => {
                   {event.year}
                 </div>
 
-                <div className="mt-2 text-[22px] text-muted">
-                  {event.title}
-                </div>
+                <div className="mt-2 text-[22px] text-muted">{event.title}</div>
               </div>
             );
           })}
-
         </div>
       </div>
     </Frame>

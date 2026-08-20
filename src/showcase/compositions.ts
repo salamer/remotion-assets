@@ -1,9 +1,9 @@
 /**
  * Studio Composition registry — semantic IDs (Metric-*, Chart-*, Diagram-*, …).
  */
-import type {ComponentType} from "react";
+import type { ComponentType } from "react";
 
-import {SCENE_DURATION} from "../config";
+import { SCENE_DURATION } from "../config";
 import {
   // metrics
   HeroMetric,
@@ -128,8 +128,8 @@ import {
   // overlays
   PresenterOrbitOverlay,
 } from "../scenes";
-import {airbnbShowcase} from "./examples/airbnb";
-import {TickerPreview} from "./TickerPreview";
+import { airbnbShowcase } from "./examples/airbnb";
+import { TickerPreview } from "./TickerPreview";
 
 export type ShowcaseEntry = {
   id: string;
@@ -213,7 +213,12 @@ export const CHARTS_SHOWCASE: ShowcaseEntry[] = [
   withProps("Chart-Marimekko", MarimekkoChart),
   withProps("Chart-NestedComposition", NestedCompositionChart),
   withProps("Chart-Waffle", WaffleChart, undefined, 180),
-  withProps("Chart-DistributionBlocks", DistributionBlocksChart, propsOf("DistributionBlocksChart"), 180),
+  withProps(
+    "Chart-DistributionBlocks",
+    DistributionBlocksChart,
+    propsOf("DistributionBlocksChart"),
+    180,
+  ),
   withProps("Chart-CompositionCompare", CompositionCompareChart),
   withProps("Chart-ContributionBar", ContributionBarChart),
   withProps("Chart-Pictogram", PictogramChart, undefined, 180),
@@ -237,45 +242,98 @@ export const CHARTS_SHOWCASE: ShowcaseEntry[] = [
 export const DIAGRAMS_SHOWCASE: ShowcaseEntry[] = [
   withProps("Diagram-TwoSidedMarketplace", TwoSidedMarketplaceDiagram),
   withProps("Diagram-Sankey", SankeyDiagram, propsOf("SankeyDiagram"), 180),
-  withProps("Diagram-ValueChain", ValueChainDiagram, propsOf("ValueChainDiagram"), 180),
+  withProps(
+    "Diagram-ValueChain",
+    ValueChainDiagram,
+    propsOf("ValueChainDiagram"),
+    180,
+  ),
   withProps("Diagram-ValueChainMap", ValueChainMap),
-  withProps("Diagram-RelationshipGraph", RelationshipGraph, propsOf("RelationshipGraph"), 180),
+  withProps(
+    "Diagram-RelationshipGraph",
+    RelationshipGraph,
+    propsOf("RelationshipGraph"),
+    180,
+  ),
   withProps("Diagram-CausalGraph", CausalGraph, propsOf("CausalGraph"), 180),
   withProps("Diagram-RivalryNetwork", RivalryNetworkDiagram),
   withProps("Diagram-CompetitiveLandscape", CompetitiveLandscapeDiagram),
   withProps("Diagram-EcosystemMap", EcosystemMap),
   withProps("Diagram-CapabilityVenn", CapabilityVennDiagram),
-  withProps("Diagram-HierarchyPyramid", HierarchyPyramid, propsOf("HierarchyPyramid")),
-  withProps("Diagram-OrganizationTree", OrganizationTree, propsOf("OrganizationTree"), 180),
-  withProps("Diagram-OwnershipTree", OwnershipTree, propsOf("OwnershipTree"), 180),
-  withProps("Diagram-BalanceSheet", BalanceSheetDiagram, propsOf("BalanceSheetDiagram"), 180),
-  withProps("Diagram-CapitalStack", CapitalStackDiagram, propsOf("CapitalStackDiagram"), 180),
+  withProps(
+    "Diagram-HierarchyPyramid",
+    HierarchyPyramid,
+    propsOf("HierarchyPyramid"),
+  ),
+  withProps(
+    "Diagram-OrganizationTree",
+    OrganizationTree,
+    propsOf("OrganizationTree"),
+    180,
+  ),
+  withProps(
+    "Diagram-OwnershipTree",
+    OwnershipTree,
+    propsOf("OwnershipTree"),
+    180,
+  ),
+  withProps(
+    "Diagram-BalanceSheet",
+    BalanceSheetDiagram,
+    propsOf("BalanceSheetDiagram"),
+    180,
+  ),
+  withProps(
+    "Diagram-CapitalStack",
+    CapitalStackDiagram,
+    propsOf("CapitalStackDiagram"),
+    180,
+  ),
 ];
 
 export const FRAMEWORKS_SHOWCASE: ShowcaseEntry[] = [
   withProps("Framework-StrategyMatrix", StrategyMatrix, undefined, 180),
   withProps("Framework-RiskMatrix", RiskMatrix, undefined, 180),
-  withProps("Framework-PrioritizationMatrix", PrioritizationMatrix, undefined, 180),
+  withProps(
+    "Framework-PrioritizationMatrix",
+    PrioritizationMatrix,
+    undefined,
+    180,
+  ),
   withProps("Framework-OpportunityMatrix", OpportunityMatrix, undefined, 180),
   withProps("Framework-StrategicRoadmap", StrategicRoadmap, undefined, 180),
   withProps("Framework-ScenarioTree", ScenarioTree, undefined, 180),
   withProps("Framework-BridgeToTarget", BridgeToTarget, undefined, 180),
   withProps("Framework-IssueTree", IssueTree, undefined, 180),
-  withProps("Framework-MetricDriverTree", MetricDriverTree, propsOf("MetricDriverTree"), 180),
+  withProps(
+    "Framework-MetricDriverTree",
+    MetricDriverTree,
+    propsOf("MetricDriverTree"),
+    180,
+  ),
   withProps("Framework-Swimlane", SwimlaneDiagram, undefined, 180),
 ];
 
 export const TABLES_SHOWCASE: ShowcaseEntry[] = [
   withProps("Table-Sparkline", SparklineTable, undefined, 180),
   withProps("Table-BenchmarkScorecard", BenchmarkScorecard, undefined, 180),
-  withProps("Table-DistributionComparison", DistributionComparisonTable, propsOf("DistributionComparisonTable"), 180),
+  withProps(
+    "Table-DistributionComparison",
+    DistributionComparisonTable,
+    propsOf("DistributionComparisonTable"),
+    180,
+  ),
   withProps("Table-CapabilityHeatmap", CapabilityHeatmap, undefined, 180),
 ];
 
 export const NARRATIVE_SHOWCASE: ShowcaseEntry[] = [
   withProps("Narrative-CompareCards", CompareCards, propsOf("CompareCards")),
   withProps("Narrative-ExecutiveSummary", ExecutiveSummary, undefined, 180),
-  withProps("Narrative-PageFlipChoice", PageFlipChoice, propsOf("PageFlipChoice")),
+  withProps(
+    "Narrative-PageFlipChoice",
+    PageFlipChoice,
+    propsOf("PageFlipChoice"),
+  ),
 ];
 
 export const MEDIA_SHOWCASE: ShowcaseEntry[] = [
@@ -283,7 +341,11 @@ export const MEDIA_SHOWCASE: ShowcaseEntry[] = [
 ];
 
 export const OVERLAY_SHOWCASE: ShowcaseEntry[] = [
-  withProps("Overlay-PresenterOrbit", PresenterOrbitOverlay, propsOf("PresenterOrbitOverlay")),
+  withProps(
+    "Overlay-PresenterOrbit",
+    PresenterOrbitOverlay,
+    propsOf("PresenterOrbitOverlay"),
+  ),
 ];
 
 export const METRICS_SHOWCASE: ShowcaseEntry[] = [
@@ -357,9 +419,18 @@ export const ALL_SHOWCASE_COMPOSITIONS: ShowcaseEntry[] = [
   ...OVERLAY_SHOWCASE,
 ];
 
-export const CHARTS_DEMO_SHOWCASE = pick(CHARTS_DEMO_IDS, ALL_SHOWCASE_COMPOSITIONS);
-export const DIAGRAMS_DEMO_SHOWCASE = pick(DIAGRAMS_DEMO_IDS, ALL_SHOWCASE_COMPOSITIONS);
-export const FRAMEWORKS_DEMO_SHOWCASE = pick(FRAMEWORKS_DEMO_IDS, ALL_SHOWCASE_COMPOSITIONS);
+export const CHARTS_DEMO_SHOWCASE = pick(
+  CHARTS_DEMO_IDS,
+  ALL_SHOWCASE_COMPOSITIONS,
+);
+export const DIAGRAMS_DEMO_SHOWCASE = pick(
+  DIAGRAMS_DEMO_IDS,
+  ALL_SHOWCASE_COMPOSITIONS,
+);
+export const FRAMEWORKS_DEMO_SHOWCASE = pick(
+  FRAMEWORKS_DEMO_IDS,
+  ALL_SHOWCASE_COMPOSITIONS,
+);
 
 /** @deprecated Use CORE_SHOWCASE */
 export const STANDARD_SHOWCASE = CORE_SHOWCASE;

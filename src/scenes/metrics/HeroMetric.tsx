@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {BrutalCard} from "../../components/BrutalCard";
-import {fadeUp} from "../../lib/motion";
+import { Frame } from "../../components/Frame";
+import { BrutalCard } from "../../components/BrutalCard";
+import { fadeUp } from "../../lib/motion";
 
 type Props = {
   company?: string;
@@ -25,35 +22,26 @@ export const HeroMetric: React.FC<Props> = ({
 }) => {
   const frame = useCurrentFrame();
 
-  const number = interpolate(
-    frame,
-    [10, 50],
-    [0, value],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    },
-  );
+  const number = interpolate(frame, [10, 50], [0, value], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   return (
     <Frame>
       <div className="flex h-full flex-col justify-between">
+        <div className="flex justify-between" style={fadeUp(frame, 0)}>
+          <div className="text-[28px] font-semibold">{company}</div>
 
-        <div
-          className="flex justify-between"
-          style={fadeUp(frame, 0)}
-        >
-          <div className="text-[28px] font-semibold">
-            {company}
-          </div>
-
-          <div className="
+          <div
+            className="
             border-2 border-ink
             bg-yellow
             px-5 py-2
             text-[22px]
             font-semibold
-          ">
+          "
+          >
             2025
           </div>
         </div>
@@ -81,9 +69,7 @@ export const HeroMetric: React.FC<Props> = ({
             style={fadeUp(frame, 8)}
           >
             ${number.toFixed(1)}
-            <span className="text-[80px]">
-              {suffix}
-            </span>
+            <span className="text-[80px]">{suffix}</span>
           </div>
 
           <div
@@ -91,28 +77,24 @@ export const HeroMetric: React.FC<Props> = ({
             style={fadeUp(frame, 28)}
           >
             <BrutalCard yellow>
-              <div className="
+              <div
+                className="
                 px-6 py-4
                 text-[36px]
                 font-semibold
-              ">
+              "
+              >
                 ▲ +{growth}%
               </div>
             </BrutalCard>
 
-            <div className="text-[26px] text-muted">
-              year over year
-            </div>
+            <div className="text-[26px] text-muted">year over year</div>
           </div>
         </div>
 
-        <div
-          className="text-[22px] text-muted"
-          style={fadeUp(frame, 40)}
-        >
+        <div className="text-[22px] text-muted" style={fadeUp(frame, 40)}>
           SOURCE / COMPANY FILINGS
         </div>
-
       </div>
     </Frame>
   );

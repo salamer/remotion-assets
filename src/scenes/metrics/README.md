@@ -3,7 +3,13 @@
 1～6 个 headline 数字。看线框选组件。
 
 ```ts
-import { HeroMetric, SplitMetric, ShareMetric, MetricGrid, FactGrid } from "./scenes";
+import {
+  HeroMetric,
+  SplitMetric,
+  ShareMetric,
+  MetricGrid,
+  FactGrid,
+} from "./scenes";
 ```
 
 ---

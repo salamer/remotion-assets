@@ -1,6 +1,6 @@
 import React from "react";
 
-import {shadows} from "../style/theme";
+import { shadows } from "../style/theme";
 
 type Props = {
   children: React.ReactNode;

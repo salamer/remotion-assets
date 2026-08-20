@@ -25,13 +25,13 @@ pnpm dev
 
 Studio reels:
 
-| Composition | Contents |
-|---|---|
-| `CoreComponentsReel` | Core metrics / charts / narrative / media |
-| `ChartsReel` | Curated advanced charts |
-| `DiagramsReel` | Flow / relationships / hierarchy / finance |
-| `FrameworksReel` | Strategy / planning / process |
-| `FullShowcaseReel` | Everything |
+| Composition          | Contents                                   |
+| -------------------- | ------------------------------------------ |
+| `CoreComponentsReel` | Core metrics / charts / narrative / media  |
+| `ChartsReel`         | Curated advanced charts                    |
+| `DiagramsReel`       | Flow / relationships / hierarchy / finance |
+| `FrameworksReel`     | Strategy / planning / process              |
+| `FullShowcaseReel`   | Everything                                 |
 
 Render examples:
 
@@ -57,7 +57,7 @@ src/scenes/
 ```
 
 ```ts
-import {HeroMetric, LineChart, SankeyDiagram, RiskMatrix} from "./scenes";
+import { HeroMetric, LineChart, SankeyDiagram, RiskMatrix } from "./scenes";
 ```
 
 See **[CATALOG.md](./CATALOG.md)** for the full component list, **[component.md](./component.md)** for selection guidance, and **[MIGRATION.md](./MIGRATION.md)** for rename/move history.

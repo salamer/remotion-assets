@@ -1,4 +1,4 @@
-import {staticFile} from "remotion";
+import { staticFile } from "remotion";
 
 /**
  * Assets 资源管理

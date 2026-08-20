@@ -1,11 +1,11 @@
 import React from "react";
-import {useCurrentFrame, useVideoConfig} from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {Source} from "../../../components/Source";
-import {countTo, springIn, tween} from "../../../lib/motion";
-import {colors} from "../../../style/theme";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { Source } from "../../../components/Source";
+import { countTo, springIn, tween } from "../../../lib/motion";
+import { colors } from "../../../style/theme";
 import {
   EdgeLabel,
   NodeCard,
@@ -43,20 +43,63 @@ export type SankeyDiagramProps = {
 };
 
 const DEFAULT_NODES: SankeyNode[] = [
-  {id: "tax", label: "TAXES", subtitle: "Households & firms", icon: "🧾", column: 0, order: 0},
-  {id: "fees", label: "FEES", subtitle: "Non-tax revenue", icon: "💳", column: 0, order: 1},
-  {id: "gov", label: "GOVERNMENT", subtitle: "Budget pool", icon: "🏛️", column: 1, order: 0, accent: true},
-  {id: "pension", label: "PENSIONS", subtitle: "Transfers", icon: "👴", column: 2, order: 0},
-  {id: "health", label: "HEALTHCARE", subtitle: "Public services", icon: "🏥", column: 2, order: 1},
-  {id: "infra", label: "INFRA", subtitle: "Investment", icon: "🏗️", column: 2, order: 2},
+  {
+    id: "tax",
+    label: "TAXES",
+    subtitle: "Households & firms",
+    icon: "🧾",
+    column: 0,
+    order: 0,
+  },
+  {
+    id: "fees",
+    label: "FEES",
+    subtitle: "Non-tax revenue",
+    icon: "💳",
+    column: 0,
+    order: 1,
+  },
+  {
+    id: "gov",
+    label: "GOVERNMENT",
+    subtitle: "Budget pool",
+    icon: "🏛️",
+    column: 1,
+    order: 0,
+    accent: true,
+  },
+  {
+    id: "pension",
+    label: "PENSIONS",
+    subtitle: "Transfers",
+    icon: "👴",
+    column: 2,
+    order: 0,
+  },
+  {
+    id: "health",
+    label: "HEALTHCARE",
+    subtitle: "Public services",
+    icon: "🏥",
+    column: 2,
+    order: 1,
+  },
+  {
+    id: "infra",
+    label: "INFRA",
+    subtitle: "Investment",
+    icon: "🏗️",
+    column: 2,
+    order: 2,
+  },
 ];
 
 const DEFAULT_LINKS: SankeyLink[] = [
-  {from: "tax", to: "gov", value: 82, label: "82", accent: true},
-  {from: "fees", to: "gov", value: 18, label: "18"},
-  {from: "gov", to: "pension", value: 38, label: "38"},
-  {from: "gov", to: "health", value: 34, label: "34", accent: true},
-  {from: "gov", to: "infra", value: 28, label: "28"},
+  { from: "tax", to: "gov", value: 82, label: "82", accent: true },
+  { from: "fees", to: "gov", value: 18, label: "18" },
+  { from: "gov", to: "pension", value: 38, label: "38" },
+  { from: "gov", to: "health", value: 34, label: "34", accent: true },
+  { from: "gov", to: "infra", value: 28, label: "28" },
 ];
 
 const NODE_HALF_W = 118;
@@ -71,12 +114,14 @@ export const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
   source = "ILLUSTRATIVE FLOW / DEMO",
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const {width, height} = STRUCTURAL_CANVAS;
-  const columns = [...new Set(nodes.map((n) => n.column))].sort((a, b) => a - b);
+  const { fps } = useVideoConfig();
+  const { width, height } = STRUCTURAL_CANVAS;
+  const columns = [...new Set(nodes.map((n) => n.column))].sort(
+    (a, b) => a - b,
+  );
   const maxColumn = Math.max(...columns);
 
-  const positions = new Map<string, {x: number; y: number}>();
+  const positions = new Map<string, { x: number; y: number }>();
   columns.forEach((column) => {
     const group = nodes
       .filter((n) => n.column === column)
@@ -84,7 +129,7 @@ export const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
     group.forEach((node, index) => {
       const x = 155 + (column / Math.max(1, maxColumn)) * (width - 310);
       const y = ((index + 1) / (group.length + 1)) * height;
-      positions.set(node.id, {x, y});
+      positions.set(node.id, { x, y });
     });
   });
 
@@ -95,7 +140,11 @@ export const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
       <SceneHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
 
       <StructuralDiagram>
-        <svg className="absolute inset-0 overflow-visible" width={width} height={height}>
+        <svg
+          className="absolute inset-0 overflow-visible"
+          width={width}
+          height={height}
+        >
           {links.map((link, index) => {
             const from = positions.get(link.from);
             const to = positions.get(link.to);
@@ -135,7 +184,13 @@ export const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
 
         {nodes.map((node, index) => {
           const pos = positions.get(node.id)!;
-          const p = springIn({frame, fps, delay: index * 5, damping: 16, stiffness: 130});
+          const p = springIn({
+            frame,
+            fps,
+            delay: index * 5,
+            damping: 16,
+            stiffness: 130,
+          });
           return (
             <div
               key={node.id}
@@ -169,7 +224,10 @@ export const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
           // 同起点多条边：按目标 y 错开标签，避免叠在同一点
           const siblings = links.filter((l) => l.from === link.from);
           const sibIndex = siblings.findIndex(
-            (l) => l.from === link.from && l.to === link.to && l.value === link.value,
+            (l) =>
+              l.from === link.from &&
+              l.to === link.to &&
+              l.value === link.value,
           );
           const stagger =
             siblings.length > 1

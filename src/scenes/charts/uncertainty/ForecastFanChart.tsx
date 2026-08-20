@@ -1,13 +1,133 @@
 import React from "react";
-import {useCurrentFrame} from "remotion";
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {tween} from "../../../lib/chartMotion";
-import {extent,GridLines,scale,smoothPath,VIZ} from "../../../components/viz/chartPrimitives";
+import { useCurrentFrame } from "remotion";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { tween } from "../../../lib/chartMotion";
+import {
+  extent,
+  GridLines,
+  scale,
+  smoothPath,
+  VIZ,
+} from "../../../components/viz/chartPrimitives";
 
-type Point={label:string;actual?:number;base:number;low:number;high:number};
-const DEFAULT:Point[]=[{label:"2023",actual:100,base:100,low:100,high:100},{label:"2024",actual:112,base:112,low:112,high:112},{label:"2025",actual:126,base:126,low:126,high:126},{label:"2026",base:139,low:126,high:153},{label:"2027",base:151,low:124,high:181},{label:"2028",base:164,low:120,high:214},{label:"2029",base:178,low:115,high:252}];
-export const ForecastFanChart:React.FC<{eyebrow?:string;title?:string;data?:Point[]}> =({eyebrow="SCENARIO FAN",title="Separate what happened from what could happen.",data=DEFAULT})=>{
- const frame=useCurrentFrame(),p=tween(frame,10,55);const width=1680,height=600,left=80,right=60,top=35,bottom=75,chartW=width-left-right,chartH=height-top-bottom;const [mn0,mx0]=extent(data.flatMap(d=>[d.low,d.base,d.high,d.actual??d.base]));const pad=(mx0-mn0)*.08,mn=mn0-pad,mx=mx0+pad;const x=(i:number)=>left+i/Math.max(1,data.length-1)*chartW,y=(v:number)=>scale(v,mn,mx,top+chartH,top);const lo=data.map((d,i)=>({x:x(i),y:y(d.low)})),hi=data.map((d,i)=>({x:x(i),y:y(d.high)})),base=data.map((d,i)=>({x:x(i),y:y(d.base)}));const band=[...hi,...lo.slice().reverse()].map(q=>`${q.x},${q.y}`).join(" ");const actualPts=data.map((d,i)=>d.actual!==undefined?({x:x(i),y:y(d.actual)}):null).filter((x):x is {x:number;y:number}=>x!==null);const split=Math.max(0,data.findIndex(d=>d.actual===undefined));
- return <Frame><SceneHeader eyebrow={eyebrow} title={title}/><svg width={width} height={height} className="mt-7"><defs><clipPath id="fan-reveal"><rect x={left} y={0} width={chartW*p} height={height}/></clipPath></defs><GridLines width={width} height={height} left={left} right={right} top={top} bottom={bottom}/><g clipPath="url(#fan-reveal)"><polygon points={band} fill={VIZ.yellow} fillOpacity={.28}/><path d={smoothPath(base)} fill="none" stroke={VIZ.ink} strokeWidth={7} strokeDasharray={split>0?"16 10":undefined}/><path d={smoothPath(actualPts)} fill="none" stroke={VIZ.ink} strokeWidth={9}/></g>{split>0?<line x1={x(split)-chartW/(data.length-1)/2} x2={x(split)-chartW/(data.length-1)/2} y1={top} y2={height-bottom} stroke={VIZ.ink} strokeWidth={3} strokeDasharray="10 8" opacity={.35}/>:null}{data.map((d,i)=><text key={d.label} x={x(i)} y={height-28} textAnchor="middle" fontFamily="IBM Plex Mono" fontSize={17} fill={VIZ.muted}>{d.label}</text>)}</svg></Frame>
+type Point = {
+  label: string;
+  actual?: number;
+  base: number;
+  low: number;
+  high: number;
+};
+const DEFAULT: Point[] = [
+  { label: "2023", actual: 100, base: 100, low: 100, high: 100 },
+  { label: "2024", actual: 112, base: 112, low: 112, high: 112 },
+  { label: "2025", actual: 126, base: 126, low: 126, high: 126 },
+  { label: "2026", base: 139, low: 126, high: 153 },
+  { label: "2027", base: 151, low: 124, high: 181 },
+  { label: "2028", base: 164, low: 120, high: 214 },
+  { label: "2029", base: 178, low: 115, high: 252 },
+];
+export const ForecastFanChart: React.FC<{
+  eyebrow?: string;
+  title?: string;
+  data?: Point[];
+}> = ({
+  eyebrow = "SCENARIO FAN",
+  title = "Separate what happened from what could happen.",
+  data = DEFAULT,
+}) => {
+  const frame = useCurrentFrame(),
+    p = tween(frame, 10, 55);
+  const width = 1680,
+    height = 600,
+    left = 80,
+    right = 60,
+    top = 35,
+    bottom = 75,
+    chartW = width - left - right,
+    chartH = height - top - bottom;
+  const [mn0, mx0] = extent(
+    data.flatMap((d) => [d.low, d.base, d.high, d.actual ?? d.base]),
+  );
+  const pad = (mx0 - mn0) * 0.08,
+    mn = mn0 - pad,
+    mx = mx0 + pad;
+  const x = (i: number) => left + (i / Math.max(1, data.length - 1)) * chartW,
+    y = (v: number) => scale(v, mn, mx, top + chartH, top);
+  const lo = data.map((d, i) => ({ x: x(i), y: y(d.low) })),
+    hi = data.map((d, i) => ({ x: x(i), y: y(d.high) })),
+    base = data.map((d, i) => ({ x: x(i), y: y(d.base) }));
+  const band = [...hi, ...lo.slice().reverse()]
+    .map((q) => `${q.x},${q.y}`)
+    .join(" ");
+  const actualPts = data
+    .map((d, i) =>
+      d.actual !== undefined ? { x: x(i), y: y(d.actual) } : null,
+    )
+    .filter((x): x is { x: number; y: number } => x !== null);
+  const split = Math.max(
+    0,
+    data.findIndex((d) => d.actual === undefined),
+  );
+  return (
+    <Frame>
+      <SceneHeader eyebrow={eyebrow} title={title} />
+      <svg width={width} height={height} className="mt-7">
+        <defs>
+          <clipPath id="fan-reveal">
+            <rect x={left} y={0} width={chartW * p} height={height} />
+          </clipPath>
+        </defs>
+        <GridLines
+          width={width}
+          height={height}
+          left={left}
+          right={right}
+          top={top}
+          bottom={bottom}
+        />
+        <g clipPath="url(#fan-reveal)">
+          <polygon points={band} fill={VIZ.yellow} fillOpacity={0.28} />
+          <path
+            d={smoothPath(base)}
+            fill="none"
+            stroke={VIZ.ink}
+            strokeWidth={7}
+            strokeDasharray={split > 0 ? "16 10" : undefined}
+          />
+          <path
+            d={smoothPath(actualPts)}
+            fill="none"
+            stroke={VIZ.ink}
+            strokeWidth={9}
+          />
+        </g>
+        {split > 0 ? (
+          <line
+            x1={x(split) - chartW / (data.length - 1) / 2}
+            x2={x(split) - chartW / (data.length - 1) / 2}
+            y1={top}
+            y2={height - bottom}
+            stroke={VIZ.ink}
+            strokeWidth={3}
+            strokeDasharray="10 8"
+            opacity={0.35}
+          />
+        ) : null}
+        {data.map((d, i) => (
+          <text
+            key={d.label}
+            x={x(i)}
+            y={height - 28}
+            textAnchor="middle"
+            fontFamily="IBM Plex Mono"
+            fontSize={17}
+            fill={VIZ.muted}
+          >
+            {d.label}
+          </text>
+        ))}
+      </svg>
+    </Frame>
+  );
 };

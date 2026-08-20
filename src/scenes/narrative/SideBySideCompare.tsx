@@ -1,9 +1,9 @@
 import React from "react";
-import {useCurrentFrame} from "remotion";
+import { useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {BrutalCard} from "../../components/BrutalCard";
-import {fadeUp} from "../../lib/motion";
+import { Frame } from "../../components/Frame";
+import { BrutalCard } from "../../components/BrutalCard";
+import { fadeUp } from "../../lib/motion";
 
 type Company = {
   icon: string;
@@ -32,11 +32,7 @@ export const SideBySideCompare: React.FC = () => {
 
   return (
     <Frame>
-
-      <div
-        className="text-[30px] text-muted"
-        style={fadeUp(frame, 0)}
-      >
+      <div className="text-[30px] text-muted" style={fadeUp(frame, 0)}>
         REVENUE / FY2025
       </div>
 
@@ -55,52 +51,45 @@ export const SideBySideCompare: React.FC = () => {
       </div>
 
       <div className="mt-16 grid grid-cols-2 gap-12">
-
         {companies.map((company, index) => (
-          <div
-            key={company.name}
-            style={fadeUp(frame, 12 + index * 8)}
-          >
-            <BrutalCard
-              yellow={index === 0}
-              className="p-10"
-            >
+          <div key={company.name} style={fadeUp(frame, 12 + index * 8)}>
+            <BrutalCard yellow={index === 0} className="p-10">
+              <div className="text-[72px]">{company.icon}</div>
 
-              <div className="text-[72px]">
-                {company.icon}
-              </div>
-
-              <div className="
+              <div
+                className="
                 mt-5
                 text-[30px]
                 font-semibold
-              ">
+              "
+              >
                 {company.name}
               </div>
 
-              <div className="
+              <div
+                className="
                 mt-16
                 text-[88px]
                 font-semibold
                 tracking-[-0.06em]
-              ">
+              "
+              >
                 {company.value}
               </div>
 
-              <div className="
+              <div
+                className="
                 mt-3
                 text-[24px]
                 text-muted
-              ">
+              "
+              >
                 {company.subtitle}
               </div>
-
             </BrutalCard>
           </div>
         ))}
-
       </div>
-
     </Frame>
   );
 };

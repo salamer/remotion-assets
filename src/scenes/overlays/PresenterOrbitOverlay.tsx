@@ -1,8 +1,8 @@
 import React from "react";
-import {useCurrentFrame, useVideoConfig} from "remotion";
-import {BrutalCard} from "../../components/BrutalCard";
-import {floatY, springIn} from "../../lib/motion";
-import {OverlayShell} from "../../components/viz/overlayShared";
+import { useCurrentFrame, useVideoConfig } from "remotion";
+import { BrutalCard } from "../../components/BrutalCard";
+import { floatY, springIn } from "../../lib/motion";
+import { OverlayShell } from "../../components/viz/overlayShared";
 
 export type PresenterOrbitItem = {
   label: string;
@@ -12,32 +12,38 @@ export type PresenterOrbitItem = {
 };
 
 const DEFAULT_ITEMS: PresenterOrbitItem[] = [
-  {label: "RATES", sublabel: "Central banks", icon: "🏦", state: "default"},
-  {label: "DEMAND", sublabel: "Consumers", icon: "🛒", state: "accent"},
-  {label: "TECH", sublabel: "Productivity", icon: "💻", state: "accent"},
-  {label: "CAPITAL", sublabel: "Investment", icon: "📈", state: "default"},
+  { label: "RATES", sublabel: "Central banks", icon: "🏦", state: "default" },
+  { label: "DEMAND", sublabel: "Consumers", icon: "🛒", state: "accent" },
+  { label: "TECH", sublabel: "Productivity", icon: "💻", state: "accent" },
+  { label: "CAPITAL", sublabel: "Investment", icon: "📈", state: "default" },
 ];
 
 const POSITIONS: Array<React.CSSProperties> = [
-  {left: 86, top: 140},
-  {right: 86, top: 140},
-  {left: 86, bottom: 140},
-  {right: 86, bottom: 140},
-  {left: 86, top: 425},
-  {right: 86, top: 425},
+  { left: 86, top: 140 },
+  { right: 86, top: 140 },
+  { left: 86, bottom: 140 },
+  { right: 86, bottom: 140 },
+  { left: 86, top: 425 },
+  { right: 86, top: 425 },
 ];
 
 export const PresenterOrbitOverlay: React.FC<{
   items?: PresenterOrbitItem[];
   transparent?: boolean;
-}> = ({items = DEFAULT_ITEMS, transparent = true}) => {
+}> = ({ items = DEFAULT_ITEMS, transparent = true }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const { fps } = useVideoConfig();
 
   return (
     <OverlayShell transparent={transparent}>
       {items.slice(0, 6).map((item, index) => {
-        const p = springIn({frame, fps, delay: 5 + index * 6, damping: 15, stiffness: 135});
+        const p = springIn({
+          frame,
+          fps,
+          delay: 5 + index * 6,
+          damping: 15,
+          stiffness: 135,
+        });
         const y = floatY(frame, 4, 105, index * 18);
         const isAccent = item.state === "accent";
         const isMuted = item.state === "muted";
@@ -58,13 +64,17 @@ export const PresenterOrbitOverlay: React.FC<{
                 <div className="flex items-start justify-between">
                   <div className="text-[44px]">{item.icon}</div>
                   <div className="border-2 border-ink bg-white px-3 py-1 text-[15px]">
-                    {(index + 1 < 10 ? `0${index + 1}` : String(index + 1))}
+                    {index + 1 < 10 ? `0${index + 1}` : String(index + 1)}
                   </div>
                 </div>
                 <div>
-                  <div className="text-[34px] font-semibold tracking-[-0.04em]">{item.label}</div>
+                  <div className="text-[34px] font-semibold tracking-[-0.04em]">
+                    {item.label}
+                  </div>
                   {item.sublabel ? (
-                    <div className="mt-2 text-[19px] text-muted">{item.sublabel}</div>
+                    <div className="mt-2 text-[19px] text-muted">
+                      {item.sublabel}
+                    </div>
                   ) : null}
                 </div>
               </div>

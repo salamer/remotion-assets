@@ -1,13 +1,10 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {Source} from "../../../components/Source";
-import {chart, typography} from "../../../style/theme";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { Source } from "../../../components/Source";
+import { chart, typography } from "../../../style/theme";
 
 type Point = {
   label: string;
@@ -21,11 +18,11 @@ type Props = {
 };
 
 const DEFAULT_DATA: Point[] = [
-  {label: "2020", value: 3.4},
-  {label: "2021", value: 6.0},
-  {label: "2022", value: 8.4},
-  {label: "2023", value: 9.9},
-  {label: "2024", value: 11.1},
+  { label: "2020", value: 3.4 },
+  { label: "2021", value: 6.0 },
+  { label: "2022", value: 8.4 },
+  { label: "2023", value: 9.9 },
+  { label: "2024", value: 11.1 },
 ];
 
 export const LineChart: React.FC<Props> = ({
@@ -48,11 +45,10 @@ export const LineChart: React.FC<Props> = ({
 
   const points = data.map((item, index) => {
     const x = (index / Math.max(1, data.length - 1)) * width;
-    const normalized =
-      (item.value - min) / Math.max(0.0001, max - min);
+    const normalized = (item.value - min) / Math.max(0.0001, max - min);
     const y = height - 50 - normalized * (height - 100);
 
-    return {...item, x, y};
+    return { ...item, x, y };
   });
 
   const path = points
@@ -64,11 +60,7 @@ export const LineChart: React.FC<Props> = ({
       <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-16">
-        <svg
-          width={width}
-          height={height}
-          viewBox={`0 0 ${width} ${height}`}
-        >
+        <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
           {[0.25, 0.5, 0.75].map((ratio) => (
             <line
               key={ratio}
@@ -112,11 +104,7 @@ export const LineChart: React.FC<Props> = ({
                   cx={point.x}
                   cy={point.y}
                   r={chart.dotRadius}
-                  fill={
-                    isLatest
-                      ? chart.colors.emphasis
-                      : chart.colors.primary
-                  }
+                  fill={isLatest ? chart.colors.emphasis : chart.colors.primary}
                   stroke={chart.colors.primary}
                   strokeWidth={chart.dotStrokeWidth}
                 />

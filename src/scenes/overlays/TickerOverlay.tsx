@@ -1,10 +1,7 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {shadows, spacing, typography} from "../../style/theme";
+import { shadows, spacing, typography } from "../../style/theme";
 
 type Props = {
   company?: string;

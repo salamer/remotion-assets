@@ -1,10 +1,10 @@
 import React from "react";
-import {useCurrentFrame, useVideoConfig} from "remotion";
-import {Frame} from "../../../components/Frame";
-import {BrutalCard} from "../../../components/BrutalCard";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {floatY, springIn, tween} from "../../../lib/motion";
-import {colors} from "../../../style/theme";
+import { useCurrentFrame, useVideoConfig } from "remotion";
+import { Frame } from "../../../components/Frame";
+import { BrutalCard } from "../../../components/BrutalCard";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { floatY, springIn, tween } from "../../../lib/motion";
+import { colors } from "../../../style/theme";
 
 export type GraphNode = {
   id: string;
@@ -26,16 +26,51 @@ export type GraphLink = {
 };
 
 const DEFAULT_NODES: GraphNode[] = [
-  {id: "platform", label: "PLATFORM", sublabel: "Matching + trust", icon: "💻", x: 0.5, y: 0.34, accent: true},
-  {id: "users", label: "USERS", sublabel: "Demand", icon: "👤", x: 0.18, y: 0.72},
-  {id: "suppliers", label: "SUPPLIERS", sublabel: "Supply", icon: "🏭", x: 0.5, y: 0.75},
-  {id: "capital", label: "CAPITAL", sublabel: "Funding", icon: "💰", x: 0.82, y: 0.72},
+  {
+    id: "platform",
+    label: "PLATFORM",
+    sublabel: "Matching + trust",
+    icon: "💻",
+    x: 0.5,
+    y: 0.34,
+    accent: true,
+  },
+  {
+    id: "users",
+    label: "USERS",
+    sublabel: "Demand",
+    icon: "👤",
+    x: 0.18,
+    y: 0.72,
+  },
+  {
+    id: "suppliers",
+    label: "SUPPLIERS",
+    sublabel: "Supply",
+    icon: "🏭",
+    x: 0.5,
+    y: 0.75,
+  },
+  {
+    id: "capital",
+    label: "CAPITAL",
+    sublabel: "Funding",
+    icon: "💰",
+    x: 0.82,
+    y: 0.72,
+  },
 ];
 
 const DEFAULT_LINKS: GraphLink[] = [
-  {from: "platform", to: "users", label: "distribution", accent: true, bend: -60},
-  {from: "platform", to: "suppliers", label: "orders", bend: 20},
-  {from: "platform", to: "capital", label: "returns", bend: -60},
+  {
+    from: "platform",
+    to: "users",
+    label: "distribution",
+    accent: true,
+    bend: -60,
+  },
+  { from: "platform", to: "suppliers", label: "orders", bend: 20 },
+  { from: "platform", to: "capital", label: "returns", bend: -60 },
 ];
 
 export const RelationshipGraph: React.FC<{
@@ -50,10 +85,10 @@ export const RelationshipGraph: React.FC<{
   links = DEFAULT_LINKS,
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const { fps } = useVideoConfig();
   const connectorP = tween(frame, 14, 44);
 
-  const graph = {left: 90, top: 220, width: 1740, height: 760};
+  const graph = { left: 90, top: 220, width: 1740, height: 760 };
   const byId = (id: string) => nodes.find((n) => n.id === id);
   const pointFor = (node: GraphNode) => ({
     x: graph.left + node.x * graph.width,
@@ -120,7 +155,13 @@ export const RelationshipGraph: React.FC<{
       </svg>
 
       {nodes.map((node, index) => {
-        const p = springIn({frame, fps, delay: 5 + index * 7, damping: 17, stiffness: 145});
+        const p = springIn({
+          frame,
+          fps,
+          delay: 5 + index * 7,
+          damping: 17,
+          stiffness: 145,
+        });
         const pt = pointFor(node);
         const w = node.width ?? 390;
         const y = floatY(frame, node.accent ? 2.5 : 4, 115, index * 22);
@@ -141,9 +182,13 @@ export const RelationshipGraph: React.FC<{
               <div className="flex h-full items-center gap-7">
                 <div className="text-[58px]">{node.icon}</div>
                 <div>
-                  <div className="text-[31px] font-semibold tracking-[-0.04em]">{node.label}</div>
+                  <div className="text-[31px] font-semibold tracking-[-0.04em]">
+                    {node.label}
+                  </div>
                   {node.sublabel ? (
-                    <div className="mt-2 text-[19px] text-muted">{node.sublabel}</div>
+                    <div className="mt-2 text-[19px] text-muted">
+                      {node.sublabel}
+                    </div>
                   ) : null}
                 </div>
               </div>

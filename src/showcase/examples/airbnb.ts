@@ -3,23 +3,32 @@
  * 数字为演示/近似值，便于财经视频叙事。
  */
 
-import type {PresenterOrbitItem} from "../../scenes/overlays/PresenterOrbitOverlay";
-import type {CausalLink, CausalNode} from "../../scenes/diagrams/relationships/CausalGraph";
-import type {OrganizationNode} from "../../scenes/diagrams/hierarchy/OrganizationTree";
-import type {OwnershipNode} from "../../scenes/diagrams/hierarchy/OwnershipTree";
-import type {DriverNode} from "../../scenes/frameworks/planning/MetricDriverTree";
-import type {SankeyLink, SankeyNode} from "../../scenes/diagrams/flow/SankeyDiagram";
-import type {ValueChainStage} from "../../scenes/diagrams/flow/ValueChainDiagram";
-import type {CapitalLayer} from "../../scenes/diagrams/finance/CapitalStackDiagram";
-import type {BalanceSheetItem} from "../../scenes/diagrams/finance/BalanceSheetDiagram";
-import type {GraphLink, GraphNode} from "../../scenes/diagrams/relationships/RelationshipGraph";
+import type { PresenterOrbitItem } from "../../scenes/overlays/PresenterOrbitOverlay";
+import type {
+  CausalLink,
+  CausalNode,
+} from "../../scenes/diagrams/relationships/CausalGraph";
+import type { OrganizationNode } from "../../scenes/diagrams/hierarchy/OrganizationTree";
+import type { OwnershipNode } from "../../scenes/diagrams/hierarchy/OwnershipTree";
+import type { DriverNode } from "../../scenes/frameworks/planning/MetricDriverTree";
+import type {
+  SankeyLink,
+  SankeyNode,
+} from "../../scenes/diagrams/flow/SankeyDiagram";
+import type { ValueChainStage } from "../../scenes/diagrams/flow/ValueChainDiagram";
+import type { CapitalLayer } from "../../scenes/diagrams/finance/CapitalStackDiagram";
+import type { BalanceSheetItem } from "../../scenes/diagrams/finance/BalanceSheetDiagram";
+import type {
+  GraphLink,
+  GraphNode,
+} from "../../scenes/diagrams/relationships/RelationshipGraph";
 
 export const AIRBNB_REVENUE = [
-  {year: "2020", value: 3.4},
-  {year: "2021", value: 6.0},
-  {year: "2022", value: 8.4},
-  {year: "2023", value: 9.9},
-  {year: "2024", value: 11.1},
+  { year: "2020", value: 3.4 },
+  { year: "2021", value: 6.0 },
+  { year: "2022", value: 8.4 },
+  { year: "2023", value: 9.9 },
+  { year: "2024", value: 11.1 },
 ];
 
 export const airbnbShowcase = {
@@ -138,9 +147,9 @@ export const airbnbShowcase = {
     eyebrow: "BOOKING ECONOMICS",
     title: "A small share of nights drives most platform revenue.",
     groups: [
-      {label: "CASUAL HOSTS", value: 12, people: 5, blocks: 5},
-      {label: "PRO HOSTS", value: 28, people: 4, blocks: 14},
-      {label: "SUPER HOSTS", value: 60, people: 1, blocks: 26, accent: true},
+      { label: "CASUAL HOSTS", value: 12, people: 5, blocks: 5 },
+      { label: "PRO HOSTS", value: 28, people: 4, blocks: 14 },
+      { label: "SUPER HOSTS", value: 60, people: 1, blocks: 26, accent: true },
     ],
     unit: "%",
     source: "COMPANY FILINGS",
@@ -149,10 +158,30 @@ export const airbnbShowcase = {
   PresenterOrbitOverlay: {
     transparent: false,
     items: [
-      {label: "RATES", sublabel: "Mortgage & credit", icon: "🏦", state: "default"},
-      {label: "DEMAND", sublabel: "Travel recovery", icon: "🛒", state: "accent"},
-      {label: "SUPPLY", sublabel: "Host listings", icon: "🏠", state: "accent"},
-      {label: "REGULATION", sublabel: "City rules", icon: "⚖️", state: "default"},
+      {
+        label: "RATES",
+        sublabel: "Mortgage & credit",
+        icon: "🏦",
+        state: "default",
+      },
+      {
+        label: "DEMAND",
+        sublabel: "Travel recovery",
+        icon: "🛒",
+        state: "accent",
+      },
+      {
+        label: "SUPPLY",
+        sublabel: "Host listings",
+        icon: "🏠",
+        state: "accent",
+      },
+      {
+        label: "REGULATION",
+        sublabel: "City rules",
+        icon: "⚖️",
+        state: "default",
+      },
     ] satisfies PresenterOrbitItem[],
   },
 
@@ -164,12 +193,12 @@ export const airbnbShowcase = {
     leftUnit: "M",
     rightUnit: "$",
     data: [
-      {label: "2019", bar: 327, line: 143},
-      {label: "2020", bar: 193, line: 120},
-      {label: "2021", bar: 300, line: 152},
-      {label: "2022", bar: 393, line: 161},
-      {label: "2023", bar: 448, line: 168},
-      {label: "2024", bar: 491, line: 175},
+      { label: "2019", bar: 327, line: 143 },
+      { label: "2020", bar: 193, line: 120 },
+      { label: "2021", bar: 300, line: 152 },
+      { label: "2022", bar: 393, line: 161 },
+      { label: "2023", bar: 448, line: 168 },
+      { label: "2024", bar: 491, line: 175 },
     ],
     source: "COMPANY FILINGS",
   },
@@ -213,9 +242,15 @@ export const airbnbShowcase = {
       },
     ] satisfies GraphNode[],
     links: [
-      {from: "platform", to: "guests", label: "bookings", accent: true, bend: -60},
-      {from: "platform", to: "hosts", label: "payouts", bend: 20},
-      {from: "platform", to: "capital", label: "returns", bend: -60},
+      {
+        from: "platform",
+        to: "guests",
+        label: "bookings",
+        accent: true,
+        bend: -60,
+      },
+      { from: "platform", to: "hosts", label: "payouts", bend: 20 },
+      { from: "platform", to: "capital", label: "returns", bend: -60 },
     ] satisfies GraphLink[],
   },
 
@@ -223,11 +258,11 @@ export const airbnbShowcase = {
     eyebrow: "CITY ECONOMICS",
     title: "Host income is uneven across markets.",
     rows: [
-      {name: "PARIS", left: 4.2, right: 58.1, icon: "🗼"},
-      {name: "NEW YORK", left: 3.8, right: 62.4, icon: "🌆"},
-      {name: "TOKYO", left: 2.1, right: 48.7, icon: "🗾"},
-      {name: "BARCELONA", left: 5.6, right: 71.2, icon: "🏖️"},
-      {name: "MIAMI", left: 1.9, right: 55.8, icon: "🌴"},
+      { name: "PARIS", left: 4.2, right: 58.1, icon: "🗼" },
+      { name: "NEW YORK", left: 3.8, right: 62.4, icon: "🌆" },
+      { name: "TOKYO", left: 2.1, right: 48.7, icon: "🗾" },
+      { name: "BARCELONA", left: 5.6, right: 71.2, icon: "🏖️" },
+      { name: "MIAMI", left: 1.9, right: 55.8, icon: "🌴" },
     ],
     leftLabel: "BOTTOM HOSTS",
     middleLabel: "CITY",
@@ -280,8 +315,19 @@ export const airbnbShowcase = {
           subtitle: "App · Search · Trust",
           icon: "💻",
           children: [
-            {id: "search", label: "SEARCH", subtitle: "Matching", icon: "🔎", accent: true},
-            {id: "trust", label: "TRUST", subtitle: "Reviews & safety", icon: "🛡️"},
+            {
+              id: "search",
+              label: "SEARCH",
+              subtitle: "Matching",
+              icon: "🔎",
+              accent: true,
+            },
+            {
+              id: "trust",
+              label: "TRUST",
+              subtitle: "Reviews & safety",
+              icon: "🛡️",
+            },
           ],
         },
         {
@@ -290,8 +336,18 @@ export const airbnbShowcase = {
           subtitle: "Hosts · Support",
           icon: "🏠",
           children: [
-            {id: "hosts", label: "HOSTS", subtitle: "Supply growth", icon: "🗝️"},
-            {id: "support", label: "SUPPORT", subtitle: "Guest care", icon: "🎧"},
+            {
+              id: "hosts",
+              label: "HOSTS",
+              subtitle: "Supply growth",
+              icon: "🗝️",
+            },
+            {
+              id: "support",
+              label: "SUPPORT",
+              subtitle: "Guest care",
+              icon: "🎧",
+            },
           ],
         },
         {
@@ -300,8 +356,13 @@ export const airbnbShowcase = {
           subtitle: "CFO · FP&A",
           icon: "💰",
           children: [
-            {id: "fpna", label: "FP&A", subtitle: "Planning", icon: "📊"},
-            {id: "treasury", label: "TREASURY", subtitle: "Liquidity", icon: "🏦"},
+            { id: "fpna", label: "FP&A", subtitle: "Planning", icon: "📊" },
+            {
+              id: "treasury",
+              label: "TREASURY",
+              subtitle: "Liquidity",
+              icon: "🏦",
+            },
           ],
         },
       ],
@@ -360,17 +421,54 @@ export const airbnbShowcase = {
     eyebrow: "BOOKING VALUE FLOW",
     title: "Most of the stay value goes to hosts — Airbnb takes the fee.",
     nodes: [
-      {id: "guest", label: "GUEST", subtitle: "Booking value", icon: "🧳", column: 0, order: 0},
-      {id: "airbnb", label: "AIRBNB", subtitle: "Platform pool", icon: "🏠", column: 1, order: 0, accent: true},
-      {id: "host", label: "HOST", subtitle: "Payout", icon: "🗝️", column: 2, order: 0},
-      {id: "fee", label: "TAKE RATE", subtitle: "Service fee", icon: "💰", column: 2, order: 1, accent: true},
-      {id: "tax", label: "TAX / OTHER", subtitle: "Local rules", icon: "🧾", column: 2, order: 2},
+      {
+        id: "guest",
+        label: "GUEST",
+        subtitle: "Booking value",
+        icon: "🧳",
+        column: 0,
+        order: 0,
+      },
+      {
+        id: "airbnb",
+        label: "AIRBNB",
+        subtitle: "Platform pool",
+        icon: "🏠",
+        column: 1,
+        order: 0,
+        accent: true,
+      },
+      {
+        id: "host",
+        label: "HOST",
+        subtitle: "Payout",
+        icon: "🗝️",
+        column: 2,
+        order: 0,
+      },
+      {
+        id: "fee",
+        label: "TAKE RATE",
+        subtitle: "Service fee",
+        icon: "💰",
+        column: 2,
+        order: 1,
+        accent: true,
+      },
+      {
+        id: "tax",
+        label: "TAX / OTHER",
+        subtitle: "Local rules",
+        icon: "🧾",
+        column: 2,
+        order: 2,
+      },
     ] satisfies SankeyNode[],
     links: [
-      {from: "guest", to: "airbnb", value: 100, label: "100", accent: true},
-      {from: "airbnb", to: "host", value: 82, label: "82"},
-      {from: "airbnb", to: "fee", value: 14, label: "14", accent: true},
-      {from: "airbnb", to: "tax", value: 4, label: "4"},
+      { from: "guest", to: "airbnb", value: 100, label: "100", accent: true },
+      { from: "airbnb", to: "host", value: 82, label: "82" },
+      { from: "airbnb", to: "fee", value: 14, label: "14", accent: true },
+      { from: "airbnb", to: "tax", value: 4, label: "4" },
     ] satisfies SankeyLink[],
     unit: "%",
     source: "ILLUSTRATIVE BOOKING ECONOMICS",
@@ -447,8 +545,20 @@ export const airbnbShowcase = {
           icon: "🛏️",
           relation: "×",
           children: [
-            {id: "listings", label: "LISTINGS", subtitle: "7.7M", icon: "🏠", relation: "×"},
-            {id: "occupancy", label: "OCCUPANCY", subtitle: "Utilization", icon: "📅", relation: "×"},
+            {
+              id: "listings",
+              label: "LISTINGS",
+              subtitle: "7.7M",
+              icon: "🏠",
+              relation: "×",
+            },
+            {
+              id: "occupancy",
+              label: "OCCUPANCY",
+              subtitle: "Utilization",
+              icon: "📅",
+              relation: "×",
+            },
           ],
         },
         {
@@ -458,8 +568,21 @@ export const airbnbShowcase = {
           icon: "🏷️",
           relation: "×",
           children: [
-            {id: "mix", label: "MIX", subtitle: "City & length", icon: "🌍", relation: "×", accent: true},
-            {id: "take", label: "TAKE RATE", subtitle: "~14–18%", icon: "📈", relation: "×"},
+            {
+              id: "mix",
+              label: "MIX",
+              subtitle: "City & length",
+              icon: "🌍",
+              relation: "×",
+              accent: true,
+            },
+            {
+              id: "take",
+              label: "TAKE RATE",
+              subtitle: "~14–18%",
+              icon: "📈",
+              relation: "×",
+            },
           ],
         },
       ],
@@ -531,12 +654,33 @@ export const airbnbShowcase = {
       },
     ] satisfies CausalNode[],
     links: [
-      {from: "rates", to: "demand", sign: "−", label: "financing", bend: -55},
-      {from: "wages", to: "demand", sign: "+", label: "spending", bend: 55, accent: true},
-      {from: "demand", to: "nights", sign: "+", label: "trips", accent: true, bend: -30},
-      {from: "demand", to: "adr", sign: "+", label: "pricing", bend: 35},
-      {from: "nights", to: "revenue", sign: "+", label: "volume", bend: -25},
-      {from: "adr", to: "revenue", sign: "+", label: "rate × take", bend: 25, accent: true},
+      { from: "rates", to: "demand", sign: "−", label: "financing", bend: -55 },
+      {
+        from: "wages",
+        to: "demand",
+        sign: "+",
+        label: "spending",
+        bend: 55,
+        accent: true,
+      },
+      {
+        from: "demand",
+        to: "nights",
+        sign: "+",
+        label: "trips",
+        accent: true,
+        bend: -30,
+      },
+      { from: "demand", to: "adr", sign: "+", label: "pricing", bend: 35 },
+      { from: "nights", to: "revenue", sign: "+", label: "volume", bend: -25 },
+      {
+        from: "adr",
+        to: "revenue",
+        sign: "+",
+        label: "rate × take",
+        bend: 25,
+        accent: true,
+      },
     ] satisfies CausalLink[],
     source: "ILLUSTRATIVE DEMAND MODEL",
   },
@@ -545,9 +689,25 @@ export const airbnbShowcase = {
     eyebrow: "AIRBNB CAPITAL",
     title: "An asset-light platform is mostly equity-funded.",
     layers: [
-      {label: "EQUITY", percent: 78, subtitle: "Public float · retained earnings", icon: "📈", accent: true},
-      {label: "CONVERTIBLE / OTHER", percent: 8, subtitle: "Hybrid claims", icon: "🧾"},
-      {label: "SENIOR DEBT", percent: 14, subtitle: "Long-term notes", icon: "🏦"},
+      {
+        label: "EQUITY",
+        percent: 78,
+        subtitle: "Public float · retained earnings",
+        icon: "📈",
+        accent: true,
+      },
+      {
+        label: "CONVERTIBLE / OTHER",
+        percent: 8,
+        subtitle: "Hybrid claims",
+        icon: "🧾",
+      },
+      {
+        label: "SENIOR DEBT",
+        percent: 14,
+        subtitle: "Long-term notes",
+        icon: "🏦",
+      },
     ] satisfies CapitalLayer[],
     lossPercent: 12,
     source: "ILLUSTRATIVE CAPITAL STRUCTURE",
@@ -557,16 +717,18 @@ export const airbnbShowcase = {
     eyebrow: "BALANCE SHEET",
     title: "Cash and marketable securities dominate the asset side.",
     assets: [
-      {label: "CASH & SECURITIES", value: 58, icon: "💵", accent: true},
-      {label: "RECEIVABLES", value: 22, icon: "🧾"},
-      {label: "OTHER ASSETS", value: 20, icon: "📦"},
+      { label: "CASH & SECURITIES", value: 58, icon: "💵", accent: true },
+      { label: "RECEIVABLES", value: 22, icon: "🧾" },
+      { label: "OTHER ASSETS", value: 20, icon: "📦" },
     ] satisfies BalanceSheetItem[],
     liabilities: [
-      {label: "DEFERRED REVENUE", value: 34, icon: "📅"},
-      {label: "DEBT", value: 18, icon: "🏦"},
-      {label: "OTHER LIAB.", value: 12, icon: "📄"},
+      { label: "DEFERRED REVENUE", value: 34, icon: "📅" },
+      { label: "DEBT", value: 18, icon: "🏦" },
+      { label: "OTHER LIAB.", value: 12, icon: "📄" },
     ] satisfies BalanceSheetItem[],
-    equity: [{label: "EQUITY", value: 36, icon: "📈", accent: true}] satisfies BalanceSheetItem[],
+    equity: [
+      { label: "EQUITY", value: 36, icon: "📈", accent: true },
+    ] satisfies BalanceSheetItem[],
     unit: "$",
     source: "COMPANY FILINGS / ILLUSTRATIVE $B",
   },

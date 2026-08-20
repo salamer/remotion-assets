@@ -4,7 +4,7 @@
  */
 import React from "react";
 
-import {colors, shadows} from "../../style/theme";
+import { colors, shadows } from "../../style/theme";
 
 export type TreeNodeBase = {
   id: string;
@@ -62,7 +62,12 @@ export const layoutTree = <T extends TreeNodeBase>(
   let order = 0;
   const out: LaidOutTreeNode<T>[] = [];
 
-  const walk = (node: T, depth: number, leafStart: number, parentId?: string) => {
+  const walk = (
+    node: T,
+    depth: number,
+    leafStart: number,
+    parentId?: string,
+  ) => {
     const count = leafCount(node);
     const leafEnd = leafStart + count;
     const centerLeaf = (leafStart + leafEnd) / 2;
@@ -102,8 +107,8 @@ export const layoutStructuralTree = <T extends TreeNodeBase>(root: T) =>
 
 /** 父子节点之间的垂直三次贝塞尔路径 */
 export const cubicTreeEdgePath = (
-  parent: {x: number; y: number},
-  child: {x: number; y: number},
+  parent: { x: number; y: number },
+  child: { x: number; y: number },
   halfHeight = STRUCTURAL_CANVAS.nodeHalfHeight,
 ) => {
   const startY = parent.y + halfHeight;
@@ -117,16 +122,17 @@ export const cubicTreeEdgePath = (
  * 几乎垂直的边略微横移，避免贴在粗描边上。
  */
 export const edgeCorridorPoint = (
-  parent: {x: number; y: number},
-  child: {x: number; y: number},
+  parent: { x: number; y: number },
+  child: { x: number; y: number },
   halfHeight = STRUCTURAL_CANVAS.nodeHalfHeight,
 ) => {
   const gapTop = parent.y + halfHeight;
   const gapBottom = child.y - halfHeight;
   const y = (gapTop + gapBottom) / 2;
   const dx = child.x - parent.x;
-  const x = (parent.x + child.x) / 2 + (Math.abs(dx) < 48 ? (dx >= 0 ? 40 : -40) : 0);
-  return {x, y};
+  const x =
+    (parent.x + child.x) / 2 + (Math.abs(dx) < 48 ? (dx >= 0 ? 40 : -40) : 0);
+  return { x, y };
 };
 
 export const edgeLabelStyle = (
@@ -146,10 +152,10 @@ export const edgeLabelStyle = (
 export const StructuralDiagram: React.FC<{
   children: React.ReactNode;
   className?: string;
-}> = ({children, className = "mt-5"}) => (
+}> = ({ children, className = "mt-5" }) => (
   <div
     className={`relative ${className}`}
-    style={{width: STRUCTURAL_CANVAS.width, height: STRUCTURAL_CANVAS.height}}
+    style={{ width: STRUCTURAL_CANVAS.width, height: STRUCTURAL_CANVAS.height }}
   >
     {children}
   </div>
@@ -163,7 +169,7 @@ export const TreeEdge: React.FC<{
   thick?: boolean;
   /** 默认：强调边 0.95，粗边 0.7，普通边 1 */
   opacity?: number;
-}> = ({d, progress, accent = false, thick = false, opacity}) => (
+}> = ({ d, progress, accent = false, thick = false, opacity }) => (
   <path
     d={d}
     pathLength={1}
@@ -221,13 +227,19 @@ export const NodeCard: React.FC<{
       }}
     >
       <div className="flex items-center gap-3">
-        {icon ? <div className={compact ? "text-[30px]" : "text-[36px]"}>{icon}</div> : null}
+        {icon ? (
+          <div className={compact ? "text-[30px]" : "text-[36px]"}>{icon}</div>
+        ) : null}
         <div className="min-w-0">
-          <div className={`${compact ? "text-[18px]" : "text-[22px]"} font-semibold leading-[1.1]`}>
+          <div
+            className={`${compact ? "text-[18px]" : "text-[22px]"} font-semibold leading-[1.1]`}
+          >
             {label}
           </div>
           {subtitle ? (
-            <div className={`${compact ? "mt-1 text-[14px]" : "mt-1.5 text-[16px]"} text-muted leading-[1.25]`}>
+            <div
+              className={`${compact ? "mt-1 text-[14px]" : "mt-1.5 text-[16px]"} text-muted leading-[1.25]`}
+            >
               {subtitle}
             </div>
           ) : null}
@@ -241,12 +253,12 @@ export const EdgeLabel: React.FC<{
   text: string;
   accent?: boolean;
   compact?: boolean;
-}> = ({text, accent = false, compact = false}) => (
+}> = ({ text, accent = false, compact = false }) => (
   <div
     className={`border-2 border-ink font-semibold ${
       accent ? "bg-yellow" : "bg-white"
     } ${compact ? "px-2 py-0.5 text-[14px]" : "px-3 py-1 text-[15px]"}`}
-    style={{boxShadow: shadows.brutalSm, whiteSpace: "nowrap"}}
+    style={{ boxShadow: shadows.brutalSm, whiteSpace: "nowrap" }}
   >
     {text}
   </div>

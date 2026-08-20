@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {BrutalCard} from "../../components/BrutalCard";
-import {SceneHeader} from "../../components/SceneHeader";
+import { Frame } from "../../components/Frame";
+import { BrutalCard } from "../../components/BrutalCard";
+import { SceneHeader } from "../../components/SceneHeader";
 
 const pieces = [
   {
@@ -38,14 +35,10 @@ export const EquationCards: React.FC = () => {
       />
 
       <div className="mt-40 flex items-center justify-center gap-7">
-
         {pieces.map((piece, index) => {
           const p = interpolate(
             frame,
-            [
-              12 + index * 8,
-              22 + index * 8,
-            ],
+            [12 + index * 8, 22 + index * 8],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -53,10 +46,7 @@ export const EquationCards: React.FC = () => {
             },
           );
 
-          if (
-            piece.text === "=" ||
-            piece.text === "−"
-          ) {
+          if (piece.text === "=" || piece.text === "−") {
             return (
               <div
                 key={index}
@@ -75,22 +65,15 @@ export const EquationCards: React.FC = () => {
               key={index}
               style={{
                 opacity: p,
-                transform:
-                  `translateY(${(1 - p) * 15}px)`,
+                transform: `translateY(${(1 - p) * 15}px)`,
               }}
             >
-              <BrutalCard
-                yellow={piece.yellow}
-                className="px-10 py-8"
-              >
-                <div className="text-[36px] font-semibold">
-                  {piece.text}
-                </div>
+              <BrutalCard yellow={piece.yellow} className="px-10 py-8">
+                <div className="text-[36px] font-semibold">{piece.text}</div>
               </BrutalCard>
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

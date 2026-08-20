@@ -2,15 +2,15 @@
 
 Quantitative scenes under `src/scenes/charts/`.
 
-| Subfolder | Use for |
-|---|---|
-| `categorical/` | Bars, rankings, tornado, scenario bars |
-| `time-series/` | Lines, areas, candles, event studies, dual-axis |
-| `comparison/` | Dumbbell, slope, small multiples, benchmark bands |
-| `composition/` | Donut, stacked, treemap, marimekko, waterfall, waffle |
-| `distribution/` | Histogram, box, beeswarm, heatmap, scatter, bubble |
-| `uncertainty/` | Forecast fan, range band |
-| `multivariate/` | Parallel coordinates, radar, quadrant scatter |
+| Subfolder       | Use for                                               |
+| --------------- | ----------------------------------------------------- |
+| `categorical/`  | Bars, rankings, tornado, scenario bars                |
+| `time-series/`  | Lines, areas, candles, event studies, dual-axis       |
+| `comparison/`   | Dumbbell, slope, small multiples, benchmark bands     |
+| `composition/`  | Donut, stacked, treemap, marimekko, waterfall, waffle |
+| `distribution/` | Histogram, box, beeswarm, heatmap, scatter, bubble    |
+| `uncertainty/`  | Forecast fan, range band                              |
+| `multivariate/` | Parallel coordinates, radar, quadrant scatter         |
 
 **Pick carefully**
 

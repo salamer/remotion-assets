@@ -1,5 +1,5 @@
 /** 视频全局参数 — 尺寸与 theme.layout 保持一致 */
-import {layout} from "./style/theme";
+import { layout } from "./style/theme";
 
 export const VIDEO_WIDTH = layout.width;
 export const VIDEO_HEIGHT = layout.height;

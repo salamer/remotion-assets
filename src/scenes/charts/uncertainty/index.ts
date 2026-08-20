@@ -1,2 +1,2 @@
-export {ForecastFanChart} from "./ForecastFanChart";
-export {RangeBandChart} from "./RangeBandChart";
+export { ForecastFanChart } from "./ForecastFanChart";
+export { RangeBandChart } from "./RangeBandChart";

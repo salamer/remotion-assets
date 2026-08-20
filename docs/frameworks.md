@@ -2,11 +2,11 @@
 
 Consulting / decision frames under `src/scenes/frameworks/`.
 
-| Subfolder | Use for |
-|---|---|
+| Subfolder   | Use for                                                            |
+| ----------- | ------------------------------------------------------------------ |
 | `strategy/` | Qualitative matrices (strategy, risk, prioritization, opportunity) |
-| `planning/` | Issue trees, metric drivers, scenarios, roadmaps, bridges |
-| `process/` | Swimlanes (who / what / when) |
+| `planning/` | Issue trees, metric drivers, scenarios, roadmaps, bridges          |
+| `process/`  | Swimlanes (who / what / when)                                      |
 
 **Distinctions**
 

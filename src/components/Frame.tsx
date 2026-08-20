@@ -1,18 +1,14 @@
 import React from "react";
-import {AbsoluteFill} from "remotion";
+import { AbsoluteFill } from "remotion";
 
-import {MONO_FONT} from "../style/fonts";
-import {
-  gridBackgroundImage,
-  layout,
-  spacing,
-} from "../style/theme";
+import { MONO_FONT } from "../style/fonts";
+import { gridBackgroundImage, layout, spacing } from "../style/theme";
 
 type Props = {
   children: React.ReactNode;
 };
 
-export const Frame: React.FC<Props> = ({children}) => {
+export const Frame: React.FC<Props> = ({ children }) => {
   return (
     <AbsoluteFill
       className="bg-paper text-ink"

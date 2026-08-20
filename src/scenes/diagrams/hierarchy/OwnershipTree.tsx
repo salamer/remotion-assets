@@ -1,10 +1,10 @@
 import React from "react";
-import {useCurrentFrame, useVideoConfig} from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {Source} from "../../../components/Source";
-import {springIn, tween} from "../../../lib/motion";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { Source } from "../../../components/Source";
+import { springIn, tween } from "../../../lib/motion";
 import {
   StructuralDiagram,
   TreeEdge,
@@ -16,7 +16,7 @@ import {
   NodeCard,
   treeNodeStyle,
 } from "../../../components/viz/structuralShared";
-import type {TreeNodeBase} from "../../../components/viz/structuralShared";
+import type { TreeNodeBase } from "../../../components/viz/structuralShared";
 
 /** 股权树：边上的 % 属于 ownership edge，不是子公司名称的一部分 */
 export type OwnershipNode = TreeNodeBase & {
@@ -47,8 +47,21 @@ const DEFAULT_ROOT: OwnershipNode = {
       icon: "💻",
       ownershipPct: 72,
       children: [
-        {id: "cloud", label: "CLOUD", subtitle: "Infrastructure", icon: "☁️", ownershipPct: 100},
-        {id: "ai", label: "AI LAB", subtitle: "Strategic subsidiary", icon: "🤖", ownershipPct: 80, accent: true},
+        {
+          id: "cloud",
+          label: "CLOUD",
+          subtitle: "Infrastructure",
+          icon: "☁️",
+          ownershipPct: 100,
+        },
+        {
+          id: "ai",
+          label: "AI LAB",
+          subtitle: "Strategic subsidiary",
+          icon: "🤖",
+          ownershipPct: 80,
+          accent: true,
+        },
       ],
     },
     {
@@ -77,7 +90,7 @@ export const OwnershipTree: React.FC<OwnershipTreeProps> = ({
   source = "CORPORATE FILINGS / DEMO",
 }) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const { fps } = useVideoConfig();
   const nodes = layoutStructuralTree(root);
   const byId = new Map(nodes.map((n) => [n.id, n]));
 
@@ -86,7 +99,11 @@ export const OwnershipTree: React.FC<OwnershipTreeProps> = ({
       <SceneHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
 
       <StructuralDiagram>
-        <svg className="absolute inset-0 overflow-visible" width="100%" height="100%">
+        <svg
+          className="absolute inset-0 overflow-visible"
+          width="100%"
+          height="100%"
+        >
           {nodes
             .filter((node) => node.parentId)
             .map((node) => {
@@ -108,9 +125,19 @@ export const OwnershipTree: React.FC<OwnershipTreeProps> = ({
         </svg>
 
         {nodes.map((node) => {
-          const p = springIn({frame, fps, delay: node.order * 4, damping: 16, stiffness: 130});
+          const p = springIn({
+            frame,
+            fps,
+            delay: node.order * 4,
+            damping: 16,
+            stiffness: 130,
+          });
           return (
-            <div key={node.id} className="absolute" style={treeNodeStyle(node.x, node.y, p, 22)}>
+            <div
+              key={node.id}
+              className="absolute"
+              style={treeNodeStyle(node.x, node.y, p, 22)}
+            >
               <NodeCard
                 label={node.label}
                 subtitle={node.subtitle}
@@ -134,14 +161,20 @@ export const OwnershipTree: React.FC<OwnershipTreeProps> = ({
             const point = edgeCorridorPoint(parent, node);
             const text =
               node.relationLabel ??
-              (node.ownershipPct == null ? "OWNERSHIP" : `${node.ownershipPct}%`);
+              (node.ownershipPct == null
+                ? "OWNERSHIP"
+                : `${node.ownershipPct}%`);
             return (
               <div
                 key={`label-${node.id}`}
                 className="absolute"
                 style={edgeLabelStyle(point.x, point.y, p)}
               >
-                <EdgeLabel text={text} accent={(node.ownershipPct ?? 0) >= 50} compact />
+                <EdgeLabel
+                  text={text}
+                  accent={(node.ownershipPct ?? 0) >= 50}
+                  compact
+                />
               </div>
             );
           })}

@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
 
 type Candle = {
   open: number;
@@ -56,9 +53,7 @@ export const CandlestickChart: React.FC = () => {
   const chartHeight = 500;
 
   const Y = (value: number) =>
-    chartHeight -
-    ((value - min) / (max - min)) *
-      chartHeight;
+    chartHeight - ((value - min) / (max - min)) * chartHeight;
 
   return (
     <Frame>
@@ -68,14 +63,10 @@ export const CandlestickChart: React.FC = () => {
       />
 
       <div className="mt-16 flex h-[520px] items-end justify-center gap-20 border-b-2 border-ink">
-
         {data.map((candle, index) => {
           const p = interpolate(
             frame,
-            [
-              10 + index * 7,
-              24 + index * 7,
-            ],
+            [10 + index * 7, 24 + index * 7],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -83,25 +74,13 @@ export const CandlestickChart: React.FC = () => {
             },
           );
 
-          const rising =
-            candle.close >= candle.open;
+          const rising = candle.close >= candle.open;
 
-          const top = Y(
-            Math.max(
-              candle.open,
-              candle.close,
-            ),
-          );
+          const top = Y(Math.max(candle.open, candle.close));
 
-          const bottom = Y(
-            Math.min(
-              candle.open,
-              candle.close,
-            ),
-          );
+          const bottom = Y(Math.min(candle.open, candle.close));
 
-          const bodyHeight =
-            Math.abs(bottom - top);
+          const bodyHeight = Math.abs(bottom - top);
 
           return (
             <div
@@ -115,9 +94,7 @@ export const CandlestickChart: React.FC = () => {
                 className="absolute left-1/2 w-[4px] -translate-x-1/2 bg-ink"
                 style={{
                   top: Y(candle.high),
-                  height:
-                    Y(candle.low) -
-                    Y(candle.high),
+                  height: Y(candle.low) - Y(candle.high),
                 }}
               />
 
@@ -127,25 +104,16 @@ export const CandlestickChart: React.FC = () => {
                   left-0
                   w-full
                   border-2 border-ink
-                  ${
-                    rising
-                      ? "bg-yellow"
-                      : "bg-white"
-                  }
+                  ${rising ? "bg-yellow" : "bg-white"}
                 `}
                 style={{
                   top,
-                  height:
-                    Math.max(
-                      8,
-                      bodyHeight,
-                    ),
+                  height: Math.max(8, bodyHeight),
                 }}
               />
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

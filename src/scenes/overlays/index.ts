@@ -1,2 +1,2 @@
-export {PresenterOrbitOverlay} from "./PresenterOrbitOverlay";
-export {TickerOverlay} from "./TickerOverlay";
+export { PresenterOrbitOverlay } from "./PresenterOrbitOverlay";
+export { TickerOverlay } from "./TickerOverlay";

@@ -1,11 +1,11 @@
 import React from "react";
-import {useCurrentFrame} from "remotion";
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {Source} from "../../../components/Source";
-import {tween} from "../../../lib/motion";
-import {colors} from "../../../style/theme";
-import {InlineLegend} from "../../../components/viz/overlayShared";
+import { useCurrentFrame } from "remotion";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { Source } from "../../../components/Source";
+import { tween } from "../../../lib/motion";
+import { colors } from "../../../style/theme";
+import { InlineLegend } from "../../../components/viz/overlayShared";
 
 type DualMetricPoint = {
   label: string;
@@ -14,14 +14,14 @@ type DualMetricPoint = {
 };
 
 const DEFAULT_DATA: DualMetricPoint[] = [
-  {label: "2018", bar: 48, line: 105},
-  {label: "2019", bar: 60, line: 110},
-  {label: "2020", bar: 42, line: 95},
-  {label: "2021", bar: 72, line: 118},
-  {label: "2022", bar: 86, line: 121},
-  {label: "2023", bar: 112, line: 135},
-  {label: "2024", bar: 130, line: 158},
-  {label: "2025", bar: 146, line: 205},
+  { label: "2018", bar: 48, line: 105 },
+  { label: "2019", bar: 60, line: 110 },
+  { label: "2020", bar: 42, line: 95 },
+  { label: "2021", bar: 72, line: 118 },
+  { label: "2022", bar: 86, line: 121 },
+  { label: "2023", bar: 112, line: 135 },
+  { label: "2024", bar: 130, line: 158 },
+  { label: "2025", bar: 146, line: 205 },
 ];
 
 const niceMax = (value: number) => {
@@ -30,7 +30,7 @@ const niceMax = (value: number) => {
   return Math.ceil(value / magnitude) * magnitude;
 };
 
-const smoothPath = (points: Array<{x: number; y: number}>) => {
+const smoothPath = (points: Array<{ x: number; y: number }>) => {
   if (points.length < 2) return "";
   let d = `M ${points[0].x} ${points[0].y}`;
   for (let i = 1; i < points.length; i++) {
@@ -80,9 +80,11 @@ export const DualAxisChart: React.FC<{
   const lineMin = minLine - linePad;
   const lineMax = maxLineRaw + linePad;
 
-  const xFor = (i: number) => left + (i / Math.max(1, data.length - 1)) * chartW;
-  const yLine = (v: number) => top + (1 - (v - lineMin) / Math.max(0.0001, lineMax - lineMin)) * chartH;
-  const linePoints = data.map((d, i) => ({x: xFor(i), y: yLine(d.line)}));
+  const xFor = (i: number) =>
+    left + (i / Math.max(1, data.length - 1)) * chartW;
+  const yLine = (v: number) =>
+    top + (1 - (v - lineMin) / Math.max(0.0001, lineMax - lineMin)) * chartH;
+  const linePoints = data.map((d, i) => ({ x: xFor(i), y: yLine(d.line) }));
   const path = smoothPath(linePoints);
   const lineP = tween(frame, 24, 58);
 
@@ -98,8 +100,8 @@ export const DualAxisChart: React.FC<{
         <div className="mt-4">
           <InlineLegend
             items={[
-              {label: barLabel, kind: "bar"},
-              {label: lineLabel, kind: "line"},
+              { label: barLabel, kind: "bar" },
+              { label: lineLabel, kind: "line" },
             ]}
           />
         </div>
@@ -132,11 +134,27 @@ export const DualAxisChart: React.FC<{
                 strokeOpacity={0.12}
                 strokeWidth={2}
               />
-              <text x={left - 14} y={y + 6} textAnchor="end" fontSize={17} fill="#737373" fontFamily="IBM Plex Mono">
-                {leftValue.toFixed(0)}{leftUnit}
+              <text
+                x={left - 14}
+                y={y + 6}
+                textAnchor="end"
+                fontSize={17}
+                fill="#737373"
+                fontFamily="IBM Plex Mono"
+              >
+                {leftValue.toFixed(0)}
+                {leftUnit}
               </text>
-              <text x={width - right + 14} y={y + 6} textAnchor="start" fontSize={17} fill="#737373" fontFamily="IBM Plex Mono">
-                {rightValue.toFixed(0)}{rightUnit}
+              <text
+                x={width - right + 14}
+                y={y + 6}
+                textAnchor="start"
+                fontSize={17}
+                fill="#737373"
+                fontFamily="IBM Plex Mono"
+              >
+                {rightValue.toFixed(0)}
+                {rightUnit}
               </text>
             </g>
           );
@@ -191,7 +209,9 @@ export const DualAxisChart: React.FC<{
               y={point.y - 7}
               width={14}
               height={14}
-              fill={index === linePoints.length - 1 ? colors.yellow : colors.ink}
+              fill={
+                index === linePoints.length - 1 ? colors.yellow : colors.ink
+              }
               stroke={colors.ink}
               strokeWidth={2}
               opacity={p}

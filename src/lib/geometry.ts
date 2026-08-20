@@ -28,7 +28,7 @@ export const scale = (
   return rangeMin + t * (rangeMax - rangeMin);
 };
 
-export const smoothPath = (points: Array<{x: number; y: number}>) => {
+export const smoothPath = (points: Array<{ x: number; y: number }>) => {
   if (!points.length) return "";
   if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
   let d = `M ${points[0].x} ${points[0].y}`;

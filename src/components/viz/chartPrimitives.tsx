@@ -4,7 +4,7 @@
  */
 import React from "react";
 
-import {colors, typography} from "../../style/theme";
+import { colors, typography } from "../../style/theme";
 
 export {
   niceMax,
@@ -33,9 +33,17 @@ export const GridLines: React.FC<{
   top?: number;
   bottom?: number;
   rows?: number;
-}> = ({width, height, left = 70, right = 40, top = 30, bottom = 60, rows = 4}) => (
+}> = ({
+  width,
+  height,
+  left = 70,
+  right = 40,
+  top = 30,
+  bottom = 60,
+  rows = 4,
+}) => (
   <g>
-    {Array.from({length: rows + 1}).map((_, i) => {
+    {Array.from({ length: rows + 1 }).map((_, i) => {
       const y = top + (i / rows) * (height - top - bottom);
       return (
         <line
@@ -54,13 +62,19 @@ export const GridLines: React.FC<{
 );
 
 export const MiniLegend: React.FC<{
-  items: Array<{label: string; kind?: "line" | "bar" | "dot"; yellow?: boolean}>;
-}> = ({items}) => (
+  items: Array<{
+    label: string;
+    kind?: "line" | "bar" | "dot";
+    yellow?: boolean;
+  }>;
+}> = ({ items }) => (
   <div className="flex flex-wrap items-center gap-6 text-[18px] text-muted">
     {items.map((item) => (
       <div key={item.label} className="flex items-center gap-3">
         {item.kind === "line" ? (
-          <span className={`h-[4px] w-[34px] ${item.yellow ? "bg-yellow" : "bg-ink"}`} />
+          <span
+            className={`h-[4px] w-[34px] ${item.yellow ? "bg-yellow" : "bg-ink"}`}
+          />
         ) : item.kind === "dot" ? (
           <span
             className={`h-[14px] w-[14px] border-2 border-ink ${item.yellow ? "bg-yellow" : "bg-white"}`}

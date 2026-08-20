@@ -1,14 +1,14 @@
 import React from "react";
-import {useCurrentFrame} from "remotion";
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
-import {palette, reveal} from "../../../lib/motion";
+import { useCurrentFrame } from "remotion";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
+import { palette, reveal } from "../../../lib/motion";
 
 const items = [
-  {name: "A", x: 82, y: 76, score: "$8B"},
-  {name: "B", x: 68, y: 58, score: "$5B"},
-  {name: "C", x: 48, y: 72, score: "$3B"},
-  {name: "D", x: 28, y: 38, score: "$1B"},
+  { name: "A", x: 82, y: 76, score: "$8B" },
+  { name: "B", x: 68, y: 58, score: "$5B" },
+  { name: "C", x: 48, y: 72, score: "$3B" },
+  { name: "D", x: 28, y: 38, score: "$1B" },
 ];
 
 export const OpportunityMatrix: React.FC = () => {

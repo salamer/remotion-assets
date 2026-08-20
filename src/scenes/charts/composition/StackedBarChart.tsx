@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
 
 const segments = [
   {
@@ -36,14 +33,10 @@ export const StackedBarChart: React.FC = () => {
       />
 
       <div className="mt-28 flex h-[150px] w-full border-2 border-ink">
-
         {segments.map((segment, index) => {
           const p = interpolate(
             frame,
-            [
-              10 + index * 10,
-              35 + index * 10,
-            ],
+            [10 + index * 10, 35 + index * 10],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -67,8 +60,7 @@ export const StackedBarChart: React.FC = () => {
                 ${segment.className}
               `}
               style={{
-                width:
-                  `${segment.value * p}%`,
+                width: `${segment.value * p}%`,
               }}
             >
               {p > 0.65 && (
@@ -79,7 +71,6 @@ export const StackedBarChart: React.FC = () => {
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

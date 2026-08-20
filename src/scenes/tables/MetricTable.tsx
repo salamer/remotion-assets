@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../components/Frame";
-import {SceneHeader} from "../../components/SceneHeader";
+import { Frame } from "../../components/Frame";
+import { SceneHeader } from "../../components/SceneHeader";
 
 const rows = [
   ["Airbnb", "$11.1B", "23%", "$92B"],
@@ -25,20 +22,16 @@ export const MetricTable: React.FC = () => {
       />
 
       <div className="mt-16 border-2 border-ink">
-
-        <div className="
+        <div
+          className="
           grid
           grid-cols-[1.6fr_1fr_1fr_1fr]
           bg-yellow
           text-[22px]
           font-semibold
-        ">
-          {[
-            "COMPANY",
-            "REVENUE",
-            "MARGIN",
-            "VALUE",
-          ].map((x) => (
+        "
+        >
+          {["COMPANY", "REVENUE", "MARGIN", "VALUE"].map((x) => (
             <div
               key={x}
               className="border-r-2 border-ink px-7 py-5 last:border-r-0"
@@ -51,10 +44,7 @@ export const MetricTable: React.FC = () => {
         {rows.map((row, index) => {
           const p = interpolate(
             frame,
-            [
-              12 + index * 8,
-              24 + index * 8,
-            ],
+            [12 + index * 8, 24 + index * 8],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -83,11 +73,7 @@ export const MetricTable: React.FC = () => {
                     border-r-2 border-ink
                     px-7 py-6
                     last:border-r-0
-                    ${
-                      cellIndex === 0
-                        ? "font-semibold"
-                        : ""
-                    }
+                    ${cellIndex === 0 ? "font-semibold" : ""}
                   `}
                 >
                   {cell}
@@ -96,7 +82,6 @@ export const MetricTable: React.FC = () => {
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

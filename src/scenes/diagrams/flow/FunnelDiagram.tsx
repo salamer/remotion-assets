@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  interpolate,
-  useCurrentFrame,
-} from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
-import {Frame} from "../../../components/Frame";
-import {SceneHeader} from "../../../components/SceneHeader";
+import { Frame } from "../../../components/Frame";
+import { SceneHeader } from "../../../components/SceneHeader";
 
 const stages = [
   {
@@ -41,14 +38,10 @@ export const FunnelDiagram: React.FC = () => {
       />
 
       <div className="mt-12 space-y-4">
-
         {stages.map((stage, index) => {
           const p = interpolate(
             frame,
-            [
-              10 + index * 8,
-              28 + index * 8,
-            ],
+            [10 + index * 8, 28 + index * 8],
             [0, 1],
             {
               extrapolateLeft: "clamp",
@@ -61,8 +54,7 @@ export const FunnelDiagram: React.FC = () => {
               key={stage.label}
               className="mx-auto"
               style={{
-                width:
-                  `${stage.width * p}%`,
+                width: `${stage.width * p}%`,
               }}
             >
               <div
@@ -72,25 +64,16 @@ export const FunnelDiagram: React.FC = () => {
                   justify-between
                   border-2 border-ink
                   px-8
-                  ${
-                    index === stages.length - 1
-                      ? "bg-yellow"
-                      : "bg-white"
-                  }
+                  ${index === stages.length - 1 ? "bg-yellow" : "bg-white"}
                 `}
               >
-                <span className="text-[24px] font-semibold">
-                  {stage.label}
-                </span>
+                <span className="text-[24px] font-semibold">{stage.label}</span>
 
-                <span className="text-[32px] font-semibold">
-                  {stage.value}
-                </span>
+                <span className="text-[32px] font-semibold">{stage.value}</span>
               </div>
             </div>
           );
         })}
-
       </div>
     </Frame>
   );

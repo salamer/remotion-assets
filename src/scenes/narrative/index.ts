@@ -1,9 +1,9 @@
-export {BeforeAfterCompare} from "./BeforeAfterCompare";
-export {BulletReveal} from "./BulletReveal";
-export {CompareCards} from "./CompareCards";
-export {EquationCards} from "./EquationCards";
-export {ExecutiveSummary} from "./ExecutiveSummary";
-export {KeyTakeaway} from "./KeyTakeaway";
-export {PageFlipChoice} from "./PageFlipChoice";
-export {SideBySideCompare} from "./SideBySideCompare";
-export {Timeline} from "./Timeline";
+export { BeforeAfterCompare } from "./BeforeAfterCompare";
+export { BulletReveal } from "./BulletReveal";
+export { CompareCards } from "./CompareCards";
+export { EquationCards } from "./EquationCards";
+export { ExecutiveSummary } from "./ExecutiveSummary";
+export { KeyTakeaway } from "./KeyTakeaway";
+export { PageFlipChoice } from "./PageFlipChoice";
+export { SideBySideCompare } from "./SideBySideCompare";
+export { Timeline } from "./Timeline";
