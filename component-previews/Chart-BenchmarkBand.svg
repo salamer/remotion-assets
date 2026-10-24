@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="BenchmarkBandChart 框图动画示意">
+<title>BenchmarkBandChart / 代码绘制的动画示意</title><desc>基准带出现 → 实际走势绘出 → 区间关系可读</desc>
+<style>
+svg .a{animation:fm-enter 4.8s ease both infinite;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:center}
+svg .gx{animation:fm-x 4.8s cubic-bezier(.2,.8,.2,1) both infinite;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:left center}
+svg .gy{animation:fm-y 4.8s cubic-bezier(.2,.8,.2,1) both infinite;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:center bottom}
+svg .dr{stroke-dasharray:1;animation:fm-draw 4.8s ease both infinite;animation-delay:var(--d,0s)}
+svg .pan{animation:fm-pan 4.8s linear infinite}
+svg .zoom{animation:fm-zoom 4.8s ease both infinite;transform-box:fill-box;transform-origin:center}
+svg .flip{animation:fm-flip 4.8s ease both infinite;transform-box:fill-box;transform-origin:center}
+svg .n0{animation:fm-n0 4.8s linear infinite}svg .n1{animation:fm-n1 4.8s linear infinite}svg .n2{animation:fm-n2 4.8s linear infinite}
+svg .theme>rect{animation:fm-theme 4.8s steps(1,end) infinite}
+svg .seek{animation:fm-seek 4.8s linear infinite;transform-box:fill-box;transform-origin:left}
+@keyframes fm-enter{0%,3%{opacity:0;transform:translateY(9px)}22%,89%{opacity:1;transform:translateY(0)}99%,100%{opacity:0;transform:translateY(0)}}
+@keyframes fm-x{0%,5%{transform:scaleX(0);opacity:0}27%,89%{transform:scaleX(1);opacity:1}99%,100%{transform:scaleX(1);opacity:0}}
+@keyframes fm-y{0%,5%{transform:scaleY(0);opacity:0}27%,89%{transform:scaleY(1);opacity:1}99%,100%{transform:scaleY(1);opacity:0}}
+@keyframes fm-draw{0%,8%{stroke-dashoffset:1;opacity:0}12%{opacity:1}48%,89%{stroke-dashoffset:0;opacity:1}99%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes fm-pan{from{transform:translateX(0)}to{transform:translateX(-480px)}}
+@keyframes fm-zoom{0%,15%{transform:scale(.9);opacity:0}30%{opacity:1;transform:scale(1)}65%,89%{opacity:1;transform:scale(1.14)}100%{opacity:0;transform:scale(1.14)}}
+@keyframes fm-flip{0%,4%{transform:scaleX(.02);opacity:0}23%,47%{transform:scaleX(1);opacity:1}57%{transform:scaleX(.02);opacity:1}73%,89%{transform:scaleX(1);opacity:1}100%{opacity:0}}
+@keyframes fm-n0{0%,13%{opacity:1}14%,100%{opacity:0}}@keyframes fm-n1{0%,13%{opacity:0}14%,28%{opacity:1}29%,100%{opacity:0}}@keyframes fm-n2{0%,28%{opacity:0}29%,90%{opacity:1}99%,100%{opacity:0}}
+@keyframes fm-theme{0%,32%{fill:#fff8cf}33%,65%{fill:#e5f2fa}66%,100%{fill:#e9f1df}}
+@keyframes fm-seek{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){svg *{animation:none!important;stroke-dashoffset:0!important}svg .n0,svg .n1{display:none}}
+</style><rect width="720" height="360" fill="#fafaf7"/>
+<g font-family="IBM Plex Mono, ui-monospace, monospace"><rect x="18" y="18" width="684" height="324" fill="none" stroke="#171917" stroke-width="1.8"/>
+<text x="36" y="47" font-size="17" fill="#171917" text-anchor="start" class="" style="--d:0s">BenchmarkBandChart</text><text x="681" y="47" font-size="10" fill="#74796e" text-anchor="end" class="" style="--d:0s">SCHEMATIC</text>
+<path d="M18 61 H702" stroke="#171917"/><path d="M70 85 L70 275" fill="none" stroke="#171917" stroke-width="2" pathLength="1" class="dr" style="--d:0s" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 275 L658 275" fill="none" stroke="#171917" stroke-width="2" pathLength="1" class="dr" style="--d:0s" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 125 L658 125" fill="none" stroke="#dce0d6" stroke-width="1" pathLength="1" class="dr" style="--d:0s" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 175 L658 175" fill="none" stroke="#dce0d6" stroke-width="1" pathLength="1" class="dr" style="--d:0s" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 225 L658 225" fill="none" stroke="#dce0d6" stroke-width="1" pathLength="1" class="dr" style="--d:0s" stroke-linejoin="round" stroke-linecap="round"/><path d="M80 218 L165 197 L250 208 L335 143 L420 130 L505 82 L635 65 L635 165 L505 176 L420 219 L335 205 L250 261 L165 250 L80 271 Z" fill="#e1e9d7" stroke="#b9c7a7" stroke-width="1" pathLength="1" class="a" style="--d:0s" stroke-linejoin="round" stroke-linecap="round"/><path d="M80 247 L165 224 L250 235 L335 172 L420 185 L505 129 L635 96" fill="none" stroke="#171917" stroke-width="3.2" pathLength="1" class="dr" style="--d:0.12s" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="36" y="327" font-size="11" fill="#74796e" text-anchor="start" class="" style="--d:0s">01  FRAME    →    02  MOTION    →    03  HOLD</text>
+<rect x="533" y="316" width="145" height="4" fill="#dce1d4"/><rect x="533" y="316" width="145" height="4" fill="#171917" class="seek"/>
+</g></svg>

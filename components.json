@@ -1,0 +1,3601 @@
+{
+  "animation": "code-drawn SVG/CSS schematic",
+  "total": 159,
+  "entries": [
+    {
+      "id": "Chart-Bar",
+      "name": "BarChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/BarChart.tsx",
+      "purpose": "比较不同类别的规模",
+      "pattern": "bars",
+      "steps": [
+        "坐标框出现",
+        "柱子由零长高",
+        "数值标签显示"
+      ],
+      "props": [
+        "data",
+        "title",
+        "eyebrow",
+        "unit",
+        "source"
+      ],
+      "usage": "import { BarChart } from \"./src/scenes/charts/categorical/BarChart\";\n\n<BarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Bullet",
+      "name": "BulletChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/BulletChart.tsx",
+      "purpose": "比较实际表现与目标",
+      "pattern": "bullet",
+      "steps": [
+        "背景区间出现",
+        "实际条伸长",
+        "目标刻线显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "rows"
+      ],
+      "usage": "import { BulletChart } from \"./src/scenes/charts/categorical/BulletChart\";\n\n<BulletChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-DivergingBar",
+      "name": "DivergingBarChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/DivergingBarChart.tsx",
+      "purpose": "比较正负两侧的变化",
+      "pattern": "diverge",
+      "steps": [
+        "中轴出现",
+        "条形向左右展开",
+        "正负值显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items",
+        "suffix"
+      ],
+      "usage": "import { DivergingBarChart } from \"./src/scenes/charts/categorical/DivergingBarChart\";\n\n<DivergingBarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-DotPlot",
+      "name": "DotPlot",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/DotPlot.tsx",
+      "purpose": "用同一坐标轴比较数值",
+      "pattern": "dotplot",
+      "steps": [
+        "类别行出现",
+        "数据点依次显现",
+        "读数显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items",
+        "suffix"
+      ],
+      "usage": "import { DotPlot } from \"./src/scenes/charts/categorical/DotPlot\";\n\n<DotPlot {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-GroupedBar",
+      "name": "GroupedBarChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/GroupedBarChart.tsx",
+      "purpose": "比较各类别中的多组指标",
+      "pattern": "groupbars",
+      "steps": [
+        "类别框出现",
+        "同组双柱长高",
+        "图例补齐"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "labels",
+        "source"
+      ],
+      "usage": "import { GroupedBarChart } from \"./src/scenes/charts/categorical/GroupedBarChart\";\n\n<GroupedBarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Lollipop",
+      "name": "LollipopChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/LollipopChart.tsx",
+      "purpose": "用细杆和圆点比较规模",
+      "pattern": "lollipop",
+      "steps": [
+        "坐标框出现",
+        "细杆伸长",
+        "端点与标签出现"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items",
+        "suffix"
+      ],
+      "usage": "import { LollipopChart } from \"./src/scenes/charts/categorical/LollipopChart\";\n\n<LollipopChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-PairedBar",
+      "name": "PairedBarChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/PairedBarChart.tsx",
+      "purpose": "逐项比较两组并列数据",
+      "pattern": "pairbars",
+      "steps": [
+        "类别行出现",
+        "两条分别展开",
+        "差值可读"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "aLabel",
+        "bLabel",
+        "suffix",
+        "source"
+      ],
+      "usage": "import { PairedBarChart } from \"./src/scenes/charts/categorical/PairedBarChart\";\n\n<PairedBarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Pareto",
+      "name": "ParetoChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/ParetoChart.tsx",
+      "purpose": "识别主要贡献项及累计贡献",
+      "pattern": "pareto",
+      "steps": [
+        "降序柱出现",
+        "累计线绘出",
+        "累计比例显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items"
+      ],
+      "usage": "import { ParetoChart } from \"./src/scenes/charts/categorical/ParetoChart\";\n\n<ParetoChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Ranking",
+      "name": "RankingChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/RankingChart.tsx",
+      "purpose": "呈现有序排名和差距",
+      "pattern": "ranking",
+      "steps": [
+        "排名行出现",
+        "横条依次伸长",
+        "名次与值显示"
+      ],
+      "props": [
+        "data"
+      ],
+      "usage": "import { RankingChart } from \"./src/scenes/charts/categorical/RankingChart\";\n\n<RankingChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-ScenarioBar",
+      "name": "ScenarioBarChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/ScenarioBarChart.tsx",
+      "purpose": "比较悲观、基准和乐观情景",
+      "pattern": "scenario",
+      "steps": [
+        "三个情景框出现",
+        "情景柱长高",
+        "假设标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "scenarios",
+        "prefix"
+      ],
+      "usage": "import { ScenarioBarChart } from \"./src/scenes/charts/categorical/ScenarioBarChart\";\n\n<ScenarioBarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Tornado",
+      "name": "TornadoChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/TornadoChart.tsx",
+      "purpose": "按影响大小比较敏感性",
+      "pattern": "tornado",
+      "steps": [
+        "中心轴出现",
+        "双侧影响条展开",
+        "变量标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "rows",
+        "suffix"
+      ],
+      "usage": "import { TornadoChart } from \"./src/scenes/charts/categorical/TornadoChart\";\n\n<TornadoChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-VarianceComparison",
+      "name": "VarianceComparisonChart",
+      "kind": "original",
+      "category": "分类比较",
+      "source": "src/scenes/charts/categorical/VarianceComparisonChart.tsx",
+      "purpose": "比较计划、实际及偏差",
+      "pattern": "variance",
+      "steps": [
+        "计划框出现",
+        "实际条展开",
+        "偏差标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "actualLabel",
+        "benchmarkLabel"
+      ],
+      "usage": "import { VarianceComparisonChart } from \"./src/scenes/charts/categorical/VarianceComparisonChart\";\n\n<VarianceComparisonChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-BenchmarkBand",
+      "name": "BenchmarkBandChart",
+      "kind": "original",
+      "category": "跨组比较",
+      "source": "src/scenes/charts/comparison/BenchmarkBandChart.tsx",
+      "purpose": "把指标放进基准区间比较",
+      "pattern": "benchmark",
+      "steps": [
+        "基准带出现",
+        "实际走势绘出",
+        "区间关系可读"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data"
+      ],
+      "usage": "import { BenchmarkBandChart } from \"./src/scenes/charts/comparison/BenchmarkBandChart\";\n\n<BenchmarkBandChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Dumbbell",
+      "name": "DumbbellChart",
+      "kind": "original",
+      "category": "跨组比较",
+      "source": "src/scenes/charts/comparison/DumbbellChart.tsx",
+      "purpose": "比较每项的两个端点",
+      "pattern": "dumbbell",
+      "steps": [
+        "类别行出现",
+        "端点显示",
+        "连接杆展开"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "fromLabel",
+        "toLabel",
+        "suffix",
+        "source"
+      ],
+      "usage": "import { DumbbellChart } from \"./src/scenes/charts/comparison/DumbbellChart\";\n\n<DumbbellChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Slope",
+      "name": "SlopeChart",
+      "kind": "original",
+      "category": "跨组比较",
+      "source": "src/scenes/charts/comparison/SlopeChart.tsx",
+      "purpose": "比较两个时期的相对位置",
+      "pattern": "slope",
+      "steps": [
+        "左右时点出现",
+        "连接线绘出",
+        "终点标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "startLabel",
+        "endLabel",
+        "suffix",
+        "source"
+      ],
+      "usage": "import { SlopeChart } from \"./src/scenes/charts/comparison/SlopeChart\";\n\n<SlopeChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-SmallMultiples",
+      "name": "SmallMultiples",
+      "kind": "original",
+      "category": "跨组比较",
+      "source": "src/scenes/charts/comparison/SmallMultiples.tsx",
+      "purpose": "用统一尺度比较多张小图",
+      "pattern": "multiples",
+      "steps": [
+        "小图框依次出现",
+        "各自走势绘出",
+        "共同尺度显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "panels"
+      ],
+      "usage": "import { SmallMultiples } from \"./src/scenes/charts/comparison/SmallMultiples\";\n\n<SmallMultiples {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-CompositionCompare",
+      "name": "CompositionCompareChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/CompositionCompareChart.tsx",
+      "purpose": "比较两组结构占比",
+      "pattern": "comparestack",
+      "steps": [
+        "两组总量框出现",
+        "占比区块展开",
+        "结构标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "rows"
+      ],
+      "usage": "import { CompositionCompareChart } from \"./src/scenes/charts/composition/CompositionCompareChart\";\n\n<CompositionCompareChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-ContributionBar",
+      "name": "ContributionBarChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/ContributionBarChart.tsx",
+      "purpose": "拆解对总量的贡献",
+      "pattern": "contribution",
+      "steps": [
+        "贡献行出现",
+        "分项条展开",
+        "总量框显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items",
+        "suffix"
+      ],
+      "usage": "import { ContributionBarChart } from \"./src/scenes/charts/composition/ContributionBarChart\";\n\n<ContributionBarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-DistributionBlocks",
+      "name": "DistributionBlocksChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/DistributionBlocksChart.tsx",
+      "purpose": "用区块呈现分配结构",
+      "pattern": "blocks",
+      "steps": [
+        "总量框出现",
+        "分配块依次填充",
+        "比例标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "groups",
+        "unit",
+        "source"
+      ],
+      "usage": "import { DistributionBlocksChart } from \"./src/scenes/charts/composition/DistributionBlocksChart\";\n\n<DistributionBlocksChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Donut",
+      "name": "DonutChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/DonutChart.tsx",
+      "purpose": "展示整体中的各部分占比",
+      "pattern": "donut",
+      "steps": [
+        "环形底框出现",
+        "分段依次描出",
+        "中心总量显示"
+      ],
+      "props": [
+        "value"
+      ],
+      "usage": "import { DonutChart } from \"./src/scenes/charts/composition/DonutChart\";\n\n<DonutChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Marimekko",
+      "name": "MarimekkoChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/MarimekkoChart.tsx",
+      "purpose": "同时比较类别规模与内部结构",
+      "pattern": "mekko",
+      "steps": [
+        "总框出现",
+        "不同宽度的列展开",
+        "列内分段显现"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "markets"
+      ],
+      "usage": "import { MarimekkoChart } from \"./src/scenes/charts/composition/MarimekkoChart\";\n\n<MarimekkoChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-NestedComposition",
+      "name": "NestedCompositionChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/NestedCompositionChart.tsx",
+      "purpose": "展示整体、子项和孙项",
+      "pattern": "nested",
+      "steps": [
+        "外层整体框出现",
+        "子框出现",
+        "内部细分显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "groups"
+      ],
+      "usage": "import { NestedCompositionChart } from \"./src/scenes/charts/composition/NestedCompositionChart\";\n\n<NestedCompositionChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Pictogram",
+      "name": "PictogramChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/PictogramChart.tsx",
+      "purpose": "用图标单元表现比例",
+      "pattern": "pictogram",
+      "steps": [
+        "图标阵列出现",
+        "部分单元依次强调",
+        "份额标签显示"
+      ],
+      "props": [
+        "total",
+        "highlighted",
+        "icon"
+      ],
+      "usage": "import { PictogramChart } from \"./src/scenes/charts/composition/PictogramChart\";\n\n<PictogramChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-StackedBar",
+      "name": "StackedBarChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/StackedBarChart.tsx",
+      "purpose": "比较多个类别的构成",
+      "pattern": "stacked",
+      "steps": [
+        "各类别底座出现",
+        "分段累计长高",
+        "图例显示"
+      ],
+      "props": [
+        "segments",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { StackedBarChart } from \"./src/scenes/charts/composition/StackedBarChart\";\n\n<StackedBarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Treemap",
+      "name": "TreemapChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/TreemapChart.tsx",
+      "purpose": "用嵌套面积表示结构",
+      "pattern": "treemap",
+      "steps": [
+        "总面积框出现",
+        "一级区块展开",
+        "子区块显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items"
+      ],
+      "usage": "import { TreemapChart } from \"./src/scenes/charts/composition/TreemapChart\";\n\n<TreemapChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Waffle",
+      "name": "WaffleChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/WaffleChart.tsx",
+      "purpose": "用等大方格表示份额",
+      "pattern": "waffle",
+      "steps": [
+        "方格底图出现",
+        "份额单元依次填色",
+        "比例显示"
+      ],
+      "props": [
+        "value",
+        "label"
+      ],
+      "usage": "import { WaffleChart } from \"./src/scenes/charts/composition/WaffleChart\";\n\n<WaffleChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Waterfall",
+      "name": "WaterfallChart",
+      "kind": "original",
+      "category": "结构占比",
+      "source": "src/scenes/charts/composition/WaterfallChart.tsx",
+      "purpose": "从起点逐项桥接到终点",
+      "pattern": "waterfall",
+      "steps": [
+        "起点柱出现",
+        "增减桥接条依次出现",
+        "终点总量显示"
+      ],
+      "props": [
+        "data",
+        "title",
+        "eyebrow",
+        "unit",
+        "source"
+      ],
+      "usage": "import { WaterfallChart } from \"./src/scenes/charts/composition/WaterfallChart\";\n\n<WaterfallChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Beeswarm",
+      "name": "BeeswarmPlot",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/BeeswarmPlot.tsx",
+      "purpose": "展示分布密度和聚集",
+      "pattern": "beeswarm",
+      "steps": [
+        "分布轴出现",
+        "错位点群出现",
+        "聚集位置可读"
+      ],
+      "props": [
+        "values",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { BeeswarmPlot } from \"./src/scenes/charts/distribution/BeeswarmPlot\";\n\n<BeeswarmPlot {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-BoxPlot",
+      "name": "BoxPlot",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/BoxPlot.tsx",
+      "purpose": "展示中位数、四分位和离群值",
+      "pattern": "boxplot",
+      "steps": [
+        "数轴出现",
+        "箱体与须线展开",
+        "中位数和离群点显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "boxes"
+      ],
+      "usage": "import { BoxPlot } from \"./src/scenes/charts/distribution/BoxPlot\";\n\n<BoxPlot {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Bubble",
+      "name": "BubbleChart",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/BubbleChart.tsx",
+      "purpose": "用位置和气泡大小展示三维指标",
+      "pattern": "bubble",
+      "steps": [
+        "坐标框出现",
+        "气泡依次放大",
+        "标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items",
+        "xLabel",
+        "yLabel"
+      ],
+      "usage": "import { BubbleChart } from \"./src/scenes/charts/distribution/BubbleChart\";\n\n<BubbleChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-CalendarHeatmap",
+      "name": "CalendarHeatmap",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/CalendarHeatmap.tsx",
+      "purpose": "按日历位置查看活动强度",
+      "pattern": "calendar",
+      "steps": [
+        "周列与日期格出现",
+        "日期格分批着色",
+        "强度图例显示"
+      ],
+      "props": [
+        "values",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { CalendarHeatmap } from \"./src/scenes/charts/distribution/CalendarHeatmap\";\n\n<CalendarHeatmap {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-CohortMatrix",
+      "name": "CohortMatrix",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/CohortMatrix.tsx",
+      "purpose": "比较各批次的留存或迁移",
+      "pattern": "cohort",
+      "steps": [
+        "批次与期间出现",
+        "三角矩阵展开",
+        "深浅数值显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "cohorts",
+        "ages",
+        "values"
+      ],
+      "usage": "import { CohortMatrix } from \"./src/scenes/charts/distribution/CohortMatrix\";\n\n<CohortMatrix {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-DotStrip",
+      "name": "DotStripPlot",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/DotStripPlot.tsx",
+      "purpose": "用条带点阵展示密度",
+      "pattern": "strip",
+      "steps": [
+        "条带底框出现",
+        "点依次显现",
+        "密集区域可读"
+      ],
+      "props": [
+        "groups",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { DotStripPlot } from \"./src/scenes/charts/distribution/DotStripPlot\";\n\n<DotStripPlot {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Heatmap",
+      "name": "Heatmap",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/Heatmap.tsx",
+      "purpose": "比较二维矩阵中的强弱",
+      "pattern": "heatmap",
+      "steps": [
+        "行列框出现",
+        "单元格依次着色",
+        "高值单元强调"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "rows",
+        "cols",
+        "values"
+      ],
+      "usage": "import { Heatmap } from \"./src/scenes/charts/distribution/Heatmap\";\n\n<Heatmap {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Histogram",
+      "name": "Histogram",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/Histogram.tsx",
+      "purpose": "查看连续变量的分箱分布",
+      "pattern": "histogram",
+      "steps": [
+        "分箱轴出现",
+        "相邻柱从零长高",
+        "峰值区间显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "bins"
+      ],
+      "usage": "import { Histogram } from \"./src/scenes/charts/distribution/Histogram\";\n\n<Histogram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-PopulationPyramid",
+      "name": "PopulationPyramid",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/PopulationPyramid.tsx",
+      "purpose": "对照两组人群的年龄结构",
+      "pattern": "pyramidbars",
+      "steps": [
+        "中心年龄轴出现",
+        "双侧分组条展开",
+        "组别标签显示"
+      ],
+      "props": [
+        "rows",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { PopulationPyramid } from \"./src/scenes/charts/distribution/PopulationPyramid\";\n\n<PopulationPyramid {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Ridgeline",
+      "name": "RidgelinePlot",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/RidgelinePlot.tsx",
+      "purpose": "比较多组分布曲线",
+      "pattern": "ridges",
+      "steps": [
+        "分组基线出现",
+        "密度轮廓依次绘出",
+        "峰值差异可读"
+      ],
+      "props": [
+        "series",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { RidgelinePlot } from \"./src/scenes/charts/distribution/RidgelinePlot\";\n\n<RidgelinePlot {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Scatter",
+      "name": "ScatterPlot",
+      "kind": "original",
+      "category": "分布与密度",
+      "source": "src/scenes/charts/distribution/ScatterPlot.tsx",
+      "purpose": "查看两个连续变量的关系",
+      "pattern": "scatter",
+      "steps": [
+        "双轴出现",
+        "散点分批显现",
+        "标签或异常点突出"
+      ],
+      "props": [
+        "data",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { ScatterPlot } from \"./src/scenes/charts/distribution/ScatterPlot\";\n\n<ScatterPlot {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-ParallelCoordinates",
+      "name": "ParallelCoordinates",
+      "kind": "original",
+      "category": "多维比较",
+      "source": "src/scenes/charts/multivariate/ParallelCoordinates.tsx",
+      "purpose": "比较对象在多个维度的表现",
+      "pattern": "parallel",
+      "steps": [
+        "维度竖轴出现",
+        "多维折线绘出",
+        "重点对象强调"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "axes",
+        "items"
+      ],
+      "usage": "import { ParallelCoordinates } from \"./src/scenes/charts/multivariate/ParallelCoordinates\";\n\n<ParallelCoordinates {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-QuadrantScatter",
+      "name": "QuadrantScatterChart",
+      "kind": "original",
+      "category": "多维比较",
+      "source": "src/scenes/charts/multivariate/QuadrantScatterChart.tsx",
+      "purpose": "把定量对象放进四象限",
+      "pattern": "quadrants",
+      "steps": [
+        "象限框出现",
+        "数据点显现",
+        "象限含义和标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items",
+        "xLabel",
+        "yLabel",
+        "quadrants"
+      ],
+      "usage": "import { QuadrantScatterChart } from \"./src/scenes/charts/multivariate/QuadrantScatterChart\";\n\n<QuadrantScatterChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Radar",
+      "name": "RadarChart",
+      "kind": "original",
+      "category": "多维比较",
+      "source": "src/scenes/charts/multivariate/RadarChart.tsx",
+      "purpose": "比较多个维度的能力画像",
+      "pattern": "radar",
+      "steps": [
+        "雷达轴框出现",
+        "能力多边形绘出",
+        "维度标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "axes",
+        "a",
+        "b",
+        "aLabel",
+        "bLabel"
+      ],
+      "usage": "import { RadarChart } from \"./src/scenes/charts/multivariate/RadarChart\";\n\n<RadarChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-AnnotatedLine",
+      "name": "AnnotatedLineChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/AnnotatedLineChart.tsx",
+      "purpose": "把事件标注放在趋势线上",
+      "pattern": "annotated",
+      "steps": [
+        "走势框出现",
+        "折线绘出",
+        "事件框和指引线出现"
+      ],
+      "props": [
+        "data",
+        "events",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { AnnotatedLineChart } from \"./src/scenes/charts/time-series/AnnotatedLineChart\";\n\n<AnnotatedLineChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Area",
+      "name": "AreaChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/AreaChart.tsx",
+      "purpose": "呈现随时间变化的规模",
+      "pattern": "area",
+      "steps": [
+        "时间轴出现",
+        "面积和边线展开",
+        "最新值显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "suffix"
+      ],
+      "usage": "import { AreaChart } from \"./src/scenes/charts/time-series/AreaChart\";\n\n<AreaChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Bump",
+      "name": "BumpChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/BumpChart.tsx",
+      "purpose": "展示排名随时间的变化",
+      "pattern": "bump",
+      "steps": [
+        "排名轴出现",
+        "多条排名路径绘出",
+        "末端名次显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "series",
+        "periods"
+      ],
+      "usage": "import { BumpChart } from \"./src/scenes/charts/time-series/BumpChart\";\n\n<BumpChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Candlestick",
+      "name": "CandlestickChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/CandlestickChart.tsx",
+      "purpose": "展示开高低收价格变化",
+      "pattern": "candles",
+      "steps": [
+        "时间轴出现",
+        "影线依次绘出",
+        "蜡烛实体显现"
+      ],
+      "props": [
+        "data",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { CandlestickChart } from \"./src/scenes/charts/time-series/CandlestickChart\";\n\n<CandlestickChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-ConnectedScatter",
+      "name": "ConnectedScatterPlot",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/ConnectedScatterPlot.tsx",
+      "purpose": "展示二维指标随时间的路径",
+      "pattern": "connected",
+      "steps": [
+        "坐标框出现",
+        "散点依次出现",
+        "时间路径连起"
+      ],
+      "props": [
+        "pts",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { ConnectedScatterPlot } from \"./src/scenes/charts/time-series/ConnectedScatterPlot\";\n\n<ConnectedScatterPlot {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-DualAxis",
+      "name": "DualAxisChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/DualAxisChart.tsx",
+      "purpose": "同时观察柱与线两种量纲",
+      "pattern": "dualaxis",
+      "steps": [
+        "双侧刻度出现",
+        "柱子长高",
+        "另一指标折线绘出"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "barLabel",
+        "lineLabel",
+        "leftUnit",
+        "rightUnit",
+        "highlightFromIndex",
+        "source"
+      ],
+      "usage": "import { DualAxisChart } from \"./src/scenes/charts/time-series/DualAxisChart\";\n\n<DualAxisChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-EventStudy",
+      "name": "EventStudyChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/EventStudyChart.tsx",
+      "purpose": "观察事件前后的变化",
+      "pattern": "event",
+      "steps": [
+        "事件分界出现",
+        "前后走势绘出",
+        "事件窗口强调"
+      ],
+      "props": [
+        "data",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { EventStudyChart } from \"./src/scenes/charts/time-series/EventStudyChart\";\n\n<EventStudyChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-IndexedComparison",
+      "name": "IndexedComparisonChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/IndexedComparisonChart.tsx",
+      "purpose": "统一起点比较同业表现",
+      "pattern": "ribbon",
+      "steps": [
+        "统一基点出现",
+        "多组走势绘出",
+        "末端比较带显示"
+      ],
+      "props": [
+        "series",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { IndexedComparisonChart } from \"./src/scenes/charts/time-series/IndexedComparisonChart\";\n\n<IndexedComparisonChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-IndexedLine",
+      "name": "IndexedLineChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/IndexedLineChart.tsx",
+      "purpose": "把多组序列统一到基准指数",
+      "pattern": "multiline",
+      "steps": [
+        "基准轴出现",
+        "多条指数线绘出",
+        "末端指数显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "labels"
+      ],
+      "usage": "import { IndexedLineChart } from \"./src/scenes/charts/time-series/IndexedLineChart\";\n\n<IndexedLineChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-Line",
+      "name": "LineChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/LineChart.tsx",
+      "purpose": "展示一组时间趋势",
+      "pattern": "line",
+      "steps": [
+        "时间框出现",
+        "折线从左向右绘出",
+        "末端值显示"
+      ],
+      "props": [
+        "title",
+        "eyebrow",
+        "data",
+        "prefix",
+        "suffix",
+        "source"
+      ],
+      "usage": "import { LineChart } from \"./src/scenes/charts/time-series/LineChart\";\n\n<LineChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-MultiLine",
+      "name": "MultiLineChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/MultiLineChart.tsx",
+      "purpose": "比较多组时间序列",
+      "pattern": "multiline",
+      "steps": [
+        "统一坐标出现",
+        "多条线依次绘出",
+        "图例和末端值显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "series",
+        "source"
+      ],
+      "usage": "import { MultiLineChart } from \"./src/scenes/charts/time-series/MultiLineChart\";\n\n<MultiLineChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-StackedArea",
+      "name": "StackedAreaChart",
+      "kind": "original",
+      "category": "时间序列",
+      "source": "src/scenes/charts/time-series/StackedAreaChart.tsx",
+      "purpose": "观察结构随时间的变化",
+      "pattern": "stackarea",
+      "steps": [
+        "时间轴出现",
+        "多层面积展开",
+        "构成图例显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data",
+        "labels"
+      ],
+      "usage": "import { StackedAreaChart } from \"./src/scenes/charts/time-series/StackedAreaChart\";\n\n<StackedAreaChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-ForecastFan",
+      "name": "ForecastFanChart",
+      "kind": "original",
+      "category": "区间与预测",
+      "source": "src/scenes/charts/uncertainty/ForecastFanChart.tsx",
+      "purpose": "展示预测和不确定性扇区",
+      "pattern": "fan",
+      "steps": [
+        "历史线出现",
+        "预测分界出现",
+        "扇形范围逐层展开"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data"
+      ],
+      "usage": "import { ForecastFanChart } from \"./src/scenes/charts/uncertainty/ForecastFanChart\";\n\n<ForecastFanChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Chart-RangeBand",
+      "name": "RangeBandChart",
+      "kind": "original",
+      "category": "区间与预测",
+      "source": "src/scenes/charts/uncertainty/RangeBandChart.tsx",
+      "purpose": "展示序列的上下界区间",
+      "pattern": "range",
+      "steps": [
+        "时间框出现",
+        "区间带展开",
+        "中心走势绘出"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "data"
+      ],
+      "usage": "import { RangeBandChart } from \"./src/scenes/charts/uncertainty/RangeBandChart\";\n\n<RangeBandChart {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-BalanceSheet",
+      "name": "BalanceSheetDiagram",
+      "kind": "original",
+      "category": "财务结构",
+      "source": "src/scenes/diagrams/finance/BalanceSheetDiagram.tsx",
+      "purpose": "比较资产与负债权益",
+      "pattern": "balance",
+      "steps": [
+        "资产与资金来源框出现",
+        "分层区块显现",
+        "两侧合计显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "assets",
+        "liabilities",
+        "equity",
+        "unit",
+        "source"
+      ],
+      "usage": "import { BalanceSheetDiagram } from \"./src/scenes/diagrams/finance/BalanceSheetDiagram\";\n\n<BalanceSheetDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-CapitalStack",
+      "name": "CapitalStackDiagram",
+      "kind": "original",
+      "category": "财务结构",
+      "source": "src/scenes/diagrams/finance/CapitalStackDiagram.tsx",
+      "purpose": "展示资本结构及清偿层级",
+      "pattern": "capital",
+      "steps": [
+        "资本总框出现",
+        "各层堆叠",
+        "层级和比例显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "layers",
+        "lossPercent",
+        "source"
+      ],
+      "usage": "import { CapitalStackDiagram } from \"./src/scenes/diagrams/finance/CapitalStackDiagram\";\n\n<CapitalStackDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-Flow",
+      "name": "FlowDiagram",
+      "kind": "original",
+      "category": "流程与价值链",
+      "source": "src/scenes/diagrams/flow/FlowDiagram.tsx",
+      "purpose": "说明顺序流程",
+      "pattern": "flow",
+      "steps": [
+        "起点框出现",
+        "连线绘出",
+        "后续节点依次出现"
+      ],
+      "props": [
+        "nodes",
+        "title",
+        "eyebrow",
+        "takeaway"
+      ],
+      "usage": "import { FlowDiagram } from \"./src/scenes/diagrams/flow/FlowDiagram\";\n\n<FlowDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-Funnel",
+      "name": "FunnelDiagram",
+      "kind": "original",
+      "category": "流程与价值链",
+      "source": "src/scenes/diagrams/flow/FunnelDiagram.tsx",
+      "purpose": "展示转化漏斗各环节",
+      "pattern": "funnel",
+      "steps": [
+        "首层出现",
+        "后续层逐层收窄",
+        "环节数值显示"
+      ],
+      "props": [
+        "stages",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { FunnelDiagram } from \"./src/scenes/diagrams/flow/FunnelDiagram\";\n\n<FunnelDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-Sankey",
+      "name": "SankeyDiagram",
+      "kind": "original",
+      "category": "流程与价值链",
+      "source": "src/scenes/diagrams/flow/SankeyDiagram.tsx",
+      "purpose": "用连带宽度表示流量",
+      "pattern": "sankey",
+      "steps": [
+        "两侧节点出现",
+        "不同宽度流带绘出",
+        "流向标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "subtitle",
+        "nodes",
+        "links",
+        "unit",
+        "source"
+      ],
+      "usage": "import { SankeyDiagram } from \"./src/scenes/diagrams/flow/SankeyDiagram\";\n\n<SankeyDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-TwoSidedMarketplace",
+      "name": "TwoSidedMarketplaceDiagram",
+      "kind": "original",
+      "category": "流程与价值链",
+      "source": "src/scenes/diagrams/flow/TwoSidedMarketplaceDiagram.tsx",
+      "purpose": "解释平台两端和资金流",
+      "pattern": "marketplace",
+      "steps": [
+        "平台框出现",
+        "供需两侧显现",
+        "双向连线绘出"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "left",
+        "right",
+        "platform"
+      ],
+      "usage": "import { TwoSidedMarketplaceDiagram } from \"./src/scenes/diagrams/flow/TwoSidedMarketplaceDiagram\";\n\n<TwoSidedMarketplaceDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-UnitEconomics",
+      "name": "UnitEconomicsDiagram",
+      "kind": "original",
+      "category": "流程与价值链",
+      "source": "src/scenes/diagrams/flow/UnitEconomicsDiagram.tsx",
+      "purpose": "拆解单元收入、成本和利润",
+      "pattern": "unit",
+      "steps": [
+        "单元收入框出现",
+        "成本项展开",
+        "利润框显示"
+      ],
+      "props": [
+        "split",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { UnitEconomicsDiagram } from \"./src/scenes/diagrams/flow/UnitEconomicsDiagram\";\n\n<UnitEconomicsDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-ValueChain",
+      "name": "ValueChainDiagram",
+      "kind": "original",
+      "category": "流程与价值链",
+      "source": "src/scenes/diagrams/flow/ValueChainDiagram.tsx",
+      "purpose": "说明价值链及各环节捕获",
+      "pattern": "valuechain",
+      "steps": [
+        "环节框依次出现",
+        "链路绘出",
+        "价值捕获条显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "stages",
+        "source"
+      ],
+      "usage": "import { ValueChainDiagram } from \"./src/scenes/diagrams/flow/ValueChainDiagram\";\n\n<ValueChainDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-ValueChainMap",
+      "name": "ValueChainMap",
+      "kind": "original",
+      "category": "流程与价值链",
+      "source": "src/scenes/diagrams/flow/ValueChainMap.tsx",
+      "purpose": "查看价值链各环节中的参与者",
+      "pattern": "valuemap",
+      "steps": [
+        "阶段列出现",
+        "参与者卡片显现",
+        "阶段链路绘出"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "stages"
+      ],
+      "usage": "import { ValueChainMap } from \"./src/scenes/diagrams/flow/ValueChainMap\";\n\n<ValueChainMap {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-HierarchyPyramid",
+      "name": "HierarchyPyramid",
+      "kind": "original",
+      "category": "层级结构",
+      "source": "src/scenes/diagrams/hierarchy/HierarchyPyramid.tsx",
+      "purpose": "展示分层结构及优先级",
+      "pattern": "pyramid",
+      "steps": [
+        "底层出现",
+        "各层向上展开",
+        "层级标签显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "tiers",
+        "footer",
+        "source"
+      ],
+      "usage": "import { HierarchyPyramid } from \"./src/scenes/diagrams/hierarchy/HierarchyPyramid\";\n\n<HierarchyPyramid {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-OrganizationTree",
+      "name": "OrganizationTree",
+      "kind": "original",
+      "category": "层级结构",
+      "source": "src/scenes/diagrams/hierarchy/OrganizationTree.tsx",
+      "purpose": "展示组织汇报关系",
+      "pattern": "tree",
+      "steps": [
+        "根节点出现",
+        "分支连线绘出",
+        "岗位节点依次出现"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "subtitle",
+        "root",
+        "source"
+      ],
+      "usage": "import { OrganizationTree } from \"./src/scenes/diagrams/hierarchy/OrganizationTree\";\n\n<OrganizationTree {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-OwnershipTree",
+      "name": "OwnershipTree",
+      "kind": "original",
+      "category": "层级结构",
+      "source": "src/scenes/diagrams/hierarchy/OwnershipTree.tsx",
+      "purpose": "展示持股与控制关系",
+      "pattern": "ownership",
+      "steps": [
+        "持有人节点出现",
+        "持股分支绘出",
+        "被投主体和比例显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "subtitle",
+        "root",
+        "source"
+      ],
+      "usage": "import { OwnershipTree } from \"./src/scenes/diagrams/hierarchy/OwnershipTree\";\n\n<OwnershipTree {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-CapabilityVenn",
+      "name": "CapabilityVennDiagram",
+      "kind": "original",
+      "category": "关系网络",
+      "source": "src/scenes/diagrams/relationships/CapabilityVennDiagram.tsx",
+      "purpose": "比较能力集合及重叠",
+      "pattern": "venn",
+      "steps": [
+        "第一个集合出现",
+        "后续集合叠入",
+        "交集区域强调"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "left",
+        "right",
+        "overlap",
+        "leftIcon",
+        "rightIcon"
+      ],
+      "usage": "import { CapabilityVennDiagram } from \"./src/scenes/diagrams/relationships/CapabilityVennDiagram\";\n\n<CapabilityVennDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-CausalGraph",
+      "name": "CausalGraph",
+      "kind": "original",
+      "category": "关系网络",
+      "source": "src/scenes/diagrams/relationships/CausalGraph.tsx",
+      "purpose": "解释带正负方向的因果关系",
+      "pattern": "causal",
+      "steps": [
+        "原因节点出现",
+        "带符号连线绘出",
+        "结果节点显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "subtitle",
+        "nodes",
+        "links",
+        "source"
+      ],
+      "usage": "import { CausalGraph } from \"./src/scenes/diagrams/relationships/CausalGraph\";\n\n<CausalGraph {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-CompetitiveLandscape",
+      "name": "CompetitiveLandscapeDiagram",
+      "kind": "original",
+      "category": "关系网络",
+      "source": "src/scenes/diagrams/relationships/CompetitiveLandscapeDiagram.tsx",
+      "purpose": "展示竞争者分区与位置",
+      "pattern": "landscape",
+      "steps": [
+        "竞争分区框出现",
+        "主体卡片显现",
+        "重点主体强调"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "items",
+        "xLabel",
+        "yLabel"
+      ],
+      "usage": "import { CompetitiveLandscapeDiagram } from \"./src/scenes/diagrams/relationships/CompetitiveLandscapeDiagram\";\n\n<CompetitiveLandscapeDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-EcosystemMap",
+      "name": "EcosystemMap",
+      "kind": "original",
+      "category": "关系网络",
+      "source": "src/scenes/diagrams/relationships/EcosystemMap.tsx",
+      "purpose": "展示中心主体与生态伙伴",
+      "pattern": "ecosystem",
+      "steps": [
+        "中心框出现",
+        "外围伙伴框出现",
+        "辐射关系连起"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "hub",
+        "nodes"
+      ],
+      "usage": "import { EcosystemMap } from \"./src/scenes/diagrams/relationships/EcosystemMap\";\n\n<EcosystemMap {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-RelationshipGraph",
+      "name": "RelationshipGraph",
+      "kind": "original",
+      "category": "关系网络",
+      "source": "src/scenes/diagrams/relationships/RelationshipGraph.tsx",
+      "purpose": "呈现实体之间的网络关系",
+      "pattern": "network",
+      "steps": [
+        "主要节点出现",
+        "关系线绘出",
+        "其他实体补齐"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "nodes",
+        "links"
+      ],
+      "usage": "import { RelationshipGraph } from \"./src/scenes/diagrams/relationships/RelationshipGraph\";\n\n<RelationshipGraph {...props} />",
+      "static": false
+    },
+    {
+      "id": "Diagram-RivalryNetwork",
+      "name": "RivalryNetworkDiagram",
+      "kind": "original",
+      "category": "关系网络",
+      "source": "src/scenes/diagrams/relationships/RivalryNetworkDiagram.tsx",
+      "purpose": "展示竞争关系与对手网络",
+      "pattern": "rivalry",
+      "steps": [
+        "竞争主体出现",
+        "对手连线绘出",
+        "核心竞争关系强调"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "nodes",
+        "edges"
+      ],
+      "usage": "import { RivalryNetworkDiagram } from \"./src/scenes/diagrams/relationships/RivalryNetworkDiagram\";\n\n<RivalryNetworkDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-BridgeToTarget",
+      "name": "BridgeToTarget",
+      "kind": "original",
+      "category": "规划与拆解",
+      "source": "src/scenes/frameworks/planning/BridgeToTarget.tsx",
+      "purpose": "说明从现状到目标的路径",
+      "pattern": "bridge",
+      "steps": [
+        "现状与目标出现",
+        "中间行动桥展开",
+        "目标值强调"
+      ],
+      "props": [
+        "steps",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { BridgeToTarget } from \"./src/scenes/frameworks/planning/BridgeToTarget\";\n\n<BridgeToTarget {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-IssueTree",
+      "name": "IssueTree",
+      "kind": "original",
+      "category": "规划与拆解",
+      "source": "src/scenes/frameworks/planning/IssueTree.tsx",
+      "purpose": "把问题逐层拆解",
+      "pattern": "tree",
+      "steps": [
+        "核心问题出现",
+        "一层分支展开",
+        "子问题依次显示"
+      ],
+      "props": [
+        "branches",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { IssueTree } from \"./src/scenes/frameworks/planning/IssueTree\";\n\n<IssueTree {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-MetricDriverTree",
+      "name": "MetricDriverTree",
+      "kind": "original",
+      "category": "规划与拆解",
+      "source": "src/scenes/frameworks/planning/MetricDriverTree.tsx",
+      "purpose": "解释指标的定量驱动因素",
+      "pattern": "drivers",
+      "steps": [
+        "目标指标出现",
+        "驱动分支绘出",
+        "叶子指标显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "subtitle",
+        "root",
+        "source"
+      ],
+      "usage": "import { MetricDriverTree } from \"./src/scenes/frameworks/planning/MetricDriverTree\";\n\n<MetricDriverTree {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-ScenarioTree",
+      "name": "ScenarioTree",
+      "kind": "original",
+      "category": "规划与拆解",
+      "source": "src/scenes/frameworks/planning/ScenarioTree.tsx",
+      "purpose": "展示不同决策和情景分支",
+      "pattern": "scenariotree",
+      "steps": [
+        "当前节点出现",
+        "情景路径绘出",
+        "终点假设显示"
+      ],
+      "props": [
+        "scenarios",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { ScenarioTree } from \"./src/scenes/frameworks/planning/ScenarioTree\";\n\n<ScenarioTree {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-StrategicRoadmap",
+      "name": "StrategicRoadmap",
+      "kind": "original",
+      "category": "规划与拆解",
+      "source": "src/scenes/frameworks/planning/StrategicRoadmap.tsx",
+      "purpose": "把战略行动放到阶段时间轴上",
+      "pattern": "roadmap",
+      "steps": [
+        "阶段列出现",
+        "行动框分批出现",
+        "后期目标显示"
+      ],
+      "props": [
+        "phases",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { StrategicRoadmap } from \"./src/scenes/frameworks/planning/StrategicRoadmap\";\n\n<StrategicRoadmap {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-Swimlane",
+      "name": "SwimlaneDiagram",
+      "kind": "original",
+      "category": "过程与职责",
+      "source": "src/scenes/frameworks/process/SwimlaneDiagram.tsx",
+      "purpose": "展示角色在各阶段的任务",
+      "pattern": "swimlane",
+      "steps": [
+        "角色泳道出现",
+        "任务框依次出现",
+        "跨道交接线绘出"
+      ],
+      "props": [
+        "lanes",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { SwimlaneDiagram } from \"./src/scenes/frameworks/process/SwimlaneDiagram\";\n\n<SwimlaneDiagram {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-OpportunityMatrix",
+      "name": "OpportunityMatrix",
+      "kind": "original",
+      "category": "战略矩阵",
+      "source": "src/scenes/frameworks/strategy/OpportunityMatrix.tsx",
+      "purpose": "比较机会大小与胜出能力",
+      "pattern": "quadrants",
+      "steps": [
+        "机会象限出现",
+        "机会框显现",
+        "重点机会强调"
+      ],
+      "props": [
+        "items",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { OpportunityMatrix } from \"./src/scenes/frameworks/strategy/OpportunityMatrix\";\n\n<OpportunityMatrix {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-PrioritizationMatrix",
+      "name": "PrioritizationMatrix",
+      "kind": "original",
+      "category": "战略矩阵",
+      "source": "src/scenes/frameworks/strategy/PrioritizationMatrix.tsx",
+      "purpose": "按价值和投入安排优先级",
+      "pattern": "quadrants",
+      "steps": [
+        "优先级象限出现",
+        "事项框显现",
+        "高优先事项强调"
+      ],
+      "props": [
+        "initiatives",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { PrioritizationMatrix } from \"./src/scenes/frameworks/strategy/PrioritizationMatrix\";\n\n<PrioritizationMatrix {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-RiskMatrix",
+      "name": "RiskMatrix",
+      "kind": "original",
+      "category": "战略矩阵",
+      "source": "src/scenes/frameworks/strategy/RiskMatrix.tsx",
+      "purpose": "比较风险概率和影响",
+      "pattern": "risk",
+      "steps": [
+        "风险格阵出现",
+        "风险点显现",
+        "高风险区域强调"
+      ],
+      "props": [
+        "risks",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { RiskMatrix } from \"./src/scenes/frameworks/strategy/RiskMatrix\";\n\n<RiskMatrix {...props} />",
+      "static": false
+    },
+    {
+      "id": "Framework-StrategyMatrix",
+      "name": "StrategyMatrix",
+      "kind": "original",
+      "category": "战略矩阵",
+      "source": "src/scenes/frameworks/strategy/StrategyMatrix.tsx",
+      "purpose": "用定性四象限整理战略",
+      "pattern": "matrix",
+      "steps": [
+        "四象限出现",
+        "各策略卡片显现",
+        "重点策略强调"
+      ],
+      "props": [
+        "items",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { StrategyMatrix } from \"./src/scenes/frameworks/strategy/StrategyMatrix\";\n\n<StrategyMatrix {...props} />",
+      "static": false
+    },
+    {
+      "id": "Media-ImageCard",
+      "name": "ImageCard",
+      "kind": "original",
+      "category": "媒体素材",
+      "source": "src/scenes/media/ImageCard.tsx",
+      "purpose": "呈现图片与说明卡片",
+      "pattern": "image",
+      "steps": [
+        "图片占位框出现",
+        "说明条出现",
+        "完整卡片停留"
+      ],
+      "props": [
+        "src",
+        "category",
+        "publicPath",
+        "title",
+        "subtitle",
+        "emoji"
+      ],
+      "usage": "import { ImageCard } from \"./src/scenes/media/ImageCard\";\n\n<ImageCard {...props} />",
+      "static": false
+    },
+    {
+      "id": "Media-LogoCloud",
+      "name": "LogoCloud",
+      "kind": "original",
+      "category": "媒体素材",
+      "source": "src/scenes/media/LogoCloud.tsx",
+      "purpose": "展示品牌或公司标识阵列",
+      "pattern": "logos",
+      "steps": [
+        "阵列底框出现",
+        "标识框依次出现",
+        "完整阵列停留"
+      ],
+      "props": [
+        "items",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { LogoCloud } from \"./src/scenes/media/LogoCloud\";\n\n<LogoCloud {...props} />",
+      "static": false
+    },
+    {
+      "id": "Media-MapCallout",
+      "name": "MapCallout",
+      "kind": "original",
+      "category": "媒体素材",
+      "source": "src/scenes/media/MapCallout.tsx",
+      "purpose": "在地图位置标出重点信息",
+      "pattern": "map",
+      "steps": [
+        "地图线框出现",
+        "地点点位显现",
+        "引线和说明框出现"
+      ],
+      "props": [
+        "src",
+        "category",
+        "publicPath",
+        "emoji",
+        "x",
+        "y",
+        "label"
+      ],
+      "usage": "import { MapCallout } from \"./src/scenes/media/MapCallout\";\n\n<MapCallout {...props} />",
+      "static": false
+    },
+    {
+      "id": "Media-Quote",
+      "name": "QuoteCard",
+      "kind": "original",
+      "category": "媒体素材",
+      "source": "src/scenes/media/QuoteCard.tsx",
+      "purpose": "突出一段引语及说话人",
+      "pattern": "quote",
+      "steps": [
+        "引语框出现",
+        "引语文字分块出现",
+        "作者与来源显示"
+      ],
+      "props": [
+        "quote",
+        "author",
+        "role"
+      ],
+      "usage": "import { QuoteCard } from \"./src/scenes/media/QuoteCard\";\n\n<QuoteCard {...props} />",
+      "static": false
+    },
+    {
+      "id": "Media-ScreenshotZoom",
+      "name": "ScreenshotZoom",
+      "kind": "original",
+      "category": "媒体素材",
+      "source": "src/scenes/media/ScreenshotZoom.tsx",
+      "purpose": "放大截图中的证据区域",
+      "pattern": "zoom",
+      "steps": [
+        "截图框出现",
+        "重点区域标出",
+        "区域放大展示"
+      ],
+      "props": [
+        "src",
+        "category",
+        "publicPath",
+        "emoji",
+        "focusX",
+        "focusY"
+      ],
+      "usage": "import { ScreenshotZoom } from \"./src/scenes/media/ScreenshotZoom\";\n\n<ScreenshotZoom {...props} />",
+      "static": false
+    },
+    {
+      "id": "Metric-FactGrid",
+      "name": "FactGrid",
+      "kind": "original",
+      "category": "核心指标",
+      "source": "src/scenes/metrics/FactGrid.tsx",
+      "purpose": "以网格组织多项事实数据",
+      "pattern": "facts",
+      "steps": [
+        "事实卡片框出现",
+        "数字依次显现",
+        "说明补齐"
+      ],
+      "props": [
+        "facts"
+      ],
+      "usage": "import { FactGrid } from \"./src/scenes/metrics/FactGrid\";\n\n<FactGrid {...props} />",
+      "static": false
+    },
+    {
+      "id": "Metric-HeroMetric",
+      "name": "HeroMetric",
+      "kind": "original",
+      "category": "核心指标",
+      "source": "src/scenes/metrics/HeroMetric.tsx",
+      "purpose": "突出一个核心数字和增长率",
+      "pattern": "metric",
+      "steps": [
+        "公司与指标出现",
+        "数字由零变化",
+        "增幅和来源显示"
+      ],
+      "props": [
+        "company",
+        "label",
+        "value",
+        "suffix",
+        "growth",
+        "prefix",
+        "period",
+        "source",
+        "decimals"
+      ],
+      "usage": "import { HeroMetric } from \"./src/scenes/metrics/HeroMetric\";\n\n<HeroMetric {...props} />",
+      "static": false
+    },
+    {
+      "id": "Metric-Grid",
+      "name": "MetricGrid",
+      "kind": "original",
+      "category": "核心指标",
+      "source": "src/scenes/metrics/MetricGrid.tsx",
+      "purpose": "并列查看多个关键指标",
+      "pattern": "kpis",
+      "steps": [
+        "指标卡框依次出现",
+        "数值变化",
+        "变化率显示"
+      ],
+      "props": [
+        "data",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { MetricGrid } from \"./src/scenes/metrics/MetricGrid\";\n\n<MetricGrid {...props} />",
+      "static": false
+    },
+    {
+      "id": "Metric-Share",
+      "name": "ShareMetric",
+      "kind": "original",
+      "category": "核心指标",
+      "source": "src/scenes/metrics/ShareMetric.tsx",
+      "purpose": "突出单个份额或百分比",
+      "pattern": "share",
+      "steps": [
+        "份额框出现",
+        "百分比变化",
+        "占比条展开"
+      ],
+      "props": [
+        "value",
+        "label"
+      ],
+      "usage": "import { ShareMetric } from \"./src/scenes/metrics/ShareMetric\";\n\n<ShareMetric {...props} />",
+      "static": false
+    },
+    {
+      "id": "Metric-Split",
+      "name": "SplitMetric",
+      "kind": "original",
+      "category": "核心指标",
+      "source": "src/scenes/metrics/SplitMetric.tsx",
+      "purpose": "并列展示两组核心数字",
+      "pattern": "splitmetric",
+      "steps": [
+        "左右数字框出现",
+        "两边数字变化",
+        "组别说明显示"
+      ],
+      "props": [
+        "eyebrow",
+        "leftValue",
+        "rightValue",
+        "leftSuffix",
+        "rightSuffix",
+        "leftLabel",
+        "rightLabel",
+        "rightTag"
+      ],
+      "usage": "import { SplitMetric } from \"./src/scenes/metrics/SplitMetric\";\n\n<SplitMetric {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-BeforeAfter",
+      "name": "BeforeAfterCompare",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/BeforeAfterCompare.tsx",
+      "purpose": "比较变化前后的状态",
+      "pattern": "beforeafter",
+      "steps": [
+        "变化前框出现",
+        "变化后框出现",
+        "差异区域强调"
+      ],
+      "props": [
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { BeforeAfterCompare } from \"./src/scenes/narrative/BeforeAfterCompare\";\n\n<BeforeAfterCompare {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-BulletReveal",
+      "name": "BulletReveal",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/BulletReveal.tsx",
+      "purpose": "逐条解释论据或步骤",
+      "pattern": "bullets",
+      "steps": [
+        "标题框出现",
+        "条目依次上移显现",
+        "完整列表停留"
+      ],
+      "props": [
+        "bullets",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { BulletReveal } from \"./src/scenes/narrative/BulletReveal\";\n\n<BulletReveal {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-CompareCards",
+      "name": "CompareCards",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/CompareCards.tsx",
+      "purpose": "以双卡片对比对象",
+      "pattern": "compare",
+      "steps": [
+        "左卡出现",
+        "右卡出现",
+        "对照标签显示"
+      ],
+      "props": [
+        "left",
+        "right",
+        "transparent",
+        "showVs"
+      ],
+      "usage": "import { CompareCards } from \"./src/scenes/narrative/CompareCards\";\n\n<CompareCards {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-Equation",
+      "name": "EquationCards",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/EquationCards.tsx",
+      "purpose": "把商业关系拆成公式",
+      "pattern": "equation",
+      "steps": [
+        "输入项框依次出现",
+        "运算符显现",
+        "结果框显示"
+      ],
+      "props": [
+        "pieces",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { EquationCards } from \"./src/scenes/narrative/EquationCards\";\n\n<EquationCards {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-ExecutiveSummary",
+      "name": "ExecutiveSummary",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/ExecutiveSummary.tsx",
+      "purpose": "呈现结论与关键支持点",
+      "pattern": "summary",
+      "steps": [
+        "结论框出现",
+        "支持点依次显现",
+        "完整摘要停留"
+      ],
+      "props": [
+        "items"
+      ],
+      "usage": "import { ExecutiveSummary } from \"./src/scenes/narrative/ExecutiveSummary\";\n\n<ExecutiveSummary {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-KeyTakeaway",
+      "name": "KeyTakeaway",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/KeyTakeaway.tsx",
+      "purpose": "突出一个核心结论",
+      "pattern": "takeaway",
+      "steps": [
+        "强调框出现",
+        "核心句显现",
+        "补充解释显示"
+      ],
+      "props": [
+        "text",
+        "label"
+      ],
+      "usage": "import { KeyTakeaway } from \"./src/scenes/narrative/KeyTakeaway\";\n\n<KeyTakeaway {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-PageFlipChoice",
+      "name": "PageFlipChoice",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/PageFlipChoice.tsx",
+      "purpose": "通过翻页呈现二选一",
+      "pattern": "flip",
+      "steps": [
+        "第一张选项卡出现",
+        "卡面翻转",
+        "另一选项显示"
+      ],
+      "props": [
+        "question",
+        "eyebrow",
+        "left",
+        "right"
+      ],
+      "usage": "import { PageFlipChoice } from \"./src/scenes/narrative/PageFlipChoice\";\n\n<PageFlipChoice {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-SideBySideCompare",
+      "name": "SideBySideCompare",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/SideBySideCompare.tsx",
+      "purpose": "比较两组数值和变化",
+      "pattern": "comparemetric",
+      "steps": [
+        "左右对象框出现",
+        "数值与对比条展开",
+        "差值显示"
+      ],
+      "props": [
+        "companies"
+      ],
+      "usage": "import { SideBySideCompare } from \"./src/scenes/narrative/SideBySideCompare\";\n\n<SideBySideCompare {...props} />",
+      "static": false
+    },
+    {
+      "id": "Narrative-Timeline",
+      "name": "Timeline",
+      "kind": "original",
+      "category": "叙事说明",
+      "source": "src/scenes/narrative/Timeline.tsx",
+      "purpose": "按时间呈现关键事件",
+      "pattern": "timeline",
+      "steps": [
+        "时间线绘出",
+        "节点依次出现",
+        "事件框显示"
+      ],
+      "props": [
+        "events",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { Timeline } from \"./src/scenes/narrative/Timeline\";\n\n<Timeline {...props} />",
+      "static": false
+    },
+    {
+      "id": "Overlay-PresenterOrbit",
+      "name": "PresenterOrbitOverlay",
+      "kind": "original",
+      "category": "画面叠加",
+      "source": "src/scenes/overlays/PresenterOrbitOverlay.tsx",
+      "purpose": "在主持人周围展示辅助卡片",
+      "pattern": "orbit",
+      "steps": [
+        "人物占位出现",
+        "周边卡片依次显现",
+        "连接与强调显示"
+      ],
+      "props": [
+        "items",
+        "transparent"
+      ],
+      "usage": "import { PresenterOrbitOverlay } from \"./src/scenes/overlays/PresenterOrbitOverlay\";\n\n<PresenterOrbitOverlay {...props} />",
+      "static": false
+    },
+    {
+      "id": "Table-BenchmarkScorecard",
+      "name": "BenchmarkScorecard",
+      "kind": "original",
+      "category": "数据表格",
+      "source": "src/scenes/tables/BenchmarkScorecard.tsx",
+      "purpose": "按同一标准比较多家主体",
+      "pattern": "scorecard",
+      "steps": [
+        "行列框出现",
+        "评分依次显现",
+        "基准或领先项强调"
+      ],
+      "props": [
+        "rows",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { BenchmarkScorecard } from \"./src/scenes/tables/BenchmarkScorecard\";\n\n<BenchmarkScorecard {...props} />",
+      "static": false
+    },
+    {
+      "id": "Table-CapabilityHeatmap",
+      "name": "CapabilityHeatmap",
+      "kind": "original",
+      "category": "数据表格",
+      "source": "src/scenes/tables/CapabilityHeatmap.tsx",
+      "purpose": "比较主体在各能力上的强弱",
+      "pattern": "heatmap",
+      "steps": [
+        "能力和主体表头出现",
+        "评分格着色",
+        "重点能力强调"
+      ],
+      "props": [
+        "cols",
+        "rows",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { CapabilityHeatmap } from \"./src/scenes/tables/CapabilityHeatmap\";\n\n<CapabilityHeatmap {...props} />",
+      "static": false
+    },
+    {
+      "id": "Table-DistributionComparison",
+      "name": "DistributionComparisonTable",
+      "kind": "original",
+      "category": "数据表格",
+      "source": "src/scenes/tables/DistributionComparisonTable.tsx",
+      "purpose": "比较两组分配结构明细",
+      "pattern": "distributiontable",
+      "steps": [
+        "行列框出现",
+        "两组分配条展开",
+        "差异数值显示"
+      ],
+      "props": [
+        "eyebrow",
+        "title",
+        "rows",
+        "leftLabel",
+        "middleLabel",
+        "rightLabel",
+        "leftUnit",
+        "rightUnit",
+        "source"
+      ],
+      "usage": "import { DistributionComparisonTable } from \"./src/scenes/tables/DistributionComparisonTable\";\n\n<DistributionComparisonTable {...props} />",
+      "static": false
+    },
+    {
+      "id": "Table-Metric",
+      "name": "MetricTable",
+      "kind": "original",
+      "category": "数据表格",
+      "source": "src/scenes/tables/MetricTable.tsx",
+      "purpose": "精确展示指标和数值",
+      "pattern": "table",
+      "steps": [
+        "表头出现",
+        "数据行依次显现",
+        "关键数值强调"
+      ],
+      "props": [
+        "rows",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { MetricTable } from \"./src/scenes/tables/MetricTable\";\n\n<MetricTable {...props} />",
+      "static": false
+    },
+    {
+      "id": "Table-Sparkline",
+      "name": "SparklineTable",
+      "kind": "original",
+      "category": "数据表格",
+      "source": "src/scenes/tables/SparklineTable.tsx",
+      "purpose": "在表格里展示各行趋势",
+      "pattern": "sparktable",
+      "steps": [
+        "数据行出现",
+        "行内趋势线绘出",
+        "末端值显示"
+      ],
+      "props": [
+        "rows",
+        "title",
+        "eyebrow"
+      ],
+      "usage": "import { SparklineTable } from \"./src/scenes/tables/SparklineTable\";\n\n<SparklineTable {...props} />",
+      "static": false
+    },
+    {
+      "id": "Overlay-Ticker",
+      "name": "TickerOverlay",
+      "kind": "original",
+      "category": "画面叠加",
+      "source": "src/scenes/overlays/TickerOverlay.tsx",
+      "purpose": "在画面底部连续展示行情",
+      "pattern": "ticker",
+      "steps": [
+        "透明画布保留",
+        "行情条出现",
+        "行情从右向左移动"
+      ],
+      "props": [
+        "company",
+        "ticker",
+        "change",
+        "value"
+      ],
+      "usage": "import { TickerOverlay } from \"./src/scenes/overlays/TickerOverlay\";\n\n<TickerOverlay {...props} />",
+      "static": false
+    },
+    {
+      "id": "Template-opener",
+      "name": "节目片头",
+      "type": "opener",
+      "kind": "template",
+      "category": "节目包装",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "用问题或结论开场",
+      "pattern": "opener",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "episode",
+        "tagline"
+      ],
+      "usage": "{\n  \"id\": \"01-opener\",\n  \"type\": \"opener\",\n  \"title\": \"收入增长之后，\\n利润去了哪里？\",\n  \"duration\": 6,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"episode\": \"EP. 001\",\n  \"tagline\": \"用一组经营数据，拆开增长、利润与现金流。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-chapter",
+      "name": "章节转场",
+      "type": "chapter",
+      "kind": "template",
+      "category": "节目包装",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "分段与建立节奏",
+      "pattern": "chapter",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "number",
+        "summary"
+      ],
+      "usage": "{\n  \"id\": \"12-chapter\",\n  \"type\": \"chapter\",\n  \"title\": \"增长质量，\\n比增速本身更重要\",\n  \"duration\": 4,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"number\": \"02\",\n  \"summary\": \"把利润表和现金流量表放在一起看。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-headline",
+      "name": "焦点头条",
+      "type": "headline",
+      "kind": "template",
+      "category": "节目包装",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "突发事件与核心数字",
+      "pattern": "headline",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "label",
+        "body",
+        "metric"
+      ],
+      "usage": "{\n  \"id\": \"02-headline\",\n  \"type\": \"headline\",\n  \"title\": \"增长正在发生结构变化\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"label\": \"本期焦点\",\n  \"body\": \"营收继续扩张，\\n现金回收却慢了一步。\",\n  \"metric\": {\n    \"label\": \"营收\",\n    \"value\": 128.6,\n    \"suffix\": \"亿元\",\n    \"change\": 18.2\n  }\n}",
+      "static": false
+    },
+    {
+      "id": "Template-news-grid",
+      "name": "新闻简报",
+      "type": "news-grid",
+      "kind": "template",
+      "category": "节目包装",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "同屏呈现 2–4 条新闻",
+      "pattern": "newsgrid",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "items"
+      ],
+      "usage": "{\n  \"id\": \"19-news-grid\",\n  \"type\": \"news-grid\",\n  \"title\": \"本周商业观察\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"items\": [\n    {\n      \"category\": \"公司财报\",\n      \"headline\": \"利润率改善\",\n      \"summary\": \"规模效应显现，关注可持续性。\"\n    },\n    {\n      \"category\": \"行业变化\",\n      \"headline\": \"竞争转向服务\",\n      \"summary\": \"产品收入与订阅收入需要分开看。\"\n    },\n    {\n      \"category\": \"宏观背景\",\n      \"headline\": \"需求结构分化\",\n      \"summary\": \"按市场和客群检查变化。\"\n    },\n    {\n      \"category\": \"下周看点\",\n      \"headline\": \"现金流验证\",\n      \"summary\": \"等待更多经营数据，而非只看指引。\"\n    }\n  ]\n}",
+      "static": false
+    },
+    {
+      "id": "Template-hero",
+      "name": "核心数字",
+      "type": "hero",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "突出一个有来源的数字",
+      "pattern": "metric",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "metric"
+      ],
+      "usage": "{\n  \"id\": \"03-hero\",\n  \"type\": \"hero\",\n  \"title\": \"规模突破，仍需观察增长质量\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"metric\": {\n    \"label\": \"营收\",\n    \"value\": 128.6,\n    \"suffix\": \"亿元\",\n    \"change\": 18.2\n  }\n}",
+      "static": false
+    },
+    {
+      "id": "Template-kpis",
+      "name": "指标看板",
+      "type": "kpis",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "比较 1–6 个关键指标",
+      "pattern": "kpis",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "items"
+      ],
+      "usage": "{\n  \"id\": \"04-kpis\",\n  \"type\": \"kpis\",\n  \"title\": \"四个数字，看懂这一季\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"items\": [\n    {\n      \"label\": \"营收\",\n      \"value\": 128.6,\n      \"suffix\": \"亿元\",\n      \"change\": 18.2\n    },\n    {\n      \"label\": \"营业利润\",\n      \"value\": 24.8,\n      \"suffix\": \"亿元\",\n      \"change\": 26.5\n    },\n    {\n      \"label\": \"自由现金流\",\n      \"value\": 19.2,\n      \"suffix\": \"亿元\",\n      \"change\": -4.5\n    },\n    {\n      \"label\": \"毛利率\",\n      \"value\": 62.4,\n      \"suffix\": \"%\"\n    }\n  ]\n}",
+      "static": false
+    },
+    {
+      "id": "Template-bars",
+      "name": "条形 / 柱状图",
+      "type": "bars",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "同口径规模比较；支持负数",
+      "pattern": "bars",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "data",
+        "unit",
+        "orientation"
+      ],
+      "usage": "{\n  \"id\": \"05-bars\",\n  \"type\": \"bars\",\n  \"title\": \"收入增长并不均匀\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"data\": [\n    {\n      \"label\": \"核心产品\",\n      \"value\": 58.2,\n      \"highlight\": false\n    },\n    {\n      \"label\": \"订阅服务\",\n      \"value\": 38.4,\n      \"highlight\": false\n    },\n    {\n      \"label\": \"增值业务\",\n      \"value\": 22.6,\n      \"highlight\": false\n    },\n    {\n      \"label\": \"其他收入\",\n      \"value\": 9.4,\n      \"highlight\": true\n    }\n  ],\n  \"unit\": \"亿元\",\n  \"orientation\": \"horizontal\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-ranking",
+      "name": "排名榜单",
+      "type": "ranking",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "按数值降序排列",
+      "pattern": "ranking",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "data",
+        "unit"
+      ],
+      "usage": "{\n  \"id\": \"06-ranking\",\n  \"type\": \"ranking\",\n  \"title\": \"哪些业务贡献了更多增长？\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"data\": [\n    {\n      \"label\": \"产品 A\",\n      \"value\": 34.6\n    },\n    {\n      \"label\": \"产品 B\",\n      \"value\": 28.4\n    },\n    {\n      \"label\": \"产品 C\",\n      \"value\": 19.7\n    },\n    {\n      \"label\": \"产品 D\",\n      \"value\": 12.5\n    },\n    {\n      \"label\": \"产品 E\",\n      \"value\": 8.2\n    }\n  ],\n  \"unit\": \"新增收入 / 亿元\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-trend",
+      "name": "趋势与预测",
+      "type": "trend",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "多序列、缺失值、预测区间",
+      "pattern": "multiline",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "labels",
+        "series",
+        "unit",
+        "forecastFrom",
+        "note"
+      ],
+      "usage": "{\n  \"id\": \"07-trend\",\n  \"type\": \"trend\",\n  \"title\": \"收入与利润，走出了不同的斜率\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"labels\": [\n    \"2021\",\n    \"2022\",\n    \"2023\",\n    \"2024\",\n    \"2025\",\n    \"2026E\"\n  ],\n  \"series\": [\n    {\n      \"name\": \"收入指数\",\n      \"values\": [\n        100.0,\n        112.5,\n        127.5,\n        136.0,\n        160.8,\n        183.2\n      ]\n    },\n    {\n      \"name\": \"利润指数\",\n      \"values\": [\n        100.0,\n        120.8,\n        143.3,\n        163.3,\n        206.7,\n        244.2\n      ]\n    }\n  ],\n  \"unit\": \"2021 = 100\",\n  \"forecastFrom\": 5,\n  \"note\": \"2026E 为演示假设；不同指标已按同一基期指数化。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-waterfall",
+      "name": "利润瀑布",
+      "type": "waterfall",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "从起点到终点的可对账变化",
+      "pattern": "waterfall",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "data",
+        "unit"
+      ],
+      "usage": "{\n  \"id\": \"08-waterfall\",\n  \"type\": \"waterfall\",\n  \"title\": \"128.6 亿元收入，留下 24.8 亿元营业利润\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"data\": [\n    {\n      \"label\": \"收入\",\n      \"value\": 128.6,\n      \"kind\": \"total\"\n    },\n    {\n      \"label\": \"营业成本\",\n      \"value\": -48.4,\n      \"kind\": \"delta\"\n    },\n    {\n      \"label\": \"营销\",\n      \"value\": -24.6,\n      \"kind\": \"delta\"\n    },\n    {\n      \"label\": \"研发\",\n      \"value\": -18.8,\n      \"kind\": \"delta\"\n    },\n    {\n      \"label\": \"管理\",\n      \"value\": -12,\n      \"kind\": \"delta\"\n    },\n    {\n      \"label\": \"营业利润\",\n      \"value\": 24.8,\n      \"kind\": \"total\"\n    }\n  ],\n  \"unit\": \"亿元\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-donut",
+      "name": "结构占比",
+      "type": "donut",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "总量分解；最多 6 部分",
+      "pattern": "donut",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "data",
+        "unit",
+        "centerLabel"
+      ],
+      "usage": "{\n  \"id\": \"09-donut\",\n  \"type\": \"donut\",\n  \"title\": \"订阅收入占到三成\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"data\": [\n    {\n      \"label\": \"核心产品\",\n      \"value\": 58.2\n    },\n    {\n      \"label\": \"订阅服务\",\n      \"value\": 38.4\n    },\n    {\n      \"label\": \"增值业务\",\n      \"value\": 22.6\n    },\n    {\n      \"label\": \"其他\",\n      \"value\": 9.4\n    }\n  ],\n  \"unit\": \"亿元\",\n  \"centerLabel\": \"总营收\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-table",
+      "name": "财务数据表",
+      "type": "table",
+      "kind": "template",
+      "category": "数据图表",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "精确数值；最多 7 行",
+      "pattern": "table",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "columns",
+        "rows",
+        "highlightRow",
+        "note"
+      ],
+      "usage": "{\n  \"id\": \"10-table\",\n  \"type\": \"table\",\n  \"title\": \"利润增长，现金流暂时落后\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"columns\": [\n    \"指标\",\n    \"本期\",\n    \"上期\",\n    \"同比\"\n  ],\n  \"rows\": [\n    [\n      \"营收\",\n      \"128.6\",\n      \"108.8\",\n      \"+18.2%\"\n    ],\n    [\n      \"营业利润\",\n      \"24.8\",\n      \"19.6\",\n      \"+26.5%\"\n    ],\n    [\n      \"自由现金流\",\n      \"19.2\",\n      \"20.1\",\n      \"−4.5%\"\n    ],\n    [\n      \"经营现金流\",\n      \"28.1\",\n      \"26.8\",\n      \"+4.9%\"\n    ]\n  ],\n  \"highlightRow\": 2,\n  \"note\": \"金额单位：亿元；所有数据均为合成示例。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-earnings",
+      "name": "财报快照",
+      "type": "earnings",
+      "kind": "template",
+      "category": "公司研究",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "公司、期间、经营指标和指引",
+      "pattern": "earnings",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "company",
+        "period",
+        "items",
+        "guidance"
+      ],
+      "usage": "{\n  \"id\": \"11-earnings\",\n  \"type\": \"earnings\",\n  \"title\": \"财报速读：规模与效率同时改善\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"company\": \"DEMO COMPANY\",\n  \"period\": \"FY2025 · 全年\",\n  \"items\": [\n    {\n      \"label\": \"营收\",\n      \"value\": 128.6,\n      \"suffix\": \"亿元\",\n      \"change\": 18.2\n    },\n    {\n      \"label\": \"营业利润\",\n      \"value\": 24.8,\n      \"suffix\": \"亿元\",\n      \"change\": 26.5\n    },\n    {\n      \"label\": \"自由现金流\",\n      \"value\": 19.2,\n      \"suffix\": \"亿元\",\n      \"change\": -4.5\n    },\n    {\n      \"label\": \"毛利率\",\n      \"value\": 62.4,\n      \"suffix\": \"%\"\n    }\n  ],\n  \"guidance\": \"管理层情景：下一期收入增长 12%–18%；此处为虚构示例。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-scenario",
+      "name": "三情景分析",
+      "type": "scenario",
+      "kind": "template",
+      "category": "公司研究",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "每个情景展示数值与假设",
+      "pattern": "scenario",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "scenarios",
+        "unit",
+        "note"
+      ],
+      "usage": "{\n  \"id\": \"17-scenario\",\n  \"type\": \"scenario\",\n  \"title\": \"用假设，界定可能的范围\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"scenarios\": [\n    {\n      \"name\": \"保守情景\",\n      \"value\": 8,\n      \"assumption\": \"需求增长放缓，价格基本持平。\"\n    },\n    {\n      \"name\": \"基准情景\",\n      \"value\": 15,\n      \"assumption\": \"用户与客单价温和增长。\"\n    },\n    {\n      \"name\": \"乐观情景\",\n      \"value\": 22,\n      \"assumption\": \"新业务放量，复购率改善。\"\n    }\n  ],\n  \"unit\": \"%\",\n  \"note\": \"情景值是演示假设，不是概率加权预测。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-comparison",
+      "name": "双边对照",
+      "type": "comparison",
+      "kind": "template",
+      "category": "观点叙事",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "观点、公司、前后变化对比",
+      "pattern": "compare",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "left",
+        "right"
+      ],
+      "usage": "{\n  \"id\": \"13-comparison\",\n  \"type\": \"comparison\",\n  \"title\": \"同样是增长，来源可以完全不同\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"left\": {\n    \"label\": \"规模驱动\",\n    \"headline\": \"更多用户 × 更低价格\",\n    \"points\": [\n      \"销量提升，收入扩大\",\n      \"促销投入增加\",\n      \"利润可能承压\"\n    ]\n  },\n  \"right\": {\n    \"label\": \"效率驱动\",\n    \"headline\": \"更高复购 × 更低成本\",\n    \"points\": [\n      \"收入结构优化\",\n      \"单位成本改善\",\n      \"现金创造能力增强\"\n    ]\n  }\n}",
+      "static": false
+    },
+    {
+      "id": "Template-quote",
+      "name": "人物引述",
+      "type": "quote",
+      "kind": "template",
+      "category": "观点叙事",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "带作者与来源的原话",
+      "pattern": "quote",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "quote",
+        "author",
+        "role"
+      ],
+      "usage": "{\n  \"id\": \"14-quote\",\n  \"type\": \"quote\",\n  \"title\": \"管理层如何解释这一变化？\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"quote\": \"我们更关心可重复的现金创造，而不是单一季度的收入增速。\",\n  \"author\": \"示例公司管理层\",\n  \"role\": \"虚构引述 · 仅供版式演示\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-timeline",
+      "name": "事件时间线",
+      "type": "timeline",
+      "kind": "template",
+      "category": "观点叙事",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "2–5 个关键节点",
+      "pattern": "timeline",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "events"
+      ],
+      "usage": "{\n  \"id\": \"15-timeline\",\n  \"type\": \"timeline\",\n  \"title\": \"变化不是一夜发生的\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"events\": [\n    {\n      \"date\": \"2022\",\n      \"title\": \"产品投入\",\n      \"body\": \"研发与市场费用上升\"\n    },\n    {\n      \"date\": \"2023\",\n      \"title\": \"规模扩张\",\n      \"body\": \"订阅业务开始放量\"\n    },\n    {\n      \"date\": \"2024\",\n      \"title\": \"效率改善\",\n      \"body\": \"单位交付成本下降\"\n    },\n    {\n      \"date\": \"2025\",\n      \"title\": \"现金回收\",\n      \"body\": \"观察应收与资本开支\"\n    }\n  ]\n}",
+      "static": false
+    },
+    {
+      "id": "Template-equation",
+      "name": "公式拆解",
+      "type": "equation",
+      "kind": "template",
+      "category": "观点叙事",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "商业公式与推导",
+      "pattern": "equation",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "terms",
+        "operators",
+        "explanation"
+      ],
+      "usage": "{\n  \"id\": \"16-equation\",\n  \"type\": \"equation\",\n  \"title\": \"收入可以被拆成两个问题\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"terms\": [\n    {\n      \"label\": \"付费用户\",\n      \"value\": \"1,000 万\"\n    },\n    {\n      \"label\": \"年均收入\",\n      \"value\": \"1,286 元\"\n    },\n    {\n      \"label\": \"年营收\",\n      \"value\": \"128.6 亿\"\n    }\n  ],\n  \"operators\": [\n    \"×\",\n    \"=\"\n  ],\n  \"explanation\": \"同时检查量与价，避免把涨价误认为用户增长。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-bullets",
+      "name": "逐条解释",
+      "type": "bullets",
+      "kind": "template",
+      "category": "观点叙事",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "分步呈现论据",
+      "pattern": "bullets",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "items"
+      ],
+      "usage": "{\n  \"id\": \"18-bullets\",\n  \"type\": \"bullets\",\n  \"title\": \"接下来，盯住三个验证指标\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"items\": [\n    {\n      \"title\": \"应收账款周转\",\n      \"body\": \"收入确认后，多久才能收到现金？\"\n    },\n    {\n      \"title\": \"续费率与留存\",\n      \"body\": \"增长来自持续价值，还是一次性促销？\"\n    },\n    {\n      \"title\": \"资本开支强度\",\n      \"body\": \"新增收入需要投入多少真实资金？\"\n    }\n  ]\n}",
+      "static": false
+    },
+    {
+      "id": "Template-takeaway",
+      "name": "核心结论",
+      "type": "takeaway",
+      "kind": "template",
+      "category": "观点叙事",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "一个结论与一个观察指标",
+      "pattern": "takeaway",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "body",
+        "action"
+      ],
+      "usage": "{\n  \"id\": \"22-takeaway\",\n  \"type\": \"takeaway\",\n  \"title\": \"本期结论\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"body\": \"增长值得关注，\\n现金回收决定它的质量。\",\n  \"action\": \"下一步：把应收账款与资本开支加入同一张观察表。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-media",
+      "name": "图像与证据",
+      "type": "media",
+      "kind": "template",
+      "category": "媒体素材",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "年报页、图片、地图等本地素材",
+      "pattern": "image",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "asset",
+        "caption"
+      ],
+      "usage": "{\n  \"id\": \"20-media\",\n  \"type\": \"media\",\n  \"title\": \"回到原始披露，检查口径\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"asset\": \"examples/report.svg\",\n  \"caption\": \"示例披露页 · 人工构造的演示素材，不代表真实财报。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-presenter",
+      "name": "主持人分屏",
+      "type": "presenter",
+      "kind": "template",
+      "category": "媒体素材",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "视频 / 图片配合论点与姓名条",
+      "pattern": "presenter",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "asset",
+        "points",
+        "lowerThird"
+      ],
+      "usage": "{\n  \"id\": \"21-presenter\",\n  \"type\": \"presenter\",\n  \"title\": \"把结论讲清楚，也把限制讲清楚\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"asset\": \"examples/presenter.svg\",\n  \"points\": [\n    \"先说结论，再展示证据\",\n    \"明确期间、单位与比较基准\",\n    \"把事实与情景假设分开\"\n  ],\n  \"lowerThird\": {\n    \"name\": \"主持人姓名\",\n    \"role\": \"经营分析 / 频道定位\"\n  }\n}",
+      "static": false
+    },
+    {
+      "id": "Template-sources",
+      "name": "来源索引",
+      "type": "sources",
+      "kind": "template",
+      "category": "节目包装",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "逐项呈现出处与口径",
+      "pattern": "sources",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "heading"
+      ],
+      "usage": "{\n  \"id\": \"23-sources\",\n  \"type\": \"sources\",\n  \"title\": \"数据、口径与来源\",\n  \"duration\": 7,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"heading\": \"生产视频请替换为真实披露与可核验链接。\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-endcard",
+      "name": "节目片尾",
+      "type": "endcard",
+      "kind": "template",
+      "category": "节目包装",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "下期预告与频道名称",
+      "pattern": "endcard",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "title",
+        "duration",
+        "sourceIds",
+        "kicker",
+        "message",
+        "nextTitle",
+        "handle"
+      ],
+      "usage": "{\n  \"id\": \"24-endcard\",\n  \"type\": \"endcard\",\n  \"title\": \"继续把数字讲明白\",\n  \"duration\": 5,\n  \"sourceIds\": [\n    \"demo\"\n  ],\n  \"kicker\": \"DEMO COMPANY / 经营观察\",\n  \"message\": \"看懂一家公司，\\n从看懂一条现金流开始。\",\n  \"nextTitle\": \"下一期：利润增长，为什么现金减少？\",\n  \"handle\": \"@YOUR_CHANNEL\"\n}",
+      "static": false
+    },
+    {
+      "id": "Template-legacy",
+      "name": "原组件适配",
+      "type": "legacy",
+      "kind": "template",
+      "category": "扩展组件",
+      "source": "src/program/Episode.tsx",
+      "purpose": "通过原 Composition ID 复用既有布局，仅横屏",
+      "pattern": "legacy",
+      "steps": [
+        "镜头容器出现",
+        "内容按框图顺序入场",
+        "信息停留，切换到下一镜头"
+      ],
+      "props": [
+        "id",
+        "type",
+        "duration",
+        "title",
+        "component",
+        "props",
+        "sourceIds"
+      ],
+      "usage": "{\n  \"id\": \"legacy-hero\",\n  \"type\": \"legacy\",\n  \"duration\": 5,\n  \"title\": \"核心数字\",\n  \"component\": \"Metric-HeroMetric\",\n  \"props\": {\n    \"value\": 128,\n    \"label\": \"演示指标\"\n  },\n  \"sourceIds\": []\n}",
+      "static": false
+    },
+    {
+      "id": "Base-Frame",
+      "name": "Frame",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/Frame.tsx",
+      "purpose": "画布、背景、内边距与字体容器",
+      "pattern": "frame",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "children"
+      ],
+      "usage": "import { Frame } from \"./src/components/Frame\";\n\n<Frame>{children}</Frame>",
+      "static": true
+    },
+    {
+      "id": "Base-BrutalCard",
+      "name": "BrutalCard",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/BrutalCard.tsx",
+      "purpose": "硬边框、硬阴影卡片",
+      "pattern": "card",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "children",
+        "yellow?",
+        "className?"
+      ],
+      "usage": "import { BrutalCard } from \"./src/components/BrutalCard\";\n\n<BrutalCard yellow>重点内容</BrutalCard>",
+      "static": true
+    },
+    {
+      "id": "Base-SceneHeader",
+      "name": "SceneHeader",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/SceneHeader.tsx",
+      "purpose": "眉题、标题、副标题依次出现",
+      "pattern": "header",
+      "steps": [
+        "眉题先出现",
+        "标题上移显现",
+        "副标题随后显现"
+      ],
+      "props": [
+        "eyebrow?",
+        "title",
+        "subtitle?"
+      ],
+      "usage": "import { SceneHeader } from \"./src/components/SceneHeader\";\n\n<SceneHeader eyebrow=\"财报\" title=\"核心结论\" subtitle=\"解释这条结论\" />",
+      "static": false
+    },
+    {
+      "id": "Base-Source",
+      "name": "Source",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/Source.tsx",
+      "purpose": "来源说明延迟显示",
+      "pattern": "source",
+      "steps": [
+        "内容区先显示",
+        "来源等待到后段",
+        "来源淡入并停留"
+      ],
+      "props": [
+        "children"
+      ],
+      "usage": "import { Source } from \"./src/components/Source\";\n\n<Source>公司年报 / 页码</Source>",
+      "static": false
+    },
+    {
+      "id": "Base-Tag",
+      "name": "Tag",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/Tag.tsx",
+      "purpose": "普通或强调标签",
+      "pattern": "tag",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "children",
+        "yellow?"
+      ],
+      "usage": "import { Tag } from \"./src/components/Tag\";\n\n<Tag yellow>FY2025</Tag>",
+      "static": true
+    },
+    {
+      "id": "Base-GridLines",
+      "name": "GridLines",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/chartPrimitives.tsx",
+      "purpose": "SVG 坐标网格",
+      "pattern": "gridlines",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "width",
+        "height",
+        "left?",
+        "right?",
+        "top?",
+        "bottom?",
+        "rows?"
+      ],
+      "usage": "import { GridLines } from \"./src/components/viz/chartPrimitives\";\n\n<svg><GridLines width={600} height={300} /></svg>",
+      "static": true
+    },
+    {
+      "id": "Base-MiniLegend",
+      "name": "MiniLegend",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/chartPrimitives.tsx",
+      "purpose": "线、柱、点三种图例",
+      "pattern": "legend",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "items"
+      ],
+      "usage": "import { MiniLegend } from \"./src/components/viz/chartPrimitives\";\n\n<MiniLegend items={[{label: \"收入\", kind: \"bar\", yellow: true}]} />",
+      "static": true
+    },
+    {
+      "id": "Base-OverlayShell",
+      "name": "OverlayShell",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/overlayShared.tsx",
+      "purpose": "透明或不透明叠加层的容器",
+      "pattern": "overlay",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "children",
+        "transparent?"
+      ],
+      "usage": "import { OverlayShell } from \"./src/components/viz/overlayShared\";\n\n<OverlayShell transparent>{children}</OverlayShell>",
+      "static": true
+    },
+    {
+      "id": "Base-InlineLegend",
+      "name": "InlineLegend",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/overlayShared.tsx",
+      "purpose": "叠加层的内联图例",
+      "pattern": "legend",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "items"
+      ],
+      "usage": "import { InlineLegend } from \"./src/components/viz/overlayShared\";\n\n<InlineLegend items={[{label: \"收入\", kind: \"bar\"}]} />",
+      "static": true
+    },
+    {
+      "id": "Base-StructuralDiagram",
+      "name": "StructuralDiagram",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/structuralShared.tsx",
+      "purpose": "树图、关系图的定位画布",
+      "pattern": "structural",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "children",
+        "className?"
+      ],
+      "usage": "import { StructuralDiagram } from \"./src/components/viz/structuralShared\";\n\n<StructuralDiagram>{nodesAndEdges}</StructuralDiagram>",
+      "static": true
+    },
+    {
+      "id": "Base-TreeEdge",
+      "name": "TreeEdge",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/structuralShared.tsx",
+      "purpose": "按 progress 绘制连接线",
+      "pattern": "edge",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "d",
+        "progress",
+        "accent?",
+        "thick?",
+        "opacity?"
+      ],
+      "usage": "import { TreeEdge } from \"./src/components/viz/structuralShared\";\n\n<TreeEdge d=\"M100 100 C200 100 200 200 300 200\" progress={p} />",
+      "static": false
+    },
+    {
+      "id": "Base-NodeCard",
+      "name": "NodeCard",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/structuralShared.tsx",
+      "purpose": "树与关系图中的节点卡片",
+      "pattern": "node",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "label",
+        "subtitle?",
+        "icon?",
+        "accent?",
+        "muted?",
+        "width?",
+        "compact?"
+      ],
+      "usage": "import { NodeCard } from \"./src/components/viz/structuralShared\";\n\n<NodeCard label=\"收入\" subtitle=\"业务驱动\" accent />",
+      "static": true
+    },
+    {
+      "id": "Base-EdgeLabel",
+      "name": "EdgeLabel",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/components/viz/structuralShared.tsx",
+      "purpose": "连线上的数值或关系标签",
+      "pattern": "edgelabel",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "text",
+        "accent?",
+        "compact?"
+      ],
+      "usage": "import { EdgeLabel } from \"./src/components/viz/structuralShared\";\n\n<EdgeLabel text=\"持股 60%\" accent />",
+      "static": true
+    },
+    {
+      "id": "Base-Panel",
+      "name": "Panel",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/primitives.tsx",
+      "purpose": "读取品牌 tokens 的面板",
+      "pattern": "panel",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "children",
+        "style?",
+        "accent?"
+      ],
+      "usage": "import { Panel } from \"./src/broadcast/primitives\";\n\n<Panel accent>重点内容</Panel>",
+      "static": true
+    },
+    {
+      "id": "Base-Reveal",
+      "name": "Reveal",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/primitives.tsx",
+      "purpose": "按帧计算透明度和上移入场",
+      "pattern": "reveal",
+      "steps": [
+        "内容透明并下移",
+        "透明度提高，同时上移",
+        "内容完全可见"
+      ],
+      "props": [
+        "children",
+        "delay?",
+        "style?"
+      ],
+      "usage": "import { Reveal } from \"./src/broadcast/primitives\";\n\n<Reveal delay={0.2}><Panel>稍后出现</Panel></Reveal>",
+      "static": false
+    },
+    {
+      "id": "Base-Delta",
+      "name": "Delta",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/primitives.tsx",
+      "purpose": "按正负值显示箭头、符号、涨跌色",
+      "pattern": "delta",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "value",
+        "label?",
+        "background?"
+      ],
+      "usage": "import { Delta } from \"./src/broadcast/primitives\";\n\n<Delta value={12.8} label=\"同比\" />",
+      "static": true
+    },
+    {
+      "id": "Base-MetricValue",
+      "name": "MetricValue",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/primitives.tsx",
+      "purpose": "数字计数、单位、精度与本地化",
+      "pattern": "metric",
+      "steps": [
+        "数字从零开始",
+        "数值向目标增长",
+        "单位、精度与目标数值保持"
+      ],
+      "props": [
+        "metric",
+        "size?",
+        "locale?",
+        "animate?"
+      ],
+      "usage": "import { MetricValue } from \"./src/broadcast/primitives\";\n\n<MetricValue metric={{label: \"收入\", value: 128, prefix: \"\", suffix: \"亿元\", decimals: 0}} />",
+      "static": false
+    },
+    {
+      "id": "Base-SceneFrame",
+      "name": "SceneFrame",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/primitives.tsx",
+      "purpose": "统一页眉、标题、内容与来源区",
+      "pattern": "sceneframe",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "scene",
+        "episode",
+        "index",
+        "children",
+        "hero?"
+      ],
+      "usage": "import { SceneFrame } from \"./src/broadcast/primitives\";\n\n<SceneFrame scene={scene} episode={episode} index={0}>{children}</SceneFrame>",
+      "static": false
+    },
+    {
+      "id": "Base-BrandProvider",
+      "name": "BrandProvider",
+      "kind": "foundation",
+      "category": "上下文与编排",
+      "source": "src/brand/BrandProvider.tsx",
+      "purpose": "为子组件提供品牌 tokens 上下文",
+      "pattern": "brand",
+      "steps": [
+        "占位框保留",
+        "通过外层 Reveal / 参数变化演示",
+        "组件内容停留"
+      ],
+      "props": [
+        "brand",
+        "children"
+      ],
+      "usage": "import { BrandProvider } from \"./src/brand/BrandProvider\";\n\n<BrandProvider brand={episode.brand}>{children}</BrandProvider>",
+      "static": true
+    },
+    {
+      "id": "Base-FinanceEpisode",
+      "name": "FinanceEpisode",
+      "kind": "foundation",
+      "category": "上下文与编排",
+      "source": "src/program/Episode.tsx",
+      "purpose": "编排镜头、字幕、行情条与音频",
+      "pattern": "episode",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "episode"
+      ],
+      "usage": "import { FinanceEpisode } from \"./src/program/Episode\";\n\n<FinanceEpisode episode={parseEpisode(data)} />",
+      "static": false
+    },
+    {
+      "id": "Base-Bars",
+      "name": "Bars",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/charts.tsx",
+      "purpose": "bars / ranking 模板内部的绘图组件",
+      "pattern": "bars",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "scene"
+      ],
+      "usage": "import { Bars } from \"./src/broadcast/charts\";\n\n<Bars scene={barsScene} />",
+      "static": false
+    },
+    {
+      "id": "Base-Trend",
+      "name": "Trend",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/charts.tsx",
+      "purpose": "trend 模板内部的趋势绘图组件",
+      "pattern": "multiline",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "scene"
+      ],
+      "usage": "import { Trend } from \"./src/broadcast/charts\";\n\n<Trend scene={trendScene} />",
+      "static": false
+    },
+    {
+      "id": "Base-Waterfall",
+      "name": "Waterfall",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/charts.tsx",
+      "purpose": "waterfall 模板内部的桥接绘图组件",
+      "pattern": "waterfall",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "scene"
+      ],
+      "usage": "import { Waterfall } from \"./src/broadcast/charts\";\n\n<Waterfall scene={waterfallScene} />",
+      "static": false
+    },
+    {
+      "id": "Base-Donut",
+      "name": "Donut",
+      "kind": "foundation",
+      "category": "基础与绘图",
+      "source": "src/broadcast/charts.tsx",
+      "purpose": "donut 模板内部的环形绘图组件",
+      "pattern": "donut",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "scene"
+      ],
+      "usage": "import { Donut } from \"./src/broadcast/charts\";\n\n<Donut scene={donutScene} />",
+      "static": false
+    },
+    {
+      "id": "Base-SceneContent",
+      "name": "SceneContent",
+      "kind": "foundation",
+      "category": "上下文与编排",
+      "source": "src/broadcast/SceneContent.tsx",
+      "purpose": "按 scene.type 分发原生节目内容；legacy 由 Episode 分发",
+      "pattern": "dispatch",
+      "steps": [
+        "上层容器出现",
+        "按输入或 progress 更新内容",
+        "完整内容停留"
+      ],
+      "props": [
+        "scene",
+        "episode"
+      ],
+      "usage": "import { SceneContent } from \"./src/broadcast/SceneContent\";\n\n<SceneContent scene={scene} episode={episode} />",
+      "static": false
+    }
+  ]
+}

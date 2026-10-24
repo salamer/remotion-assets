@@ -28,7 +28,7 @@ export const presets: Record<Brand["preset"], Tokens> = {
       negative: "#C34136",
       series: ["#526B46", "#D0A43D", "#5483A1", "#AF6456", "#82789C"],
     },
-    "sans",
+    "mono",
     0,
     true,
     true,
@@ -46,7 +46,7 @@ export const presets: Record<Brand["preset"], Tokens> = {
       negative: "#FF897D",
       series: ["#FFBA52", "#63BCD8", "#9D9AF1", "#73CAA3", "#D992B6"],
     },
-    "sans",
+    "mono",
     4,
   ),
   terminal: make(
@@ -79,7 +79,7 @@ export const presets: Record<Brand["preset"], Tokens> = {
       negative: "#B74B37",
       series: ["#B74B37", "#467E85", "#B7964F", "#7C739D", "#799359"],
     },
-    "serif",
+    "mono",
     0,
   ),
   cobalt: make(
@@ -95,7 +95,7 @@ export const presets: Record<Brand["preset"], Tokens> = {
       negative: "#FF9A96",
       series: ["#DBF566", "#6ACBEE", "#E3A6EC", "#B2A4FB", "#F9C28F"],
     },
-    "sans",
+    "mono",
     20,
     true,
   ),
@@ -112,7 +112,7 @@ export const presets: Record<Brand["preset"], Tokens> = {
       negative: "#DA9B87",
       series: ["#D5B982", "#9DBF91", "#8DAFBC", "#C39BB5", "#A8A5D0"],
     },
-    "serif",
+    "mono",
     2,
   ),
   minimal: make(
@@ -128,7 +128,7 @@ export const presets: Record<Brand["preset"], Tokens> = {
       negative: "#C04050",
       series: ["#2658DD", "#128789", "#B27B24", "#AF4C81", "#7764C3"],
     },
-    "sans",
+    "mono",
     24,
   ),
   signal: make(
@@ -144,7 +144,7 @@ export const presets: Record<Brand["preset"], Tokens> = {
       negative: "#C62F38",
       series: ["#C62F38", "#336E98", "#92754A", "#758349", "#8A68A9"],
     },
-    "sans",
+    "mono",
     0,
   ),
 };
