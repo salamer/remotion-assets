@@ -62,7 +62,7 @@ export const EcosystemMap: React.FC<{
             left: cx,
             top: cy,
             transform: `translate(-50%,-50%) scale(${0.85 + 0.15 * hubP})`,
-            boxShadow: "7px 7px 0 #111",
+            boxShadow: "7px 7px 0 var(--fm-ink, #111)",
           }}
         >
           <div className="text-center">
@@ -85,7 +85,7 @@ export const EcosystemMap: React.FC<{
                 top: y,
                 transform: `translate(-50%,-50%) scale(${0.88 + 0.12 * p})`,
                 opacity: p,
-                boxShadow: "5px 5px 0 #111",
+                boxShadow: "5px 5px 0 var(--fm-ink, #111)",
               }}
             >
               <div className="text-center">

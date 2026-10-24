@@ -5,7 +5,10 @@ import { Frame } from "../../components/Frame";
 import { BrutalCard } from "../../components/BrutalCard";
 import { SceneHeader } from "../../components/SceneHeader";
 
-export const BeforeAfterCompare: React.FC = () => {
+export const BeforeAfterCompare: React.FC<{
+  title?: string;
+  eyebrow?: string;
+}> = ({ title = "The economics changed.", eyebrow = "BUSINESS MODEL" }) => {
   const frame = useCurrentFrame();
 
   const left = interpolate(frame, [10, 25], [0, 1], {
@@ -20,7 +23,7 @@ export const BeforeAfterCompare: React.FC = () => {
 
   return (
     <Frame>
-      <SceneHeader eyebrow="BUSINESS MODEL" title="The economics changed." />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-20 grid grid-cols-2 gap-16">
         <div

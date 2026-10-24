@@ -44,11 +44,24 @@ const data: Candle[] = [
   },
 ];
 
-export const CandlestickChart: React.FC = () => {
+const LEGACY_DEFAULT_data = data;
+
+export const CandlestickChart: React.FC<{
+  data?: typeof LEGACY_DEFAULT_data;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  data = LEGACY_DEFAULT_data,
+  title = "Investors repriced Airbnb through the cycle.",
+  eyebrow = "ABNB STOCK",
+}) => {
   const frame = useCurrentFrame();
 
-  const min = 90;
-  const max = 150;
+  const minValue = Math.min(...data.map((c) => c.low));
+  const maxValue = Math.max(...data.map((c) => c.high));
+  const pad = Math.max(1, (maxValue - minValue) * 0.1);
+  const min = minValue - pad;
+  const max = maxValue + pad;
 
   const chartHeight = 500;
 
@@ -57,10 +70,7 @@ export const CandlestickChart: React.FC = () => {
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="ABNB STOCK"
-        title="Investors repriced Airbnb through the cycle."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-16 flex h-[520px] items-end justify-center gap-20 border-b-2 border-ink">
         {data.map((candle, index) => {

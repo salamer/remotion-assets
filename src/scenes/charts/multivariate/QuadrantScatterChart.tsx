@@ -58,7 +58,7 @@ export const QuadrantScatterChart: React.FC<{
                 bottom: `${it.y}%`,
                 transform: `translate(-50%,50%) scale(${0.85 + 0.15 * p})`,
                 opacity: p,
-                boxShadow: "4px 4px 0 #111",
+                boxShadow: "4px 4px 0 var(--fm-ink, #111)",
               }}
             >
               {it.label}

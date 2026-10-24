@@ -1,3 +1,9 @@
+/** v2 production protocol: use ProgramSceneSpec / EpisodeSpec for new work. */
+export type {
+  Scene as ProgramSceneSpec,
+  Episode as EpisodeSpec,
+} from "../program/schema";
+
 /**
  * SceneSpec — semantic scene types for programmatic composition.
  * Prefer kebab-case `type` values matching CATALOG.md.

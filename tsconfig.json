@@ -10,7 +10,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "types": ["node"]
   },
-  "exclude": ["remotion.config.ts"]
+  "exclude": ["node_modules", "build", "dist", "out"]
 }

@@ -83,7 +83,9 @@ export const RivalryNetworkDiagram: React.FC<{
                     x={(x1 + x2) / 2}
                     y={(y1 + y2) / 2 - 10}
                     textAnchor="middle"
-                    fontFamily="IBM Plex Mono"
+                    fontFamily={
+                      'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                    }
                     fontSize={16}
                     fill={VIZ.ink}
                   >
@@ -105,7 +107,7 @@ export const RivalryNetworkDiagram: React.FC<{
                 top: `${n.y}%`,
                 transform: `translate(-50%,-50%) scale(${0.9 + 0.1 * p})`,
                 opacity: p,
-                boxShadow: "5px 5px 0 #111",
+                boxShadow: "5px 5px 0 var(--fm-ink, #111)",
               }}
             >
               <div className="text-center">

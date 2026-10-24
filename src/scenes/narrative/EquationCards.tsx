@@ -24,15 +24,22 @@ const pieces = [
   },
 ];
 
-export const EquationCards: React.FC = () => {
+const LEGACY_DEFAULT_pieces = pieces;
+
+export const EquationCards: React.FC<{
+  pieces?: typeof LEGACY_DEFAULT_pieces;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  pieces = LEGACY_DEFAULT_pieces,
+  title = "Strip the business down to one equation.",
+  eyebrow = "THE MODEL",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="THE MODEL"
-        title="Strip the business down to one equation."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-40 flex items-center justify-center gap-7">
         {pieces.map((piece, index) => {

@@ -11,14 +11,21 @@ const rows = [
   { name: "CN", latest: "4.8%", data: [6.1, 5.8, 5.3, 5.0, 4.7, 4.6, 4.8] },
 ];
 
-export const SparklineTable: React.FC = () => {
+const LEGACY_DEFAULT_rows = rows;
+
+export const SparklineTable: React.FC<{
+  rows?: typeof LEGACY_DEFAULT_rows;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  rows = LEGACY_DEFAULT_rows,
+  title = "Small charts, precise comparisons.",
+  eyebrow = "AT A GLANCE",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="AT A GLANCE"
-        title="Small charts, precise comparisons."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-12 border-2 border-ink bg-white">
         {rows.map((r, i) => {
           const p = reveal(frame, 8 + i * 7, 18),

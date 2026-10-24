@@ -39,12 +39,22 @@ const data: KPI[] = [
   },
 ];
 
-export const MetricGrid: React.FC = () => {
+const LEGACY_DEFAULT_data = data;
+
+export const MetricGrid: React.FC<{
+  data?: typeof LEGACY_DEFAULT_data;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  data = LEGACY_DEFAULT_data,
+  title = "The company in four numbers.",
+  eyebrow = "FY2025",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader eyebrow="FY2025" title="The company in four numbers." />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-16 grid grid-cols-2 gap-8">
         {data.map((item, index) => {

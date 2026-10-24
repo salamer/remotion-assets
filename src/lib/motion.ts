@@ -118,11 +118,11 @@ export const count = (
 
 /** Shared ink palette for scenes that previously used editorialViz.palette */
 export const palette = {
-  paper: "#FAFAF7",
-  ink: "#111111",
-  yellow: "#FFD43B",
-  muted: "#737373",
-  soft: "#ECECE7",
-  soft2: "#E1E1DB",
-  white: "#FFFFFF",
+  paper: "var(--fm-paper, #FAFAF7)",
+  ink: "var(--fm-ink, #111111)",
+  yellow: "var(--fm-accent, #FFD43B)",
+  muted: "var(--fm-muted, #737373)",
+  soft: "var(--fm-soft, #ECECE7)",
+  soft2: "var(--fm-line, #E1E1DB)",
+  white: "var(--fm-surface, #FFFFFF)",
 } as const;

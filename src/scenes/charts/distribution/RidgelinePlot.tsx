@@ -10,16 +10,23 @@ const series = [
   { label: "2024", pts: [3, 9, 20, 43, 68, 92, 71, 36] },
 ];
 
-export const RidgelinePlot: React.FC = () => {
+const LEGACY_DEFAULT_series = series;
+
+export const RidgelinePlot: React.FC<{
+  series?: typeof LEGACY_DEFAULT_series;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  series = LEGACY_DEFAULT_series,
+  title = "The whole distribution moved — not just the average.",
+  eyebrow = "DISTRIBUTION SHIFT",
+}) => {
   const frame = useCurrentFrame(),
     W = 1350,
     H = 150;
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="DISTRIBUTION SHIFT"
-        title="The whole distribution moved — not just the average."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-12 space-y-7">
         {series.map((s, i) => {
           const p = reveal(frame, 10 + i * 10, 24),

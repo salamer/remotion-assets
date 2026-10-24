@@ -1,0 +1,403 @@
+{
+  "episode": {
+    "version": "2.0",
+    "title": "增长之后，利润去了哪里？",
+    "format": "landscape",
+    "fps": 30,
+    "locale": "zh-CN",
+    "isDemo": true,
+    "brand": {
+      "preset": "editorial",
+      "name": "深度 / 商业观察",
+      "marketColors": "international"
+    },
+    "sources": [
+      {
+        "id": "demo",
+        "label": "Finance Motion 合成演示数据",
+        "date": "2026-10-24",
+        "detail": "示例公司、数值和引述均为人工构造；用于测试组件、叙事和版式。"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "01-opener",
+        "duration": 6,
+        "title": "收入增长之后，\n利润去了哪里？",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "收入增长之后，利润去了哪里？我们用一组演示数据拆开看。",
+        "transition": "fade",
+        "type": "opener",
+        "episode": "EP. 001",
+        "tagline": "用一组经营数据，拆开增长、利润与现金流。"
+      },
+      {
+        "id": "03-hero",
+        "duration": 7,
+        "title": "规模突破，仍需观察增长质量",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "收入达到一百二十八点六亿元，同比增长百分之十八点二。",
+        "transition": "fade",
+        "type": "hero",
+        "metric": {
+          "label": "营收",
+          "value": 128.6,
+          "prefix": "",
+          "suffix": "亿元",
+          "decimals": 1,
+          "change": 18.2,
+          "changeLabel": "同比"
+        }
+      },
+      {
+        "id": "04-kpis",
+        "duration": 7,
+        "title": "四个数字，看懂这一季",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "利润增长快于收入，但自由现金流却出现下降。",
+        "transition": "fade",
+        "type": "kpis",
+        "items": [
+          {
+            "label": "营收",
+            "value": 128.6,
+            "prefix": "",
+            "suffix": "亿元",
+            "decimals": 1,
+            "change": 18.2,
+            "changeLabel": "同比"
+          },
+          {
+            "label": "营业利润",
+            "value": 24.8,
+            "prefix": "",
+            "suffix": "亿元",
+            "decimals": 1,
+            "change": 26.5,
+            "changeLabel": "同比"
+          },
+          {
+            "label": "自由现金流",
+            "value": 19.2,
+            "prefix": "",
+            "suffix": "亿元",
+            "decimals": 1,
+            "change": -4.5,
+            "changeLabel": "同比"
+          },
+          {
+            "label": "毛利率",
+            "value": 62.4,
+            "prefix": "",
+            "suffix": "%",
+            "decimals": 1,
+            "changeLabel": "同比"
+          }
+        ]
+      },
+      {
+        "id": "07-trend",
+        "duration": 7,
+        "title": "收入与利润，走出了不同的斜率",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "note": "2026E 为演示假设；不同指标已按同一基期指数化。",
+        "narration": "把收入和利润按同一基期指数化，可以比较它们的增长轨迹。",
+        "transition": "fade",
+        "type": "trend",
+        "labels": [
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026E"
+        ],
+        "series": [
+          {
+            "name": "收入指数",
+            "values": [
+              100,
+              112.5,
+              127.5,
+              136,
+              160.8,
+              183.2
+            ]
+          },
+          {
+            "name": "利润指数",
+            "values": [
+              100,
+              120.8,
+              143.3,
+              163.3,
+              206.7,
+              244.2
+            ]
+          }
+        ],
+        "unit": "2021 = 100",
+        "zeroBaseline": false,
+        "forecastFrom": 5
+      },
+      {
+        "id": "08-waterfall",
+        "duration": 7,
+        "title": "128.6 亿元收入，留下 24.8 亿元营业利润",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "扣除各项成本费用，营业利润为二十四点八亿元。",
+        "transition": "fade",
+        "type": "waterfall",
+        "data": [
+          {
+            "label": "收入",
+            "value": 128.6,
+            "kind": "total"
+          },
+          {
+            "label": "营业成本",
+            "value": -48.4,
+            "kind": "delta"
+          },
+          {
+            "label": "营销",
+            "value": -24.6,
+            "kind": "delta"
+          },
+          {
+            "label": "研发",
+            "value": -18.8,
+            "kind": "delta"
+          },
+          {
+            "label": "管理",
+            "value": -12,
+            "kind": "delta"
+          },
+          {
+            "label": "营业利润",
+            "value": 24.8,
+            "kind": "total"
+          }
+        ],
+        "unit": "亿元"
+      },
+      {
+        "id": "10-table",
+        "duration": 7,
+        "title": "利润增长，现金流暂时落后",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "note": "金额单位：亿元；所有数据均为合成示例。",
+        "narration": "利润增加并不等于现金增加，还要检查营运资金与资本开支。",
+        "transition": "fade",
+        "type": "table",
+        "columns": [
+          "指标",
+          "本期",
+          "上期",
+          "同比"
+        ],
+        "rows": [
+          [
+            "营收",
+            "128.6",
+            "108.8",
+            "+18.2%"
+          ],
+          [
+            "营业利润",
+            "24.8",
+            "19.6",
+            "+26.5%"
+          ],
+          [
+            "自由现金流",
+            "19.2",
+            "20.1",
+            "−4.5%"
+          ],
+          [
+            "经营现金流",
+            "28.1",
+            "26.8",
+            "+4.9%"
+          ]
+        ],
+        "highlightRow": 2
+      },
+      {
+        "id": "13-comparison",
+        "duration": 7,
+        "title": "同样是增长，来源可以完全不同",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "规模扩张与效率改善，是两种不同的增长机制。",
+        "transition": "fade",
+        "type": "comparison",
+        "left": {
+          "label": "规模驱动",
+          "headline": "更多用户 × 更低价格",
+          "points": [
+            "销量提升，收入扩大",
+            "促销投入增加",
+            "利润可能承压"
+          ]
+        },
+        "right": {
+          "label": "效率驱动",
+          "headline": "更高复购 × 更低成本",
+          "points": [
+            "收入结构优化",
+            "单位成本改善",
+            "现金创造能力增强"
+          ]
+        }
+      },
+      {
+        "id": "18-bullets",
+        "duration": 7,
+        "title": "接下来，盯住三个验证指标",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "下一步，观察应收账款、用户续费，以及资本开支强度。",
+        "transition": "fade",
+        "type": "bullets",
+        "items": [
+          {
+            "title": "应收账款周转",
+            "body": "收入确认后，多久才能收到现金？"
+          },
+          {
+            "title": "续费率与留存",
+            "body": "增长来自持续价值，还是一次性促销？"
+          },
+          {
+            "title": "资本开支强度",
+            "body": "新增收入需要投入多少真实资金？"
+          }
+        ]
+      },
+      {
+        "id": "22-takeaway",
+        "duration": 7,
+        "title": "本期结论",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "增长值得关注，现金回收决定它的质量。",
+        "transition": "fade",
+        "type": "takeaway",
+        "body": "增长值得关注，\n现金回收决定它的质量。",
+        "action": "下一步：把应收账款与资本开支加入同一张观察表。"
+      },
+      {
+        "id": "23-sources",
+        "duration": 7,
+        "title": "数据、口径与来源",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "以上公司和数值均为合成演示数据，实际分析应回到原始披露。",
+        "transition": "fade",
+        "type": "sources",
+        "heading": "生产视频请替换为真实披露与可核验链接。"
+      },
+      {
+        "id": "24-endcard",
+        "duration": 5,
+        "title": "继续把数字讲明白",
+        "kicker": "DEMO COMPANY / 经营观察",
+        "sourceIds": [
+          "demo"
+        ],
+        "narration": "下期继续讨论：利润增长，为什么现金减少？",
+        "transition": "fade",
+        "type": "endcard",
+        "message": "看懂一家公司，\n从看懂一条现金流开始。",
+        "nextTitle": "下一期：利润增长，为什么现金减少？",
+        "handle": "@YOUR_CHANNEL"
+      }
+    ],
+    "captions": [
+      {
+        "start": 0.35,
+        "end": 5.75,
+        "text": "收入增长之后，利润去了哪里？我们用一组演示数据拆开看。"
+      },
+      {
+        "start": 6.35,
+        "end": 12.75,
+        "text": "收入达到一百二十八点六亿元，同比增长百分之十八点二。"
+      },
+      {
+        "start": 13.35,
+        "end": 19.75,
+        "text": "利润增长快于收入，但自由现金流却出现下降。"
+      },
+      {
+        "start": 20.35,
+        "end": 26.75,
+        "text": "把收入和利润按同一基期指数化，可以比较它们的增长轨迹。"
+      },
+      {
+        "start": 27.35,
+        "end": 33.75,
+        "text": "扣除各项成本费用，营业利润为二十四点八亿元。"
+      },
+      {
+        "start": 34.35,
+        "end": 40.75,
+        "text": "利润增加并不等于现金增加，还要检查营运资金与资本开支。"
+      },
+      {
+        "start": 41.35,
+        "end": 47.75,
+        "text": "规模扩张与效率改善，是两种不同的增长机制。"
+      },
+      {
+        "start": 48.35,
+        "end": 54.75,
+        "text": "下一步，观察应收账款、用户续费，以及资本开支强度。"
+      },
+      {
+        "start": 55.35,
+        "end": 61.75,
+        "text": "增长值得关注，现金回收决定它的质量。"
+      },
+      {
+        "start": 62.35,
+        "end": 68.75,
+        "text": "以上公司和数值均为合成演示数据，实际分析应回到原始披露。"
+      },
+      {
+        "start": 69.35,
+        "end": 73.75,
+        "text": "下期继续讨论：利润增长，为什么现金减少？"
+      }
+    ]
+  }
+}

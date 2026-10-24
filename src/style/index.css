@@ -1,15 +1,16 @@
 /**
- * Tailwind v4 主题 — 色值与 src/style/theme.ts 中的 colors 保持一致
- * 修改颜色时请同步更新 theme.ts
+ * Tailwind v4 主题 — 统一映射到 BrandProvider 的 CSS 变量
+ * 新增频道请修改 brand/presets.ts 或 JSON brand.overrides
  */
 @import "tailwindcss";
 
-@theme {
-  --color-paper: #fafaf7;
-  --color-ink: #111111;
-  --color-yellow: #ffd43b;
-  --color-muted: #737373;
-  --color-soft: #ecece7;
+@theme inline {
+  --color-paper: var(--fm-paper, #fafaf7);
+  --color-ink: var(--fm-ink, #111111);
+  --color-yellow: var(--fm-accent, #ffd43b);
+  --color-muted: var(--fm-muted, #737373);
+  --color-soft: var(--fm-soft, #ecece7);
+  --color-white: var(--fm-surface, #ffffff);
 }
 
 html,
@@ -20,4 +21,11 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+[data-finance-brand] .bg-yellow {
+  color: var(--fm-on-accent);
+}
+[data-finance-brand] svg text:not([fill]) {
+  fill: var(--fm-ink);
 }

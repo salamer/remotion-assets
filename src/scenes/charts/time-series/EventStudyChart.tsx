@@ -18,7 +18,17 @@ const data = [
   { x: 5, a: 8.2, b: 2.2 },
 ];
 
-export const EventStudyChart: React.FC = () => {
+const LEGACY_DEFAULT_data = data;
+
+export const EventStudyChart: React.FC<{
+  data?: typeof LEGACY_DEFAULT_data;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  data = LEGACY_DEFAULT_data,
+  title = "What changed after the event?",
+  eyebrow = "EVENT STUDY",
+}) => {
   const frame = useCurrentFrame(),
     W = 1480,
     H = 500,
@@ -33,10 +43,7 @@ export const EventStudyChart: React.FC = () => {
       .join(" ");
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="EVENT STUDY"
-        title="What changed after the event?"
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-12">
         <svg width={W} height={H + 80}>
           <line
@@ -50,7 +57,9 @@ export const EventStudyChart: React.FC = () => {
           <text
             x={toX(0) + 12}
             y={28}
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={18}
             fontWeight={600}
           >
@@ -78,7 +87,9 @@ export const EventStudyChart: React.FC = () => {
               x={toX(x)}
               y={H + 42}
               textAnchor="middle"
-              fontFamily="IBM Plex Mono"
+              fontFamily={
+                'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+              }
               fontSize={18}
               fill={palette.muted}
             >
@@ -89,7 +100,9 @@ export const EventStudyChart: React.FC = () => {
             x={W - 10}
             y={toY(8.2) - 16}
             textAnchor="end"
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={20}
             fontWeight={600}
           >
@@ -99,7 +112,9 @@ export const EventStudyChart: React.FC = () => {
             x={W - 10}
             y={toY(2.2) + 30}
             textAnchor="end"
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={20}
             fill={palette.muted}
           >

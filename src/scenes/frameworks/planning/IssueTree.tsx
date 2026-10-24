@@ -22,17 +22,24 @@ const LEAF_W = 170;
 const LEAF_H = 52;
 const LEAF_GAP = 20;
 
-export const IssueTree: React.FC = () => {
+const LEGACY_DEFAULT_branches = branches;
+
+export const IssueTree: React.FC<{
+  branches?: typeof LEGACY_DEFAULT_branches;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  branches = LEGACY_DEFAULT_branches,
+  title = "Break the question into drivers.",
+  eyebrow = "ISSUE TREE",
+}) => {
   const frame = useCurrentFrame();
   const rootCx = ROOT.x + ROOT.w;
   const rootCy = ROOT.y + ROOT.h / 2;
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="ISSUE TREE"
-        title="Break the question into drivers."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="relative mt-12 h-[650px]">
         <div
           className="absolute border-2 border-ink bg-yellow p-7 text-[30px] font-semibold"
@@ -40,7 +47,7 @@ export const IssueTree: React.FC = () => {
             left: ROOT.x,
             top: ROOT.y,
             width: ROOT.w,
-            boxShadow: "6px 6px 0 #111",
+            boxShadow: "6px 6px 0 var(--fm-ink, #111)",
           }}
         >
           WHAT DRIVES PROFIT?

@@ -76,7 +76,7 @@ export const TwoSidedMarketplaceDiagram: React.FC<{
                 style={{
                   opacity: q,
                   transform: `translateX(${(1 - q) * -35}px)`,
-                  boxShadow: "5px 5px 0 #111",
+                  boxShadow: "5px 5px 0 var(--fm-ink, #111)",
                 }}
               >
                 <span className="text-[46px]">{p.icon}</span>
@@ -92,7 +92,7 @@ export const TwoSidedMarketplaceDiagram: React.FC<{
           className="relative flex h-[290px] items-center justify-center border-2 border-ink bg-yellow"
           style={{
             transform: `scale(${0.88 + 0.12 * cp})`,
-            boxShadow: "8px 8px 0 #111",
+            boxShadow: "8px 8px 0 var(--fm-ink, #111)",
           }}
         >
           <div className="text-center">
@@ -111,7 +111,7 @@ export const TwoSidedMarketplaceDiagram: React.FC<{
                 style={{
                   opacity: q,
                   transform: `translateX(${(1 - q) * 35}px)`,
-                  boxShadow: "5px 5px 0 #111",
+                  boxShadow: "5px 5px 0 var(--fm-ink, #111)",
                 }}
               >
                 <span className="text-[46px]">{p.icon}</span>

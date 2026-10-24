@@ -10,7 +10,17 @@ const series = [
   { name: "MARKET", values: [100, 102, 108, 114, 119, 125], accent: false },
 ];
 
-export const IndexedComparisonChart: React.FC = () => {
+const LEGACY_DEFAULT_series = series;
+
+export const IndexedComparisonChart: React.FC<{
+  series?: typeof LEGACY_DEFAULT_series;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  series = LEGACY_DEFAULT_series,
+  title = "Start everyone at 100.",
+  eyebrow = "INDEXED COMPARISON",
+}) => {
   const frame = useCurrentFrame(),
     W = 1450,
     H = 500,
@@ -20,10 +30,7 @@ export const IndexedComparisonChart: React.FC = () => {
     p = reveal(frame, 10, 48);
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="INDEXED COMPARISON"
-        title="Start everyone at 100."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-12">
         <svg width={W} height={H + 70}>
           <line
@@ -68,7 +75,9 @@ export const IndexedComparisonChart: React.FC = () => {
                   x={last.x - 78}
                   y={last.y + 2}
                   textAnchor="middle"
-                  fontFamily="IBM Plex Mono"
+                  fontFamily={
+                    'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                  }
                   fontSize={16}
                   fontWeight={600}
                 >

@@ -120,7 +120,9 @@ export const ForecastFanChart: React.FC<{
             x={x(i)}
             y={height - 28}
             textAnchor="middle"
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={17}
             fill={VIZ.muted}
           >

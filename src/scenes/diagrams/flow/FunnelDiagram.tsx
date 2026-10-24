@@ -27,15 +27,22 @@ const stages = [
   },
 ];
 
-export const FunnelDiagram: React.FC = () => {
+const LEGACY_DEFAULT_stages = stages;
+
+export const FunnelDiagram: React.FC<{
+  stages?: typeof LEGACY_DEFAULT_stages;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  stages = LEGACY_DEFAULT_stages,
+  title = "A huge audience becomes a much smaller customer base.",
+  eyebrow = "CONVERSION",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="CONVERSION"
-        title="A huge audience becomes a much smaller customer base."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-12 space-y-4">
         {stages.map((stage, index) => {

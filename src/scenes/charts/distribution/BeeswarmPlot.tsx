@@ -9,14 +9,21 @@ const values = [
   42, 44, 46, 48, 52, 58, 65, 71, 84,
 ];
 
-export const BeeswarmPlot: React.FC = () => {
+const LEGACY_DEFAULT_values = values;
+
+export const BeeswarmPlot: React.FC<{
+  values?: typeof LEGACY_DEFAULT_values;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  values = LEGACY_DEFAULT_values,
+  title = "The average hides the shape.",
+  eyebrow = "DISTRIBUTION",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="DISTRIBUTION"
-        title="The average hides the shape."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="relative mt-24 h-[430px] border-b-2 border-ink">
         {values.map((v, i) => {
           const p = reveal(frame, 8 + i * 1.5, 12),

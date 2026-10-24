@@ -49,7 +49,10 @@ export const CapabilityVennDiagram: React.FC<{
         </div>
         <div
           className="absolute left-1/2 top-[260px] -translate-x-1/2 -translate-y-1/2 border-2 border-ink bg-ink px-7 py-5 text-[23px] font-semibold text-white"
-          style={{ opacity: p3, boxShadow: "5px 5px 0 #FFD43B" }}
+          style={{
+            opacity: p3,
+            boxShadow: "5px 5px 0 var(--fm-accent, #FFD43B)",
+          }}
         >
           {overlap}
         </div>

@@ -91,8 +91,8 @@ Shape / spread / density: `Histogram`, `BoxPlot`, `BeeswarmPlot`, `RidgelinePlot
 
 **Example — Sankey vs Flow**
 
-`SankeyDiagram` — Purpose: show magnitude-encoded flows between nodes.  
-Use when: money / users / value move across sources and destinations.  
+`SankeyDiagram` — Purpose: show magnitude-encoded flows between nodes.
+Use when: money / users / value move across sources and destinations.
 Do not use when: a simple 3-step sequence is enough → use `FlowDiagram`.
 
 ---

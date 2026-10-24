@@ -1,0 +1,252 @@
+{
+  "version": "2.0",
+  "title": "收入增长，现金也跟上了吗？",
+  "description": "59 秒中文财务解读计划；16:9、30 fps。仅依据用户提供的 2023—2025 内部经营数据，未经独立核验。时长按拟录旁白规划，尚无音轨、配乐或音频对齐字幕。",
+  "format": "landscape",
+  "fps": 30,
+  "locale": "zh-CN",
+  "isDemo": true,
+  "brand": {
+    "preset": "newsroom",
+    "name": "经营观察",
+    "marketColors": "china",
+    "overrides": {
+      "colors": {
+        "background": "#0B1727",
+        "surface": "#12243A",
+        "foreground": "#F1F5FA",
+        "muted": "#AEBFD3",
+        "line": "#344C68",
+        "accent": "#FFBA52",
+        "onAccent": "#151B22",
+        "series": ["#FFBA52", "#63BCD8", "#9D9AF1", "#73CAA3", "#D992B6"]
+      },
+      "typography": {
+        "font": "sans",
+        "titleScale": 1
+      },
+      "shape": {
+        "radius": 4,
+        "border": 1,
+        "shadow": false
+      },
+      "layout": {
+        "padding": 72,
+        "grid": false
+      },
+      "motion": "calm"
+    }
+  },
+  "sources": [
+    {
+      "id": "user-internal-operations",
+      "label": "Finance Motion 独立 skill 试跑：合成经营数据",
+      "detail": "内部经营数据仅为测试设定；不是用户真实公司数据。"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "01-question",
+      "type": "opener",
+      "title": "收入增长，\n现金也跟上了吗？",
+      "duration": 4,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "收入增长，现金也跟上了吗？",
+      "episode": "经营数据解读",
+      "tagline": "从营收、营业利润到自由现金流",
+      "note": "用户提供的内部经营数据，未经独立核验。"
+    },
+    {
+      "id": "02-history",
+      "type": "table",
+      "title": "营收上行，现金走势分化",
+      "duration": 9,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "二〇二三到二〇二五年，营收从八十亿增至一百二十五亿，营业利润翻倍。",
+      "subtitle": "年度数据｜金额单位：亿元人民币",
+      "columns": ["指标", "2023", "2024", "2025"],
+      "rows": [
+        ["营收", 80, 100, 125],
+        ["营业利润", 12, 18, 24],
+        ["自由现金流", 10, 13, 11]
+      ],
+      "highlightRow": 2,
+      "note": "用户提供，未经独立核验；自由现金流沿用原数据口径。"
+    },
+    {
+      "id": "03-mix",
+      "type": "donut",
+      "title": "2025 年：产品收入占 56%",
+      "duration": 6,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "最新一年，产品收入七十亿，订阅四十亿，其他十五亿。",
+      "data": [
+        {
+          "label": "产品",
+          "value": 70
+        },
+        {
+          "label": "订阅",
+          "value": 40
+        },
+        {
+          "label": "其他",
+          "value": 15
+        }
+      ],
+      "unit": "亿元人民币",
+      "centerLabel": "营收",
+      "note": "70 + 40 + 15 = 125；仅展示当年结构，不能推断各分部的增长贡献。"
+    },
+    {
+      "id": "04-profit-bridge",
+      "type": "waterfall",
+      "title": "2025 年：125 亿收入如何留下 24 亿利润",
+      "duration": 7,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "成本和费用合计一百零一亿，留下二十四亿营业利润。",
+      "data": [
+        {
+          "label": "营收",
+          "value": 125,
+          "kind": "total"
+        },
+        {
+          "label": "营业成本",
+          "value": -50,
+          "kind": "delta"
+        },
+        {
+          "label": "营销",
+          "value": -24,
+          "kind": "delta"
+        },
+        {
+          "label": "研发",
+          "value": -17,
+          "kind": "delta"
+        },
+        {
+          "label": "管理",
+          "value": -10,
+          "kind": "delta"
+        },
+        {
+          "label": "营业利润",
+          "value": 24,
+          "kind": "total"
+        }
+      ],
+      "unit": "亿元人民币",
+      "note": "125 − 50 − 24 − 17 − 10 = 24；该桥接解释营业利润，不能用于解释自由现金流。"
+    },
+    {
+      "id": "05-divergence",
+      "type": "kpis",
+      "title": "2025 年：增长与现金出现背离",
+      "duration": 8,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "营收同比增长百分之二十五，自由现金流却从十三亿降至十一亿。",
+      "items": [
+        {
+          "label": "营收",
+          "value": 125,
+          "suffix": "亿元",
+          "decimals": 0,
+          "change": 25,
+          "changeLabel": "",
+          "note": "2024 年：100 亿元"
+        },
+        {
+          "label": "营业利润",
+          "value": 24,
+          "suffix": "亿元",
+          "decimals": 0,
+          "change": 33.33333333333333,
+          "changeLabel": "",
+          "note": "2024 年：18 亿元"
+        },
+        {
+          "label": "自由现金流",
+          "value": 11,
+          "suffix": "亿元",
+          "decimals": 0,
+          "change": -15.384615384615385,
+          "changeLabel": "",
+          "note": "2024 年：13 亿元"
+        }
+      ],
+      "note": "同比均以 2024 年为基期，百分比显示到一位小数；用户数据未经独立核验。",
+      "subtitle": "金额单位：亿元人民币｜增速为同比，基期：2024 年"
+    },
+    {
+      "id": "06-cash-share",
+      "type": "comparison",
+      "title": "自由现金流占营收：下降 4.2 个百分点",
+      "duration": 9,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "自由现金流占营收比例，降至百分之八点八，较上年下降四点二个百分点。",
+      "left": {
+        "label": "2024 年",
+        "headline": "13.0%",
+        "points": ["自由现金流：13 亿元", "营收：100 亿元", "13 ÷ 100 × 100%"]
+      },
+      "right": {
+        "label": "2025 年",
+        "headline": "8.8%",
+        "points": ["自由现金流：11 亿元", "营收：125 亿元", "11 ÷ 125 × 100%"]
+      },
+      "note": "8.8% − 13.0% = −4.2 个百分点；该比例并非利润转现率，不代表现金余额变化。"
+    },
+    {
+      "id": "07-takeaway",
+      "type": "takeaway",
+      "title": "看增长，也要看现金生成",
+      "duration": 7,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "利润与现金走势分化。下滑原因，现有数据无法判断。",
+      "body": "收入扩大、利润增加，\n现金生成仍要单独看。",
+      "action": "现有数据不足以解释自由现金流下降原因。",
+      "note": "未提供经营现金流、资本开支及相关明细；不将任何原因表述为已证实。"
+    },
+    {
+      "id": "08-sources",
+      "type": "sources",
+      "title": "数据来源与口径",
+      "duration": 6,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "以上为用户提供的内部经营数据，未经独立核验。",
+      "heading": "2023—2025 年度数据｜金额：亿元人民币",
+      "note": "同比、占比和合计由本片计算；没有外部核验，也不构成预测。"
+    },
+    {
+      "id": "09-endcard",
+      "type": "endcard",
+      "title": "增长，也要看现金",
+      "duration": 3,
+      "kicker": "经营观察 / 2023—2025",
+      "sourceIds": ["user-internal-operations"],
+      "transition": "fade",
+      "narration": "增长，也要看现金。",
+      "message": "经营观察\n看增长，也看现金生成",
+      "note": "旁白和各镜时长为计划值，须在录音后复核。"
+    }
+  ],
+  "captions": []
+}

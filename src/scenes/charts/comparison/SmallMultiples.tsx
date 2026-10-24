@@ -49,7 +49,7 @@ export const SmallMultiples: React.FC<{
             <div
               key={panel.title}
               className={`border-2 border-ink p-6 ${panel.highlight ? "bg-yellow" : "bg-white"}`}
-              style={{ opacity: p, boxShadow: "5px 5px 0 #111" }}
+              style={{ opacity: p, boxShadow: "5px 5px 0 var(--fm-ink, #111)" }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-[26px] font-semibold">

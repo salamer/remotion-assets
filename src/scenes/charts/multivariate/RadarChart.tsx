@@ -94,7 +94,9 @@ export const RadarChart: React.FC<{
                 x={lx}
                 y={ly}
                 textAnchor="middle"
-                fontFamily="IBM Plex Mono"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
                 fontSize={18}
                 fill={VIZ.ink}
               >
@@ -121,7 +123,9 @@ export const RadarChart: React.FC<{
         <text
           x={1280}
           y={100}
-          fontFamily="IBM Plex Mono"
+          fontFamily={
+            'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+          }
           fontSize={20}
           fill={VIZ.ink}
         >
@@ -130,7 +134,9 @@ export const RadarChart: React.FC<{
         <text
           x={1280}
           y={140}
-          fontFamily="IBM Plex Mono"
+          fontFamily={
+            'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+          }
           fontSize={20}
           fill={VIZ.muted}
         >

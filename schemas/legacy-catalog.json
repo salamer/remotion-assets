@@ -1,0 +1,6436 @@
+[
+  {
+    "id": "Metric-HeroMetric",
+    "component": "HeroMetric",
+    "source": "src/scenes/metrics/HeroMetric.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "suffix": {
+          "type": "string"
+        },
+        "growth": {
+          "type": "number"
+        },
+        "prefix": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "decimals": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-SideBySideCompare",
+    "component": "SideBySideCompare",
+    "source": "src/scenes/narrative/SideBySideCompare.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "companies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "icon",
+              "name",
+              "value",
+              "subtitle"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Bar",
+    "component": "BarChart",
+    "source": "src/scenes/charts/categorical/BarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "year",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-Flow",
+    "component": "FlowDiagram",
+    "source": "src/scenes/diagrams/flow/FlowDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "icon",
+              "title"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "takeaway": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Ranking",
+    "component": "RankingChart",
+    "source": "src/scenes/charts/categorical/RankingChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "name",
+              "icon",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-KeyTakeaway",
+    "component": "KeyTakeaway",
+    "source": "src/scenes/narrative/KeyTakeaway.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Media-Quote",
+    "component": "QuoteCard",
+    "source": "src/scenes/media/QuoteCard.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "quote": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Line",
+    "component": "LineChart",
+    "source": "src/scenes/charts/time-series/LineChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "prefix": {
+          "type": "string"
+        },
+        "suffix": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Candlestick",
+    "component": "CandlestickChart",
+    "source": "src/scenes/charts/time-series/CandlestickChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "open": {
+                "type": "number"
+              },
+              "close": {
+                "type": "number"
+              },
+              "high": {
+                "type": "number"
+              },
+              "low": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "open",
+              "close",
+              "high",
+              "low"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Donut",
+    "component": "DonutChart",
+    "source": "src/scenes/charts/composition/DonutChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Waterfall",
+    "component": "WaterfallChart",
+    "source": "src/scenes/charts/composition/WaterfallChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "type": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "start"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "end"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "positive"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "negative"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "total"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "delta"
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value",
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Table-Metric",
+    "component": "MetricTable",
+    "source": "src/scenes/tables/MetricTable.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "maxItems": 500
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Metric-Grid",
+    "component": "MetricGrid",
+    "source": "src/scenes/metrics/MetricGrid.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "change": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "icon",
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-BulletReveal",
+    "component": "BulletReveal",
+    "source": "src/scenes/narrative/BulletReveal.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "bullets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "icon",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-BeforeAfter",
+    "component": "BeforeAfterCompare",
+    "source": "src/scenes/narrative/BeforeAfterCompare.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-Equation",
+    "component": "EquationCards",
+    "source": "src/scenes/narrative/EquationCards.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "pieces": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "yellow": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "text",
+                  "yellow"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "yellow": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "text"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-Funnel",
+    "component": "FunnelDiagram",
+    "source": "src/scenes/diagrams/flow/FunnelDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "width": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value",
+              "width"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Media-ImageCard",
+    "component": "ImageCard",
+    "source": "src/scenes/media/ImageCard.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "enum": [
+                "maps"
+              ]
+            },
+            {
+              "enum": [
+                "screenshots"
+              ]
+            },
+            {
+              "enum": [
+                "photos"
+              ]
+            },
+            {
+              "enum": [
+                "logos"
+              ]
+            }
+          ]
+        },
+        "publicPath": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Media-LogoCloud",
+    "component": "LogoCloud",
+    "source": "src/scenes/media/LogoCloud.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "maxItems": 500
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Media-MapCallout",
+    "component": "MapCallout",
+    "source": "src/scenes/media/MapCallout.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "enum": [
+                "maps"
+              ]
+            },
+            {
+              "enum": [
+                "screenshots"
+              ]
+            },
+            {
+              "enum": [
+                "photos"
+              ]
+            },
+            {
+              "enum": [
+                "logos"
+              ]
+            }
+          ]
+        },
+        "publicPath": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Metric-Share",
+    "component": "ShareMetric",
+    "source": "src/scenes/metrics/ShareMetric.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Scatter",
+    "component": "ScatterPlot",
+    "source": "src/scenes/charts/distribution/ScatterPlot.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "name",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Media-ScreenshotZoom",
+    "component": "ScreenshotZoom",
+    "source": "src/scenes/media/ScreenshotZoom.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "enum": [
+                "maps"
+              ]
+            },
+            {
+              "enum": [
+                "screenshots"
+              ]
+            },
+            {
+              "enum": [
+                "photos"
+              ]
+            },
+            {
+              "enum": [
+                "logos"
+              ]
+            }
+          ]
+        },
+        "publicPath": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "focusX": {
+          "type": "number"
+        },
+        "focusY": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-StackedBar",
+    "component": "StackedBarChart",
+    "source": "src/scenes/charts/composition/StackedBarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "className": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "value",
+              "className"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-Timeline",
+    "component": "Timeline",
+    "source": "src/scenes/narrative/Timeline.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "year",
+              "title"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-UnitEconomics",
+    "component": "UnitEconomicsDiagram",
+    "source": "src/scenes/diagrams/flow/UnitEconomicsDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "split": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "className": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "value",
+              "className"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Overlay-Ticker",
+    "component": "TickerPreview",
+    "source": "src/showcase/TickerPreview.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "change": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-GroupedBar",
+    "component": "GroupedBarChart",
+    "source": "src/scenes/charts/categorical/GroupedBarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              },
+              "c": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "a",
+              "b"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-PairedBar",
+    "component": "PairedBarChart",
+    "source": "src/scenes/charts/categorical/PairedBarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "a",
+              "b"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "aLabel": {
+          "type": "string"
+        },
+        "bLabel": {
+          "type": "string"
+        },
+        "suffix": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Lollipop",
+    "component": "LollipopChart",
+    "source": "src/scenes/charts/categorical/LollipopChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-DotPlot",
+    "component": "DotPlot",
+    "source": "src/scenes/charts/categorical/DotPlot.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "group": {
+                "type": "string"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Bullet",
+    "component": "BulletChart",
+    "source": "src/scenes/charts/categorical/BulletChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "actual": {
+                "type": "number"
+              },
+              "target": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "actual",
+              "target",
+              "max"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-DivergingBar",
+    "component": "DivergingBarChart",
+    "source": "src/scenes/charts/categorical/DivergingBarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Pareto",
+    "component": "ParetoChart",
+    "source": "src/scenes/charts/categorical/ParetoChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-ScenarioBar",
+    "component": "ScenarioBarChart",
+    "source": "src/scenes/charts/categorical/ScenarioBarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "probability": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "prefix": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Tornado",
+    "component": "TornadoChart",
+    "source": "src/scenes/charts/categorical/TornadoChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "down": {
+                "type": "number"
+              },
+              "up": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "down",
+              "up"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-VarianceComparison",
+    "component": "VarianceComparisonChart",
+    "source": "src/scenes/charts/categorical/VarianceComparisonChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "actual": {
+                "type": "number"
+              },
+              "benchmark": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "actual",
+              "benchmark"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "actualLabel": {
+          "type": "string"
+        },
+        "benchmarkLabel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-MultiLine",
+    "component": "MultiLineChart",
+    "source": "src/scenes/charts/time-series/MultiLineChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            }
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "series": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Area",
+    "component": "AreaChart",
+    "source": "src/scenes/charts/time-series/AreaChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-StackedArea",
+    "component": "StackedAreaChart",
+    "source": "src/scenes/charts/time-series/StackedAreaChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              },
+              "c": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "a",
+              "b",
+              "c"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-IndexedLine",
+    "component": "IndexedLineChart",
+    "source": "src/scenes/charts/time-series/IndexedLineChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              },
+              "c": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "a",
+              "b",
+              "c"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-AnnotatedLine",
+    "component": "AnnotatedLineChart",
+    "source": "src/scenes/charts/time-series/AnnotatedLineChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "number"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "index",
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-EventStudy",
+    "component": "EventStudyChart",
+    "source": "src/scenes/charts/time-series/EventStudyChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "x",
+              "a",
+              "b"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-DualAxis",
+    "component": "DualAxisChart",
+    "source": "src/scenes/charts/time-series/DualAxisChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "bar": {
+                "type": "number"
+              },
+              "line": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "bar",
+              "line"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "barLabel": {
+          "type": "string"
+        },
+        "lineLabel": {
+          "type": "string"
+        },
+        "leftUnit": {
+          "type": "string"
+        },
+        "rightUnit": {
+          "type": "string"
+        },
+        "highlightFromIndex": {
+          "type": "number"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-ConnectedScatter",
+    "component": "ConnectedScatterPlot",
+    "source": "src/scenes/charts/time-series/ConnectedScatterPlot.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "pts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "year",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Bump",
+    "component": "BumpChart",
+    "source": "src/scenes/charts/time-series/BumpChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "ranks": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "ranks"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "periods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-IndexedComparison",
+    "component": "IndexedComparisonChart",
+    "source": "src/scenes/charts/time-series/IndexedComparisonChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "values",
+              "accent"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Dumbbell",
+    "component": "DumbbellChart",
+    "source": "src/scenes/charts/comparison/DumbbellChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "from": {
+                "type": "number"
+              },
+              "to": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "from",
+              "to"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "fromLabel": {
+          "type": "string"
+        },
+        "toLabel": {
+          "type": "string"
+        },
+        "suffix": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Slope",
+    "component": "SlopeChart",
+    "source": "src/scenes/charts/comparison/SlopeChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "start": {
+                "type": "number"
+              },
+              "end": {
+                "type": "number"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "start",
+              "end"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "startLabel": {
+          "type": "string"
+        },
+        "endLabel": {
+          "type": "string"
+        },
+        "suffix": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-SmallMultiples",
+    "component": "SmallMultiples",
+    "source": "src/scenes/charts/comparison/SmallMultiples.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "panels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "values"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-BenchmarkBand",
+    "component": "BenchmarkBandChart",
+    "source": "src/scenes/charts/comparison/BenchmarkBandChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "benchmarkLow": {
+                "type": "number"
+              },
+              "benchmarkHigh": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value",
+              "benchmarkLow",
+              "benchmarkHigh"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Treemap",
+    "component": "TreemapChart",
+    "source": "src/scenes/charts/composition/TreemapChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Marimekko",
+    "component": "MarimekkoChart",
+    "source": "src/scenes/charts/composition/MarimekkoChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "markets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "segments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "share": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "share"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "label",
+              "size",
+              "segments"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-NestedComposition",
+    "component": "NestedCompositionChart",
+    "source": "src/scenes/charts/composition/NestedCompositionChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 500
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value",
+              "children"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Waffle",
+    "component": "WaffleChart",
+    "source": "src/scenes/charts/composition/WaffleChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-DistributionBlocks",
+    "component": "DistributionBlocksChart",
+    "source": "src/scenes/charts/composition/DistributionBlocksChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "people": {
+                "type": "number"
+              },
+              "blocks": {
+                "type": "number"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value",
+              "people",
+              "blocks"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "unit": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-CompositionCompare",
+    "component": "CompositionCompareChart",
+    "source": "src/scenes/charts/composition/CompositionCompareChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "segments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "label",
+              "segments"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-ContributionBar",
+    "component": "ContributionBarChart",
+    "source": "src/scenes/charts/composition/ContributionBarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Pictogram",
+    "component": "PictogramChart",
+    "source": "src/scenes/charts/composition/PictogramChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "number"
+        },
+        "highlighted": {
+          "type": "number"
+        },
+        "icon": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Histogram",
+    "component": "Histogram",
+    "source": "src/scenes/charts/distribution/Histogram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "bins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "count": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "count"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-BoxPlot",
+    "component": "BoxPlot",
+    "source": "src/scenes/charts/distribution/BoxPlot.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "boxes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "min": {
+                "type": "number"
+              },
+              "q1": {
+                "type": "number"
+              },
+              "median": {
+                "type": "number"
+              },
+              "q3": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "min",
+              "q1",
+              "median",
+              "q3",
+              "max"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Beeswarm",
+    "component": "BeeswarmPlot",
+    "source": "src/scenes/charts/distribution/BeeswarmPlot.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Ridgeline",
+    "component": "RidgelinePlot",
+    "source": "src/scenes/charts/distribution/RidgelinePlot.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "pts": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "label",
+              "pts"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-DotStrip",
+    "component": "DotStripPlot",
+    "source": "src/scenes/charts/distribution/DotStripPlot.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "name",
+              "values"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-PopulationPyramid",
+    "component": "PopulationPyramid",
+    "source": "src/scenes/charts/distribution/PopulationPyramid.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 500
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Bubble",
+    "component": "BubbleChart",
+    "source": "src/scenes/charts/distribution/BubbleChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "size": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "x",
+              "y",
+              "size"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "xLabel": {
+          "type": "string"
+        },
+        "yLabel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Heatmap",
+    "component": "Heatmap",
+    "source": "src/scenes/charts/distribution/Heatmap.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "cols": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 1,
+            "maxItems": 500
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-CalendarHeatmap",
+    "component": "CalendarHeatmap",
+    "source": "src/scenes/charts/distribution/CalendarHeatmap.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-CohortMatrix",
+    "component": "CohortMatrix",
+    "source": "src/scenes/charts/distribution/CohortMatrix.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "cohorts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "ages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 1,
+            "maxItems": 500
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-ForecastFan",
+    "component": "ForecastFanChart",
+    "source": "src/scenes/charts/uncertainty/ForecastFanChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "actual": {
+                "type": "number"
+              },
+              "base": {
+                "type": "number"
+              },
+              "low": {
+                "type": "number"
+              },
+              "high": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "base",
+              "low",
+              "high"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-RangeBand",
+    "component": "RangeBandChart",
+    "source": "src/scenes/charts/uncertainty/RangeBandChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "low": {
+                "type": "number"
+              },
+              "mid": {
+                "type": "number"
+              },
+              "high": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "low",
+              "mid",
+              "high"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-ParallelCoordinates",
+    "component": "ParallelCoordinates",
+    "source": "src/scenes/charts/multivariate/ParallelCoordinates.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "axes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "values"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-Radar",
+    "component": "RadarChart",
+    "source": "src/scenes/charts/multivariate/RadarChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "axes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "a": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "b": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "aLabel": {
+          "type": "string"
+        },
+        "bLabel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Chart-QuadrantScatter",
+    "component": "QuadrantScatterChart",
+    "source": "src/scenes/charts/multivariate/QuadrantScatterChart.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "xLabel": {
+          "type": "string"
+        },
+        "yLabel": {
+          "type": "string"
+        },
+        "quadrants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-TwoSidedMarketplace",
+    "component": "TwoSidedMarketplaceDiagram",
+    "source": "src/scenes/diagrams/flow/TwoSidedMarketplaceDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "left": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "detail": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "right": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "detail": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "platform": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-Sankey",
+    "component": "SankeyDiagram",
+    "source": "src/scenes/diagrams/flow/SankeyDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "column": {
+                "type": "number"
+              },
+              "order": {
+                "type": "number"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "column"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "label": {
+                "type": "string"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "unit": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-ValueChain",
+    "component": "ValueChainDiagram",
+    "source": "src/scenes/diagrams/flow/ValueChainDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "metric": {
+                "type": "number"
+              },
+              "metricLabel": {
+                "type": "string"
+              },
+              "unit": {
+                "type": "string"
+              },
+              "capture": {
+                "type": "number"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-ValueChainMap",
+    "component": "ValueChainMap",
+    "source": "src/scenes/diagrams/flow/ValueChainMap.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "players": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              },
+              "margin": {
+                "type": "string"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "players"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-RelationshipGraph",
+    "component": "RelationshipGraph",
+    "source": "src/scenes/diagrams/relationships/RelationshipGraph.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "sublabel": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "width": {
+                "type": "number"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              },
+              "bend": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "from",
+              "to"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-CausalGraph",
+    "component": "CausalGraph",
+    "source": "src/scenes/diagrams/relationships/CausalGraph.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              },
+              "direction": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "flat"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "up"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "down"
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "sign": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "−"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "+"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "?"
+                    ]
+                  }
+                ]
+              },
+              "label": {
+                "type": "string"
+              },
+              "bend": {
+                "type": "number"
+              },
+              "delay": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "from",
+              "to"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-RivalryNetwork",
+    "component": "RivalryNetworkDiagram",
+    "source": "src/scenes/diagrams/relationships/RivalryNetworkDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "type": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "compete"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "cooperate"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "supply"
+                    ]
+                  }
+                ]
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-CompetitiveLandscape",
+    "component": "CompetitiveLandscapeDiagram",
+    "source": "src/scenes/diagrams/relationships/CompetitiveLandscapeDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "highlight": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "xLabel": {
+          "type": "string"
+        },
+        "yLabel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-EcosystemMap",
+    "component": "EcosystemMap",
+    "source": "src/scenes/diagrams/relationships/EcosystemMap.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "hub": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-CapabilityVenn",
+    "component": "CapabilityVennDiagram",
+    "source": "src/scenes/diagrams/relationships/CapabilityVennDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "left": {
+          "type": "string"
+        },
+        "right": {
+          "type": "string"
+        },
+        "overlap": {
+          "type": "string"
+        },
+        "leftIcon": {
+          "type": "string"
+        },
+        "rightIcon": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-HierarchyPyramid",
+    "component": "HierarchyPyramid",
+    "source": "src/scenes/diagrams/hierarchy/HierarchyPyramid.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "sublabel": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "footer": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-OrganizationTree",
+    "component": "OrganizationTree",
+    "source": "src/scenes/diagrams/hierarchy/OrganizationTree.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "root": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "accent": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "muted": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "children": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "number"
+                },
+                "toString": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "toLocaleString": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "pop": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "push": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "concat": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "join": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reverse": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "shift": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "slice": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "sort": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "splice": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "unshift": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "indexOf": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "lastIndexOf": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "every": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "some": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "forEach": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "map": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reduce": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reduceRight": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "find": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "findIndex": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "fill": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "copyWithin": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "entries": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "keys": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "values": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "includes": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "flatMap": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "flat": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "at": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "length",
+                "toString",
+                "toLocaleString",
+                "pop",
+                "push",
+                "concat",
+                "join",
+                "reverse",
+                "shift",
+                "slice",
+                "sort",
+                "splice",
+                "unshift",
+                "indexOf",
+                "lastIndexOf",
+                "every",
+                "some",
+                "forEach",
+                "map",
+                "filter",
+                "reduce",
+                "reduceRight",
+                "find",
+                "findIndex",
+                "fill",
+                "copyWithin",
+                "entries",
+                "keys",
+                "values",
+                "includes",
+                "flatMap",
+                "flat",
+                "at"
+              ],
+              "additionalProperties": false
+            },
+            "headcount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-OwnershipTree",
+    "component": "OwnershipTree",
+    "source": "src/scenes/diagrams/hierarchy/OwnershipTree.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "root": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "accent": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "muted": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "children": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "number"
+                },
+                "toString": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "toLocaleString": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "pop": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "push": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "concat": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "join": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reverse": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "shift": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "slice": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "sort": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "splice": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "unshift": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "indexOf": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "lastIndexOf": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "every": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "some": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "forEach": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "map": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reduce": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reduceRight": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "find": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "findIndex": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "fill": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "copyWithin": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "entries": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "keys": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "values": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "includes": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "flatMap": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "flat": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "at": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "length",
+                "toString",
+                "toLocaleString",
+                "pop",
+                "push",
+                "concat",
+                "join",
+                "reverse",
+                "shift",
+                "slice",
+                "sort",
+                "splice",
+                "unshift",
+                "indexOf",
+                "lastIndexOf",
+                "every",
+                "some",
+                "forEach",
+                "map",
+                "filter",
+                "reduce",
+                "reduceRight",
+                "find",
+                "findIndex",
+                "fill",
+                "copyWithin",
+                "entries",
+                "keys",
+                "values",
+                "includes",
+                "flatMap",
+                "flat",
+                "at"
+              ],
+              "additionalProperties": false
+            },
+            "ownershipPct": {
+              "type": "number"
+            },
+            "relationLabel": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-BalanceSheet",
+    "component": "BalanceSheetDiagram",
+    "source": "src/scenes/diagrams/finance/BalanceSheetDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "liabilities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "equity": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "unit": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Diagram-CapitalStack",
+    "component": "CapitalStackDiagram",
+    "source": "src/scenes/diagrams/finance/CapitalStackDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "layers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "percent": {
+                "type": "number"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "percent"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "lossPercent": {
+          "type": "number"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-StrategyMatrix",
+    "component": "StrategyMatrix",
+    "source": "src/scenes/frameworks/strategy/StrategyMatrix.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "highlight": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "x",
+                  "y",
+                  "highlight"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "highlight": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "name",
+                  "x",
+                  "y"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-RiskMatrix",
+    "component": "RiskMatrix",
+    "source": "src/scenes/frameworks/strategy/RiskMatrix.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "risks": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "icon": {
+                    "type": "string"
+                  },
+                  "high": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "x",
+                  "y",
+                  "icon",
+                  "high"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "icon": {
+                    "type": "string"
+                  },
+                  "high": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "name",
+                  "x",
+                  "y",
+                  "icon"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-PrioritizationMatrix",
+    "component": "PrioritizationMatrix",
+    "source": "src/scenes/frameworks/strategy/PrioritizationMatrix.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "initiatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "size": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "x",
+              "y",
+              "size",
+              "icon"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-OpportunityMatrix",
+    "component": "OpportunityMatrix",
+    "source": "src/scenes/frameworks/strategy/OpportunityMatrix.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "score": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "x",
+              "y",
+              "score"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-StrategicRoadmap",
+    "component": "StrategicRoadmap",
+    "source": "src/scenes/frameworks/planning/StrategicRoadmap.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "period": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "period",
+              "title",
+              "items",
+              "icon"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-ScenarioTree",
+    "component": "ScenarioTree",
+    "source": "src/scenes/frameworks/planning/ScenarioTree.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "probability": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "y": {
+                "type": "number"
+              },
+              "accent": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "probability",
+              "value",
+              "y",
+              "accent"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-BridgeToTarget",
+    "component": "BridgeToTarget",
+    "source": "src/scenes/frameworks/planning/BridgeToTarget.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "delta": {
+                "type": "number"
+              },
+              "total": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "delta",
+              "total"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-IssueTree",
+    "component": "IssueTree",
+    "source": "src/scenes/frameworks/planning/IssueTree.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "branches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "leaves": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "title",
+              "icon",
+              "leaves"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-MetricDriverTree",
+    "component": "MetricDriverTree",
+    "source": "src/scenes/frameworks/planning/MetricDriverTree.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "root": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "accent": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "muted": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "children": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "number"
+                },
+                "toString": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "toLocaleString": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "pop": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "push": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "concat": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "join": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reverse": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "shift": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "slice": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "sort": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "splice": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "unshift": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "indexOf": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "lastIndexOf": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "every": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "some": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "forEach": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "map": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reduce": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "reduceRight": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "find": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "findIndex": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "fill": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "copyWithin": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "entries": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "keys": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "values": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "includes": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "flatMap": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "flat": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                },
+                "at": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "length",
+                "toString",
+                "toLocaleString",
+                "pop",
+                "push",
+                "concat",
+                "join",
+                "reverse",
+                "shift",
+                "slice",
+                "sort",
+                "splice",
+                "unshift",
+                "indexOf",
+                "lastIndexOf",
+                "every",
+                "some",
+                "forEach",
+                "map",
+                "filter",
+                "reduce",
+                "reduceRight",
+                "find",
+                "findIndex",
+                "fill",
+                "copyWithin",
+                "entries",
+                "keys",
+                "values",
+                "includes",
+                "flatMap",
+                "flat",
+                "at"
+              ],
+              "additionalProperties": false
+            },
+            "value": {
+              "type": "string"
+            },
+            "relation": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Framework-Swimlane",
+    "component": "SwimlaneDiagram",
+    "source": "src/scenes/frameworks/process/SwimlaneDiagram.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "lanes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "x": {
+                      "type": "number"
+                    },
+                    "w": {
+                      "type": "number"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "x",
+                    "w",
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "name",
+              "icon",
+              "steps"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Table-Sparkline",
+    "component": "SparklineTable",
+    "source": "src/scenes/tables/SparklineTable.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "latest": {
+                "type": "string"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "name",
+              "latest",
+              "data"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Table-BenchmarkScorecard",
+    "component": "BenchmarkScorecard",
+    "source": "src/scenes/tables/BenchmarkScorecard.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "ours": {
+                "type": "number"
+              },
+              "peer": {
+                "type": "number"
+              },
+              "best": {
+                "type": "number"
+              },
+              "unit": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "metric",
+              "ours",
+              "peer",
+              "best",
+              "unit"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Table-DistributionComparison",
+    "component": "DistributionComparisonTable",
+    "source": "src/scenes/tables/DistributionComparisonTable.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "left": {
+                "type": "number"
+              },
+              "right": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "left",
+              "right"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "leftLabel": {
+          "type": "string"
+        },
+        "middleLabel": {
+          "type": "string"
+        },
+        "rightLabel": {
+          "type": "string"
+        },
+        "leftUnit": {
+          "type": "string"
+        },
+        "rightUnit": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Table-CapabilityHeatmap",
+    "component": "CapabilityHeatmap",
+    "source": "src/scenes/tables/CapabilityHeatmap.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "cols": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "maxItems": 500
+              }
+            },
+            "required": [
+              "name",
+              "values"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "title": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-CompareCards",
+    "component": "CompareCards",
+    "source": "src/scenes/narrative/CompareCards.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "left": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "sublabel": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "accent": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            }
+          },
+          "required": [
+            "label",
+            "icon"
+          ],
+          "additionalProperties": false
+        },
+        "right": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "sublabel": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "accent": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            }
+          },
+          "required": [
+            "label",
+            "icon"
+          ],
+          "additionalProperties": false
+        },
+        "transparent": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "showVs": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-ExecutiveSummary",
+    "component": "ExecutiveSummary",
+    "source": "src/scenes/narrative/ExecutiveSummary.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kicker": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "detail": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kicker",
+              "title",
+              "detail"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Narrative-PageFlipChoice",
+    "component": "PageFlipChoice",
+    "source": "src/scenes/narrative/PageFlipChoice.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "left": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "sublabel": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "accent": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "right": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "sublabel": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "accent": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Overlay-PresenterOrbit",
+    "component": "PresenterOrbitOverlay",
+    "source": "src/scenes/overlays/PresenterOrbitOverlay.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "sublabel": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "state": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "default"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "accent"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "muted"
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 500
+        },
+        "transparent": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Metric-Split",
+    "component": "SplitMetric",
+    "source": "src/scenes/metrics/SplitMetric.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
+        "leftValue": {
+          "type": "number"
+        },
+        "rightValue": {
+          "type": "number"
+        },
+        "leftSuffix": {
+          "type": "string"
+        },
+        "rightSuffix": {
+          "type": "string"
+        },
+        "leftLabel": {
+          "type": "string"
+        },
+        "rightLabel": {
+          "type": "string"
+        },
+        "rightTag": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "id": "Metric-FactGrid",
+    "component": "FactGrid",
+    "source": "src/scenes/metrics/FactGrid.tsx",
+    "dataDriven": true,
+    "propsSchema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "maxItems": 500
+          },
+          "minItems": 1,
+          "maxItems": 500
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+]

@@ -22,6 +22,7 @@ export const BrutalCard: React.FC<Props> = ({
       `}
       style={{
         boxShadow: shadows.brutal,
+        borderRadius: "var(--fm-radius, 0px)",
       }}
     >
       {children}

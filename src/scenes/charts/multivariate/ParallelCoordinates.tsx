@@ -54,7 +54,9 @@ export const ParallelCoordinates: React.FC<{
               x={x(i)}
               y={height - 30}
               textAnchor="middle"
-              fontFamily="IBM Plex Mono"
+              fontFamily={
+                'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+              }
               fontSize={18}
               fill={VIZ.ink}
             >
@@ -64,7 +66,9 @@ export const ParallelCoordinates: React.FC<{
               x={x(i)}
               y={top - 15}
               textAnchor="middle"
-              fontFamily="IBM Plex Mono"
+              fontFamily={
+                'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+              }
               fontSize={15}
               fill={VIZ.muted}
             >
@@ -74,7 +78,9 @@ export const ParallelCoordinates: React.FC<{
               x={x(i)}
               y={top + chartH + 22}
               textAnchor="middle"
-              fontFamily="IBM Plex Mono"
+              fontFamily={
+                'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+              }
               fontSize={15}
               fill={VIZ.muted}
             >
@@ -100,7 +106,9 @@ export const ParallelCoordinates: React.FC<{
               <text
                 x={pts.at(-1)!.x + 25}
                 y={pts.at(-1)!.y + 6}
-                fontFamily="IBM Plex Mono"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
                 fontSize={19}
                 fill={VIZ.ink}
               >

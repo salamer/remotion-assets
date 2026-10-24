@@ -83,7 +83,9 @@ export const BubbleChart: React.FC<{
                   x={cx}
                   y={cy + 7}
                   textAnchor="middle"
-                  fontFamily="IBM Plex Mono"
+                  fontFamily={
+                    'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                  }
                   fontSize={20}
                   fontWeight={600}
                 >
@@ -96,7 +98,9 @@ export const BubbleChart: React.FC<{
             x={width / 2}
             y={height - 20}
             textAnchor="middle"
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={18}
             fill={VIZ.muted}
           >
@@ -107,7 +111,9 @@ export const BubbleChart: React.FC<{
             y={height / 2}
             transform={`rotate(-90 24 ${height / 2})`}
             textAnchor="middle"
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={18}
             fill={VIZ.muted}
           >

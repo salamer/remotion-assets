@@ -1,0 +1,123 @@
+[
+  {
+    "id": "01-opener",
+    "type": "opener",
+    "title": "收入增长之后，\n利润去了哪里？",
+    "start": 0,
+    "end": 6,
+    "narration": "收入增长之后，利润去了哪里？我们用一组演示数据拆开看。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "03-hero",
+    "type": "hero",
+    "title": "规模突破，仍需观察增长质量",
+    "start": 6,
+    "end": 13,
+    "narration": "收入达到一百二十八点六亿元，同比增长百分之十八点二。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "04-kpis",
+    "type": "kpis",
+    "title": "四个数字，看懂这一季",
+    "start": 13,
+    "end": 20,
+    "narration": "利润增长快于收入，但自由现金流却出现下降。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "07-trend",
+    "type": "trend",
+    "title": "收入与利润，走出了不同的斜率",
+    "start": 20,
+    "end": 27,
+    "narration": "把收入和利润按同一基期指数化，可以比较它们的增长轨迹。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "08-waterfall",
+    "type": "waterfall",
+    "title": "128.6 亿元收入，留下 24.8 亿元营业利润",
+    "start": 27,
+    "end": 34,
+    "narration": "扣除各项成本费用，营业利润为二十四点八亿元。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "10-table",
+    "type": "table",
+    "title": "利润增长，现金流暂时落后",
+    "start": 34,
+    "end": 41,
+    "narration": "利润增加并不等于现金增加，还要检查营运资金与资本开支。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "13-comparison",
+    "type": "comparison",
+    "title": "同样是增长，来源可以完全不同",
+    "start": 41,
+    "end": 48,
+    "narration": "规模扩张与效率改善，是两种不同的增长机制。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "18-bullets",
+    "type": "bullets",
+    "title": "接下来，盯住三个验证指标",
+    "start": 48,
+    "end": 55,
+    "narration": "下一步，观察应收账款、用户续费，以及资本开支强度。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "22-takeaway",
+    "type": "takeaway",
+    "title": "本期结论",
+    "start": 55,
+    "end": 62,
+    "narration": "增长值得关注，现金回收决定它的质量。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "23-sources",
+    "type": "sources",
+    "title": "数据、口径与来源",
+    "start": 62,
+    "end": 69,
+    "narration": "以上公司和数值均为合成演示数据，实际分析应回到原始披露。",
+    "sourceIds": [
+      "demo"
+    ]
+  },
+  {
+    "id": "24-endcard",
+    "type": "endcard",
+    "title": "继续把数字讲明白",
+    "start": 69,
+    "end": 74,
+    "narration": "下期继续讨论：利润增长，为什么现金减少？",
+    "sourceIds": [
+      "demo"
+    ]
+  }
+]

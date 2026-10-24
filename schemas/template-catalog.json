@@ -1,0 +1,152 @@
+[
+  {
+    "type": "opener",
+    "name": "节目片头",
+    "group": "节目包装",
+    "use": "用问题或结论开场"
+  },
+  {
+    "type": "chapter",
+    "name": "章节转场",
+    "group": "节目包装",
+    "use": "分段与建立节奏"
+  },
+  {
+    "type": "headline",
+    "name": "焦点头条",
+    "group": "节目包装",
+    "use": "突发事件与核心数字"
+  },
+  {
+    "type": "news-grid",
+    "name": "新闻简报",
+    "group": "节目包装",
+    "use": "同屏呈现 2–4 条新闻"
+  },
+  {
+    "type": "hero",
+    "name": "核心数字",
+    "group": "数据图表",
+    "use": "突出一个有来源的数字"
+  },
+  {
+    "type": "kpis",
+    "name": "指标看板",
+    "group": "数据图表",
+    "use": "比较 1–6 个关键指标"
+  },
+  {
+    "type": "bars",
+    "name": "条形 / 柱状图",
+    "group": "数据图表",
+    "use": "同口径规模比较；支持负数"
+  },
+  {
+    "type": "ranking",
+    "name": "排名榜单",
+    "group": "数据图表",
+    "use": "按数值降序排列"
+  },
+  {
+    "type": "trend",
+    "name": "趋势与预测",
+    "group": "数据图表",
+    "use": "多序列、缺失值、预测区间"
+  },
+  {
+    "type": "waterfall",
+    "name": "利润瀑布",
+    "group": "数据图表",
+    "use": "从起点到终点的可对账变化"
+  },
+  {
+    "type": "donut",
+    "name": "结构占比",
+    "group": "数据图表",
+    "use": "总量分解；最多 6 部分"
+  },
+  {
+    "type": "table",
+    "name": "财务数据表",
+    "group": "数据图表",
+    "use": "精确数值；最多 7 行"
+  },
+  {
+    "type": "earnings",
+    "name": "财报快照",
+    "group": "公司研究",
+    "use": "公司、期间、经营指标和指引"
+  },
+  {
+    "type": "scenario",
+    "name": "三情景分析",
+    "group": "公司研究",
+    "use": "每个情景展示数值与假设"
+  },
+  {
+    "type": "comparison",
+    "name": "双边对照",
+    "group": "观点叙事",
+    "use": "观点、公司、前后变化对比"
+  },
+  {
+    "type": "quote",
+    "name": "人物引述",
+    "group": "观点叙事",
+    "use": "带作者与来源的原话"
+  },
+  {
+    "type": "timeline",
+    "name": "事件时间线",
+    "group": "观点叙事",
+    "use": "2–5 个关键节点"
+  },
+  {
+    "type": "equation",
+    "name": "公式拆解",
+    "group": "观点叙事",
+    "use": "商业公式与推导"
+  },
+  {
+    "type": "bullets",
+    "name": "逐条解释",
+    "group": "观点叙事",
+    "use": "分步呈现论据"
+  },
+  {
+    "type": "takeaway",
+    "name": "核心结论",
+    "group": "观点叙事",
+    "use": "一个结论与一个观察指标"
+  },
+  {
+    "type": "media",
+    "name": "图像与证据",
+    "group": "媒体素材",
+    "use": "年报页、图片、地图等本地素材"
+  },
+  {
+    "type": "presenter",
+    "name": "主持人分屏",
+    "group": "媒体素材",
+    "use": "视频 / 图片配合论点与姓名条"
+  },
+  {
+    "type": "sources",
+    "name": "来源索引",
+    "group": "节目包装",
+    "use": "逐项呈现出处与口径"
+  },
+  {
+    "type": "endcard",
+    "name": "节目片尾",
+    "group": "节目包装",
+    "use": "下期预告与频道名称"
+  },
+  {
+    "type": "legacy",
+    "name": "原组件适配",
+    "group": "扩展组件",
+    "use": "通过原 Composition ID 复用既有布局，仅横屏"
+  }
+]

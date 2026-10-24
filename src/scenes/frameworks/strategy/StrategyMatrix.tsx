@@ -11,11 +11,21 @@ const items = [
   { name: "OPTION", x: 82, y: 35 },
 ];
 
-export const StrategyMatrix: React.FC = () => {
+const LEGACY_DEFAULT_items = items;
+
+export const StrategyMatrix: React.FC<{
+  items?: typeof LEGACY_DEFAULT_items;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  items = LEGACY_DEFAULT_items,
+  title = "Where should we play?",
+  eyebrow = "STRATEGY MATRIX",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader eyebrow="STRATEGY MATRIX" title="Where should we play?" />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="relative mt-12 h-[650px] border-b-2 border-l-2 border-ink">
         <div className="absolute left-1/2 top-0 h-full w-[2px] bg-soft" />
         <div className="absolute left-0 top-1/2 h-[2px] w-full bg-soft" />
@@ -42,7 +52,9 @@ export const StrategyMatrix: React.FC = () => {
                 bottom: `${it.y}%`,
                 transform: `translate(-50%,50%) scale(${0.85 + 0.15 * p})`,
                 opacity: p,
-                boxShadow: it.highlight ? "5px 5px 0 #111" : undefined,
+                boxShadow: it.highlight
+                  ? "5px 5px 0 var(--fm-ink, #111)"
+                  : undefined,
               }}
             >
               {it.name}

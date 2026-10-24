@@ -16,15 +16,22 @@ const rows = [
   ["0–9", 5, 5],
 ];
 
-export const PopulationPyramid: React.FC = () => {
+const LEGACY_DEFAULT_rows = rows;
+
+export const PopulationPyramid: React.FC<{
+  rows?: typeof LEGACY_DEFAULT_rows;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  rows = LEGACY_DEFAULT_rows,
+  title = "An aging society has a different shape.",
+  eyebrow = "DEMOGRAPHY",
+}) => {
   const frame = useCurrentFrame(),
     max = 12;
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="DEMOGRAPHY"
-        title="An aging society has a different shape."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-12">
         {rows.map((r, i) => {
           const p = reveal(frame, 8 + i * 3, 18);

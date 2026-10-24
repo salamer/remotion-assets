@@ -17,7 +17,17 @@ const split = [
   },
 ];
 
-export const UnitEconomicsDiagram: React.FC = () => {
+const LEGACY_DEFAULT_split = split;
+
+export const UnitEconomicsDiagram: React.FC<{
+  split?: typeof LEGACY_DEFAULT_split;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  split = LEGACY_DEFAULT_split,
+  title = "What happens to every $100 booking?",
+  eyebrow = "UNIT ECONOMICS",
+}) => {
   const frame = useCurrentFrame();
 
   const p = interpolate(frame, [15, 50], [0, 1], {
@@ -27,10 +37,7 @@ export const UnitEconomicsDiagram: React.FC = () => {
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="UNIT ECONOMICS"
-        title="What happens to every $100 booking?"
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-20">
         <div className="text-[120px] font-semibold tracking-[-0.07em]">

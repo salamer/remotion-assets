@@ -13,7 +13,17 @@ const steps = [
   { label: "TARGET", delta: 128, total: true },
 ];
 
-export const BridgeToTarget: React.FC = () => {
+const LEGACY_DEFAULT_steps = steps;
+
+export const BridgeToTarget: React.FC<{
+  steps?: typeof LEGACY_DEFAULT_steps;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  steps = LEGACY_DEFAULT_steps,
+  title = "What must happen to get from here to there?",
+  eyebrow = "BRIDGE TO TARGET",
+}) => {
   const frame = useCurrentFrame();
   let running = 0;
   const calc = steps.map((s) => {
@@ -25,13 +35,10 @@ export const BridgeToTarget: React.FC = () => {
     running += s.delta;
     return { ...s, start, end: running };
   });
-  const max = 140;
+  const max = Math.max(1, ...calc.flatMap((s) => [s.start, s.end])) * 1.1;
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="BRIDGE TO TARGET"
-        title="What must happen to get from here to there?"
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-16 flex h-[600px] items-end gap-9 border-b-2 border-ink px-5">
         {calc.map((s, i) => {
           const p = reveal(frame, 8 + i * 7, 18),

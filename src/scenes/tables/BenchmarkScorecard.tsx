@@ -11,14 +11,21 @@ const rows = [
   { metric: "R&D / SALES", ours: 9, peer: 7, best: 12, unit: "%" },
 ];
 
-export const BenchmarkScorecard: React.FC = () => {
+const LEGACY_DEFAULT_rows = rows;
+
+export const BenchmarkScorecard: React.FC<{
+  rows?: typeof LEGACY_DEFAULT_rows;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  rows = LEGACY_DEFAULT_rows,
+  title = "Where we outperform — and where we do not.",
+  eyebrow = "BENCHMARK",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="BENCHMARK"
-        title="Where we outperform — and where we do not."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-14 border-2 border-ink bg-white">
         <div className="grid grid-cols-[280px_1fr_180px_180px_180px] bg-yellow px-6 py-5 text-[20px] font-semibold">
           <div>METRIC</div>

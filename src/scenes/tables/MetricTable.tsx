@@ -11,15 +11,22 @@ const rows = [
   ["Hilton", "$11.7B", "18%", "$52B"],
 ];
 
-export const MetricTable: React.FC = () => {
+const LEGACY_DEFAULT_rows = rows;
+
+export const MetricTable: React.FC<{
+  rows?: typeof LEGACY_DEFAULT_rows;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  rows = LEGACY_DEFAULT_rows,
+  title = "Same market. Different economics.",
+  eyebrow = "COMPETITORS",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="COMPETITORS"
-        title="Same market. Different economics."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-16 border-2 border-ink">
         <div

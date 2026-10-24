@@ -82,7 +82,9 @@ export const BumpChart: React.FC<{
                     <text
                       x={pt.x + 28}
                       y={pt.y + 7}
-                      fontFamily="IBM Plex Mono"
+                      fontFamily={
+                        'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                      }
                       fontSize={20}
                       fill={VIZ.ink}
                     >
@@ -100,7 +102,9 @@ export const BumpChart: React.FC<{
             x={x(i)}
             y={height - 25}
             textAnchor="middle"
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={18}
             fill={VIZ.muted}
           >

@@ -12,7 +12,11 @@ const facts = [
   ["LEADER", "Company A", "Largest by revenue"],
 ];
 
-export const FactGrid: React.FC = () => {
+const LEGACY_DEFAULT_facts = facts;
+
+export const FactGrid: React.FC<{ facts?: typeof LEGACY_DEFAULT_facts }> = ({
+  facts = LEGACY_DEFAULT_facts,
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>

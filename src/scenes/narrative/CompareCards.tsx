@@ -102,7 +102,7 @@ export const CompareCards: React.FC<{
       {showVs ? (
         <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-ink bg-yellow px-5 py-3 text-[26px] font-semibold"
-          style={{ boxShadow: "5px 5px 0 #111" }}
+          style={{ boxShadow: "5px 5px 0 var(--fm-ink, #111)" }}
         >
           VS
         </div>

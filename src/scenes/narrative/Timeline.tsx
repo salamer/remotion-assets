@@ -38,7 +38,17 @@ const events: Event[] = [
   },
 ];
 
-export const Timeline: React.FC = () => {
+const LEGACY_DEFAULT_events = events;
+
+export const Timeline: React.FC<{
+  events?: typeof LEGACY_DEFAULT_events;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  events = LEGACY_DEFAULT_events,
+  title = "From three air mattresses to a global platform.",
+  eyebrow = "AIRBNB / HISTORY",
+}) => {
   const frame = useCurrentFrame();
 
   const line = interpolate(frame, [15, 55], [0, 1], {
@@ -48,10 +58,7 @@ export const Timeline: React.FC = () => {
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="AIRBNB / HISTORY"
-        title="From three air mattresses to a global platform."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="relative mt-44">
         <div className="absolute left-0 right-0 top-[77px] h-[4px] bg-soft">

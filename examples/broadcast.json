@@ -1,0 +1,129 @@
+{
+  "version": "2.0",
+  "title": "财经简报 · 演示",
+  "format": "landscape",
+  "fps": 30,
+  "locale": "zh-CN",
+  "isDemo": true,
+  "brand": {
+    "preset": "newsroom",
+    "name": "深度 / 商业观察"
+  },
+  "sources": [
+    {
+      "id": "demo",
+      "label": "Finance Motion 合成演示数据",
+      "date": "2026-10-24",
+      "detail": "示例公司、数值和引述均为人工构造；用于测试组件、叙事和版式。"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "02-headline",
+      "type": "headline",
+      "title": "增长正在发生结构变化",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "label": "本期焦点",
+      "body": "营收继续扩张，\n现金回收却慢了一步。",
+      "metric": {
+        "label": "营收",
+        "value": 128.6,
+        "suffix": "亿元",
+        "change": 18.2
+      },
+      "lowerThird": {
+        "name": "主持人姓名",
+        "role": "财经简报 / 合成示例"
+      }
+    },
+    {
+      "id": "04-kpis",
+      "type": "kpis",
+      "title": "四个数字，看懂这一季",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "items": [
+        {
+          "label": "营收",
+          "value": 128.6,
+          "suffix": "亿元",
+          "change": 18.2
+        },
+        {
+          "label": "营业利润",
+          "value": 24.8,
+          "suffix": "亿元",
+          "change": 26.5
+        },
+        {
+          "label": "自由现金流",
+          "value": 19.2,
+          "suffix": "亿元",
+          "change": -4.5
+        },
+        {
+          "label": "毛利率",
+          "value": 62.4,
+          "suffix": "%"
+        }
+      ]
+    },
+    {
+      "id": "19-news-grid",
+      "type": "news-grid",
+      "title": "本周商业观察",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "items": [
+        {
+          "category": "公司财报",
+          "headline": "利润率改善",
+          "summary": "规模效应显现，关注可持续性。"
+        },
+        {
+          "category": "行业变化",
+          "headline": "竞争转向服务",
+          "summary": "产品收入与订阅收入需要分开看。"
+        },
+        {
+          "category": "宏观背景",
+          "headline": "需求结构分化",
+          "summary": "按市场和客群检查变化。"
+        },
+        {
+          "category": "下周看点",
+          "headline": "现金流验证",
+          "summary": "等待更多经营数据，而非只看指引。"
+        }
+      ]
+    }
+  ],
+  "ticker": [
+    {
+      "label": "示例指数 A",
+      "value": "3,286.40",
+      "change": 1.8
+    },
+    {
+      "label": "示例指数 B",
+      "value": "1,054.20",
+      "change": -0.6
+    },
+    {
+      "label": "示例汇率",
+      "value": "7.1200",
+      "change": 0.2
+    }
+  ],
+  "captions": [
+    {
+      "start": 1,
+      "end": 5,
+      "text": "所有指数与数值均为合成示例"
+    }
+  ]
+}

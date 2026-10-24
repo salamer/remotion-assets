@@ -1,0 +1,130 @@
+{
+  "version": "2.0",
+  "title": "60 秒经营观察",
+  "format": "portrait",
+  "fps": 30,
+  "locale": "zh-CN",
+  "isDemo": true,
+  "brand": {
+    "preset": "newsroom",
+    "name": "深度 / 商业观察"
+  },
+  "sources": [
+    {
+      "id": "demo",
+      "label": "Finance Motion 合成演示数据",
+      "date": "2026-10-24",
+      "detail": "示例公司、数值和引述均为人工构造；用于测试组件、叙事和版式。"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "01-opener",
+      "type": "opener",
+      "title": "收入增长之后，\n利润去了哪里？",
+      "duration": 6,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "episode": "EP. 001",
+      "tagline": "用一组经营数据，拆开增长、利润与现金流。"
+    },
+    {
+      "id": "03-hero",
+      "type": "hero",
+      "title": "规模突破，仍需观察增长质量",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "metric": {
+        "label": "营收",
+        "value": 128.6,
+        "suffix": "亿元",
+        "change": 18.2
+      }
+    },
+    {
+      "id": "08-waterfall",
+      "type": "waterfall",
+      "title": "128.6 亿元收入，留下 24.8 亿元营业利润",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "data": [
+        {
+          "label": "收入",
+          "value": 128.6,
+          "kind": "total"
+        },
+        {
+          "label": "营业成本",
+          "value": -48.4,
+          "kind": "delta"
+        },
+        {
+          "label": "营销",
+          "value": -24.6,
+          "kind": "delta"
+        },
+        {
+          "label": "研发",
+          "value": -18.8,
+          "kind": "delta"
+        },
+        {
+          "label": "管理",
+          "value": -12,
+          "kind": "delta"
+        },
+        {
+          "label": "营业利润",
+          "value": 24.8,
+          "kind": "total"
+        }
+      ],
+      "unit": "亿元"
+    },
+    {
+      "id": "18-bullets",
+      "type": "bullets",
+      "title": "接下来，盯住三个验证指标",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "items": [
+        {
+          "title": "应收账款周转",
+          "body": "收入确认后，多久才能收到现金？"
+        },
+        {
+          "title": "续费率与留存",
+          "body": "增长来自持续价值，还是一次性促销？"
+        },
+        {
+          "title": "资本开支强度",
+          "body": "新增收入需要投入多少真实资金？"
+        }
+      ]
+    },
+    {
+      "id": "22-takeaway",
+      "type": "takeaway",
+      "title": "本期结论",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "body": "增长值得关注，\n现金回收决定它的质量。",
+      "action": "下一步：把应收账款与资本开支加入同一张观察表。"
+    },
+    {
+      "id": "24-endcard",
+      "type": "endcard",
+      "title": "继续把数字讲明白",
+      "duration": 5,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "message": "看懂一家公司，\n从看懂一条现金流开始。",
+      "nextTitle": "下一期：利润增长，为什么现金减少？",
+      "handle": "@YOUR_CHANNEL"
+    }
+  ]
+}

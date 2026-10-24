@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 
-import { MONO_FONT } from "../style/fonts";
+import { MONO_FONT, useFonts } from "../style/fonts";
 import { gridBackgroundImage, layout, spacing } from "../style/theme";
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
 };
 
 export const Frame: React.FC<Props> = ({ children }) => {
+  useFonts();
   return (
     <AbsoluteFill
       className="bg-paper text-ink"

@@ -27,15 +27,22 @@ const data = [
   },
 ];
 
-export const ScatterPlot: React.FC = () => {
+const LEGACY_DEFAULT_data = data;
+
+export const ScatterPlot: React.FC<{
+  data?: typeof LEGACY_DEFAULT_data;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  data = LEGACY_DEFAULT_data,
+  title = "Growth companies trade at premium multiples.",
+  eyebrow = "VALUATION",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="VALUATION"
-        title="Growth companies trade at premium multiples."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="relative mt-16 h-[600px] border-b-2 border-l-2 border-ink">
         <div className="absolute -left-[50px] top-[240px] -rotate-90 text-[20px] text-muted">

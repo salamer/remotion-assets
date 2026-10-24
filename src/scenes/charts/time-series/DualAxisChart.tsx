@@ -139,8 +139,10 @@ export const DualAxisChart: React.FC<{
                 y={y + 6}
                 textAnchor="end"
                 fontSize={17}
-                fill="#737373"
-                fontFamily="IBM Plex Mono"
+                fill="var(--fm-muted, #737373)"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
               >
                 {leftValue.toFixed(0)}
                 {leftUnit}
@@ -150,8 +152,10 @@ export const DualAxisChart: React.FC<{
                 y={y + 6}
                 textAnchor="start"
                 fontSize={17}
-                fill="#737373"
-                fontFamily="IBM Plex Mono"
+                fill="var(--fm-muted, #737373)"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
               >
                 {rightValue.toFixed(0)}
                 {rightUnit}
@@ -180,8 +184,10 @@ export const DualAxisChart: React.FC<{
                 y={top + chartH + 37}
                 textAnchor="middle"
                 fontSize={17}
-                fill="#737373"
-                fontFamily="IBM Plex Mono"
+                fill="var(--fm-muted, #737373)"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
               >
                 {d.label}
               </text>

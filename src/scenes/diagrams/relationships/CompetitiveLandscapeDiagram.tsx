@@ -68,7 +68,7 @@ export const CompetitiveLandscapeDiagram: React.FC<{
                 bottom: `${it.y}%`,
                 transform: `translate(-50%,50%) scale(${0.85 + 0.15 * p})`,
                 opacity: p,
-                boxShadow: "5px 5px 0 #111",
+                boxShadow: "5px 5px 0 var(--fm-ink, #111)",
               }}
             >
               <span className="text-[31px]">{it.icon}</span>

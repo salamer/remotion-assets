@@ -11,7 +11,20 @@ const events = [
   { index: 9, label: "RATE SHOCK" },
 ];
 
-export const AnnotatedLineChart: React.FC = () => {
+const LEGACY_DEFAULT_data = data;
+const LEGACY_DEFAULT_events = events;
+
+export const AnnotatedLineChart: React.FC<{
+  data?: typeof LEGACY_DEFAULT_data;
+  events?: typeof LEGACY_DEFAULT_events;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  data = LEGACY_DEFAULT_data,
+  events = LEGACY_DEFAULT_events,
+  title = "Tell the story on the chart.",
+  eyebrow = "ANNOTATED SERIES",
+}) => {
   const frame = useCurrentFrame(),
     W = 1480,
     H = 500,
@@ -27,10 +40,7 @@ export const AnnotatedLineChart: React.FC = () => {
     lineP = reveal(frame, 10, 45);
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="ANNOTATED SERIES"
-        title="Tell the story on the chart."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-12">
         <svg width={W} height={H + 110} viewBox={`0 0 ${W} ${H + 110}`}>
           {[0.25, 0.5, 0.75].map((r) => (
@@ -89,7 +99,9 @@ export const AnnotatedLineChart: React.FC = () => {
                   x={pt.x}
                   y={above ? pt.y - 111 : pt.y + 127}
                   textAnchor="middle"
-                  fontFamily="IBM Plex Mono"
+                  fontFamily={
+                    'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                  }
                   fontWeight={600}
                   fontSize={18}
                 >

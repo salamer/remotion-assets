@@ -11,11 +11,21 @@ const items = [
   { name: "D", x: 28, y: 38, score: "$1B" },
 ];
 
-export const OpportunityMatrix: React.FC = () => {
+const LEGACY_DEFAULT_items = items;
+
+export const OpportunityMatrix: React.FC<{
+  items?: typeof LEGACY_DEFAULT_items;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  items = LEGACY_DEFAULT_items,
+  title = "Size × right to win.",
+  eyebrow = "OPPORTUNITY MATRIX",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader eyebrow="OPPORTUNITY MATRIX" title="Size × right to win." />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="relative mt-12 h-[650px] border-b-2 border-l-2 border-ink">
         <div className="absolute right-[5%] top-[24px] border-2 border-ink bg-yellow px-5 py-3 text-[20px] font-semibold">
           PRIORITY ZONE
@@ -32,7 +42,7 @@ export const OpportunityMatrix: React.FC = () => {
                 bottom: `${it.y}%`,
                 transform: `translate(-50%,50%) scale(${p})`,
                 opacity: p,
-                boxShadow: hi ? "5px 5px 0 #111" : undefined,
+                boxShadow: hi ? "5px 5px 0 var(--fm-ink, #111)" : undefined,
                 background: hi ? palette.yellow : palette.white,
               }}
             >

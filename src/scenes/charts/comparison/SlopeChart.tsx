@@ -102,7 +102,9 @@ export const SlopeChart: React.FC<{
                 x={382}
                 y={y1 + 7}
                 textAnchor="end"
-                fontFamily="IBM Plex Mono"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
                 fontSize={20}
                 fill={VIZ.ink}
               >
@@ -113,7 +115,9 @@ export const SlopeChart: React.FC<{
                 x={1268}
                 y={y2 + 7}
                 textAnchor="start"
-                fontFamily="IBM Plex Mono"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
                 fontSize={20}
                 fill={VIZ.ink}
               >

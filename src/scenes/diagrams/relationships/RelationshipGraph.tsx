@@ -142,8 +142,10 @@ export const RelationshipGraph: React.FC<{
                   y={(a.y + b.y) / 2 + bend - 12}
                   textAnchor="middle"
                   fontSize={17}
-                  fill="#737373"
-                  fontFamily="IBM Plex Mono"
+                  fill="var(--fm-muted, #737373)"
+                  fontFamily={
+                    'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                  }
                   opacity={linkP}
                 >
                   {link.label}

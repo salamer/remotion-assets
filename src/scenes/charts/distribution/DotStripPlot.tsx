@@ -10,14 +10,21 @@ const groups = [
   { name: "LARGE", values: [45, 52, 58, 64, 72, 78, 83, 88] },
 ];
 
-export const DotStripPlot: React.FC = () => {
+const LEGACY_DEFAULT_groups = groups;
+
+export const DotStripPlot: React.FC<{
+  groups?: typeof LEGACY_DEFAULT_groups;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  groups = LEGACY_DEFAULT_groups,
+  title = "Compare the spread, not just the mean.",
+  eyebrow = "DISTRIBUTION BY GROUP",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="DISTRIBUTION BY GROUP"
-        title="Compare the spread, not just the mean."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-14 space-y-12">
         {groups.map((g, gi) => (
           <div

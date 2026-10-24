@@ -6,15 +6,22 @@ import { palette, reveal } from "../../../lib/motion";
 
 const values = Array.from({ length: 91 }, (_, i) => (i * 17 + 11) % 100);
 
-export const CalendarHeatmap: React.FC = () => {
+const LEGACY_DEFAULT_values = values;
+
+export const CalendarHeatmap: React.FC<{
+  values?: typeof LEGACY_DEFAULT_values;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  values = LEGACY_DEFAULT_values,
+  title = "When does the behavior happen?",
+  eyebrow = "ACTIVITY MAP",
+}) => {
   const frame = useCurrentFrame(),
     p = reveal(frame, 8, 45);
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="ACTIVITY MAP"
-        title="When does the behavior happen?"
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-20 grid grid-cols-[120px_repeat(13,1fr)] gap-3">
         {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].flatMap(
           (day, row) => [

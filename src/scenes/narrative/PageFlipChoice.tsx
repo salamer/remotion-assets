@@ -84,7 +84,7 @@ export const PageFlipChoice: React.FC<{
             transform: `rotateX(${angle}deg)`,
             transformStyle: "preserve-3d",
             backfaceVisibility: "hidden",
-            boxShadow: "8px 12px 0 #FFD43B",
+            boxShadow: "8px 12px 0 var(--fm-accent, #FFD43B)",
           }}
         >
           <div className="text-center">

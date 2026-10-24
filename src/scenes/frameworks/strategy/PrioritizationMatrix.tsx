@@ -11,11 +11,21 @@ const initiatives = [
   { name: "REBRAND", x: 24, y: 32, size: 50, icon: "🎨" },
 ];
 
-export const PrioritizationMatrix: React.FC = () => {
+const LEGACY_DEFAULT_initiatives = initiatives;
+
+export const PrioritizationMatrix: React.FC<{
+  initiatives?: typeof LEGACY_DEFAULT_initiatives;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  initiatives = LEGACY_DEFAULT_initiatives,
+  title = "Value versus effort.",
+  eyebrow = "PRIORITIZATION",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader eyebrow="PRIORITIZATION" title="Value versus effort." />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="relative mt-12 h-[650px] border-b-2 border-l-2 border-ink">
         <div className="absolute bottom-1/2 left-0 h-[2px] w-full bg-soft" />
         <div className="absolute left-1/2 top-0 h-full w-[2px] bg-soft" />

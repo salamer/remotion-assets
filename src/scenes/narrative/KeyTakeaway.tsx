@@ -4,7 +4,10 @@ import { interpolate, useCurrentFrame } from "remotion";
 import { Frame } from "../../components/Frame";
 import { Tag } from "../../components/Tag";
 
-export const KeyTakeaway: React.FC = () => {
+export const KeyTakeaway: React.FC<{ text?: string; label?: string }> = ({
+  text = "Airbnb does not need to build a hotel to add another room.",
+  label = "THE KEY POINT",
+}) => {
   const frame = useCurrentFrame();
 
   const p = interpolate(frame, [5, 25], [0, 1], {
@@ -20,7 +23,7 @@ export const KeyTakeaway: React.FC = () => {
             opacity: p,
           }}
         >
-          <Tag yellow>THE KEY POINT</Tag>
+          <Tag yellow>{label}</Tag>
         </div>
 
         <div
@@ -37,7 +40,7 @@ export const KeyTakeaway: React.FC = () => {
             transform: `translateY(${(1 - p) * 25}px)`,
           }}
         >
-          Airbnb does not need to build a hotel to add another room.
+          {text}
         </div>
       </div>
     </Frame>

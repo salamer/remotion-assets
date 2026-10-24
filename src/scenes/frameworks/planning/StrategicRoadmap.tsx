@@ -25,11 +25,21 @@ const phases = [
   },
 ];
 
-export const StrategicRoadmap: React.FC = () => {
+const LEGACY_DEFAULT_phases = phases;
+
+export const StrategicRoadmap: React.FC<{
+  phases?: typeof LEGACY_DEFAULT_phases;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  phases = LEGACY_DEFAULT_phases,
+  title = "Sequence the strategy.",
+  eyebrow = "ROADMAP",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader eyebrow="ROADMAP" title="Sequence the strategy." />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="relative mt-20">
         <div className="absolute left-[130px] right-[130px] top-[74px] h-[5px] bg-soft">
           <div
@@ -53,7 +63,10 @@ export const StrategicRoadmap: React.FC = () => {
                 </div>
                 <div
                   className="mt-8 border-2 border-ink bg-white p-7"
-                  style={{ boxShadow: i === 1 ? "6px 6px 0 #111" : undefined }}
+                  style={{
+                    boxShadow:
+                      i === 1 ? "6px 6px 0 var(--fm-ink, #111)" : undefined,
+                  }}
                 >
                   <div className="text-[20px] text-muted">{p.period}</div>
                   <div className="mt-2 text-[36px] font-semibold">

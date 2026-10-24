@@ -14,15 +14,22 @@ const items = [
   ["🛎️", "HILTON"],
 ];
 
-export const LogoCloud: React.FC = () => {
+const LEGACY_DEFAULT_items = items;
+
+export const LogoCloud: React.FC<{
+  items?: typeof LEGACY_DEFAULT_items;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  items = LEGACY_DEFAULT_items,
+  title = "Everyone competes for the same traveler.",
+  eyebrow = "COMPETITION",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="COMPETITION"
-        title="Everyone competes for the same traveler."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-20 grid grid-cols-3 gap-8">
         {items.map(([icon, name], index) => {

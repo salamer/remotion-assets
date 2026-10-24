@@ -53,7 +53,7 @@ export const ValueChainMap: React.FC<{
                 style={{
                   opacity: p,
                   transform: `translateY(${(1 - p) * 20}px)`,
-                  boxShadow: "5px 5px 0 #111",
+                  boxShadow: "5px 5px 0 var(--fm-ink, #111)",
                 }}
               >
                 <div className="text-[50px]">{s.icon}</div>

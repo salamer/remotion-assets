@@ -1,135 +1,71 @@
 import React from "react";
 import { useCurrentFrame } from "remotion";
-
 import { Frame } from "../../../components/Frame";
 import { BrutalCard } from "../../../components/BrutalCard";
+import { SceneHeader } from "../../../components/SceneHeader";
 import { fadeUp } from "../../../lib/motion";
-
-const Node = ({
-  emoji,
-  title,
-  subtitle,
-  yellow = false,
-}: {
-  emoji: string;
-  title: string;
-  subtitle: string;
-  yellow?: boolean;
+type Node = { icon: string; title: string; subtitle?: string };
+const DEFAULT: Node[] = [
+  { icon: "01", title: "GUEST", subtitle: "Pays $100" },
+  { icon: "02", title: "PLATFORM", subtitle: "Keeps fee" },
+  { icon: "03", title: "HOST", subtitle: "Receives remainder" },
+];
+export const FlowDiagram: React.FC<{
+  nodes?: Node[];
+  title?: string;
+  eyebrow?: string;
+  takeaway?: string;
+}> = ({
+  nodes = DEFAULT,
+  title = "The platform sits in the middle.",
+  eyebrow = "BUSINESS MODEL",
+  takeaway = "NO HOTEL OWNERSHIP REQUIRED",
 }) => {
-  return (
-    <BrutalCard
-      yellow={yellow}
-      className="
-        w-[380px]
-        p-8
-        text-center
-      "
-    >
-      <div className="text-[72px]">{emoji}</div>
-
-      <div
-        className="
-        mt-4
-        text-[30px]
-        font-semibold
-      "
-      >
-        {title}
-      </div>
-
-      <div
-        className="
-        mt-2
-        text-[22px]
-        text-muted
-      "
-      >
-        {subtitle}
-      </div>
-    </BrutalCard>
-  );
-};
-
-export const FlowDiagram: React.FC = () => {
   const frame = useCurrentFrame();
-
   return (
     <Frame>
-      <div style={fadeUp(frame, 0)}>
-        <div
-          className="
-          text-[28px]
-          text-muted
-        "
-        >
-          BUSINESS MODEL
-        </div>
-
-        <div
-          className="
-          mt-3
-          text-[64px]
-          font-semibold
-        "
-        >
-          Airbnb sits in the middle.
-        </div>
-      </div>
-
+      <SceneHeader title={title} eyebrow={eyebrow} />
       <div
-        className="
-          mt-36
-          flex
-          items-center
-          justify-between
-        "
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 28,
+          marginTop: 140,
+        }}
       >
-        <div style={fadeUp(frame, 10)}>
-          <Node emoji="🧳" title="GUEST" subtitle="Pays $100" />
-        </div>
-
-        <div
-          className="
-            text-[70px]
-            font-semibold
-          "
-          style={fadeUp(frame, 20)}
-        >
-          →
-        </div>
-
-        <div style={fadeUp(frame, 25)}>
-          <Node emoji="🏠" title="AIRBNB" subtitle="Keeps fee" yellow />
-        </div>
-
-        <div
-          className="
-            text-[70px]
-            font-semibold
-          "
-          style={fadeUp(frame, 35)}
-        >
-          →
-        </div>
-
-        <div style={fadeUp(frame, 40)}>
-          <Node emoji="👤" title="HOST" subtitle="Receives remainder" />
-        </div>
+        {nodes.map((node, i) => (
+          <React.Fragment key={i}>
+            {i > 0 && (
+              <div style={{ fontSize: 42, ...fadeUp(frame, 10 + i * 8) }}>
+                →
+              </div>
+            )}
+            <div style={{ flex: 1, ...fadeUp(frame, 10 + i * 8) }}>
+              <BrutalCard yellow={i === 1} className="p-8 text-center">
+                <div style={{ fontSize: 56 }}>{node.icon}</div>
+                <div style={{ fontSize: 32, marginTop: 28, fontWeight: 600 }}>
+                  {node.title}
+                </div>
+                <div style={{ fontSize: 24, marginTop: 20 }}>
+                  {node.subtitle}
+                </div>
+              </BrutalCard>
+            </div>
+          </React.Fragment>
+        ))}
       </div>
-
-      <div className="mt-20 text-center" style={fadeUp(frame, 55)}>
-        <span
-          className="
-          bg-yellow
-          px-5 py-3
-          text-[32px]
-          font-semibold
-          border-2 border-ink
-        "
+      {takeaway && (
+        <div
+          style={{
+            fontSize: 30,
+            textAlign: "center",
+            marginTop: 70,
+            ...fadeUp(frame, 50),
+          }}
         >
-          NO HOTEL OWNERSHIP REQUIRED
-        </span>
-      </div>
+          {takeaway}
+        </div>
+      )}
     </Frame>
   );
 };

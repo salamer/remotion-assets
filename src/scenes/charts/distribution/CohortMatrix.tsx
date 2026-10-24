@@ -56,7 +56,7 @@ export const CohortMatrix: React.FC<{
                     opacity: v === undefined ? 0.15 : p,
                     background:
                       v === undefined
-                        ? "#ECECE7"
+                        ? "var(--fm-soft, #ECECE7)"
                         : `rgba(255,212,59,${0.1 + 0.9 * (v / 100)})`,
                   }}
                 >

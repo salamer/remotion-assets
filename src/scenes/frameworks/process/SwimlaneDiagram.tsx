@@ -24,11 +24,21 @@ const lanes = [
   { name: "SUPPLIER", icon: "🏭", steps: [{ x: 48, w: 18, text: "FULFILL" }] },
 ];
 
-export const SwimlaneDiagram: React.FC = () => {
+const LEGACY_DEFAULT_lanes = lanes;
+
+export const SwimlaneDiagram: React.FC<{
+  lanes?: typeof LEGACY_DEFAULT_lanes;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  lanes = LEGACY_DEFAULT_lanes,
+  title = "Who does what — and when?",
+  eyebrow = "PROCESS MAP",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader eyebrow="PROCESS MAP" title="Who does what — and when?" />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-14 border-2 border-ink bg-white">
         {lanes.map((lane, i) => (
           <div

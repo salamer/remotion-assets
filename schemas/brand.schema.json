@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "preset": {
+      "default": "editorial",
+      "type": "string",
+      "enum": [
+        "editorial",
+        "newsroom",
+        "terminal",
+        "journal",
+        "cobalt",
+        "documentary",
+        "minimal",
+        "signal"
+      ]
+    },
+    "name": {
+      "default": "FINANCE / MOTION",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "logo": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "marketColors": {
+      "default": "international",
+      "type": "string",
+      "enum": [
+        "international",
+        "china"
+      ]
+    },
+    "overrides": {
+      "type": "object",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "properties": {
+            "background": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "surface": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "foreground": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "muted": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "line": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "accent": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "onAccent": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "positive": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "negative": {
+              "type": "string",
+              "pattern": "^#[\\da-fA-F]{6}$"
+            },
+            "series": {
+              "minItems": 3,
+              "maxItems": 8,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^#[\\da-fA-F]{6}$"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "font": {
+              "type": "string",
+              "enum": [
+                "sans",
+                "serif",
+                "mono"
+              ]
+            },
+            "titleScale": {
+              "type": "number",
+              "minimum": 0.8,
+              "maximum": 1.15
+            }
+          },
+          "additionalProperties": false
+        },
+        "shape": {
+          "type": "object",
+          "properties": {
+            "radius": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 40
+            },
+            "border": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 4
+            },
+            "shadow": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "padding": {
+              "type": "number",
+              "minimum": 48,
+              "maximum": 96
+            },
+            "grid": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "motion": {
+          "type": "string",
+          "enum": [
+            "calm",
+            "editorial",
+            "energetic",
+            "none"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -23,15 +23,22 @@ const bullets = [
   },
 ];
 
-export const BulletReveal: React.FC = () => {
+const LEGACY_DEFAULT_bullets = bullets;
+
+export const BulletReveal: React.FC<{
+  bullets?: typeof LEGACY_DEFAULT_bullets;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  bullets = LEGACY_DEFAULT_bullets,
+  title = "Four ideas explain the entire business.",
+  eyebrow = "WHY IT MATTERS",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="WHY IT MATTERS"
-        title="Four ideas explain the entire business."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-16 space-y-5">
         {bullets.map((bullet, index) => {

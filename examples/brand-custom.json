@@ -1,0 +1,21 @@
+{
+  "preset": "minimal",
+  "name": "我的财经频道",
+  "marketColors": "international",
+  "overrides": {
+    "colors": {
+      "accent": "#E97440",
+      "onAccent": "#17212B"
+    },
+    "shape": {
+      "radius": 12,
+      "border": 1,
+      "shadow": false
+    },
+    "typography": {
+      "font": "sans",
+      "titleScale": 1
+    },
+    "motion": "calm"
+  }
+}

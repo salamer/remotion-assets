@@ -13,14 +13,24 @@ const rows = [
   { name: "DISTRIBUTION", values: [4, 4, 4, 5] },
 ];
 
-export const CapabilityHeatmap: React.FC = () => {
+const LEGACY_DEFAULT_cols = cols;
+const LEGACY_DEFAULT_rows = rows;
+
+export const CapabilityHeatmap: React.FC<{
+  cols?: typeof LEGACY_DEFAULT_cols;
+  rows?: typeof LEGACY_DEFAULT_rows;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  cols = LEGACY_DEFAULT_cols,
+  rows = LEGACY_DEFAULT_rows,
+  title = "Strength is uneven across the system.",
+  eyebrow = "CAPABILITY HEATMAP",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="CAPABILITY HEATMAP"
-        title="Strength is uneven across the system."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-14 border-2 border-ink">
         <div className="grid grid-cols-[360px_repeat(4,1fr)] bg-yellow text-[22px] font-semibold">
           <div className="p-5">CAPABILITY</div>

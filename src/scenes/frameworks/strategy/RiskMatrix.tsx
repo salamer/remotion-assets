@@ -12,19 +12,26 @@ const risks = [
   { name: "CYBER", x: 82, y: 68, icon: "🔒", high: true },
 ];
 
-export const RiskMatrix: React.FC = () => {
+const LEGACY_DEFAULT_risks = risks;
+
+export const RiskMatrix: React.FC<{
+  risks?: typeof LEGACY_DEFAULT_risks;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  risks = LEGACY_DEFAULT_risks,
+  title = "Which risks deserve attention first?",
+  eyebrow = "RISK MATRIX",
+}) => {
   const frame = useCurrentFrame();
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="RISK MATRIX"
-        title="Which risks deserve attention first?"
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div
         className="relative mt-12 h-[650px] border-2 border-ink"
         style={{
           background:
-            "linear-gradient(135deg,#FAFAF7 0%,#FAFAF7 45%,#FFF7B8 72%,#FFD43B 100%)",
+            "linear-gradient(135deg,var(--fm-paper, #FAFAF7) 0%,var(--fm-paper, #FAFAF7) 45%,#FFF7B8 72%,var(--fm-accent, #FFD43B) 100%)",
         }}
       >
         {[25, 50, 75].map((v) => (
@@ -50,7 +57,7 @@ export const RiskMatrix: React.FC = () => {
                 bottom: `${r.y}%`,
                 transform: "translate(-50%,50%)",
                 opacity: p,
-                boxShadow: r.high ? "4px 4px 0 #111" : undefined,
+                boxShadow: r.high ? "4px 4px 0 var(--fm-ink, #111)" : undefined,
               }}
             >
               {r.icon} {r.name}

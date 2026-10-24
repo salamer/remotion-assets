@@ -1,0 +1,532 @@
+{
+  "version": "2.0",
+  "title": "Finance Motion · 模板全览",
+  "format": "landscape",
+  "fps": 30,
+  "locale": "zh-CN",
+  "isDemo": true,
+  "brand": {
+    "preset": "editorial",
+    "name": "深度 / 商业观察"
+  },
+  "sources": [
+    {
+      "id": "demo",
+      "label": "Finance Motion 合成演示数据",
+      "date": "2026-10-24",
+      "detail": "示例公司、数值和引述均为人工构造；用于测试组件、叙事和版式。"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "01-opener",
+      "type": "opener",
+      "title": "收入增长之后，\n利润去了哪里？",
+      "duration": 6,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "episode": "EP. 001",
+      "tagline": "用一组经营数据，拆开增长、利润与现金流。"
+    },
+    {
+      "id": "02-headline",
+      "type": "headline",
+      "title": "增长正在发生结构变化",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "label": "本期焦点",
+      "body": "营收继续扩张，\n现金回收却慢了一步。",
+      "metric": {
+        "label": "营收",
+        "value": 128.6,
+        "suffix": "亿元",
+        "change": 18.2
+      }
+    },
+    {
+      "id": "03-hero",
+      "type": "hero",
+      "title": "规模突破，仍需观察增长质量",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "metric": {
+        "label": "营收",
+        "value": 128.6,
+        "suffix": "亿元",
+        "change": 18.2
+      }
+    },
+    {
+      "id": "04-kpis",
+      "type": "kpis",
+      "title": "四个数字，看懂这一季",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "items": [
+        {
+          "label": "营收",
+          "value": 128.6,
+          "suffix": "亿元",
+          "change": 18.2
+        },
+        {
+          "label": "营业利润",
+          "value": 24.8,
+          "suffix": "亿元",
+          "change": 26.5
+        },
+        {
+          "label": "自由现金流",
+          "value": 19.2,
+          "suffix": "亿元",
+          "change": -4.5
+        },
+        {
+          "label": "毛利率",
+          "value": 62.4,
+          "suffix": "%"
+        }
+      ]
+    },
+    {
+      "id": "05-bars",
+      "type": "bars",
+      "title": "收入增长并不均匀",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "data": [
+        {
+          "label": "核心产品",
+          "value": 58.2,
+          "highlight": false
+        },
+        {
+          "label": "订阅服务",
+          "value": 38.4,
+          "highlight": false
+        },
+        {
+          "label": "增值业务",
+          "value": 22.6,
+          "highlight": false
+        },
+        {
+          "label": "其他收入",
+          "value": 9.4,
+          "highlight": true
+        }
+      ],
+      "unit": "亿元",
+      "orientation": "horizontal"
+    },
+    {
+      "id": "06-ranking",
+      "type": "ranking",
+      "title": "哪些业务贡献了更多增长？",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "data": [
+        {
+          "label": "产品 A",
+          "value": 34.6
+        },
+        {
+          "label": "产品 B",
+          "value": 28.4
+        },
+        {
+          "label": "产品 C",
+          "value": 19.7
+        },
+        {
+          "label": "产品 D",
+          "value": 12.5
+        },
+        {
+          "label": "产品 E",
+          "value": 8.2
+        }
+      ],
+      "unit": "新增收入 / 亿元"
+    },
+    {
+      "id": "07-trend",
+      "type": "trend",
+      "title": "收入与利润，走出了不同的斜率",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "labels": ["2021", "2022", "2023", "2024", "2025", "2026E"],
+      "series": [
+        {
+          "name": "收入指数",
+          "values": [100.0, 112.5, 127.5, 136.0, 160.8, 183.2]
+        },
+        {
+          "name": "利润指数",
+          "values": [100.0, 120.8, 143.3, 163.3, 206.7, 244.2]
+        }
+      ],
+      "unit": "2021 = 100",
+      "forecastFrom": 5,
+      "note": "2026E 为演示假设；不同指标已按同一基期指数化。"
+    },
+    {
+      "id": "08-waterfall",
+      "type": "waterfall",
+      "title": "128.6 亿元收入，留下 24.8 亿元营业利润",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "data": [
+        {
+          "label": "收入",
+          "value": 128.6,
+          "kind": "total"
+        },
+        {
+          "label": "营业成本",
+          "value": -48.4,
+          "kind": "delta"
+        },
+        {
+          "label": "营销",
+          "value": -24.6,
+          "kind": "delta"
+        },
+        {
+          "label": "研发",
+          "value": -18.8,
+          "kind": "delta"
+        },
+        {
+          "label": "管理",
+          "value": -12,
+          "kind": "delta"
+        },
+        {
+          "label": "营业利润",
+          "value": 24.8,
+          "kind": "total"
+        }
+      ],
+      "unit": "亿元"
+    },
+    {
+      "id": "09-donut",
+      "type": "donut",
+      "title": "订阅收入占到三成",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "data": [
+        {
+          "label": "核心产品",
+          "value": 58.2
+        },
+        {
+          "label": "订阅服务",
+          "value": 38.4
+        },
+        {
+          "label": "增值业务",
+          "value": 22.6
+        },
+        {
+          "label": "其他",
+          "value": 9.4
+        }
+      ],
+      "unit": "亿元",
+      "centerLabel": "总营收"
+    },
+    {
+      "id": "10-table",
+      "type": "table",
+      "title": "利润增长，现金流暂时落后",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "columns": ["指标", "本期", "上期", "同比"],
+      "rows": [
+        ["营收", "128.6", "108.8", "+18.2%"],
+        ["营业利润", "24.8", "19.6", "+26.5%"],
+        ["自由现金流", "19.2", "20.1", "−4.5%"],
+        ["经营现金流", "28.1", "26.8", "+4.9%"]
+      ],
+      "highlightRow": 2,
+      "note": "金额单位：亿元；所有数据均为合成示例。"
+    },
+    {
+      "id": "11-earnings",
+      "type": "earnings",
+      "title": "财报速读：规模与效率同时改善",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "company": "DEMO COMPANY",
+      "period": "FY2025 · 全年",
+      "items": [
+        {
+          "label": "营收",
+          "value": 128.6,
+          "suffix": "亿元",
+          "change": 18.2
+        },
+        {
+          "label": "营业利润",
+          "value": 24.8,
+          "suffix": "亿元",
+          "change": 26.5
+        },
+        {
+          "label": "自由现金流",
+          "value": 19.2,
+          "suffix": "亿元",
+          "change": -4.5
+        },
+        {
+          "label": "毛利率",
+          "value": 62.4,
+          "suffix": "%"
+        }
+      ],
+      "guidance": "管理层情景：下一期收入增长 12%–18%；此处为虚构示例。"
+    },
+    {
+      "id": "12-chapter",
+      "type": "chapter",
+      "title": "增长质量，\n比增速本身更重要",
+      "duration": 4,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "number": "02",
+      "summary": "把利润表和现金流量表放在一起看。"
+    },
+    {
+      "id": "13-comparison",
+      "type": "comparison",
+      "title": "同样是增长，来源可以完全不同",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "left": {
+        "label": "规模驱动",
+        "headline": "更多用户 × 更低价格",
+        "points": ["销量提升，收入扩大", "促销投入增加", "利润可能承压"]
+      },
+      "right": {
+        "label": "效率驱动",
+        "headline": "更高复购 × 更低成本",
+        "points": ["收入结构优化", "单位成本改善", "现金创造能力增强"]
+      }
+    },
+    {
+      "id": "14-quote",
+      "type": "quote",
+      "title": "管理层如何解释这一变化？",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "quote": "我们更关心可重复的现金创造，而不是单一季度的收入增速。",
+      "author": "示例公司管理层",
+      "role": "虚构引述 · 仅供版式演示"
+    },
+    {
+      "id": "15-timeline",
+      "type": "timeline",
+      "title": "变化不是一夜发生的",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "events": [
+        {
+          "date": "2022",
+          "title": "产品投入",
+          "body": "研发与市场费用上升"
+        },
+        {
+          "date": "2023",
+          "title": "规模扩张",
+          "body": "订阅业务开始放量"
+        },
+        {
+          "date": "2024",
+          "title": "效率改善",
+          "body": "单位交付成本下降"
+        },
+        {
+          "date": "2025",
+          "title": "现金回收",
+          "body": "观察应收与资本开支"
+        }
+      ]
+    },
+    {
+      "id": "16-equation",
+      "type": "equation",
+      "title": "收入可以被拆成两个问题",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "terms": [
+        {
+          "label": "付费用户",
+          "value": "1,000 万"
+        },
+        {
+          "label": "年均收入",
+          "value": "1,286 元"
+        },
+        {
+          "label": "年营收",
+          "value": "128.6 亿"
+        }
+      ],
+      "operators": ["×", "="],
+      "explanation": "同时检查量与价，避免把涨价误认为用户增长。"
+    },
+    {
+      "id": "17-scenario",
+      "type": "scenario",
+      "title": "用假设，界定可能的范围",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "scenarios": [
+        {
+          "name": "保守情景",
+          "value": 8,
+          "assumption": "需求增长放缓，价格基本持平。"
+        },
+        {
+          "name": "基准情景",
+          "value": 15,
+          "assumption": "用户与客单价温和增长。"
+        },
+        {
+          "name": "乐观情景",
+          "value": 22,
+          "assumption": "新业务放量，复购率改善。"
+        }
+      ],
+      "unit": "%",
+      "note": "情景值是演示假设，不是概率加权预测。"
+    },
+    {
+      "id": "18-bullets",
+      "type": "bullets",
+      "title": "接下来，盯住三个验证指标",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "items": [
+        {
+          "title": "应收账款周转",
+          "body": "收入确认后，多久才能收到现金？"
+        },
+        {
+          "title": "续费率与留存",
+          "body": "增长来自持续价值，还是一次性促销？"
+        },
+        {
+          "title": "资本开支强度",
+          "body": "新增收入需要投入多少真实资金？"
+        }
+      ]
+    },
+    {
+      "id": "19-news-grid",
+      "type": "news-grid",
+      "title": "本周商业观察",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "items": [
+        {
+          "category": "公司财报",
+          "headline": "利润率改善",
+          "summary": "规模效应显现，关注可持续性。"
+        },
+        {
+          "category": "行业变化",
+          "headline": "竞争转向服务",
+          "summary": "产品收入与订阅收入需要分开看。"
+        },
+        {
+          "category": "宏观背景",
+          "headline": "需求结构分化",
+          "summary": "按市场和客群检查变化。"
+        },
+        {
+          "category": "下周看点",
+          "headline": "现金流验证",
+          "summary": "等待更多经营数据，而非只看指引。"
+        }
+      ]
+    },
+    {
+      "id": "20-media",
+      "type": "media",
+      "title": "回到原始披露，检查口径",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "asset": "examples/report.svg",
+      "caption": "示例披露页 · 人工构造的演示素材，不代表真实财报。"
+    },
+    {
+      "id": "21-presenter",
+      "type": "presenter",
+      "title": "把结论讲清楚，也把限制讲清楚",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "asset": "examples/presenter.svg",
+      "points": [
+        "先说结论，再展示证据",
+        "明确期间、单位与比较基准",
+        "把事实与情景假设分开"
+      ],
+      "lowerThird": {
+        "name": "主持人姓名",
+        "role": "经营分析 / 频道定位"
+      }
+    },
+    {
+      "id": "22-takeaway",
+      "type": "takeaway",
+      "title": "本期结论",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "body": "增长值得关注，\n现金回收决定它的质量。",
+      "action": "下一步：把应收账款与资本开支加入同一张观察表。"
+    },
+    {
+      "id": "23-sources",
+      "type": "sources",
+      "title": "数据、口径与来源",
+      "duration": 7,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "heading": "生产视频请替换为真实披露与可核验链接。"
+    },
+    {
+      "id": "24-endcard",
+      "type": "endcard",
+      "title": "继续把数字讲明白",
+      "duration": 5,
+      "sourceIds": ["demo"],
+      "kicker": "DEMO COMPANY / 经营观察",
+      "message": "看懂一家公司，\n从看懂一条现金流开始。",
+      "nextTitle": "下一期：利润增长，为什么现金减少？",
+      "handle": "@YOUR_CHANNEL"
+    }
+  ]
+}

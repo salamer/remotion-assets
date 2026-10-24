@@ -100,7 +100,9 @@ export const GroupedBarChart: React.FC<{
                 x={center}
                 y={height - 25}
                 textAnchor="middle"
-                fontFamily="IBM Plex Mono"
+                fontFamily={
+                  'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                }
                 fontSize={18}
                 fill={VIZ.muted}
               >

@@ -11,6 +11,10 @@ type Props = {
   value?: number;
   suffix?: string;
   growth?: number;
+  prefix?: string;
+  period?: string;
+  source?: string;
+  decimals?: number;
 };
 
 export const HeroMetric: React.FC<Props> = ({
@@ -19,6 +23,10 @@ export const HeroMetric: React.FC<Props> = ({
   value = 11.1,
   suffix = "B",
   growth = 12,
+  prefix = "$",
+  period = "FY2025",
+  source = "COMPANY FILINGS",
+  decimals = 1,
 }) => {
   const frame = useCurrentFrame();
 
@@ -42,7 +50,7 @@ export const HeroMetric: React.FC<Props> = ({
             font-semibold
           "
           >
-            2025
+            {period}
           </div>
         </div>
 
@@ -68,7 +76,8 @@ export const HeroMetric: React.FC<Props> = ({
             "
             style={fadeUp(frame, 8)}
           >
-            ${number.toFixed(1)}
+            {prefix}
+            {number.toFixed(decimals)}
             <span className="text-[80px]">{suffix}</span>
           </div>
 
@@ -84,7 +93,8 @@ export const HeroMetric: React.FC<Props> = ({
                 font-semibold
               "
               >
-                ▲ +{growth}%
+                {growth > 0 ? "▲ +" : growth < 0 ? "▼ −" : "→ "}
+                {Math.abs(growth)}%
               </div>
             </BrutalCard>
 
@@ -93,7 +103,7 @@ export const HeroMetric: React.FC<Props> = ({
         </div>
 
         <div className="text-[22px] text-muted" style={fadeUp(frame, 40)}>
-          SOURCE / COMPANY FILINGS
+          SOURCE / {source}
         </div>
       </div>
     </Frame>

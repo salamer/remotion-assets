@@ -22,15 +22,22 @@ const segments = [
   },
 ];
 
-export const StackedBarChart: React.FC = () => {
+const LEGACY_DEFAULT_segments = segments;
+
+export const StackedBarChart: React.FC<{
+  segments?: typeof LEGACY_DEFAULT_segments;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  segments = LEGACY_DEFAULT_segments,
+  title = "Where does the money actually come from?",
+  eyebrow = "REVENUE MIX",
+}) => {
   const frame = useCurrentFrame();
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="REVENUE MIX"
-        title="Where does the money actually come from?"
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
 
       <div className="mt-28 flex h-[150px] w-full border-2 border-ink">
         {segments.map((segment, index) => {
@@ -60,7 +67,15 @@ export const StackedBarChart: React.FC = () => {
                 ${segment.className}
               `}
               style={{
-                width: `${segment.value * p}%`,
+                width: `${
+                  (segment.value /
+                    Math.max(
+                      1e-9,
+                      segments.reduce((sum, s) => sum + s.value, 0),
+                    )) *
+                  100 *
+                  p
+                }%`,
               }}
             >
               {p > 0.65 && (

@@ -19,17 +19,17 @@
 /** 所有品牌色。yellow = 强调，ink = 主信息，muted = 次要信息 */
 export const colors = {
   /** 画布背景 — 暖白纸张色 */
-  paper: "#FAFAF7",
+  paper: "var(--fm-paper, #FAFAF7)",
   /** 主文字、边框、阴影 — 近黑 */
-  ink: "#111111",
+  ink: "var(--fm-ink, #111111)",
   /** 强调色 — 用于高亮数字、标签、图表重点 */
-  yellow: "#FFD43B",
+  yellow: "var(--fm-accent, #FFD43B)",
   /** 次要文字、注释、轴标签 */
-  muted: "#737373",
+  muted: "var(--fm-muted, #737373)",
   /** 分隔线、图表底色、浅背景块 */
-  soft: "#ECECE7",
+  soft: "var(--fm-soft, #ECECE7)",
   /** 卡片默认背景（非 yellow 强调时） */
-  white: "#FFFFFF",
+  white: "var(--fm-surface, #FFFFFF)",
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -51,7 +51,7 @@ export const borders = {
 
 /** 粗野主义硬阴影：无模糊，纯黑偏移（大→小用于层级） */
 export const shadows = {
-  brutal: `6px 6px 0 ${colors.ink}`,
+  brutal: `var(--fm-shadow, 6px 6px 0 ${colors.ink})`,
   brutalMd: `4px 4px 0 ${colors.ink}`,
   brutalSm: `3px 3px 0 ${colors.ink}`,
 } as const;
@@ -90,7 +90,7 @@ export const layout = {
 
 export const typography = {
   /** 字体族名称 — 须与 fonts.ts 中 loadFont 的 family 一致 */
-  fontFamily: "IBM Plex Mono",
+  fontFamily: 'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace',
   /** 字重 */
   weight: {
     regular: 400,

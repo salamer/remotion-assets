@@ -15,6 +15,9 @@ type Props = {
   title?: string;
   eyebrow?: string;
   data?: Point[];
+  prefix?: string;
+  suffix?: string;
+  source?: string;
 };
 
 const DEFAULT_DATA: Point[] = [
@@ -29,6 +32,9 @@ export const LineChart: React.FC<Props> = ({
   eyebrow = "AIRBNB / REVENUE",
   title = "Growth resumed after the pandemic.",
   data = DEFAULT_DATA,
+  prefix = "$",
+  suffix = "B",
+  source = "COMPANY FILINGS",
 }) => {
   const frame = useCurrentFrame();
 
@@ -44,7 +50,7 @@ export const LineChart: React.FC<Props> = ({
   const min = Math.min(...data.map((x) => x.value));
 
   const points = data.map((item, index) => {
-    const x = (index / Math.max(1, data.length - 1)) * width;
+    const x = 65 + (index / Math.max(1, data.length - 1)) * (width - 130);
     const normalized = (item.value - min) / Math.max(0.0001, max - min);
     const y = height - 50 - normalized * (height - 100);
 
@@ -81,8 +87,9 @@ export const LineChart: React.FC<Props> = ({
             strokeWidth={chart.strokeWidth}
             strokeLinecap={chart.strokeLinecap}
             strokeLinejoin="miter"
-            strokeDasharray={4000}
-            strokeDashoffset={4000 * (1 - lineProgress)}
+            pathLength={1}
+            strokeDasharray={1}
+            strokeDashoffset={1 - lineProgress}
           />
 
           {points.map((point, index) => {
@@ -117,7 +124,9 @@ export const LineChart: React.FC<Props> = ({
                   fontFamily={typography.fontFamily}
                   fontWeight={typography.weight.semibold}
                 >
-                  ${point.value}B
+                  {prefix}
+                  {point.value}
+                  {suffix}
                 </text>
 
                 <text
@@ -136,7 +145,7 @@ export const LineChart: React.FC<Props> = ({
         </svg>
       </div>
 
-      <Source>COMPANY FILINGS</Source>
+      <Source>{source}</Source>
     </Frame>
   );
 };

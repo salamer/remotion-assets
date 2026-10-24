@@ -27,7 +27,11 @@ const data = [
   },
 ];
 
-export const RankingChart: React.FC = () => {
+const LEGACY_DEFAULT_data = data;
+
+export const RankingChart: React.FC<{ data?: typeof LEGACY_DEFAULT_data }> = ({
+  data = LEGACY_DEFAULT_data,
+}) => {
   const frame = useCurrentFrame();
 
   return (

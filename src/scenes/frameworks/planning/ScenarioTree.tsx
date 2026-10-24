@@ -15,17 +15,24 @@ const scenarios = [
   { name: "BEAR", probability: "25%", value: "$72", y: 470, accent: false },
 ];
 
-export const ScenarioTree: React.FC = () => {
+const LEGACY_DEFAULT_scenarios = scenarios;
+
+export const ScenarioTree: React.FC<{
+  scenarios?: typeof LEGACY_DEFAULT_scenarios;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  scenarios = LEGACY_DEFAULT_scenarios,
+  title = "One decision, three possible worlds.",
+  eyebrow = "SCENARIO TREE",
+}) => {
   const frame = useCurrentFrame();
   const rootCx = ROOT.x + ROOT.w;
   const rootCy = ROOT.y + ROOT.h / 2;
 
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="SCENARIO TREE"
-        title="One decision, three possible worlds."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="relative mt-10 h-[650px]">
         <div
           className="absolute border-2 border-ink bg-yellow px-8 py-7 text-[30px] font-semibold"
@@ -34,7 +41,7 @@ export const ScenarioTree: React.FC = () => {
             top: ROOT.y,
             width: ROOT.w,
             height: ROOT.h,
-            boxShadow: "6px 6px 0 #111",
+            boxShadow: "6px 6px 0 var(--fm-ink, #111)",
           }}
         >
           TODAY

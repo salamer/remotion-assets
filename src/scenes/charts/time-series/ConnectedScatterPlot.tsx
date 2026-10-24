@@ -13,7 +13,17 @@ const pts = [
   { year: "2024", x: 78, y: 72 },
 ];
 
-export const ConnectedScatterPlot: React.FC = () => {
+const LEGACY_DEFAULT_pts = pts;
+
+export const ConnectedScatterPlot: React.FC<{
+  pts?: typeof LEGACY_DEFAULT_pts;
+  title?: string;
+  eyebrow?: string;
+}> = ({
+  pts = LEGACY_DEFAULT_pts,
+  title = "How the relationship evolved over time.",
+  eyebrow = "CONNECTED SCATTER",
+}) => {
   const frame = useCurrentFrame(),
     p = reveal(frame, 12, 50),
     W = 1400,
@@ -26,10 +36,7 @@ export const ConnectedScatterPlot: React.FC = () => {
     .join(" ");
   return (
     <Frame>
-      <SceneHeader
-        eyebrow="CONNECTED SCATTER"
-        title="How the relationship evolved over time."
-      />
+      <SceneHeader eyebrow={eyebrow} title={title} />
       <div className="mt-14">
         <svg width={W} height={H + 60}>
           <line
@@ -74,7 +81,9 @@ export const ConnectedScatterPlot: React.FC = () => {
                 <text
                   x={x + 18}
                   y={y - 14}
-                  fontFamily="IBM Plex Mono"
+                  fontFamily={
+                    'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+                  }
                   fontSize={17}
                 >
                   {pt.year}
@@ -86,7 +95,9 @@ export const ConnectedScatterPlot: React.FC = () => {
             x={W / 2}
             y={H + 50}
             textAnchor="middle"
-            fontFamily="IBM Plex Mono"
+            fontFamily={
+              'var(--fm-font, "IBM Plex Mono"), "Noto Sans SC", monospace'
+            }
             fontSize={18}
             fill={palette.muted}
           >

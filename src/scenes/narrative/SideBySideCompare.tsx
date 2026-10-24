@@ -27,7 +27,11 @@ const companies: Company[] = [
   },
 ];
 
-export const SideBySideCompare: React.FC = () => {
+const LEGACY_DEFAULT_companies = companies;
+
+export const SideBySideCompare: React.FC<{
+  companies?: typeof LEGACY_DEFAULT_companies;
+}> = ({ companies = LEGACY_DEFAULT_companies }) => {
   const frame = useCurrentFrame();
 
   return (

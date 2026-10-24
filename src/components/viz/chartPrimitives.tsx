@@ -23,7 +23,7 @@ export const VIZ = {
   white: colors.white,
 } as const;
 
-export const FONT = `"${typography.fontFamily}", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`;
+export const FONT = typography.fontFamily;
 
 export const GridLines: React.FC<{
   width: number;
